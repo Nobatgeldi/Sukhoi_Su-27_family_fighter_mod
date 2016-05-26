@@ -1,0 +1,19 @@
+_plane = _this select 0
+;_plane Say "gearmove"
+_plane Animate ["gear_r", 1];
+_plane Animate ["gear_l", 1];
+_plane Animate ["gear_n", 1];
+_plane Animate ["gear_r1", 1];
+_plane Animate ["gear_l1", 1];
+_plane Animate ["gear_n_piston_2", 1];
+~0.5
+_plane Animate ["gear_r_pick", 1];
+_plane Animate ["gear_l_pick", 1];
+
+_plane Animate ["door_br1", 1];
+_plane Animate ["door_br2", 1];
+_plane Animate ["door_bl1", 1];
+_plane Animate ["door_bl2", 1];
+_plane Animate ["door_n", 1];
+
+exit
