@@ -9,10 +9,10 @@ class CfgAmmo
 		indirectHit=85;
 		indirectHitRange=10;
 		maneuvrability=27;
+		simulation="shotMissile";
 		simulationStep=0.0020000001;
 		airLock=2;
 		irLock=1;
-		simulation="shotMissile";
 		cost=1500;
 		maxSpeed=828;
 		timeToLive=40;
@@ -33,7 +33,7 @@ class CfgAmmo
 		missileLockCone=120;
 		maxControlRange=8000;
 	};
-		class SAC_M_R27RE: SAC_M_R73_AA
+	class SAC_M_R27RE: SAC_M_R73_AA
 	{
 		model="\SACSu33\SACR27RE.p3d";
 		proxyShape="\SACSu33\SACR27RE_proxy.p3d";
@@ -46,7 +46,6 @@ class CfgAmmo
 		trackLead=0.94999999;
 		airLock=1;
 		irLock=1;
-		simulation="shotMissile";
 		initTime=0.30000001;
 		thrustTime=15;
 		thrust=400;
@@ -72,7 +71,7 @@ class CfgAmmo
 		trackOversteer=5;
 		trackLead=0.69999999;
 		airLock=1;
-		simulation="shotMissile";
+		//simulation="shotMissile";
 		irLock=1;
 		thrustTime=12;
 		thrust=380;

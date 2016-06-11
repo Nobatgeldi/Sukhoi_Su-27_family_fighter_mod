@@ -57,25 +57,28 @@ class CfgVehicles
 		incomingMissileDetectionSystem=16;
 		radarType=4;
 		laserScanner=1;
-		irTarget = true;
+		irTarget=1;
 		irScanRangeMin=100;
 		irScanRangeMax=10500;
 		irScanToEyeFactor=4;
 		irScanGround=1;
-		irScanToEyeFactor = 2;
 		LockDetectionSystem="2 + 4 + 8";
 		landingAoa="rad 10";
 		landingSpeed=180;
 		extCameraPosition[] = {0, 2, -30};
 		gearRetracting=1;
 		maxSpeed=2100;
-		commanderCanSee = 31+32;
-		commanderUsesPilotView=rue;
+		//commanderCanSee = 31+32;
+		commanderUsesPilotView=true;
 		flapsFrictionCoef=0.5;
 		forceThrustMultiple = 1.7;
 		supplyRadius=13;
+		airBrake = true;
 	    //secondaryExplosion = true;
 		turnCoef=6.0
+		damping=92;
+		damperSize = 0.12;
+		wheelWeight = 175;
 		memoryPointGun="machinegun";
 		memoryPointLRocket="L raketa";
 		memoryPointRRocket="P raketa";
@@ -83,7 +86,7 @@ class CfgVehicles
 		{
 		 "SACGSh301",
 		 "SACR73Launcher",
-		 "GBU12BombLauncher",
+		 "SACR27Launcher",
 		 "SACR27Launcher",
          "CMFlareLauncher"		 
 		};
@@ -91,13 +94,33 @@ class CfgVehicles
 		{
 		 "SAC_150Rnd_30mm_GSh301",
          "SAC_6Rnd_R73",
-		 "2Rnd_GBU12_LGB_MI10",
+		 "SAC_4Rnd_R27RE",
 		 "SAC_4Rnd_R27RE",	
          "300Rnd_CMFlare_Chaff_Magazine"		 
 		};
 		aileronSensitivity=1.2;
 		elevatorSensitivity=1;
-		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
+		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};	
+		/*class Light
+		{
+			position="gear_n";
+			ambient[] = {0.3,0.15,0.0,1.0};
+			size = 5.3;
+			brightness = 0.08;
+			color[] = {1.0,0.5,0.0,1.0};
+		
+		};
+		class MarkerLights
+		{
+			class Green_Still_L
+			{
+				name="num1";
+				color[]={0.029999999,0.30000001,0.029999999,1};
+				ambient[]={0.003,0.029999999,0.003,1};
+				brightness=0.050000001;
+				blinking=0;
+			};
+		};*/
 		class Reflectors
 		{
 			class Left

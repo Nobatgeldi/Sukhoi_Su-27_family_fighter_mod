@@ -15,7 +15,7 @@ class CfgWeapons
 		{
 			"SAC_150Rnd_30mm_GSh301"
 		};
-		canLock=LockYes;
+		canLock=2;
 		ballisticsComputer=2;
 		modes[]=
 		{
@@ -126,12 +126,11 @@ class CfgWeapons
 	class MissileBase;
 	class MissileLauncher;
 	class CMFlareLauncher
-	{
-		
+	{	
 	};	
 	class SACR73Launcher: MissileLauncher
 	{
-		canLock=LockYes;
+		canLock=2;
 		autoFire=0;
 		displayName="R-73 Archer";
 		displayNameMagazine="R-73 Archer";
@@ -187,7 +186,7 @@ class CfgWeapons
 		magazineReloadTime=0.1;
 		magazines[]=
 		{
-			"SAC_6Rnd_R73"
+			"SAC_6Rnd_R73",
 			"SAC_4Rnd_R73"
 		};
 		holdsterAnimValue=3;
