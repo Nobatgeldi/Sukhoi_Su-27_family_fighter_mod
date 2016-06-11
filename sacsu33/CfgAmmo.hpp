@@ -12,6 +12,7 @@ class CfgAmmo
 		simulationStep=0.0020000001;
 		airLock=2;
 		irLock=1;
+		simulation="shotMissile";
 		cost=1500;
 		maxSpeed=828;
 		timeToLive=40;
@@ -45,6 +46,7 @@ class CfgAmmo
 		trackLead=0.94999999;
 		airLock=1;
 		irLock=1;
+		simulation="shotMissile";
 		initTime=0.30000001;
 		thrustTime=15;
 		thrust=400;
@@ -70,6 +72,7 @@ class CfgAmmo
 		trackOversteer=5;
 		trackLead=0.69999999;
 		airLock=1;
+		simulation="shotMissile";
 		irLock=1;
 		thrustTime=12;
 		thrust=380;

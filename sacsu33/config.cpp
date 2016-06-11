@@ -1,6 +1,9 @@
 #include "CfgWeapons.hpp"
 #include "CfgAmmo.hpp"
 #include "CfgMagazines.hpp"
+#include "CfgSkeletons.hpp"
+#include "basicDefines_A3.hpp"
+
 class CfgPatches
 {
 	class SACSu33
@@ -8,7 +11,7 @@ class CfgPatches
 		units[]=
 		{
 			"SACSu33",
-			"SACSu33A"
+			"SACSu33B"
 		};
 		weapons[]={};
 		requiredVersion=0.0.1;
@@ -24,11 +27,11 @@ class CfgVehicles
 	class SACSu33: Plane
 	{
 		side = 0;
-		faction = "turkmenAF";
+		faction = "OPF_F";
 		crew = "O_pilot_F";
 		author="Nobatgeldi Geldimammedov";
 		DriverAction="pilot";
-		getInAction = GetInLow;
+		getInAction = "";
 		displayName="Su-33 Flanker-D";
 		model="\SACSu33\SACSu33.p3d";
 		animated=1;
@@ -42,7 +45,7 @@ class CfgVehicles
 		scope=2;
 		nameSound="aircraft";
 		fuelCapacity=2550;
-		camouflage=15;
+		camouflage=5;
 		Audible=9;
 		mapSize=20;
 		cost=100000000;
@@ -51,14 +54,28 @@ class CfgVehicles
 		armor=120;
 		damageResistance=0.00336;
 		armorStructured=1;
+		incomingMissileDetectionSystem=16;
+		radarType=4;
 		laserScanner=1;
+		irTarget = true;
+		irScanRangeMin=100;
+		irScanRangeMax=10500;
+		irScanToEyeFactor=4;
+		irScanGround=1;
+		irScanToEyeFactor = 2;
 		LockDetectionSystem="2 + 4 + 8";
 		landingAoa="rad 10";
 		landingSpeed=180;
 		extCameraPosition[] = {0, 2, -30};
 		gearRetracting=1;
 		maxSpeed=2100;
+		commanderCanSee = 31+32;
+		commanderUsesPilotView=rue;
+		flapsFrictionCoef=0.5;
+		forceThrustMultiple = 1.7;
 		supplyRadius=13;
+	    //secondaryExplosion = true;
+		turnCoef=6.0
 		memoryPointGun="machinegun";
 		memoryPointLRocket="L raketa";
 		memoryPointRRocket="P raketa";
@@ -66,15 +83,17 @@ class CfgVehicles
 		{
 		 "SACGSh301",
 		 "SACR73Launcher",
-		 "SACR77Launcher",
-		 "SACR27Launcher"		 
+		 "GBU12BombLauncher",
+		 "SACR27Launcher",
+         "CMFlareLauncher"		 
 		};
 		magazines[]=
 		{
 		 "SAC_150Rnd_30mm_GSh301",
          "SAC_6Rnd_R73",
-		 "SAC_4Rnd_R77",
-		 "SAC_4Rnd_R27RE"		 
+		 "2Rnd_GBU12_LGB_MI10",
+		 "SAC_4Rnd_R27RE",	
+         "300Rnd_CMFlare_Chaff_Magazine"		 
 		};
 		aileronSensitivity=1.2;
 		elevatorSensitivity=1;
@@ -83,18 +102,68 @@ class CfgVehicles
 		{
 			class Left
 			{
-				color[]={0.80000001,0.80000001,1,1};
-				ambient[]={0.07,0.07,0.07,1};
+				color[]={7000,7500,10000,1};
+				ambient[]={100,100,100,0};
 				position="light_1_1_source";
 				direction="light_1_1_target";
 				hitpoint="L svetlo";
 				selection="L svetlo";
 				size=1;
-				brightness=1;
+				innerAngle=20;
+				outerAngle=60;
+				coneFadeCoef=10;
+				intensity=50;
+				useFlare=1;
+				dayLight=0;
+				FlareSize=4;
+				class Attenuation
+				{
+					start=1;
+					constant=0;
+					linear=0;
+					quadratic=4;
+				};
+			};
+			class Right
+			{
+				color[]={7000,7500,10000,1};
+				ambient[]={100,100,100,0};
+				position="light_1_2_source";
+				direction="light_1_2_target";
+				hitpoint="P svetlo";
+				selection="P svetlo";
+				size=1;
+				innerAngle=20;
+				outerAngle=60;
+				coneFadeCoef=10;
+				intensity=50;
+				useFlare=1;
+				dayLight=0;
+				FlareSize=4;
+				class Attenuation
+				{
+					start=1;
+					constant=0;
+					linear=0;
+					quadratic=4;
+				};
 			};
 		};
 		class Sounds
 		{
+			/*class someVehicleClass
+			{
+			...
+			//declared sounds for hitSounds
+			hitSound1[] = {"\VBS2\people\data\sound\hit_man\hit1", 0.177828, 1};
+			hitSound2[] = {"\VBS2\people\data\sound\hit_man\hit2", 0.177828, 1};
+			...
+			hitSound30[] = {"\VBS2\people\data\sound\hit_man\hit30", 0.177828, 1};
+			 
+			//this parameter applies the sounds
+			hitSounds[] = {"hitSound1", 0.033333, "hitSound2", 0.033333, ..., "hitSound30", 0.033333};
+			...
+			};*/
 			class EngineLowOut
 			{
 				sound[]=
@@ -189,17 +258,16 @@ class CfgVehicles
 				volume="(1-camPos)*(speed factor[1, 150])";
 			};
 		};
+		insideSoundCoef = 0.05;
 		hiddenselections[]=
 		{
 			"canopy",
 			"canopyglass",
-			"seat",
 			"num1",
 			"num2"
 		};
 		class AnimationSources
 		{
-
 			class wing
 			{
 				source="user";
@@ -259,7 +327,7 @@ class CfgVehicles
 				condition="this animationPhase ""ABcut"" == 0 and player in this and isengineon this";
 				statement="this animate [""ABcut"",1];";
 			};
-			class Hook on
+			class Hookon
 			{
 				displayName="HOOK ON";
 				position="pos player";
@@ -268,7 +336,7 @@ class CfgVehicles
 				condition="this animationPhase ""hook"" == 0";
 				statement="this animate [""hook"",1];";
 			};
-			class Hook off
+			class Hookoff
 			{
 				displayName="HOOK OFF";
 				position="pos player";
@@ -299,7 +367,6 @@ class CfgVehicles
 		class EventHandlers
 		{
 			init="_this execVM ""\sacsu33\sqs\init2.sqf"",[_this select 0]exec ""\SACSu33\sqs\init.sqs"",[_this select 0]exec ""\SACSu33\sqs\wing.sqs"",[_this select 0] execVM ""\SACSu33\sqs\AircraftEffects.sqf"",_this execVM ""\sacsu33\sqs\aircraftvapour.sqf""";
-			//,_this execVM ""\sacsu33\sqsaircraftvapour.sqf""
 			fired="[_this] exec ""\SACSu33\sqs\fireGsh.sqs"",_this call BIS_Effects_EH_Fired";
 		};
 		class Library
@@ -309,17 +376,19 @@ class CfgVehicles
 	   };
 	class SACSu33B: SACSu33
 	{
-		displayName="Su-33 Flanker(FAB250,R-73,S-8T)";
+		displayName="Su-33B Flanker-D";
 		model="\SACSu33\SACSu33B.p3d";
 		weapons[]=
 		{
 			"SACGSh301",
 			"SACR73Launcher",
+			"CMFlareLauncher"
 		};
 		magazines[]=
 		{
 			"SAC_150Rnd_30mm_GSh301",
-			"SAC_4Rnd_R73"
+			"SAC_4Rnd_R73",
+			"300Rnd_CMFlare_Chaff_Magazine"
 		};
 		threat[]={1,1,0.85000002};
 	};
