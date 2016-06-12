@@ -1,6 +1,7 @@
 class CfgWeapons
 {
 	class CannonCore;
+	class MissileLauncher;
 	class SACGSh301: CannonCore
 	{
         scope=2;
@@ -123,11 +124,7 @@ class CfgWeapons
 			maxRangeProbab=0.0099999998;
 		};
 	};
-	class MissileBase;
-	class MissileLauncher;
-	class CMFlareLauncher
-	{	
-	};	
+	
 	class SACR73Launcher: MissileLauncher
 	{
 		canLock=2;

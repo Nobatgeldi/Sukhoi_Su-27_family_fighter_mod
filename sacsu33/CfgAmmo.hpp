@@ -9,10 +9,13 @@ class CfgAmmo
 		indirectHit=85;
 		indirectHitRange=10;
 		maneuvrability=27;
+		cmImmunity=0.70;
 		simulation="shotMissile";
 		simulationStep=0.0020000001;
 		airLock=2;
 		irLock=1;
+		laserLock = true;
+		laserScanRange = 10000;
 		cost=1500;
 		maxSpeed=828;
 		timeToLive=40;
@@ -39,6 +42,7 @@ class CfgAmmo
 		proxyShape="\SACSu33\SACR27RE_proxy.p3d";
 		hit=100;
 		indirectHit=50;
+		cmImmunity=0.50;
 		indirectHitRange=9;
 		maneuvrability=20;
 		simulationStep=0.0020000001;
@@ -65,6 +69,7 @@ class CfgAmmo
 		proxyShape="\SACSu33\SACR77_proxy.p3d";
 		hit=80;
 		indirectHit=40;
+		cmImmunity=0.40;
 		indirectHitRange=9;
 		maneuvrability=30;
 		simulationStep=0.0020000001;

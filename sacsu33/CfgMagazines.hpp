@@ -1,6 +1,7 @@
 class CfgMagazines
 {
 	class VehicleMagazine;
+	class 300Rnd_CMFlare_Chaff_Magazine;
 	class SAC_150Rnd_30mm_GSh301: VehicleMagazine
 	{
 		scope=2;
