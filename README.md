@@ -3,7 +3,7 @@ converted from ArmA2
 #
 | | |
 |----------|---------------------------------------------------------------------|
-| **Nobatgeldi**  	| [![Build Status](http://nobatgeldi.github.io/su-33_arma3_mode/)](obatgeldi.tk)|
+| **Nobatgeldi**  	| [![Build Status]|
 #
 https://www.youtube.com/watch?v=brMAxmC_jGk
 #
