@@ -3,7 +3,7 @@ converted from ArmA2
 #
 | | |
 |----------|---------------------------------------------------------------------|
-| **Nobatgeldi**  	| [![Build Status](http://ci.rada.re/buildStatus/icon?job=radare2)](http://ci.rada.re/job/radare2)|
+| **Nobatgeldi**  	| [![Build Status](http://nobatgeldi.github.io/su-33_arma3_mode/)](obatgeldi.tk)|
 #
 https://www.youtube.com/watch?v=brMAxmC_jGk
 #
