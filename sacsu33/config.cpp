@@ -404,14 +404,9 @@ class CfgVehicles
 				onlyforplayer=0;
 			};
 		};
-		/*class EventHandlers
-		{
-			init="_this execVM ""\sacsu33\sqs\init2.sqf"",[_this select 0]exec ""\SACSu33\sqs\init.sqs"",[_this select 0]exec ""\SACSu33\sqs\wing.sqs"",[_this select 0] execVM ""\SACSu33\sqs\AircraftEffects.sqf"",_this execVM ""\sacsu33\sqs\aircraftvapour.sqf""";
-			fired="[_this] exec ""\SACSu33\sqs\fireGsh.sqs"",_this call BIS_Effects_EH_Fired";
-		};*/
 		class EventHandlers
 		{
-			init="_this execVM ""\sacsu33\sqs\init2.sqf"",[_this select 0]exec ""\SACSu33\sqs\init.sqs"",[_this select 0]exec ""\SACSu33\sqs\wing.sqs""";
+			init="_this execVM ""\sacsu33\sqs\init2.sqf"",[_this select 0]exec ""\SACSu33\sqs\init.sqs"",[_this select 0]exec ""\SACSu33\sqs\wing.sqs"",[_this select 0] execVM ""\SACSu33\sqs\AircraftEffects.sqf"",_this execVM ""\sacsu33\sqs\aircraftvapour.sqf""";
 			fired="[_this] exec ""\SACSu33\sqs\fireGsh.sqs"",_this call BIS_Effects_EH_Fired";
 		};
 		class Library
@@ -428,6 +423,7 @@ class CfgVehicles
 			"SACGSh301",
 			"SACR73Launcher",
 			"su33_s8Laucher",
+			"GBU12BombLauncher",
 			"CMFlareLauncher"
 			
 		};
@@ -435,6 +431,7 @@ class CfgVehicles
 		{
 			"SAC_150Rnd_30mm_GSh301",
 			"SAC_4Rnd_R73",
+			"2Rnd_GBU12_LGB_MI10",
 			"su33_80Rnd_S8T",
 			"300Rnd_CMFlare_Chaff_Magazine"
 		};
