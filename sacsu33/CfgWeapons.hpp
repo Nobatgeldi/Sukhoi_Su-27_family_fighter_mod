@@ -2,6 +2,7 @@ class CfgWeapons
 {
 	class CannonCore;
 	class MissileLauncher;
+	class RocketPods;
 	class SACGSh301: CannonCore
 	{
         scope=2;
@@ -209,5 +210,15 @@ class CfgWeapons
 			"SAC_4Rnd_R77"
 		};
 		reloadTime=0.30000001;
+	};
+	class su33_s8Laucher: RocketPods
+	{
+		displayName="S8 80mm Rockets";
+		magazines[]=
+		{
+			"su33_80Rnd_S8T"
+		};
+		cursor="Air_Dot";
+		cursorSize=1;
 	};
 };

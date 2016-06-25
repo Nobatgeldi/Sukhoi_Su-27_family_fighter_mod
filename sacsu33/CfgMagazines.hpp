@@ -64,4 +64,26 @@ class CfgMagazines
 	{
 		count=4;
 	};
+	class su33_80Rnd_S8T: VehicleMagazine
+	{
+		scope=2;
+		displayName="S8 Rocket";
+		ammo="su33_rocket_80mm_HE";
+		count=80;
+		initSpeed=0;
+		nameSound="rockets";
+		sound[]=
+		{
+			"A3\sounds_f\weapons\rockets\explosion_missile_02",
+			1,
+			1,
+			1200
+		};
+		reloadSound[]=
+		{
+			"",
+			0.00031622799,
+			1
+		};
+	};
 };
