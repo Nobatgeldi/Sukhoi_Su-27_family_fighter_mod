@@ -33,15 +33,15 @@ class CfgAmmo
 		explosionSoundEffect="DefaultExplosion";
 		soundFly[]=
 		{
-			"",
-			1,
+			"A3\Sounds_F\weapons\Rockets\rocket_fly_2",
+			2.2,
 			1,
 			400
 		};
 		soundEngine[]=
 		{
-			"",
-			1,
+			"A3\Sounds_F\weapons\Rockets\rocket_fly_2",
+			2.2,
 			1,
 			20
 		};

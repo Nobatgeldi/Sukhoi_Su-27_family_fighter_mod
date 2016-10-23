@@ -1,3 +1,4 @@
+#include "BIS_AddonInfo.hpp"
 #include "CfgWeapons.hpp"
 #include "CfgAmmo.hpp"
 #include "CfgMagazines.hpp"
@@ -11,7 +12,8 @@ class CfgPatches
 		units[]=
 		{
 			"SACSu33",
-			"SACSu33B"
+			"SACSu33B",
+			"SACSu33C"
 		};
 		weapons[]={};
 		requiredVersion=0.0.1;
@@ -433,6 +435,29 @@ class CfgVehicles
 			"SAC_4Rnd_R73",
 			"2Rnd_GBU12_LGB_MI10",
 			"su33_80Rnd_S8T",
+			"300Rnd_CMFlare_Chaff_Magazine"
+		};
+		threat[]={1,1,0.85000002};
+	};
+	class SACSu33C: SACSu33
+	{
+		displayName="Su-33C Flanker-D";
+		model="\SACSu33\SACSu33C.p3d";
+		weapons[]=
+		{
+			"SACGSh301",
+			"SACR73Launcher",
+			"SACR27Launcher",
+			"SACR77Launcher",
+			"CMFlareLauncher"
+			
+		};
+		magazines[]=
+		{
+			"SAC_150Rnd_30mm_GSh301",
+			"SAC_2Rnd_R73",
+			"SAC_4Rnd_R27RE",
+			"SAC_2Rnd_R77",
 			"300Rnd_CMFlare_Chaff_Magazine"
 		};
 		threat[]={1,1,0.85000002};

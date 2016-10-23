@@ -6,7 +6,7 @@ _t=time;
 _fl = "#particlesource" createVehicleLocal getpos _v;
 _fl attachto [_v,[0,0,0],"destructionEffect2"];
 _fl setParticleRandom [0.3, [1, 1, 0], [0, 0, 0], 0, 0.3, [0, 0, 0, 0], 0, 0];
-_fl setParticleParams [["\Ca\Data\ParticleEffects\Universal\Universal", 16, 10, 32], "", "Billboard", 1, 2, "destructionEffect2",
+_fl setParticleParams [["\a3\data_f\ParticleEffects\Universal\Universal", 16, 10, 32], "", "Billboard", 1, 2, "destructionEffect2",
 				[0, 0, 5], 0, 10, 7.9, 0.075, [4,7,9,10], [[1, 1, 1, -1], [1, 1, 1, -1],
 				[1, 1, 1, -1], [1, 1, 1, -0.5], [1, 1, 1, -0]], [1,0.5], 1, 0, "", "", _v];
 _fl setDropInterval 1;
@@ -14,7 +14,7 @@ _fl setDropInterval 1;
 _sm = "#particlesource" createVehicleLocal getpos _v;
 _sm attachto [_v,[0,0,0],"destructionEffect1"];
 _sm setParticleRandom [2, [2, 2, 0], [0, 0, 0], 0, 0.3, [0, 0, 0, 0.1], 0, 0];
-_sm setParticleParams [["\Ca\Data\ParticleEffects\Universal\Universal", 16, 7, 48], "", "Billboard", 1, 5, "destructionEffect1",
+_sm setParticleParams [["\a3\data_f\ParticleEffects\Universal\Universal", 16, 7, 48], "", "Billboard", 1, 5, "destructionEffect1",
 				[0, 0, 5], 0, 10, 7.9, 0.075, [4,8,12,14], [[0.3, 0.3, 0.3, 1],
 				[0.45, 0.45, 0.45, 1],[0.6, 0.6, 0.6, 0.6], [0.7, 0.7, 0.7, 0.25], [1, 1, 1, 0]], [0.8,0.3,0.25], 1, 0, "", "", _v];
 _sm setDropInterval 1;
@@ -46,7 +46,7 @@ if (surfaceiswater(_pos) && (_pos select 2)<9 ) then
 	_wave = "#particlesource" createVehicleLocal getpos _v;
 	_wave attachto [_v,[0,0,0],"destructionEffect1"];
 	_wave setParticleRandom [0.3, [1, 1, 0], [0.5, 0.5, 0], 0, 0.3, [0, 0, 0, 0], 0, 0];
-	_wave setParticleParams [["\Ca\Data\ParticleEffects\Universal\Universal", 16, 12, 13,0], "", "Billboard", 1, 1.6, "destructionEffect1",
+	_wave setParticleParams [["\a3\data_f\ParticleEffects\Universal\Universal", 16, 12, 13,0], "", "Billboard", 1, 1.6, "destructionEffect1",
 			[0, 0, 0], 0, 10, 7.9, 0.075, [3,8],
 			[[0.7,0.8,1,0.6],[0.85,0.9,1,0.0]], [1000], 1, 0, "", "", _v];
 	_wave setparticlecircle [2,[0,16,0]];
@@ -55,7 +55,7 @@ if (surfaceiswater(_pos) && (_pos select 2)<9 ) then
 	_splash = "#particlesource" createVehicleLocal getpos _v;
 	_splash attachto [_v,[0,0,0],"destructionEffect1"];
 	_splash setParticleRandom [2, [2, 2, 0], [2, 2, 7], 0, 0.5, [0, 0, 0, 0], 0, 0];
-	_splash setParticleParams [["\Ca\Data\ParticleEffects\Universal\Universal", 16, 13, 6, 0], "", "Billboard", 1, 4, "destructionEffect1",
+	_splash setParticleParams [["\a3\data_f\ParticleEffects\Universal\Universal", 16, 13, 6, 0], "", "Billboard", 1, 4, "destructionEffect1",
 			[0, 0, 0], 0, 30, 7.9, 0.075, [8,15],
 			[[0.7,0.7,0.7,1],[1,1,1,0]], [1000], 1, 0, "", "", _v];
 	_splash setparticlecircle [2,[0,3,15]];
