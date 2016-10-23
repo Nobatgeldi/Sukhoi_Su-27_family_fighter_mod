@@ -1,14 +1,13 @@
 class CfgMagazines
 {
 	class VehicleMagazine;
-	class 300Rnd_CMFlare_Chaff_Magazine;
 	class SAC_150Rnd_30mm_GSh301: VehicleMagazine
 	{
 		scope=2;
-		count=500;
-		ammo="B_35mm_AA";
+		count=300;
+		ammo="B_40mm_GPR_Tracer_Red";
 		initSpeed=1036;
-		tracersEvery=2;
+		tracersEvery=1;
 		nameSound="cannon";
 	};
 	class SAC_6Rnd_R73: VehicleMagazine
@@ -40,6 +39,10 @@ class CfgMagazines
 	{
 		count=4;
 	};
+	class SAC_2Rnd_R73: SAC_6Rnd_R73
+	{
+		count=2;
+	}
 	class SAC_6Rnd_R27RE: SAC_6Rnd_R73
 	{
 		scope=2;
@@ -52,6 +55,10 @@ class CfgMagazines
 	{
 		count=4;
 	};
+	class SAC_2Rnd_R27RE: SAC_6Rnd_R27RE
+	{
+		count=2;
+	};
 	class SAC_6Rnd_R77: VehicleMagazine
 	{
 		scope=2;
@@ -63,6 +70,10 @@ class CfgMagazines
 	class SAC_4Rnd_R77: SAC_6Rnd_R77
 	{
 		count=4;
+	};
+	class SAC_2Rnd_R77: SAC_6Rnd_R77
+	{
+		count=2;
 	};
 	class su33_80Rnd_S8T: VehicleMagazine
 	{

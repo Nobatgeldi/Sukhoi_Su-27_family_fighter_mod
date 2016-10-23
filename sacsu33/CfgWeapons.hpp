@@ -125,7 +125,6 @@ class CfgWeapons
 			maxRangeProbab=0.0099999998;
 		};
 	};
-	
 	class SACR73Launcher: MissileLauncher
 	{
 		canLock=2;
@@ -137,10 +136,9 @@ class CfgWeapons
 		cursor="EmptyCursor";
 		minRange=300;
 		minRangeProbab=0.025;
-		midRange=2500;
-		midRangeProbab=0.090000004;
 		maxRange=9000;
 		maxRangeProbab=0.0099999998;
+		sound[]={"A3\Sounds_F\weapons\Rockets\rocket_fly_2",db+47,1};
 		sounds[]=
 		{
 			"StandardSound"
@@ -185,9 +183,11 @@ class CfgWeapons
 		magazines[]=
 		{
 			"SAC_6Rnd_R73",
-			"SAC_4Rnd_R73"
+			"SAC_4Rnd_R73",
+			"SAC_2Rnd_R73"
 		};
 		holdsterAnimValue=3;
+		weaponLockSystem="2 + 16 + 4";
 		weaponLockDelay=3;
 		textureType="semi";
 	};
@@ -197,7 +197,8 @@ class CfgWeapons
 		magazines[]=
 		{
 			"SAC_6Rnd_R27RE",
-			"SAC_4Rnd_R27RE"
+			"SAC_4Rnd_R27RE",
+			"SAC_2Rnd_R27RE"
 		};
 		reloadTime=0.30000001;
 	};
@@ -207,7 +208,8 @@ class CfgWeapons
 		magazines[]=
 		{
 			"SAC_6Rnd_R77",
-			"SAC_4Rnd_R77"
+			"SAC_4Rnd_R77",
+			"SAC_2Rnd_R77"
 		};
 		reloadTime=0.30000001;
 	};
