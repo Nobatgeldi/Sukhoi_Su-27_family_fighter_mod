@@ -79,12 +79,12 @@ class CfgVehicles
 		timeToStop=0.2;
 		//commanderCanSee = 31+32;
 		commanderUsesPilotView=true;
-		flapsFrictionCoef=0.5;
+		flapsFrictionCoef=0.2;
 		forceThrustMultiple = 2.0;
 		flyInHeight=200;
 		supplyRadius=13;
 		airBrake = true;
-		maxRotationX=0.8; 
+		maxRotationX=1.5; 
 	    //secondaryExplosion = true;
 		turnCoef=5.0
 		damping=60;
@@ -114,35 +114,67 @@ class CfgVehicles
 		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
 		/*class Light
 		{
-			position="gear_n";
+			
+			position="pos player";
 			ambient[] = {0.3,0.15,0.0,1.0};
-			size = 5.3;
-			brightness = 0.08;
+			size = 3.3;
+			brightness = 0.3;
 			color[] = {1.0,0.5,0.0,1.0};
 
-		};
+		};*/
 		class MarkerLights
 		{
-			class Green_Still_L
+			class Cockpit_light_1
 			{
-				name="num1";
-				color[]={0.029999999,0.30000001,0.029999999,1};
-				ambient[]={0.003,0.029999999,0.003,1};
-				brightness=0.050000001;
+				name="pos player";
+				ambient[]={0.0099999998,0.0099999998,0.0099999998,1};
+				color[]={0.029999999,1,0.11,1};
+				brightness=0.035;
 				blinking=0;
+				class Attenuation
+				{
+					start=1;
+					constant=0;
+					linear=0;
+					quadratic=4;
+				};
 			};
-		};*/
+			class Green_Still_Rear
+			{
+				name="bily pozicni";
+				color[]={1.0, 0.0, 0.0, 1.0};
+				ambient[]={1.0, 0.0, 0.0, 1.0};
+				brightness=0.25;
+				blinking=true;
+			};
+			class Green_Still_Flaps_L
+			{
+				name="cerveny pozicni";
+				color[]={1.0, 0.0, 0.0, 1.0};
+				ambient[]={1.0, 0.0, 0.0, 1.0};
+				brightness=0.25;
+				blinking=true;
+			};
+			class Green_Still_Flaps_R
+			{
+				name="zeleny pozicni";
+				color[]={1.0, 0.0, 0.0, 1.0};
+				ambient[]={1.0, 0.0, 0.0, 1.0};
+				brightness=0.25;
+				blinking=true;
+			};
+		};
 		class Exhausts
 		{
 			class Exhaust_left
 			{
-				position="nozzle3";
+				position="elevator_l_axis";
 				direction="Exhausts_end_left";
 				effect="ExhaustsEffectPlane";
 			};
 			class Exhaust_right
 			{
-				position="nozzle3";
+				position="elevator_r_axis";
 				direction="Exhausts_end_right";
 				effect="ExhaustsEffectPlane";
 			};
@@ -343,12 +375,12 @@ class CfgVehicles
 				source="user";
 				animPeriod=3;
 			};
-			/*class hook
+			class hook
 			{
 				source="user";
 				animPeriod=3;
 				initPhase=0;
-			};*/
+			};
 			class ABcut
 			{
 				source="user";
