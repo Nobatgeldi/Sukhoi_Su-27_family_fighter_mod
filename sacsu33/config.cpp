@@ -16,10 +16,12 @@ class CfgPatches
 			"SACSu33C"
 		};
 		weapons[]={};
-		requiredVersion=0.0.1;
+		requiredVersion=0.0.2;
 		requiredAddons[]={};
 	};
 };
+
+class Eventhandlers;
 
 class CfgVehicles
 {
@@ -46,19 +48,22 @@ class CfgVehicles
 		_generalMacro="Plane";
 		scope=2;
 		nameSound="aircraft";
-		fuelCapacity=2550;
+		fuelCapacity=2500;
 		camouflage=5;
 		lightOnGear = true;
 		Audible=9;
 		mapSize=20;
+		MapUseRealSize = true;
 		cost=100000000;
 		type=2;
 		threat[]={0.99999999,0.99999999,1};
-		armor=120;
+		armor=450;
 		damageResistance=0.00336;
 		armorStructured=1;
 		incomingMissileDetectionSystem=16;
+		//missileDetectionSystem= LDS_MISSILE;
 		radarType=4;
+		radarRange = 4000;
 		laserScanner=1;
 		irTarget=1;
 		irScanRangeMin=100;
@@ -71,16 +76,18 @@ class CfgVehicles
 		extCameraPosition[] = {0, 2, -30};
 		gearRetracting=1;
 		maxSpeed=2100;
+		timeToStop=0.2;
 		//commanderCanSee = 31+32;
 		commanderUsesPilotView=true;
 		flapsFrictionCoef=0.5;
-		forceThrustMultiple = 1.7;
+		forceThrustMultiple = 2.0;
 		flyInHeight=200;
 		supplyRadius=13;
 		airBrake = true;
+		maxRotationX=0.8; 
 	    //secondaryExplosion = true;
-		turnCoef=3.0
-		damping=92;
+		turnCoef=5.0
+		damping=60;
 		damperSize = 0.12;
 		wheelWeight = 175;
 		memoryPointGun="machinegun";
@@ -102,7 +109,7 @@ class CfgVehicles
 		 "SAC_4Rnd_R27RE",
          "300Rnd_CMFlare_Chaff_Magazine"
 		};
-		aileronSensitivity=1.2;
+		aileronSensitivity=1.6;
 		elevatorSensitivity=1;
 		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
 		/*class Light
@@ -125,21 +132,21 @@ class CfgVehicles
 				blinking=0;
 			};
 		};*/
-		/*class Exhausts
+		class Exhausts
 		{
 			class Exhaust_left
 			{
-				position="Exhausts_start_left";
+				position="nozzle3";
 				direction="Exhausts_end_left";
 				effect="ExhaustsEffectPlane";
 			};
 			class Exhaust_right
 			{
-				position="Exhausts_start_right";
+				position="nozzle3";
 				direction="Exhausts_end_right";
 				effect="ExhaustsEffectPlane";
 			};
-		};*/
+		};
 		class Reflectors
 		{
 			class Left
@@ -336,12 +343,12 @@ class CfgVehicles
 				source="user";
 				animPeriod=3;
 			};
-			class hook
+			/*class hook
 			{
 				source="user";
 				animPeriod=3;
 				initPhase=0;
-			};
+			};*/
 			class ABcut
 			{
 				source="user";
@@ -369,7 +376,7 @@ class CfgVehicles
 				condition="this animationPhase ""ABcut"" == 0 and player in this and isengineon this";
 				statement="this animate [""ABcut"",1];";
 			};
-			class Hookon
+			/*class Hookon
 			{
 				displayName="HOOK ON";
 				position="pos player";
@@ -386,7 +393,7 @@ class CfgVehicles
 				onlyforplayer=0;
 				condition="this animationPhase ""hook"" == 1";
 				statement="this animate [""hook"",0];";
-			};
+			};*/
 			class folding_wing
 			{
 				displayName="Fold Wing";
@@ -406,7 +413,7 @@ class CfgVehicles
 				onlyforplayer=0;
 			};
 		};
-		class EventHandlers
+		class EventHandlers: Eventhandlers
 		{
 			init="_this execVM ""\sacsu33\sqs\init2.sqf"",[_this select 0]exec ""\SACSu33\sqs\init.sqs"",[_this select 0]exec ""\SACSu33\sqs\wing.sqs"",[_this select 0] execVM ""\SACSu33\sqs\AircraftEffects.sqf"",_this execVM ""\sacsu33\sqs\aircraftvapour.sqf""";
 			fired="[_this] exec ""\SACSu33\sqs\fireGsh.sqs"",_this call BIS_Effects_EH_Fired";
