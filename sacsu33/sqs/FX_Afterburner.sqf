@@ -2,7 +2,7 @@
 private ["_MaxIntensity","_Boost","_leftengine","_rightengine","_emitters","_Intensity","_looptime", "_plane","_illuminateL","_illuminateR","_veldir","_veldirx","_veldiry","_veldirz","_daylight","_cl0","_cl1","_cl2","_cl3","_risetime","_downtime","_day","_eftime","_ef"];
 
 _MaxIntensity = 2;
-_Boost = 0.4;
+_Boost = 1.5;
 _Intensity = 0;
 _veldir = 1;
 _veldirx = 0;
@@ -27,7 +27,7 @@ _eftime = [((_ef select 0) + (((_ef select 1) - (_ef select 0))/ 31) * (_day sel
 (1 + (_ef select 2) + (((_ef select 3) - (_ef select 2))/ 31) * (_day select 2))];
 
 
-_maxspeed = 2700;
+_maxspeed = 2100;
 _sizespeed = 800;
 _plane = _this;
 
