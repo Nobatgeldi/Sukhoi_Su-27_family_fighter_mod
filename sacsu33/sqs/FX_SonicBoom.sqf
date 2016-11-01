@@ -11,14 +11,14 @@ _emitter setDropInterval 0;
 while {(alive _this) and (_this animationPhase "KillFx" == 0)} do
 {
 	_nowspeed = speed _this;
-	if ((_nowspeed > 850) and (_nowspeed < 860) and (_lastspeed < _nowspeed)) then
+	if ((_nowspeed > 850) and (_nowspeed < 860)) then /*and (_lastspeed < _nowspeed)*/
 	{
 		_emitter setDropInterval 0.0005;
 		for "_i" from 1 to 100 do
 		  {
 			_emitter setParticleRandom [0.4,[10*(_i/100),10*(_i/100),10*(_i/100)],[10*(_i/100),10*(_i/100),10*(_i/100)],0,0.3,[0.1,0.15,0.3,0.5],0,0];
 			_emitter setParticleParams ["\wop_gui\data\cl_basic","","Billboard",1,0.1,[0,(-12*(_i/100)+8),-0.5],(velocity _this),1,1.2745,1,0.001,[20*(_i/100)],[[1,1,1,0],[1,1,1,0.1*(_i/100)],[1,1,1,0]],[0],0,0,"","",_this];
-			 sleep 0.005;
+			 sleep 0.05;
 		   };
 		_emitter setDropInterval 0;
 		sleep ((random 5)+ 5);
