@@ -11,7 +11,7 @@ If (!(player in _plane) AND (count (crew _plane) > 0)) then {goto "AI"} else {go
 ?(not alive _plane): goto "Exit"
 ;?((getpos _plane select 2 < 2)and(_plane animationPhase "ABcut" == 1)and(speed _plane <= 10)) :_plane Animate ["ABcut", 0];
 
-?((getpos _plane select 2 < 45)and(speed _plane <= 260)and(_plane animationPhase "Flap_r12" > 0.5)and(_plane animationPhase "gear_n" > 0.5)) :goto "down"
+?((getpos _plane select 2 < 45)and(speed _plane <= 240)and(_plane animationPhase "Flap_r12" > 0.5)and(_plane animationPhase "gear_n" > 0.5)) :goto "down"
 
 ?((getpos _plane select 2 >= 45)and(_plane animationPhase "Flap_r12" < 0.5)and(_plane animationPhase "gear_n" < 0.5)) :goto "up"
 
