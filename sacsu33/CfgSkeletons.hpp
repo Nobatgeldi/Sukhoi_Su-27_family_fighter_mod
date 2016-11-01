@@ -16,9 +16,9 @@ class CfgModels
 	{
 		sections[] = {};
 		sectionsInherit="";
-		skeletonName = "";
+		skeletonName = "SACSu33Skeleton";
 	};
-	class Name_Of_Your_Model : Default
+	class SACSu33S : Default
 	{
 		skeletonName="SACSu33Skeleton";
 		sections[]=

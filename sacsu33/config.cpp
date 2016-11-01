@@ -101,6 +101,7 @@ class CfgVehicles
 		 "SACR27Launcher",
          "CMFlareLauncher"
 		};
+		
 		magazines[]=
 		{
 		 "SAC_150Rnd_30mm_GSh301",
@@ -109,8 +110,8 @@ class CfgVehicles
 		 "SAC_4Rnd_R27RE",
          "300Rnd_CMFlare_Chaff_Magazine"
 		};
-		aileronSensitivity=1.6;
-		elevatorSensitivity=1;
+		aileronSensitivity=1.4;
+		elevatorSensitivity=1.8;
 		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
 		/*class Light
 		{
@@ -124,12 +125,12 @@ class CfgVehicles
 		};*/
 		class MarkerLights
 		{
-			class Cockpit_light_1
+			/*class Cockpit_light_1
 			{
 				name="pos player";
-				ambient[]={0.0099999998,0.0099999998,0.0099999998,1};
-				color[]={0.029999999,1,0.11,1};
-				brightness=0.035;
+				ambient[]={1.0, 0.8, 0.2, 1.0};
+				color[]={1.0, 0.8, 0.2, 1.0};
+				brightness=0.10;
 				blinking=0;
 				class Attenuation
 				{
@@ -138,12 +139,12 @@ class CfgVehicles
 					linear=0;
 					quadratic=4;
 				};
-			};
+			};*/
 			class Green_Still_Rear
 			{
 				name="bily pozicni";
-				color[]={1.0, 0.0, 0.0, 1.0};
-				ambient[]={1.0, 0.0, 0.0, 1.0};
+				color[]={0.0, 0.0, 1.0, 1.0};
+				ambient[]={0.0, 0.0, 1.0, 1.0};
 				brightness=0.25;
 				blinking=true;
 			};
@@ -168,13 +169,13 @@ class CfgVehicles
 		{
 			class Exhaust_left
 			{
-				position="elevator_l_axis";
+				position="levy prach";
 				direction="Exhausts_end_left";
 				effect="ExhaustsEffectPlane";
 			};
 			class Exhaust_right
 			{
-				position="elevator_r_axis";
+				position="pravy prach";
 				direction="Exhausts_end_right";
 				effect="ExhaustsEffectPlane";
 			};
