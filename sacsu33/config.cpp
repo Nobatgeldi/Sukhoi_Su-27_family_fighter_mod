@@ -112,19 +112,19 @@ class CfgVehicles
 		 "SACR73Launcher",
 		 "SACR27Launcher",
 		 "SACR27Launcher",
-         "CMFlareLauncher"
+     "CMFlareLauncher"
 		};
 
 		magazines[]=
 		{
 		 "SAC_150Rnd_30mm_GSh301",
-         "SAC_6Rnd_R73",
+     "SAC_6Rnd_R73",
 		 "SAC_4Rnd_R27RE",
 		 "SAC_4Rnd_R27RE",
-         "300Rnd_CMFlare_Chaff_Magazine"
+     "300Rnd_CMFlare_Chaff_Magazine"
 		};
 		aileronSensitivity=1.4;
-		elevatorSensitivity=1.9;
+		elevatorSensitivity=1.6;
 		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
 		/*class Light
 		{
