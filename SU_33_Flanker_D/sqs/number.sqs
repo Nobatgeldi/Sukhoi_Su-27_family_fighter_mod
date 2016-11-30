@@ -3,10 +3,10 @@ _num = _this select 1
 ~0.05
 ?((_num > 99) or (_num < 0)):goto "error"
 #number
-_num1 = 1
-_num2 = 0
-_plane setobjecttexture[03, "\SU_33_Flanker_D\num\2.paa"]
-_plane setobjecttexture[04, "\SU_33_Flanker_D\num\1.paa"]
+_num1 = floor( _num / 10)
+_num2 = floor( _num - (_num1 * 10 ))
+_plane setobjecttexture[03, "\SU_33_Flanker_D\num\0.paa"]
+_plane setobjecttexture[04, "\SU_33_Flanker_D\num\0.paa"]
 ?(_num1 > 0): _plane setobjecttexture[03, "\SU_33_Flanker_D\num\1.paa"]
 ?(_num1 > 1): _plane setobjecttexture[03, "\SU_33_Flanker_D\num\2.paa"]
 ?(_num1 > 2): _plane setobjecttexture[03, "\SU_33_Flanker_D\num\3.paa"]
@@ -30,6 +30,6 @@ _plane setobjecttexture[04, "\SU_33_Flanker_D\num\1.paa"]
 exit
 
 #error
-_plane setobjecttexture[03, "\SU_33_Flanker_D\num\1.paa"]
-_plane setobjecttexture[04, "\SU_33_Flanker_D\num\3.paa"]
+_plane setobjecttexture[03, "\SACSu33\num\1.paa"]
+_plane setobjecttexture[04, "\SACSu33\num\3.paa"]
 exit

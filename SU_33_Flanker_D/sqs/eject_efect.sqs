@@ -8,14 +8,14 @@ _seatpos = "Logic" camCreate (getpos _seat)
 #loop
 _slidetime = _slidetime - 0.05
 _seatpos setpos (getpos _seat)
-drop [["\a3\data_f\ParticleEffects\Universal\Universal", 16, 7, 48],"", "Billboard", 1.5, 0.8,[0, 0, 0],[5-random 20,5-random 20,5-random 20],1,1.275,1,0,[2,6+((3.3+random 5) /3)],[[0.6,0.6,0.6,0.2],[0.7,0.7,0.7,0.7],[0.7,0.7,0.7,0.65],[0.8,0.8,0.8,0.35],[0.9,0.9,0.9,0.18], [1,1,1,0]],[3 + random 5],0.01,0.01,"","", _seatpos];
+drop [["\ca\Data\ParticleEffects\Universal\Universal", 16, 7, 48],"", "Billboard", 1.5, 0.8,[0, 0, 0],[5-random 20,5-random 20,5-random 20],1,1.275,1,0,[2,6+((3.3+random 5) /3)],[[0.6,0.6,0.6,0.2],[0.7,0.7,0.7,0.7],[0.7,0.7,0.7,0.65],[0.8,0.8,0.8,0.35],[0.9,0.9,0.9,0.18], [1,1,1,0]],[3 + random 5],0.01,0.01,"","", _seatpos];
 ~0.005
-drop [["\a3\data_f\ParticleEffects\Universal\Universal", 16, 7, 48],"", "Billboard", 1.5, 0.8,[0, 0, 0],[5-random 20,5-random 20,5-random 20],1,1.275,1,0,[2,6+((3.3+random 5) /3)],[[0.6,0.6,0.6,0.2],[0.7,0.7,0.7,0.7],[0.7,0.7,0.7,0.65],[0.8,0.8,0.8,0.35],[0.9,0.9,0.9,0.18], [1,1,1,0]],[3 + random 5],0.01,0.01,"","", _seatpos];
-;drop [["\a3\data_f\Cl_fired", 8, 1, 8], "", "Billboard", 1, 2, [0, 0, 0], [0, 0, 0.75], 0, 10, 7.9, 0.075, [1.2, 2, 4], [[0.8, 0.8, 0.8, 0.7], [0.25, 0.25, 0.25, 0.5], [0.5, 0.5, 0.5, 0]], [0.08], 1, 0, "", "", _seatpos];
+drop [["\ca\Data\ParticleEffects\Universal\Universal", 16, 7, 48],"", "Billboard", 1.5, 0.8,[0, 0, 0],[5-random 20,5-random 20,5-random 20],1,1.275,1,0,[2,6+((3.3+random 5) /3)],[[0.6,0.6,0.6,0.2],[0.7,0.7,0.7,0.7],[0.7,0.7,0.7,0.65],[0.8,0.8,0.8,0.35],[0.9,0.9,0.9,0.18], [1,1,1,0]],[3 + random 5],0.01,0.01,"","", _seatpos];
+;drop [["\Ca\Data\Cl_fired", 8, 1, 8], "", "Billboard", 1, 2, [0, 0, 0], [0, 0, 0.75], 0, 10, 7.9, 0.075, [1.2, 2, 4], [[0.8, 0.8, 0.8, 0.7], [0.25, 0.25, 0.25, 0.5], [0.5, 0.5, 0.5, 0]], [0.08], 1, 0, "", "", _seatpos];
 ~0.05
 
 ?(_slidetime > 0):goto "loop"
 
 #end
-DeleteVehicle _seatpos
+DeleteVehicle _seatpos 
 exit;

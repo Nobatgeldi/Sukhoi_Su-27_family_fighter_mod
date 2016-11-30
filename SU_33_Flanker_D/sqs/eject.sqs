@@ -17,7 +17,7 @@ _pilot sidechat "Damn it! ejecting!"
 
 ;_seat = Createvehicle ["SACK36",position _pilot, [], 0, "none"]
 ;_canopy = Createvehicle ["SACCanopy",position _pilot, [], 0, "none"]
-	
+
 _seat = "SACK36" Createvehicle [(getpos _plane select 0)+(_Vu select 0)*8,(getpos _plane select 1)+(_Vu select 1)*8,(getpos _plane select 2)+(_Vu select 2)*8]
 _canopy = "SACCanopy" Createvehicle [(getpos _plane select 0)+(_Vu select 0)*10,(getpos _plane select 1)+(_Vu select 1)*10,(getpos _plane select 2)+(_Vu select 2)*10]
 
@@ -43,7 +43,7 @@ _plane setFuel 0
 _seat Lock true
 _seat setFuel 0
 
-[_seat] exec "\SACSu33\sqs\eject_efect.sqs"
+[_seat] exec "\SU_33_Flanker_D\sqs\eject_efect.sqs"
 
 _canopy setvelocity [(velocity _plane select 0)*0.7,(velocity _plane select 1)*0.7,(velocity _plane select 2)+10]
 
