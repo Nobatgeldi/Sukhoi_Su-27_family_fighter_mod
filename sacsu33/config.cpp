@@ -18,30 +18,23 @@ class CfgPatches
 			"SACSu33C"
 		};
 		weapons[]={};
-		requiredVersion=0.0.2;
+		requiredVersion=0.0.2.1;
 		requiredAddons[]={};
 	};
 };
 
-class Eventhandlers;
-
 class CfgVehicles
 {
-	  class All
-		{
-		};
-		class AllVehicles: All
-		{
-		};
-		class Air: AllVehicles
-		{
-		};
+	  class All{};
+		class AllVehicles: All{};
+		class Air: AllVehicles{};
 		class Plane: Air
 		{
 			class NewTurret;
 			class ViewPilot;
 			class Sounds;
 			class AnimationSources;
+			class Eventhandlers;
 		};
 	class SACSu33: Plane
 	{
@@ -65,14 +58,14 @@ class CfgVehicles
 		nameSound="aircraft";
 		fuelCapacity=2500;
 		camouflage=5;
-		lightOnGear = false;
+		lightOnGear = true;
 		Audible=9;
 		mapSize=20;
 		MapUseRealSize = true;
-		cost=100000000;
+		cost=1000000;
 		type=2;
 		threat[]={0.99999999,0.99999999,1};
-		armor=450;
+		armor=80;
 		damageResistance=0.00336;
 		armorStructured=1;
 		incomingMissileDetectionSystem=16;
@@ -90,7 +83,7 @@ class CfgVehicles
 		extCameraPosition[] = {0, 2, -30};
 		gearRetracting=1;
 		maxSpeed=2100;
-		timeToStop=0.2;
+		//timeToStop=0.2;
 		commanderUsesPilotView=true;
 		flapsFrictionCoef=0.2;
 		forceThrustMultiple = 2.0;
@@ -114,7 +107,6 @@ class CfgVehicles
 		 "SACR27Launcher",
      "CMFlareLauncher"
 		};
-
 		magazines[]=
 		{
 		 "SAC_150Rnd_30mm_GSh301",
@@ -124,7 +116,7 @@ class CfgVehicles
      "300Rnd_CMFlare_Chaff_Magazine"
 		};
 		aileronSensitivity=1.4;
-		elevatorSensitivity=1.6;
+		elevatorSensitivity=1.9;
 		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
 		/*class Light
 		{
@@ -459,9 +451,9 @@ class CfgVehicles
 				onlyforplayer=0;
 			};
 		};
-		class EventHandlers: Eventhandlers
+		class Eventhandlers: Eventhandlers
 		{
-			init="_this execVM ""\sacsu33\sqs\init2.sqf"",[_this select 0]exec ""\SACSu33\sqs\init.sqs"",[_this select 0]exec ""\SACSu33\sqs\wing.sqs"",[_this select 0] execVM ""\SACSu33\sqs\AircraftEffects.sqf"",_this execVM ""\sacsu33\sqs\aircraftvapour.sqf""";
+			init="_this execVM ""\sacsu33\sqs\init2.sqf"",[_this]exec ""\SACSu33\sqs\init.sqs"",[_this select 0]exec ""\SACSu33\sqs\wing.sqs"",[_this select 0] execVM ""\SACSu33\sqs\AircraftEffects.sqf"",_this execVM ""\sacsu33\sqs\aircraftvapour.sqf""";
 			fired="[_this] exec ""\SACSu33\sqs\fireGsh.sqs"",_this call BIS_Effects_EH_Fired";
 		};
 		class Library
