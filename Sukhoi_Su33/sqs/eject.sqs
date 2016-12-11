@@ -1,0 +1,167 @@
+;[planeName] exec "ejection_seat.sqs"
+_plane=_this select 0;
+_pilot = _this select 1;
+
+_oldhigh = getpos _plane select 2
+_planeDir = getdir _plane;
+_seatmove = [0,5.0,3.0]
+
+;hide canopy&seat
+_plane setobjecttexture[0, ""]
+_plane setobjecttexture[1, ""]
+_plane setobjecttexture[2, ""]
+
+_Vd = vectorDir _plane
+_Vu = vectorUp _plane
+_pilot sidechat "Damn it! ejecting!"
+
+;_seat = Createvehicle ["SACK36",position _pilot, [], 0, "none"]
+;_canopy = Createvehicle ["SACCanopy",position _pilot, [], 0, "none"]
+
+_seat = "SACK36" Createvehicle [(getpos _plane select 0)+(_Vu select 0)*8,(getpos _plane select 1)+(_Vu select 1)*8,(getpos _plane select 2)+(_Vu select 2)*8]
+_canopy = "SACCanopy" Createvehicle [(getpos _plane select 0)+(_Vu select 0)*10,(getpos _plane select 1)+(_Vu select 1)*10,(getpos _plane select 2)+(_Vu select 2)*10]
+
+_seat SetPos (_plane ModelToWorld _seatmove);
+
+_seat setvectordir _Vd
+_seat setvectorup _Vu
+
+_canopy setDir _planeDir
+_canopy Lock true
+_pilot Action ["getout",_plane]
+UnassignVehicle _pilot
+;_pilot AssignAsDriver _seat
+;_pilot moveInDriver _seat
+_pilot assignAsCargo _seat
+_pilot moveInCargo _seat
+;_seat Say "SACeject"
+
+#skip
+~0.001
+_plane Lock true
+_plane setFuel 0
+_seat Lock true
+_seat setFuel 0
+
+[_seat] exec "\Sukhoi_Su33\sqs\eject_efect.sqs"
+
+_canopy setvelocity [(velocity _plane select 0)*0.7,(velocity _plane select 1)*0.7,(velocity _plane select 2)+10]
+
+_seatspdx = (velocity _plane select 0) * 0.7
+_seatspdy = (velocity _plane select 1) * 0.7
+_seatspdz = (velocity _plane select 2) * 0.7
+_Vu0 = _Vu select 0
+_Vu1 = _Vu select 1
+_Vu2 = _Vu select 2
+_ejectmvx = (_Vu0)*40
+_ejectmvy = (_Vu1)*40
+_ejectmvz = (_Vu2)*40
+_Vux = 6
+_Vuy = 6
+_Vuz = 6
+_loopcount = 0
+
+#loopeffect
+_seat Lock true
+_ejectspdx = _seatspdx + _ejectmvx
+_ejectspdy = _seatspdy + _ejectmvy
+_ejectspdz = _seatspdz + _ejectmvz
+;_pilot globalchat format ["Z : %1",_ejectspdz]
+
+_seat setvelocity [_ejectspdx,_ejectspdy,_ejectspdz]
+;_ejectspd = _ejectspd * 0.98
+
+if((_Vu0) > 0.1) then {_Vu0 = _Vu0 -0.08}
+if((_Vu1) > 0.1) then {_Vu1 = _Vu1 -0.08}
+
+if((_Vu0) < -0.1) then {_Vu0 = _Vu0 +0.08}
+if((_Vu1) < -0.1) then {_Vu1 = _Vu1 +0.08}
+if((_Vu2) < 0.9) then {_Vu2 = _Vu2 +0.08}
+
+if(((_Vu0) < 0.1) and ((_Vu0) > -0.1)) then {_Vux = 0}
+if(((_Vu1) < 0.1) and ((_Vu1) > -0.1)) then {_Vuy = 0}
+if(((_Vu2) >= 0.9) and (((getpos _seat) select 2) > 40) and ((_loopcount) > 20) and (_ejectspdz > 90)) then {_Vuz = 0}
+
+_ejectmvx = _ejectmvx + (_Vu0 * _Vux)
+_ejectmvy = _ejectmvy + (_Vu1 * _Vuy)
+_ejectmvz = _ejectmvz + (_Vu2 * _Vuz)
+_Vu = [_Vu0,_Vu1,_Vu2]
+_seat setvectorup _Vu
+
+~0.02
+?(!(alive _pilot) ):goto "Exit"
+?(count (crew _seat) == 0):goto "seatopen"
+_loopcount = _loopcount +1
+?((_loopcount) < 50):goto "loopeffect"
+?((getpos _pilot select 2) > 120):goto "paraopen"
+?((_loopcount) > 100):goto "paraopen"
+goto "loopeffect"
+
+#seatopen
+
+#paraopen
+_seat Lock false
+UnassignVehicle _pilot
+~0.05
+moveOut _pilot
+_pilot Action ["eject",_seat];
+_seat Lock true
+~0.2
+
+_pilot switchMove "para_pilot"
+_pilotheight = getpos _pilot select 2
+[_pilot, _pilotheight] exec "ca\air2\halo\data\Scripts\HALO_init.sqs";
+
+exit
+
+
+
+;;;old script
+
+
+;?(((velocity _pilot select 2) < 10)and((getpos _pilot) select 2) < 140):goto "testroop"
+;_pilot setvelocity [(velocity _pilot select 0),(velocity _pilot select 1),(velocity _pilot select 2)*0.05]
+
+#testroop
+@(getpos _pilot select 2 < 100)
+;_pilot globalchat format ["alt : %1",((getpos _pilot) select 2)]
+;?(((getpos _pilot) select 2) > 100): goto "testroop"
+
+_pilotV = Velocity _pilot
+_para = "BIS_Steerable_Parachute" Createvehicle [(getpos _pilot select 0),(getpos _pilot select 1),(getpos _pilot select 2)]
+;_para SetPos (getpos _pilot);
+_para SetPos (getpos _pilot);
+_seatDir = getdir _seat
+_para SetDir _seatDir
+_para Lock false
+[_pilot] AllowGetIn true
+_pilot AssignAsDriver _para
+_pilot MoveInDriver _para
+;_para Lock true
+~0.1
+
+
+#liferaft
+@(getpos _pilot select 2 < 6)
+if (surfaceisWater (getpos _pilot)) then {goto "water"} else {goto "endland"}
+
+#water
+@(getpos _pilot select 2 < 2)
+_liferaft = "PBX" Createvehicle [(getpos _pilot select 0),(getpos _pilot select 1),0]
+_liferaft setDir (getdir _pilot)
+_liferaft Lock false
+_para Lock false
+;_pilot Action ["getout",_para]
+;UnassignVehicle _pilot
+;_pilot moveInDriver _liferaft
+;_pilot AssignAsDriver _liferaft
+
+
+#endland
+_para Lock false
+;@(getpos _pilot select 2 < 1)
+;_liferaft = "liferaftobj" camCreate (getpos _pilot)
+;_liferaft setDir (getdir _pilot)
+;_liferaft Lock true
+#Exit
+exit

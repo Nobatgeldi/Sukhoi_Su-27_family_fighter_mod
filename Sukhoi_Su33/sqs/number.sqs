@@ -1,0 +1,35 @@
+_plane = _this select 0
+_num = _this select 1
+~0.05
+?((_num > 99) or (_num < 0)):goto "error"
+#number
+_num1 = floor( _num / 10)
+_num2 = floor( _num - (_num1 * 10 ))
+_plane setobjecttexture[03, "\Sukhoi_Su33\num\2.paa"]
+_plane setobjecttexture[04, "\Sukhoi_Su33\num\1.paa"]/*
+?(_num1 > 0): _plane setobjecttexture[03, "\Sukhoi_Su33\num\1.paa"]
+?(_num1 > 1): _plane setobjecttexture[03, "\Sukhoi_Su33\num\2.paa"]
+?(_num1 > 2): _plane setobjecttexture[03, "\Sukhoi_Su33\num\3.paa"]
+?(_num1 > 3): _plane setobjecttexture[03, "\Sukhoi_Su33\num\4.paa"]
+?(_num1 > 4): _plane setobjecttexture[03, "\Sukhoi_Su33\num\5.paa"]
+?(_num1 > 5): _plane setobjecttexture[03, "\Sukhoi_Su33\num\6.paa"]
+?(_num1 > 6): _plane setobjecttexture[03, "\Sukhoi_Su33\num\7.paa"]
+?(_num1 > 7): _plane setobjecttexture[03, "\Sukhoi_Su33\num\8.paa"]
+?(_num1 > 8): _plane setobjecttexture[03, "\Sukhoi_Su33\num\9.paa"]
+
+?(_num2 > 0): _plane setobjecttexture[04, "\Sukhoi_Su33\num\1.paa"]
+?(_num2 > 1): _plane setobjecttexture[04, "\Sukhoi_Su33\num\2.paa"]
+?(_num2 > 2): _plane setobjecttexture[04, "\Sukhoi_Su33\num\3.paa"]
+?(_num2 > 3): _plane setobjecttexture[04, "\Sukhoi_Su33\num\4.paa"]
+?(_num2 > 4): _plane setobjecttexture[04, "\Sukhoi_Su33\num\5.paa"]
+?(_num2 > 5): _plane setobjecttexture[04, "\Sukhoi_Su33\num\6.paa"]
+?(_num2 > 6): _plane setobjecttexture[04, "\Sukhoi_Su33\num\7.paa"]
+?(_num2 > 7): _plane setobjecttexture[04, "\Sukhoi_Su33\num\8.paa"]
+?(_num2 > 8): _plane setobjecttexture[04, "\Sukhoi_Su33\num\9.paa"]
+*/
+exit
+
+#error
+_plane setobjecttexture[03, "\Sukhoi_Su33\num\2.paa"]
+_plane setobjecttexture[04, "\Sukhoi_Su33\num\0.paa"]
+exit

@@ -1,0 +1,22 @@
+_plane = _this select 0
+exit
+#loop
+
+@!(format ["%1",driver _plane] == "<NULL-object>")
+
+_pilot = driver _plane
+
+?side _pilot == west : _paratype = "ParachuteWest"
+?side _pilot == east : _paratype = "ParachuteEast"
+?side _pilot == resistance : _paratype = "ParachuteG"
+?side _pilot == civilian : _paratype = "ParachuteC"
+
+@format ["%1",driver _plane] == "<NULL-object>"
+?speed _plane < 5 : goto "loop"
+
+_para = nearestobject [_plane,_paratype]
+deletevehicle _para
+
+[_plane,_pilot] exec "\Sukhoi_Su33\sqs\eject.sqs"
+
+goto "loop"
