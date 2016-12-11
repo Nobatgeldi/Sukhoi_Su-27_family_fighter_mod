@@ -1,4 +1,4 @@
-////////////////////////////////////////////////////////////////////
+﻿////////////////////////////////////////////////////////////////////
 //DeRap: Produced from mikero's Dos Tools Dll version 5.66
 //'now' is Wed Nov 30 21:59:53 2016 : 'file' last modified on Fri Apr 29 15:45:41 2016
 //http://dev-heaven.net/projects/list_files/mikero-pbodll
@@ -23,7 +23,7 @@ class Stage1
 };
 class Stage2
 {
-	texture = "SACSu33\paa\env_co.paa";
+	texture = "Sukhoi_Su33\paa\env_co.paa";
 	uvSource = "none";
 };
 //};

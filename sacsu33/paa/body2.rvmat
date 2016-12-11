@@ -1,4 +1,4 @@
-////////////////////////////////////////////////////////////////////
+﻿////////////////////////////////////////////////////////////////////
 //DeRap: Produced from mikero's Dos Tools Dll version 5.66
 //'now' is Wed Nov 30 22:01:38 2016 : 'file' last modified on Fri Apr 29 15:45:41 2016
 //http://dev-heaven.net/projects/list_files/mikero-pbodll
@@ -17,7 +17,7 @@ PixelShaderID = "Super";
 VertexShaderID = "Super";
 class Stage1
 {
-	texture = "SACSu33\paa\ura_nohq.paa";
+	texture = "Sukhoi_Su33\paa\ura_nohq.paa";
 	uvSource = "tex";
 	class uvTransform
 	{
@@ -53,7 +53,7 @@ class Stage3
 };
 class Stage4
 {
-	texture = "SACSu33\paa\ura_as.paa";
+	texture = "Sukhoi_Su33\paa\ura_as.paa";
 	uvSource = "tex";
 	class uvTransform
 	{
@@ -65,7 +65,7 @@ class Stage4
 };
 class Stage5
 {
-	texture = "SACSu33\paa\ura_smdi.paa";
+	texture = "Sukhoi_Su33\paa\ura_smdi.paa";
 	uvSource = "tex";
 	class uvTransform
 	{
@@ -89,7 +89,7 @@ class Stage6
 };
 class Stage7
 {
-	texture = "SACSu33\paa\env_land_co.paa";
+	texture = "Sukhoi_Su33\paa\env_land_co.paa";
 	uvSource = "tex";
 	class uvTransform
 	{
