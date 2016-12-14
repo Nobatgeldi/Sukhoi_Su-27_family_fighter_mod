@@ -17,4 +17,4 @@ Sukhoi Su-33 Flanker D ArmA3 Guns test
 #
 [![ScreenShot](https://raw.githubusercontent.com/Nobatgeldi/su-33_arma3_mod/master/Screenshot%20(192).png)](https://www.youtube.com/embed/pipVNscpq74)
 #
-Contact  mailto: info@nobatgeldi.com
+Contact info@nobatgeldi.com
