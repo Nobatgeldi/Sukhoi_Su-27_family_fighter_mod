@@ -5,8 +5,8 @@ _num = _this select 1
 #number
 _num1 = floor( _num / 10)
 _num2 = floor( _num - (_num1 * 10 ))
-_plane setobjecttexture[03, "\SU_33_Flanker_D\num\0.paa"]
-_plane setobjecttexture[04, "\SU_33_Flanker_D\num\0.paa"]
+_plane setobjecttexture[03, "\SU_33_Flanker_D\num\2.paa"]
+_plane setobjecttexture[04, "\SU_33_Flanker_D\num\1.paa"]/*
 ?(_num1 > 0): _plane setobjecttexture[03, "\SU_33_Flanker_D\num\1.paa"]
 ?(_num1 > 1): _plane setobjecttexture[03, "\SU_33_Flanker_D\num\2.paa"]
 ?(_num1 > 2): _plane setobjecttexture[03, "\SU_33_Flanker_D\num\3.paa"]
@@ -26,10 +26,10 @@ _plane setobjecttexture[04, "\SU_33_Flanker_D\num\0.paa"]
 ?(_num2 > 6): _plane setobjecttexture[04, "\SU_33_Flanker_D\num\7.paa"]
 ?(_num2 > 7): _plane setobjecttexture[04, "\SU_33_Flanker_D\num\8.paa"]
 ?(_num2 > 8): _plane setobjecttexture[04, "\SU_33_Flanker_D\num\9.paa"]
-
+*/
 exit
 
 #error
-_plane setobjecttexture[03, "\SACSu33\num\1.paa"]
-_plane setobjecttexture[04, "\SACSu33\num\3.paa"]
+_plane setobjecttexture[03, "\SU_33_Flanker_D\num\2.paa"]
+_plane setobjecttexture[04, "\SU_33_Flanker_D\num\0.paa"]
 exit

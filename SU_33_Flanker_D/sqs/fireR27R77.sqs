@@ -7,13 +7,14 @@ _Vu = vectorUp _plane
 _cx = 0
 
 #main
-_w1 = _plane ammo "SACR73Launcher"
-_w2 = _plane ammo "SACR77Launcher"
-_w3 = _plane ammo "SACR27Launcher"
+_w1 = _plane ammo "Su_R73Launcher"
+_w2 = _plane ammo "Su_R77Launcher"
+_w3 = _plane ammo "Su_R27Launcher"
 
-? (_ammoname == "SAC_M_R73_AA"): goto "R73"
-? (_ammoname == "SAC_M_R77"): goto "R77"
-? (_ammoname == "SAC_M_R27RE"): goto "R27"
+? (_ammoname == "Su_M_R73_AA"): goto "R73"
+? (_ammoname == "Su_M_R77"): goto "R77"
+? (_ammoname == "Su_M_R27R"): goto "R27"
+? (_ammoname == "Su_M_R27EA"): goto "R27"
 
 exit
 
