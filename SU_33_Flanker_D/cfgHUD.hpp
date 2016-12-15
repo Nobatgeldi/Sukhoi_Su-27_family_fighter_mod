@@ -149,9 +149,9 @@ class Pos10Vector
 	pos10[]={__EVAL(PosX0Center+SizeX10deg),__EVAL(PosY0Center+SizeY10deg)};
 };
 
-topLeft = "HUD L.U";
-topRight = "HUD R.U";
-bottomLeft = "HUD L.D";
+topLeft = "HUD LH";
+topRight = "HUD PH";
+bottomLeft = "HUD LD";
 /// adjust position inside of memory points LOD
 borderLeft = 0;
 borderRight = 0;
