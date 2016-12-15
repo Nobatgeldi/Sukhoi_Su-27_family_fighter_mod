@@ -17,6 +17,6 @@ _pilot = driver _plane
 _para = nearestobject [_plane,_paratype]
 deletevehicle _para
 
-[_plane,_pilot] exec "\SU_33_Flanker_D\sqs\eject.sqs"
+[_plane,_pilot] exec "\Sukhoi_Su33\sqs\eject.sqs"
 
 goto "loop"

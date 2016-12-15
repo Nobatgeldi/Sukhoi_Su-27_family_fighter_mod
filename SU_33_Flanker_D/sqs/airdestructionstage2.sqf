@@ -5,7 +5,7 @@ _pos=getpos _v;
 // Particle effects
 _smoke = "#particlesource" createVehicleLocal _pos;
 _smoke attachto [_v,[0,0,0],"destructionEffect1"];
-_smoke setParticleParams [["\ca\Data\ParticleEffects\Universal\Universal",16,7,48],
+_smoke setParticleParams [["\a3\data_f\ParticleEffects\Universal\Universal",16,7,48],
 			"", "Billboard", 1, 15, [0, 0, 0], [0, 0, 0], 1, 1.275, 1, 0, [8,14],
 			[[0.1,0.1,0.1,1],[0.1,0.1,0.1,0]], [0.5], 0.1, 0.1, "", "", _v];
 //_smoke setParticleCircle [2,[0,0,0]];
@@ -16,7 +16,7 @@ _fire = "#particlesource" createVehicleLocal _pos;
 _fire attachto [_v,[0,0,0],"destructionEffect2"];
 /*_fire setParticleParams [["\ca\Data\ParticleEffects\Universal\Universal",16,2,32], "", "Billboard", 1, 1, [0, 1, 0], [0, 0, 0], 1, 1.275, 1, 0, [10,15],
           [[1,1,1,-1],[1,1,1,0]], [0.5], 0.01, 0.01, "", "", _v,360]; */
-_fire setParticleParams [["\ca\Data\ParticleEffects\Universal\Universal",16,2,80],
+_fire setParticleParams [["\a3\data_f\ParticleEffects\Universal\Universal",16,2,80],
 		"", "Billboard", 1, 2, [0, 1, 0], [0, 0, 0], 1, 1.275, 1, 0, [7,13],
                 [[1,1,1,-1],[1,1,1,0]], [0.5], 0.01, 0.01, "", "", _v,360];
 _fire setParticleRandom [0.5, [0.5, 0.5, 0.5], [0, 0, 0], 0, 0, [0, 0, 0, 0], 0, 0];
@@ -32,7 +32,7 @@ _shards setDropInterval 0.05;
 */
 _dirt = "#particlesource" createVehicleLocal _pos;
 _dirt attachto [_v,[0,0,0],"destructionEffect1"];
-_dirt setParticleParams [["\ca\Data\ParticleEffects\Universal\Universal",16,12,9,0], "", "Billboard", 1, 5, [0, 0, 0], [0, 0, 5], 0, 5, 1, 0, [10,20],
+_dirt setParticleParams [["\a3\data_f\ParticleEffects\Universal\Universal",16,12,9,0], "", "Billboard", 1, 5, [0, 0, 0], [0, 0, 5], 0, 5, 1, 0, [10,20],
 	  [[0.1,0.1,0.1,1],[0.1,0.1,0.1,0.7],[0.1,0.1,0.1,0]], [1000], 0, 0, "", "", _v,360];
 	  _dirt setParticleRandom [0, [1, 1, 1], [1, 1, 2.5], 0, 0, [0, 0, 0, 0.5], 0, 0];
 _dirt setDropInterval 0.05;

@@ -43,7 +43,7 @@ _plane setFuel 0
 _seat Lock true
 _seat setFuel 0
 
-[_seat] exec "\SU_33_Flanker_D\sqs\eject_efect.sqs"
+[_seat] exec "\Sukhoi_Su33\sqs\eject_efect.sqs"
 
 _canopy setvelocity [(velocity _plane select 0)*0.7,(velocity _plane select 1)*0.7,(velocity _plane select 2)+10]
 
