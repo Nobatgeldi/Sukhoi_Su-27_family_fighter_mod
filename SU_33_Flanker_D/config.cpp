@@ -37,7 +37,7 @@ class CfgVehicles
 		faction = "OPF_F";
 		crew = "O_pilot_F";
 		author="Nobatgeldi Geldimammedov";
-		driverAction="pilot";
+		driverAction="commander";
 		driverCanSee = 1+2+4+8+16;
 		getInAction = "";
 		displayName="Sukhoi Su-33 Flanker-D";
@@ -82,6 +82,7 @@ class CfgVehicles
 		irScanGround=1;
 		LockDetectionSystem="1 + 2 + 4 + 8";
 		landingAoa="rad 10";
+		sweepDisengageRandomCourseCoef = 1;
 		landingSpeed=180;
 		extCameraPosition[] = {0, 2, -30};
 		gearRetracting=1;
@@ -388,6 +389,12 @@ class CfgVehicles
 				animPeriod=5;
 				initPhase=0;
 			};
+			class sun_rise
+			{
+				source="user";
+				animPeriod=2;
+				initPhase=0;
+			};
 			class wing_r: wing
 			{
 			};
@@ -446,6 +453,27 @@ class CfgVehicles
 				statement="this animate [""ABcut"",1];";
 				showWindow=0;
 				hideOnUse=1;
+			};
+			class sun_rise_up
+			{
+				displayName="Sun Visor Up";
+				position="pos player";
+				radius=20;
+				onlyforplayer=0;
+				hideOnUse=1;
+				condition="this animationPhase ""sun_rise"" == 0";
+				statement="this animate [""sun_rise"",1];";
+				showWindow=0;
+			};
+			class sun_rise_down
+			{
+				displayName="Sun Visor Down";
+				position="pos player";
+				radius=20;
+				onlyforplayer=0;
+				hideOnUse=1;
+				condition="this animationPhase ""sun_rise"" == 1";
+				statement="this animate [""sun_rise"",0];";
 			};
 			/*class Hookon
 			{
@@ -521,4 +549,45 @@ class CfgVehicles
 			libTextDesc = "The Sukhoi Su-33 (NATO reporting name Flanker-D) is a carrier-based multi-role fighter aircraft produced by Russian firm Sukhoi beginning in 1982. \nThe main differences from the Su-27 are that the Su-33 can operate from aircraft carriers and is capable of aerial refueling. \nThe wings were fitted with power-assisted folding, and the vertical tails were shortened to allow the fighter to fit in the typically crowded hangars of an aircraft carrier. The rear radome was shortened and reshaped to allow for the tail hook, as well as to save space inside the hangars.";
 		};
 	};
+};
+
+class CfgNonAIVehicles
+{
+	class ProxyDriver;
+	class ProxyWeapon;
+	class Proxym_kh29: ProxyWeapon
+	{
+		model="\SU_33_Flanker_D\wep\KH-29";
+		simulation="maverickweapon";
+	};
+	class Proxym_r73: ProxyWeapon
+	{
+		model="\SU_33_Flanker_D\wep\R73_proxy";
+		simulation="maverickweapon";
+	};
+	class Proxym_r77: ProxyWeapon
+	{
+		model="\SU_33_Flanker_D\wep\R77_proxy";
+		simulation="maverickweapon";
+	};
+	class Proxym_r27: ProxyWeapon
+	{
+		model="\SU_33_Flanker_D\wep\R27RE_proxy";
+		simulation="maverickweapon";
+	};
+	class Proxym_kab500l: ProxyWeapon
+	{
+		model="\SU_33_Flanker_D\wep\FAB-500";
+		simulation="maverickweapon";
+	};
+	/*class Proxym_s8_launcher_x1: ProxyWeapon
+	{
+		model="\js_jc_su35\stores\m_s8_launcher_x1";
+		simulation="maverickweapon";
+	};
+	class Proxym_s8_launcher_x2: ProxyWeapon
+	{
+		model="\js_jc_su35\stores\m_s8_launcher_x2";
+		simulation="maverickweapon";
+	};*/
 };

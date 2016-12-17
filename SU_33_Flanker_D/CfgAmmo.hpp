@@ -2,11 +2,16 @@ class CfgAmmo
 {
 	class MissileBase;
 	class Cannon_30mm_HE_Plane_CAS_02_F;
-	class B_35mm_AA_Tracer_Red;
+	class B_30mm_MP_Tracer_Red;
+	class Bomb_04_F;
 
-	class Su_GSh301_30mm: B_35mm_AA_Tracer_Red
+	class Su_GSh301_30mm: Cannon_30mm_HE_Plane_CAS_02_F
 	{
    // bla blaa
+	};
+	class Fab_500: Bomb_04_F
+	{
+	 // bla blaa
 	};
 	class Su35_kh_29: MissileBase
 	{

@@ -5,88 +5,10 @@ class CfgWeapons
 	class RocketPods;
 	class Bomb_03_Plane_CAS_02_F;
 	class Bomb_04_Plane_CAS_01_F;
-	class autocannon_35mm;
-	class Cannon_30mm_Plane_CAS_02_F;
-
-	class Su33_kh29_Launcher: MissileLauncher
-	{
-		canLock=2;
-		autoFire=0;
-		displayName="Kh-29 Kedge";
-		displayNameMagazine="Kh-29 Kedge";
-		shortNameMagazine="Kh-29";
-		magazines[]=
-		{
-			"Su33_kh29_x4"
-		};
-		reloadTime=0.1;
-		magazineReloadTime=0.1;
-		aiRateOfFire=5;
-		aiRateOfFireDistance=500;
-		nameSound="MissileLauncher";
-		sounds[]=
-		{
-			"StandardSound"
-		};
-		class StandardSound
-		{
-			begin1[]=
-			{
-				"A3\Sounds_F\weapons\Rockets\missile_1",
-				1.12202,
-				1.3,
-				1000
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-			weaponSoundEffect="DefaultRifle";
-		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\weapons\Rockets\rocket_fly_1",
-			1,
-			1.1,
-			700
-		};
-		lockingTargetSound[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\locked_1",
-			0.316228,
-			1
-		};
-		lockedTargetSound[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\locked_3",
-			0.316228,
-			2.5
-		};
-		cursor="EmptyCursor";
-		cursorAim="EmptyCursor";
-		weaponLockDelay=3;
-		textureType="fullAuto";
-		minRange=300;
-		minRangeProbab=0.25;
-		midRange=2500;
-		midRangeProbab=0.89999998;
-		maxRange=9000;
-		maxRangeProbab=0.0099999998;
-	};
-	class Su_kab500K_Laucher: Bomb_04_Plane_CAS_01_F
-	{
-		displayName="KAB-500K";
-		displayNameMagazine="KAB-500K";
-		shortNameMagazine="KAB-500K";
-	};
-	class Su_kab500L_Laucher: Bomb_03_Plane_CAS_02_F
-	{
-		displayName="KAB-500L";
-		displayNameMagazine="KAB-500L";
-		shortNameMagazine="KAB-500L";
-	};
-	class Su_GSh301: autocannon_35mm
+	//class gatling_30mm;
+	class gatling_30mm;
+	//class Cannon_30mm_Plane_CAS_02_F;
+	class Su_GSh301: gatling_30mm
 	{
 		displayName="Gsh-301 30mm";
 		displayNameMagazine="Gsh-301 30mm";
@@ -111,7 +33,7 @@ class CfgWeapons
 	};
 	class Su_GSh301_old: CannonCore
 	{
-    scope=2;
+		scope=2;
 		displayName="Gsh-301 30mm";
 		displayNameMagazine="Gsh-301 30mm";
 		shortNameMagazine="Gsh-301 30mm";
@@ -242,6 +164,85 @@ class CfgWeapons
 			maxRange=1500;
 			maxRangeProbab=0.0099999998;
 		};
+	};
+	class Su33_kh29_Launcher: MissileLauncher
+	{
+		canLock=2;
+		autoFire=0;
+		displayName="Kh-29 Kedge";
+		displayNameMagazine="Kh-29 Kedge";
+		shortNameMagazine="Kh-29";
+		magazines[]=
+		{
+			"Su33_kh29_x4"
+		};
+		reloadTime=0.1;
+		magazineReloadTime=0.1;
+		aiRateOfFire=5;
+		aiRateOfFireDistance=500;
+		nameSound="MissileLauncher";
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			begin1[]=
+			{
+				"A3\Sounds_F\weapons\Rockets\missile_1",
+				1.12202,
+				1.3,
+				1000
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				1
+			};
+			weaponSoundEffect="DefaultRifle";
+		};
+		soundFly[]=
+		{
+			"A3\Sounds_F\weapons\Rockets\rocket_fly_1",
+			1,
+			1.1,
+			700
+		};
+		lockingTargetSound[]=
+		{
+			"\A3\Sounds_F\weapons\Rockets\locked_1",
+			0.316228,
+			1
+		};
+		lockedTargetSound[]=
+		{
+			"\A3\Sounds_F\weapons\Rockets\locked_3",
+			0.316228,
+			2.5
+		};
+		cursor="EmptyCursor";
+		cursorAim="EmptyCursor";
+		weaponLockDelay=3;
+		textureType="fullAuto";
+		minRange=300;
+		minRangeProbab=0.25;
+		midRange=2500;
+		midRangeProbab=0.89999998;
+		maxRange=9000;
+		maxRangeProbab=0.0099999998;
+	};
+	class Su_kab500K_Laucher: Bomb_04_Plane_CAS_01_F
+	{
+		displayName="KAB-500K";
+		displayNameMagazine="KAB-500K";
+		shortNameMagazine="KAB-500K";
+	};
+	class Su_kab500L_Laucher: Bomb_03_Plane_CAS_02_F
+	{
+		displayName="KAB-500L";
+		displayNameMagazine="KAB-500L";
+		shortNameMagazine="KAB-500L";
+		
 	};
 	class Su_R73Launcher: MissileLauncher
 	{
