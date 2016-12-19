@@ -1,0 +1,174 @@
+;Missile spoof script by Franze
+;Uses elements from BAS's spoof missile script
+;and from Moph's range bearing and altitude script
+_helo = _this select 0
+_enemy = _helo select 2
+_count = 0
+
+
+?(not alive (_helo select 0) ) or (not isengineon (_helo select 0)): exit
+
+
+_weaponname = _helo select 1
+
+_missile = nearestobject [_enemy,_weaponname]
+_text = format["%1", _missile]
+;hint format ["Heres the Text: %1",_text]
+?(_weaponname == "R_M136_AT") or (_weaponname == "R_PG7V_AT") or (_weaponname == "R_PG7VR_AT"): goto "rpg"
+?(_text == "NOID jam_rpg7rocketf") or (_text == "NOID icprpg7rocketf"): goto "rpg"
+?(_text == "NOID dkmm_mi28_23mmtr"): exit
+
+goto "misdir1"
+
+#rpg
+
+(_helo select 0) vehiclechat "R P G!"
+
+exit
+
+#misdir1
+_poshelo = getpos (_helo select 0)
+_posenemy = getpos _missile
+
+#start
+_x1 = _poshelo select 0
+_y1 = _poshelo select 1
+_z1 = _poshelo select 2
+_x2 = _posenemy select 0
+_y2 = _posenemy select 1
+_z2 = _posenemy select 2
+
+_x = (_x1 - _x2)
+_y = (_y1 - _y2)
+;;_range = ((_x^2)+(_y^2))^0.5
+_range = _missile distance (_helo select 0)
+
+? (_x>0) and (_y>0): _theta = atan (abs _x/ abs _y) +180
+? (_x>0) and (_y<0): _theta = atan (abs _y/ abs _x) +270
+? (_x<0) and (_y<0): _theta = atan (abs _x/ abs _y)
+? (_x<0) and (_y>0): _theta = atan (abs _y/ abs _x) +90
+
+;;goto "highlowchk"
+
+_dirhelo1 = direction (_helo select 0)
+
+_theta = (360 + (_dirhelo1 - _theta))Mod 360
+
+?(_theta > 15 and _theta < 45): goto "eleven"
+?(_theta > 45 and _theta < 75): goto "ten"
+?(_theta > 75 and _theta < 105): goto "nine"
+?(_theta > 105 and _theta < 135): goto "eight"
+?(_theta > 135 and _theta < 165): goto "seven"
+?(_theta > 165 and _theta < 195): goto "six"
+?(_theta > 195 and _theta < 225): goto "five"
+?(_theta > 225 and _theta < 255): goto "four"
+?(_theta > 255 and _theta < 285): goto "three"
+?(_theta > 285 and _theta < 315): goto "two"
+?(_theta > 315 and _theta < 345): goto "one"
+?(_theta > 345 and _theta < 360): goto "twelve"
+?(_theta > 0 and _theta < 15): goto "twelve"
+#highlowchk
+?(_z2 > 50): goto "high"
+?(_z2 < 50): goto "low"
+
+#eleven
+_oclock = 11
+?(_z2 > _z1): goto "high"
+?(_z2 < _z1): goto "low"
+goto "rndm"
+
+#ten
+_oclock = 10
+?(_z2 > _z1): goto "high"
+?(_z2 < _z1): goto "low"
+goto "rndm"
+
+#nine
+_oclock = 9
+?(_z2 > _z1): goto "high"
+?(_z2 < _z1): goto "low"
+goto "rndm"
+
+#eight
+_oclock = 8
+?(_z2 > _z1): goto "high"
+?(_z2 < _z1): goto "low"
+goto "rndm"
+
+#seven
+_oclock = 7
+?(_z2 > _z1): goto "high"
+?(_z2 < _z1): goto "low"
+goto "rndm"
+
+#six
+_oclock = 6
+?(_z2 > _z1): goto "high"
+?(_z2 < _z1): goto "low"
+goto "rndm"
+
+#five
+_oclock = 5
+?(_z2 > _z1): goto "high"
+?(_z2 < _z1): goto "low"
+goto "rndm"
+
+#four
+_oclock = 4
+?(_z2 > _z1): goto "high"
+?(_z2 < _z1): goto "low"
+goto "rndm"
+
+#three
+_oclock = 3
+?(_z2 > _z1): goto "high"
+?(_z2 < _z1): goto "low"
+goto "rndm"
+
+#two
+_oclock = 2
+?(_z2 > _z1): goto "high"
+?(_z2 < _z1): goto "low"
+goto "rndm"
+
+#one
+_oclock = 1
+?(_z2 > _z1): goto "high"
+?(_z2 < _z1): goto "low"
+goto "rndm"
+
+#twelve
+_oclock = 12
+?(_z2 > _z1): goto "high"
+?(_z2 < _z1): goto "low"
+goto "rndm"
+
+#high
+(_helo select 0) vehiclechat format ["%1 Missile %2 OClock High %3 Meters",_weaponname,_oclock,_range]
+(_helo select 0) vehicleradio "fz_f18_bp_miswarn"
+goto "jammeron"
+
+#low
+(_helo select 0) vehiclechat format ["%1 Missile %2 OClock Low %3 Meters",_weaponname,_oclock,_range]
+(_helo select 0) vehicleradio "fz_f18_bp_miswarn"
+goto "jammeron"
+
+#jammeron
+_rand = 20
+_chance1 = 3
+_chance2 = 2
+#rndm
+#spoof
+[(_helo select 0)] exec "\Sukhi_Su-30\scripts\flarelaunch.sqs"
+?(random 100 < _rand): goto "quit"
+
+@ (_missile distance (_helo select 0)) <100
+
+#loop
+_missile setdir (direction _missile - _chance1 - random _chance2)
+_count =_count +1
+
+? _count <7:goto "loop"
+
+#quit
+exit
