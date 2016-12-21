@@ -14,7 +14,8 @@ class CfgVehicles {
 	class AllVehicles: All{};
 	class Air: AllVehicles{};	// External class reference
 
-	class Plane : Air {
+	class Plane : Air
+	{
 		class NewTurret;	// External class reference
 		class ViewPilot;	// External class reference
 		class ViewGunner;	// External class reference
@@ -45,7 +46,6 @@ class CfgVehicles {
 		gunnerhasflares=1;
 		gunnergetinaction="GetInLow";
 		gunnergetoutaction="GetOutLow";
-		hasGunner=1;
 		unitInfoType="UnitInfoAirplane";
 		simulation="airplane";
 		_generalMacro="Plane";
@@ -137,6 +137,7 @@ class CfgVehicles {
 		{
 			class Light
 			{
+					//actionKey = "";
 					color[]={7000,7500,10000,1};
 					ambient[]={255,0,0,0};
 					position="podsvit pristroju";
@@ -321,14 +322,18 @@ class CfgVehicles {
 				body = "";
 				gun = "";
 				hasCrew = true;
+				hasGunner = 1;
 				primaryGunner = true;
-				commanding = -2;
 				proxyIndex=2;
-				startEngine = false;
+				startEngine = true;
+				IWVicon = "gunner";
+				commanding = -2;
 				proxyType= CPGunner;
 				gunnerCompartments = Compartment1;
 				memoryPointsGetInGunner = "pos gunner";
 				memoryPointsGetInGunnerDir = "pos gunner dir";
+				gunnerAction = "pilot";
+				gunnerInAction = "pilot";
 				gunnergetinaction="GetInLow";
 				gunnergetoutaction="GetOutHigh";
 				gunnerrighthandanimname="stick_pilot";
@@ -359,8 +364,6 @@ class CfgVehicles {
 				viewGunnerShadow = 1;
 				gunnerOpticsModel = "\Sukhi_Su_30\optika_SU30_gunner";
 				gunnerForceOptics = 0;
-				gunnerAction = "pilot";
-				gunnerInAction = "pilot";
 
 				class Viewoptics
 				{
@@ -450,7 +453,7 @@ class CfgVehicles {
 				showWindow=0;
 				hideOnUse=1;
 			};
-			/*class ABurner_on {
+  	/*class ABurner_on {
 				displayName = "Enable Burners";
 				position = "pilotcontrol";
 				onlyforplayer = 0;
