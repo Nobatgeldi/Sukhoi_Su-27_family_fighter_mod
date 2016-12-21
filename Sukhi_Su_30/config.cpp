@@ -33,12 +33,19 @@ class CfgVehicles {
 		displayName = "Sukhoi SU-30MK";
 		model = "\Sukhi_Su_30\models\su30MK.p3d";
 		icon = "\Sukhi_Su_30\tex\Icon_su30MK1_CA.paa";
-    picture="\SU_33_Flanker_D\paa\pic.paa";
+    picture="\Sukhi_Su_30\tex\picture_mkk_ca.paa";
 		//extCameraPosition[] = {0, 0, -30};
 		animated=1;
     getInAction = "";
 		driverAction="commander";
-		driverCanSee = 1+2+4+8+16;
+		driverIsCommander = true;
+		driverrighthandanimname="stick_pilot";
+		driverCanSee = 1+2+4+8+16+32;
+		gunnerCanSee = 1+2+4+8+16+32;
+		gunnerhasflares=1;
+		gunnergetinaction="GetInLow";
+		gunnergetoutaction="GetOutLow";
+		hasGunner=1;
 		unitInfoType="UnitInfoAirplane";
 		simulation="airplane";
 		_generalMacro="Plane";
@@ -65,6 +72,8 @@ class CfgVehicles {
 		//Vehicle/turret setting. Displays gunner/commander turret aimpoints on the HUD.
 		showCrewAim = 1+2+4; // values can be combined
 
+		hasCommander = true;
+
 		radarRange = 150000;
 		laserScanner=1;
 		irTarget=1;
@@ -75,7 +84,7 @@ class CfgVehicles {
 		LockDetectionSystem="1 + 2 + 4 + 8";
 		landingAoa="rad 10";
 		sweepDisengageRandomCourseCoef = 1;
-		landingSpeed=180;
+		landingSpeed=220;
 		extCameraPosition[] = {0, 2, -30};
 		gearRetracting=1;
 		maxSpeed=2300;
@@ -92,22 +101,29 @@ class CfgVehicles {
 		damping=40;
 		damperSize = 0.12;
 		wheelWeight = 175;
+
+		altNoForce = 10000; //	Specifies full engine thrust up to the defined altitude.
+												//  Simulates the affect of thinning air on engine performance.
+
+		advancedWeaponSelection = true;
+		afMax = 115;
+		//memoryPointMissile[] = {"aux_missile_muzzle", "aux_missile_muzzle"};
 		weapons[]=
 		{
 		 "Su_GSh301",
 
-		 "Su_R73Launcher",
+		 /*"Su_R73Launcher",
 
 		 "Su_R27Launcher",
 
 		 "Su_R77Launcher",
 
-		 "CMFlareLauncher"
+		 "CMFlareLauncher"*/
 		};
 		magazines[]=
 		{
-		 //"Su_300Rnd_30mm_GSh301",
 		 "Su_300Rnd_30mm_GSh301",
+		 /*"Su_300Rnd_30mm_GSh301",
 
 		 "Su_6Rnd_R73M1_AA",
 
@@ -115,7 +131,18 @@ class CfgVehicles {
 
 		 "Su_4Rnd_R77",
 
-		 "300Rnd_CMFlare_Chaff_Magazine"
+		 "300Rnd_CMFlare_Chaff_Magazine"*/
+		};
+		class LightSystems
+		{
+			class Light
+			{
+					color[]={7000,7500,10000,1};
+					ambient[]={255,0,0,0};
+					position="podsvit pristroju";
+					size=0.2;
+					brightness=0.003;
+			};
 		};
 		class Eventhandlers: Eventhandlers
 		{
@@ -252,10 +279,11 @@ class CfgVehicles {
 			1,
 			100
 		};
-
+		enableGPS = 1;
+		brakeDistance = 500
 		insideSoundCoef = 0.1;
-		aileronSensitivity=2.2;
-		elevatorSensitivity=2.6;
+		aileronSensitivity=2.6;
+		elevatorSensitivity=3.2;
 		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
 		memoryPointGun="machinegun";
 		memoryPointLRocket="L raketa";
@@ -287,19 +315,45 @@ class CfgVehicles {
 			minAngleY = -135;
 			maxAngleY = 135;
 		};
-		/*class Turrets
+		class Turrets
 		{
 			class MainTurret : NewTurret {
 				body = "";
 				gun = "";
-				commanding = -1;
+				hasCrew = true;
+				primaryGunner = true;
+				commanding = -2;
+				proxyIndex=2;
+				startEngine = false;
+				proxyType= CPGunner;
+				gunnerCompartments = Compartment1;
 				memoryPointsGetInGunner = "pos gunner";
 				memoryPointsGetInGunnerDir = "pos gunner dir";
-				weapons[] =
+				gunnergetinaction="GetInLow";
+				gunnergetoutaction="GetOutHigh";
+				gunnerrighthandanimname="stick_pilot";
+				caneject=1;
+				weapons[]=
 				{
+
+				 "Su_R73Launcher",
+
+				 "Su_R27Launcher",
+
+				 "Su_R77Launcher",
+
+				 "CMFlareLauncher"
 				};
-				magazines[] =
+				magazines[]=
 				{
+
+				 "Su_6Rnd_R73M1_AA",
+
+				 "Su_2Rnd_R27EA",
+
+				 "Su_4Rnd_R77",
+
+				 "300Rnd_CMFlare_Chaff_Magazine"
 				};
 				castGunnerShadow = 1;
 				viewGunnerShadow = 1;
@@ -308,7 +362,8 @@ class CfgVehicles {
 				gunnerAction = "pilot";
 				gunnerInAction = "pilot";
 
-				class Viewoptics {
+				class Viewoptics
+				{
 					initAngleX = 0;
 					minAngleX = 0;
 					maxAngleX = 0;
@@ -320,7 +375,8 @@ class CfgVehicles {
 					maxFov = 0.4;
 				};
 
-				class ViewGunner : ViewGunner {
+				class ViewGunner : ViewGunner
+				{
 					initFov = 0.8;
 					minFov = 0.3;
 					maxFov = 1.2;
@@ -332,7 +388,7 @@ class CfgVehicles {
 					maxAngleY = 135;
 				};
 			};
-		};*/
+		};
 
 		class AnimationSources
 		{
