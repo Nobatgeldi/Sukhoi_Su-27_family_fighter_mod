@@ -3,8 +3,6 @@ _plane = _this select 0
 _plane setobjecttexture[0, "\SU_33_Flanker_D\paa\omote.paa"]
 _plane setobjecttexture[1, "\SU_33_Flanker_D\paa\glass.paa"]
 _plane setobjecttexture[2, "\SU_33_Flanker_D\paa\omote.paa"]
-plane setobjecttexture[04, "\SU_33_Flanker_D\paa\engine_low.paa"]
-plane setobjecttexture[05, "\SU_33_Flanker_D\paa\engine_low.paa"]
 
 _plane setobjecttexture[03, "\SU_33_Flanker_D\num\2.paa"]
 _plane setobjecttexture[04, "\SU_33_Flanker_D\num\1.paa"]

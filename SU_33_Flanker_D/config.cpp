@@ -377,9 +377,7 @@ class CfgVehicles
 			"canopyglass",
 			"seat",
 			"num1",
-			"num2",
-			"engineL",
-			"engineR"
+			"num2"
 		};
 		class AnimationSources
 		{
@@ -497,6 +495,7 @@ class CfgVehicles
 			{
 				displayName="Fold Wing";
 				position="pos player";
+				//shortcut="SeagullFastForward";
 				radius=20;
 				condition="this animationphase ""wing"" == 0 and alive this and count (crew this) > 0 and speed this < 30";
 				statement="this animate [""wing"",1];";
@@ -508,6 +507,7 @@ class CfgVehicles
 			{
 				displayName="Unfold Wing";
 				position="pos player";
+				//shortcut="SeagullFastForward";
 				radius=20;
 				condition="this animationphase ""wing"" == 1 and alive this and count (crew this) > 0 and speed this < 30";
 				statement="this animate [""wing"",0];";

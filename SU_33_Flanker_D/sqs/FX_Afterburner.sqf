@@ -17,9 +17,6 @@ _eftime = [0,0,0,0];
 _risetime = [7.08,7.56,7.66,7.16,6.44,5.50,4.75,4.5,4.69,5.16,5.84,6.50,7.08,7.56];
 _downtime = [16.50,16.25,16.50,17.08,17.46,18.08,18.80,19.42,19.42,19.00,18.16,17.16,16.50,16.25];
 _day = date;
-//_plane = _this select 0
-//_plane setobjecttexture[04, "\SU_33_Flanker_D\paa\engine_high.paa"]
-//_plane setobjecttexture[05, "\SU_33_Flanker_D\paa\engine_high.paa"]
 //[year, month, day, hour, minute]
 
 _ef = [_risetime select (_day select 1),_risetime select (1+(_day select 1)),_downtime select (_day select 1),_downtime select (1+(_day select 1))];
@@ -152,8 +149,6 @@ sleep 0.05; // mod by Crowe
 
 _looptime = time - _looptime;
 };
-/*_plane setobjecttexture[04, "\SU_33_Flanker_D\paa\engine_low.paa"]
-_plane setobjecttexture[05, "\SU_33_Flanker_D\paa\engine_low.paa"]*/
 deleteVehicle _leftengine;
 deleteVehicle _rightengine;
 deleteVehicle _illuminateL;
