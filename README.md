@@ -1,5 +1,7 @@
 # SUKHOI SU-27 FAMILY AIRCRAFT MODS
-#
-![GitHub Logo](http://localhost/nobatgeldi.com/su33/images/pic02.jpg)
+
+THIS ADD-ON REPRESENTS
+REAL LIFE FLANKERS
+IN VARIOUS PAINT SCHEMES/VERSIONS
 #
 Contact info@nobatgeldi.com
