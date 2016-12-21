@@ -1,6 +1,5 @@
-# su-33_arma3_mode
-converted from ArmA2
+# SUKHOI SU-27 FAMILY AIRCRAFT MODS
 #
-![GitHub Logo](https://github.com/Nobatgeldi/su-33_arma3_mod/blob/master/wall2.jpg)
+![GitHub Logo](http://localhost/nobatgeldi.com/su33/images/pic02.jpg)
 #
 Contact info@nobatgeldi.com
