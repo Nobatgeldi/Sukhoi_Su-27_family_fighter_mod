@@ -3,6 +3,7 @@ class CfgWeapons
 	class CannonCore;
 	class MissileLauncher;
 	class RocketPods;
+	class H_PilotHelmetFighter_O;
 	class Bomb_03_Plane_CAS_02_F;
 	class Bomb_04_Plane_CAS_01_F;
 	//class gatling_30mm;
@@ -13,6 +14,8 @@ class CfgWeapons
 		displayName="Gsh-301 30mm";
 		displayNameMagazine="Gsh-301 30mm";
 		shortNameMagazine="Gsh-301 30mm";
+		cursor="EmptyCursor";
+		cursorAim="";
 		burst=2;
 		reloadTime=0.1;
 		dispersion=0.0024999999;
@@ -242,7 +245,7 @@ class CfgWeapons
 		displayName="KAB-500L";
 		displayNameMagazine="KAB-500L";
 		shortNameMagazine="KAB-500L";
-		
+
 	};
 	class Su_R73Launcher: MissileLauncher
 	{
