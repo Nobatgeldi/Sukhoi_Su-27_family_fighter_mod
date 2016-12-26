@@ -40,7 +40,6 @@ class CfgVehicles {
     getInAction = "";
 		driverAction="commander";
 		driverIsCommander = true;
-		driverrighthandanimname="stick_pilot";
 		driverCanSee = 1+2+4+8+16+32;
 		gunnerCanSee = 1+2+4+8+16+32;
 		gunnerhasflares=1;
@@ -289,6 +288,8 @@ class CfgVehicles {
 		memoryPointGun="machinegun";
 		memoryPointLRocket="L raketa";
 		memoryPointRRocket="P raketa";
+		driverRightHandAnimName = "stick_pilot";
+		driverLeftHandAnimName = "stick_pilot";
 		class Exhausts
 		{
 			class Exhaust_left
@@ -401,6 +402,19 @@ class CfgVehicles {
 				initPhase=1;
 				animPeriod=0.0099999998;
 			};
+			class AfterburnerLV2
+			{
+				source = "user";
+				animPeriod = 1;
+				initPhase = 0;
+			};
+
+			class AfterburnerRV2
+			{
+				source = "user";
+				animPeriod = 1;
+				initPhase = 0;
+			};
 	   /*		class UserAB {
 				source = "user";
 				animPeriod = 1.0;
@@ -437,7 +451,7 @@ class CfgVehicles {
 				radius=20;
 				onlyforplayer=0;
 				condition="this animationPhase ""ABcut"" == 1 and player in this and isengineon this";
-				statement="this animate [""ABcut"",0];";
+				statement="this animate [""ABcut"",0],this animate [""AfterburnerRV2"",1], this animate [""AfterburnerLV2"",1];";
 				hideOnUse=1;
 				showWindow=0;
 			};
@@ -449,8 +463,31 @@ class CfgVehicles {
 				radius=20;
 				onlyforplayer=0;
 				condition="this animationPhase ""ABcut"" == 0 and player in this and isengineon this";
-				statement="this animate [""ABcut"",1];";
+				statement="this animate [""ABcut"",1],this animate [""AfterburnerRV2"",0], this animate [""AfterburnerLV2"",0];";
 				showWindow=0;
+				hideOnUse=1;
+			};
+			class Farsouge_on
+			{
+				displayName ="Farsouge On";
+				position = "pos player";
+				radius =20;
+				showWindow = 0;
+				condition = "this animationPhase ""AfterburnerLV2"" == 0 and player in this and isengineon this";
+				statement = "this animate [""AfterburnerRV2"",1], this animate [""AfterburnerLV2"",1];";
+				onlyforplayer = false;
+				hideOnUse=1;
+			};
+
+			class Farsouge_off
+			{
+				displayName ="Farsouge OFF";
+				position = "pos player";
+				radius =20;
+				showWindow = 0;
+				condition = "this animationPhase ""AfterburnerLV2"" == 1 and player in this and isengineon this";
+				statement = "this animate [""AfterburnerRV2"",0], this animate [""AfterburnerLV2"",0],;";
+				onlyforplayer = false;
 				hideOnUse=1;
 			};
   	/*class ABurner_on {

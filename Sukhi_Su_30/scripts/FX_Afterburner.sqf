@@ -68,7 +68,7 @@ if ((dayTime < (_eftime select 0)) || (dayTime > (_eftime select 3)))
 		}
 	else
 	{
-//rise
+   //rise
 		if ((dayTime >= (_eftime select 0)) && (dayTime <= (_eftime select 1)))
 			then
 			{
@@ -76,7 +76,6 @@ if ((dayTime < (_eftime select 0)) || (dayTime > (_eftime select 3)))
 			}
 			else
 			{
-//down
 				if ((dayTime >= (_eftime select 2)) && (dayTime <= (_eftime select 3)))
 				then
 				{
@@ -85,30 +84,29 @@ if ((dayTime < (_eftime select 0)) || (dayTime > (_eftime select 3)))
 			};
 	};
 
-
-
 if ((isengineon _this) and ((_this animationPhase "ABcut") < 0.3)) then
 {
     if (_Intensity < _MaxIntensity) then
      {
-     	_Intensity = _Intensity + 0.1*(10*_looptime);
+     	 _Intensity = _Intensity + 0.1*(10*_looptime);
 
-		if (_daylight > 0) then
-		{
-		_illuminateL setLightColor [(0.090 - _daylight*0.050),(0.050 + _daylight*0.015),(0.030 + _daylight*0.050)];
-		_illuminateR setLightColor [(0.090 - _daylight*0.050),(0.050 + _daylight*0.015),(0.030 + _daylight*0.050)];
-		_illuminateL setLightAmbient [(0.090 - _daylight*0.050),(0.050 + _daylight*0.015),(0.030 + _daylight*0.050)];
-		_illuminateR setLightAmbient [(0.090 - _daylight*0.050),(0.050 + _daylight*0.015),(0.030 + _daylight*0.050)];
-        _illuminateL setLightBrightness ( _Intensity/90);
-        _illuminateR setLightBrightness ( _Intensity/90);
-        //_daylight = 1;
+		   if (_daylight > 0) then
+		   {
+					_illuminateL setLightColor [(0.090 - _daylight*0.050),(0.050 + _daylight*0.015),(0.030 + _daylight*0.050)];
+					_illuminateR setLightColor [(0.090 - _daylight*0.050),(0.050 + _daylight*0.015),(0.030 + _daylight*0.050)];
+					_illuminateL setLightAmbient [(0.090 - _daylight*0.050),(0.050 + _daylight*0.015),(0.030 + _daylight*0.050)];
+					_illuminateR setLightAmbient [(0.090 - _daylight*0.050),(0.050 + _daylight*0.015),(0.030 + _daylight*0.050)];
+	        _illuminateL setLightBrightness ( _Intensity/90);
+	        _illuminateR setLightBrightness ( _Intensity/90);
+	        //_daylight = 1;
         };
-      };
+     };
      if ((speed _this) < _maxspeed) then
       {_this setVelocity [(velocity _this select 0)+((vectordir _this) select 0)*((_Boost*_Intensity/2)*(10*_looptime)),(velocity _this select 1)+((vectordir _this) select 1)*((_Boost*_Intensity/2)*(10*_looptime)),(velocity _this select 2)+((vectordir _this) select 2)*((_Boost*_Intensity/2)*(10*_looptime))]};
      if (fuel _this > 0) then {_this setFuel ((fuel _this)-((1/3000)*(3*_looptime)))};
 }
 else {
+
 	if (_Intensity > 0) then
 		{
 			_Intensity = _Intensity - 0.2*(10*_looptime);
@@ -123,8 +121,8 @@ else {
 			_illuminateR setLightColor [(0.090 - _daylight*0.050),(0.050 + _daylight*0.015),(0.030 + _daylight*0.050)];
 			_illuminateL setLightAmbient [(0.090 - _daylight*0.050),(0.050 + _daylight*0.015),(0.030 + _daylight*0.050)];
 			_illuminateR setLightAmbient [(0.090 - _daylight*0.050),(0.050 + _daylight*0.015),(0.030 + _daylight*0.050)];
-		_illuminateL setLightBrightness ( _Intensity/100);
-		_illuminateR setLightBrightness ( _Intensity/100);
+	  	_illuminateL setLightBrightness ( _Intensity/100);
+	  	_illuminateR setLightBrightness ( _Intensity/100);
 };
 
 //set burner color
