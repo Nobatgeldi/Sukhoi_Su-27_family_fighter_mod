@@ -161,7 +161,7 @@ class CfgVehicles
 		flyInHeight=200;
 		supplyRadius=13;
 		airBrake = true;
-		maxRotationX=1.5;
+		maxRotationX=10.5;
 	    //secondaryExplosion = true;
 		turnCoef=5.0
 		damping=40;
@@ -3173,6 +3173,42 @@ class CfgVehicles
 						max="none";
 						numberEach=5;
 						majorLineEach=5;
+					};
+					class RadarTargets
+					{
+						type="radar";
+						width=4;
+						angle=-2.3;
+						pos0[]={0.5,0.55500001};
+						pos10[]={1.24,1.325};
+						points[]=
+						{
+
+							{
+								{-0.050000001,-0.047297299},
+								1
+							},
+
+							{
+								{0.050000001,-0.047297299},
+								1
+							},
+
+							{
+								{0.050000001,0.047297299},
+								1
+							},
+
+							{
+								{-0.050000001,0.047297299},
+								1
+							},
+
+							{
+								{-0.050000001,-0.047297299},
+								1
+							}
+						};
 					};
 				};
 			};
