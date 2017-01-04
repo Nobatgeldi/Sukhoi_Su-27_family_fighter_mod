@@ -10,7 +10,8 @@ class CfgPatches
 	class Su33_Protatype_PT
 	{
 		units[] = {
-			"Su33_Protatype_PT"
+			"Su33_Protatype_PT",
+			"Su33_Protatype_PT_2"
 		};
 		weapons[] = {};
 		requiredVersion = 0.0.1;
@@ -62,7 +63,7 @@ class CfgVehicles
 			backpack="";
 			linkedItems[]=
 			{
-				"JS_JC_SU35_PilotHelmet",
+				"H_PilotHelmetFighter_O",
 				"ItemMap",
 				"ItemCompass",
 				"ItemWatch",
@@ -71,7 +72,7 @@ class CfgVehicles
 			};
 			respawnLinkedItems[]=
 			{
-				"JS_JC_SU35_PilotHelmet",
+				"PilotHelmet",
 				"ItemMap",
 				"ItemCompass",
 				"ItemWatch",
@@ -133,13 +134,10 @@ class CfgVehicles
 		armorStructured=1;
 		incomingMissileDetectionSystem=16;
 		radarType=4;
-
 		// Vehicle/turret setting. Displays all targets known to vehicle sensors in via the ingame UI. Values can be combined.
 		showAllTargets = 2; //LockYes, show targets from all sensors
-
 		//Vehicle/turret setting. Displays gunner/commander turret aimpoints on the HUD.
 		showCrewAim = 1+2+4; // values can be combined
-
 		radarRange = 150000;
 		laserScanner=1;
 		irTarget=1;
@@ -465,16 +463,16 @@ class CfgVehicles
 		};
 		class AnimationSources
 		{
-			class wing
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
 			class sun_rise
 			{
 				source="user";
 				animPeriod=2;
+				initPhase=0;
+			};
+			class wing
+			{
+				source="user";
+				animPeriod=5;
 				initPhase=0;
 			};
 			class wing_r: wing
@@ -509,6 +507,30 @@ class CfgVehicles
 				initPhase=1;
 				animPeriod=0.0099999998;
 			};
+			class AfterburnerLV2
+			{
+				source = "user";
+				animPeriod = 1;
+				initPhase = 0;
+			};
+			class AfterburnerRV2
+			{
+				source = "user";
+				animPeriod = 1;
+				initPhase = 0;
+			};
+			class AfterburnerL2
+			{
+				source = "user";
+				animPeriod = 1;
+				initPhase = 0;
+			};
+			class AfterburnerR2
+			{
+				source = "user";
+				animPeriod = 1;
+				initPhase = 0;
+			};
 		};
 		class UserActions
 		{
@@ -520,7 +542,7 @@ class CfgVehicles
 				radius=20;
 				onlyforplayer=0;
 				condition="this animationPhase ""ABcut"" == 1 and player in this and isengineon this";
-				statement="this animate [""ABcut"",0];";
+				statement="this animate [""ABcut"",0] and this animate [""AfterburnerLV2"",1] and this animate [""AfterburnerRV2"",1] and this animate [""AfterburnerL2"",1] and this animate [""AfterburnerR2"",1]";
 				hideOnUse=1;
 				showWindow=0;
 			};
@@ -532,7 +554,7 @@ class CfgVehicles
 				radius=20;
 				onlyforplayer=0;
 				condition="this animationPhase ""ABcut"" == 0 and player in this and isengineon this";
-				statement="this animate [""ABcut"",1];";
+				statement="this animate [""ABcut"",1] and this animate [""AfterburnerLV2"",0] and this animate [""AfterburnerRV2"",0] and this animate [""AfterburnerL2"",0] and this animate [""AfterburnerR2"",0]";
 				showWindow=0;
 				hideOnUse=1;
 			};
@@ -3963,6 +3985,11 @@ class CfgVehicles
 			};
 		};
 	};
+	class Su33_Protatype_PT_2: Su33_Protatype_PT
+	{
+		displayName="Sukhoi Su-33 Flanker-D";
+		model="\SU_33_Flanker_D\Su33_protatype_2.p3d";
+	}
 };
 /*class CfgFunctions
 {

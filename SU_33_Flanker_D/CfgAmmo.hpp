@@ -154,12 +154,9 @@ class CfgAmmo
 		model="\SU_33_Flanker_D\wep\R73.p3d";
 		proxyShape="\SU_33_Flanker_D\wep\R73_proxy.p3d";
 		hit=200;
-
 		weaponType = "missileAA"; //Overrides the engine determination of weapon type
 															//based on ammo simulation, for vehicle weapon grouping.
-
 		guidanceInitTime=1; //Defines how long a projectile waits before starting its engine.
-
 		trackOversteer=2;   //Defines how a missile over steers.	1 - no oversteer
 										    //Values higher than 1 result in more over steer.
 		indirectHit=85;
@@ -212,7 +209,7 @@ class CfgAmmo
 		indirectHitRange=20;
 		maneuvrability=35;
 	};
-	// long range missile up to 80 km
+	// medium range missile up to 80 km
 	class Su_M_R27R: Su_M_R73_AA
 	{
 		model="\SU_33_Flanker_D\wep\R27RE.p3d";

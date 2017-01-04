@@ -245,7 +245,6 @@ class CfgWeapons
 		displayName="KAB-500L";
 		displayNameMagazine="KAB-500L";
 		shortNameMagazine="KAB-500L";
-
 	};
 	class Su_R73Launcher: MissileLauncher
 	{

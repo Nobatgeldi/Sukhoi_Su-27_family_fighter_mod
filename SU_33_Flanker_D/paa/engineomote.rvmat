@@ -17,7 +17,7 @@ PixelShaderID = "Super";
 VertexShaderID = "Super";
 class Stage1
 {
-	texture = "SU_33_Flanker_D\paa\omote_nohq.paa";
+	texture = "SU_33_Flanker_D\paa\su-27_detail.paa";
 	uvSource = "tex";
 	class uvTransform
 	{
@@ -29,19 +29,19 @@ class Stage1
 };
 class Stage2
 {
-	texture = "a3\weapons_f\Data\detailmaps\metal_detail_dt.paa";
+	texture = "#(argb,8,8,3)color(0,0,0,0,MC)";
 	uvSource = "tex";
 	class uvTransform
 	{
-		aside[] = {30,0,0};
-		up[] = {0,30,0};
+		aside[] = {1,0,0};
+		up[] = {0,1,0};
 		dir[] = {0,0,0};
 		pos[] = {0,0,0};
 	};
 };
 class Stage3
 {
-	texture = "#(argb,8,8,3)color(0,0,0,0,MC)";
+	texture = "SU_33_Flanker_D\paa\su-27_detail.paa";
 	uvSource = "tex";
 	class uvTransform
 	{
@@ -53,7 +53,7 @@ class Stage3
 };
 class Stage4
 {
-	texture = "SU_33_Flanker_D\paa\omote_as.paa";
+	texture = "SU_33_Flanker_D\paa\su-27_detail.paa";
 	uvSource = "tex";
 	class uvTransform
 	{
@@ -65,18 +65,6 @@ class Stage4
 };
 class Stage5
 {
-	texture = "SU_33_Flanker_D\paa\omote_smdi.paa";
-	uvSource = "tex";
-	class uvTransform
-	{
-		aside[] = {1,0,0};
-		up[] = {0,1,0};
-		dir[] = {0,0,0};
-		pos[] = {0,0,0};
-	};
-};
-class Stage6
-{
 	texture = "#(ai,64,64,1)fresnel(1.36,0.01)";
 	uvSource = "tex";
 	class uvTransform
@@ -87,7 +75,7 @@ class Stage6
 		pos[] = {0,0,0};
 	};
 };
-class Stage7
+class Stage6
 {
 	texture = "SU_33_Flanker_D\paa\env_land_co.paa";
 	uvSource = "tex";
