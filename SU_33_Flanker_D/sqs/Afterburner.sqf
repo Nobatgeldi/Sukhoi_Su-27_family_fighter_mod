@@ -18,14 +18,6 @@ if (isengineon _plane) then
   if (_Intensity < _MaxIntensity) then {_Intensity = _Intensity + 0.1*(15*_looptime)};
   if ((speed _this) < _maxspeed) then {_this setVelocity [(velocity _this select 0)+((vectordir _this) select 0)*((_Boost*_Intensity/2)*(15*_looptime)),(velocity _this select 1)+((vectordir _this) select 1)*((_Boost*_Intensity/2)*(15*_looptime)),(velocity _this select 2)+((vectordir _this) select 2)*((_Boost*_Intensity/2)*(10*_looptime))]};
   if (fuel _this > 0) then {_this setFuel ((fuel _this)-((0.002/5000)*(3*_looptime)))};
-
-    _AnimAfterburner = (speed _plane - 400)/300;
-    _plane animate ["AfterburnerL",_AnimAfterburner];
-    _plane animate ["AfterburnerR",_AnimAfterburner];
-    _plane animate ["AfterburnerL2",_AnimAfterburner];
-    _plane animate ["AfterburnerR2",_AnimAfterburner];
-    _oldphase = _AnimAfterburner;
-
 }
 else {if (_Intensity > 0) then {_Intensity = _Intensity - 0.2*(15*_looptime)}};
 _looptime = time;

@@ -99,17 +99,17 @@ class CfgVehicles
 			class AnimationSources;
 			class Eventhandlers;
 		};
-	class Su33_Protatype_PT: Plane
+	class Su33_Protatype_PT_2: Plane
 	{
 		side = 0;
 		faction = "OPF_F";
 		crew = "Sukhoi_Pilot";
 		author="Nobatgeldi Geldimammedov";
+		displayName="Sukhoi Su-33 Flanker-D";
+		model="\SU_33_Flanker_D\Su33_protatype_2.p3d";
 		driverAction="commander";
 		driverCanSee = 1+2+4+8+16;
 		getInAction = "";
-		displayName="Sukhoi Su-33 Flanker-D";
-		model="\SU_33_Flanker_D\Su33_protatype.p3d";
 		animated=1;
 		vehicleClass="Air";
 		icon="\SU_33_Flanker_D\paa\icon.paa";
@@ -418,6 +418,18 @@ class CfgVehicles
 				volume="(1-camPos)*(speed factor[1, 150])";
 			};
 		};
+		/*
+		soundCrash[] = {Vehicles\crash, 0.316228, 1};
+		soundDammage[] = {"", 1, 1};
+		soundEngine[] = {"", 1, 1};
+		soundEnviron[] = {"", 1, 1};
+		soundLandCrash[] = {Explosions\intoground, 0.316228, 1};
+		soundWaterCrash[] = {Explosions\intowater, 0.316228, 1};
+		soundGetIn[] = {Vehicles\get_in, 0.000316, 1};
+		soundGetOut[] = {Vehicles\get_out, 0.000316, 1};
+		soundServo[] = {Vehicles\gun_elevate, 0.010000, 0.500000};
+		soundGear[] = {"\AnyAddon\AnySound(.wss)", 0.316228, 1}
+		*/
 		soundIncommingMissile[]=
 		{
 			"\A3\Sounds_F\weapons\Rockets\locked_3",
@@ -543,6 +555,7 @@ class CfgVehicles
 				onlyforplayer=0;
 				condition="this animationPhase ""ABcut"" == 1 and player in this and isengineon this";
 				statement="this animate [""ABcut"",0] and this animate [""AfterburnerLV2"",1] and this animate [""AfterburnerRV2"",1] and this animate [""AfterburnerL2"",1] and this animate [""AfterburnerR2"",1]";
+				/*statement="this animate [""ABcut"",0]";*/
 				hideOnUse=1;
 				showWindow=0;
 			};
@@ -555,6 +568,7 @@ class CfgVehicles
 				onlyforplayer=0;
 				condition="this animationPhase ""ABcut"" == 0 and player in this and isengineon this";
 				statement="this animate [""ABcut"",1] and this animate [""AfterburnerLV2"",0] and this animate [""AfterburnerRV2"",0] and this animate [""AfterburnerL2"",0] and this animate [""AfterburnerR2"",0]";
+				/*statement="this animate [""ABcut"",1]";*/
 				showWindow=0;
 				hideOnUse=1;
 			};
@@ -3985,11 +3999,6 @@ class CfgVehicles
 			};
 		};
 	};
-	class Su33_Protatype_PT_2: Su33_Protatype_PT
-	{
-		displayName="Sukhoi Su-33 Flanker-D";
-		model="\SU_33_Flanker_D\Su33_protatype_2.p3d";
-	}
 };
 /*class CfgFunctions
 {
