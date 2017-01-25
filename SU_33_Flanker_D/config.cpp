@@ -18,7 +18,6 @@ class CfgPatches
 		requiredAddons[] = {};
 	};
 };
-
 class CfgVehicles
 {
 	  class All{};
@@ -149,6 +148,8 @@ class CfgVehicles
 		landingAoa="rad 10";
 		sweepDisengageRandomCourseCoef = 1;
 		landingSpeed=180;
+		enableGPS = 1;
+		fuelLeakiness = 20;
 		extCameraPosition[] = {0, 2, -30};
 		gearRetracting=1;
 		maxSpeed=2100;
@@ -165,11 +166,18 @@ class CfgVehicles
 		damping=40;
 		damperSize = 0.12;
 		wheelWeight = 175;
+		memoryPointMissile[] =
+		{
+			/*"aux_missile_muzzle",
+			"aux_missile_muzzle"*/
+		};
 		memoryPointGun="machinegun";
 		memoryPointLRocket="L raketa";
 		memoryPointRRocket="P raketa";
-		driverRightHandAnimName = "sticker";
-		driverLeftHandAnimName = "sticker";
+		driverRightHandAnimName = "controlThrottle";
+		driverLeftHandAnimName = "ControlStick";
+		driverLeftLegAnimName = "pilot_pedal_L";
+		driverRightLegAnimName = "pilot_pedal_R";
 		weapons[]=
 		{
 		 "Su_GSh301",
@@ -297,7 +305,7 @@ class CfgVehicles
 					quadratic=4;
 				};
 			};
-			class Right
+			/*class Right
 			{
 				color[]={7000,7500,10000,1};
 				ambient[]={100,100,100,0};
@@ -320,7 +328,7 @@ class CfgVehicles
 					linear=0;
 					quadratic=4;
 				};
-			};
+			};*/
 		};
 		class Sounds
 		{
@@ -554,8 +562,8 @@ class CfgVehicles
 				radius=20;
 				onlyforplayer=0;
 				condition="this animationPhase ""ABcut"" == 1 and player in this and isengineon this";
-				statement="this animate [""ABcut"",0] and this animate [""AfterburnerLV2"",1] and this animate [""AfterburnerRV2"",1] and this animate [""AfterburnerL2"",1] and this animate [""AfterburnerR2"",1]";
-				/*statement="this animate [""ABcut"",0]";*/
+				//statement="this animate [""ABcut"",0]";
+				statement="this animate [""ABcut"",0]  and this animate [""AfterburnerLV2"",1] and this animate [""AfterburnerRV2"",1] and this animate [""AfterburnerL2"",1] and this animate [""AfterburnerR2"",1]";
 				hideOnUse=1;
 				showWindow=0;
 			};
@@ -567,8 +575,8 @@ class CfgVehicles
 				radius=20;
 				onlyforplayer=0;
 				condition="this animationPhase ""ABcut"" == 0 and player in this and isengineon this";
-				statement="this animate [""ABcut"",1] and this animate [""AfterburnerLV2"",0] and this animate [""AfterburnerRV2"",0] and this animate [""AfterburnerL2"",0] and this animate [""AfterburnerR2"",0]";
-				/*statement="this animate [""ABcut"",1]";*/
+				//statement="this animate [""ABcut"",1]";
+				statement="this animate [""ABcut"",1]  and this animate [""AfterburnerLV2"",0] and this animate [""AfterburnerRV2"",0] and this animate [""AfterburnerL2"",0] and this animate [""AfterburnerR2"",0]";
 				showWindow=0;
 				hideOnUse=1;
 			};
@@ -661,7 +669,7 @@ class CfgVehicles
 		 }
 		class Eventhandlers: Eventhandlers
 		{
-			init="_this execVM ""\SU_33_Flanker_D\sqs\init2.sqf"",[_this select 0]exec ""\SU_33_Flanker_D\sqs\init.sqs"",[_this select 0]exec ""\SU_33_Flanker_D\sqs\wing.sqs"",[_this select 0] execVM ""\SU_33_Flanker_D\sqs\AircraftEffects.sqf"",_this execVM ""\SU_33_Flanker_D\sqs\aircraftvapour.sqf""";
+			init="_this execVM ""\SU_33_Flanker_D\sqs\init2.sqf"",[_this select 0]exec ""\SU_33_Flanker_D\sqs\init.sqs"",[_this select 0]exec ""\SU_33_Flanker_D\sqs\wing.sqs"",[_this select 0] execVM ""\SU_33_Flanker_D\sqs\AircraftEffects.sqf"",_this execVM ""\SU_33_Flanker_D\sqs\aircraftvapour.sqf"",[_this select 0] execVM ""\SU_33_Flanker_D\sqs\afterburner_anim.sqf"",";
 			fired="[_this] exec ""\SU_33_Flanker_D\sqs\fireGsh.sqs"",_this call BIS_Effects_EH_Fired";
 		};
 		class Library
