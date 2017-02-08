@@ -1,11 +1,12 @@
 class CfgMagazines
 {
 	class VehicleMagazine;
-	class Su_4Rnd_fab_500: VehicleMagazine
+	//class 4Rnd_Bomb_04_F;
+	class Su_6Rnd_fab_250: VehicleMagazine
 	{
 		scope=2;
-		count=4;
-		ammo="Fab_500";
+		count=6;
+		ammo="fab_250";
 		initSpeed=0;
 		ammoIsProxy = true;
 	};
@@ -68,13 +69,13 @@ class CfgMagazines
 		};
 		nameSound="missiles";
 	};
-	class Su_6Rnd_R73M1_AA: Su_6Rnd_R73
+	class Su_2Rnd_R73M1_AA: Su_6Rnd_R73
 	{
 		ammo="Su_M_R73M1_AA";
 		displayName="R-73M1";
 		displayNameShort="R-73M1";
 		ammoIsProxy = true;
-		count=6
+		count=2
 	};
 	class Su_2Rnd_R27R: Su_6Rnd_R73
 	{

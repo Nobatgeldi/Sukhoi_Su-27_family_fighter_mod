@@ -10,7 +10,6 @@ class CfgPatches
 	class Su33_Protatype_PT
 	{
 		units[] = {
-			"Su33_Protatype_PT",
 			"Su33_Protatype_PT_2"
 		};
 		weapons[] = {};
@@ -43,21 +42,25 @@ class CfgVehicles
 			nameSound="veh_infantry_pilot_s";
 			//author="$STR_A3_Bohemia_Interactive";
 			_generalMacro="O_Pilot_F";
-			displayName="Fighter Pilot";
+			displayName="Sukhoi Pilot";
 			model="\A3\characters_F\Common\pilot_f.p3d";
 			modelSides[]={3,1};
 			//uniformClass="JS_JC_SU35_PilotCoveralls";
 			weapons[]=
 			{
 				"Throw",
-				"Put"
+				"Put",
+				"arifle_Katiba_ACO_pointer_F"
 			};
 			respawnWeapons[]=
 			{
 				"Throw",
 				"Put"
 			};
-			magazines[]={};
+			magazines[]=
+			{
+				"30Rnd_65x39_caseless_green_mag_Tracer"
+			};
 			respawnMagazines[]={};
 			backpack="";
 			linkedItems[]=
@@ -67,16 +70,18 @@ class CfgVehicles
 				"ItemCompass",
 				"ItemWatch",
 				"ItemRadio",
-				"ItemGPS"
+				"ItemGPS",
+				"Integrated_NVG_F"
 			};
 			respawnLinkedItems[]=
 			{
-				"PilotHelmet",
+				"H_PilotHelmetFighter_O",
 				"ItemMap",
 				"ItemCompass",
 				"ItemWatch",
 				"ItemRadio",
-				"ItemGPS"
+				"ItemGPS",
+				"Integrated_NVG_F"
 			};
 			hiddenSelections[]=
 			{
@@ -106,7 +111,7 @@ class CfgVehicles
 		author="Nobatgeldi Geldimammedov";
 		displayName="Sukhoi Su-33 Flanker-D";
 		model="\SU_33_Flanker_D\Su33_protatype_2.p3d";
-		driverAction="commander";
+		driverAction="su_33_pilot";
 		driverCanSee = 1+2+4+8+16;
 		getInAction = "";
 		animated=1;
@@ -114,6 +119,7 @@ class CfgVehicles
 		icon="\SU_33_Flanker_D\paa\icon.paa";
 		picture="\SU_33_Flanker_D\paa\pic.paa";
 		unitInfoType="UnitInfoAirplane";
+		//unitInfoType = "Rsc_FA18X_UnitInfo";
 		simulation="airplane";
 		_generalMacro="Plane";
 		scope=2;
@@ -168,25 +174,38 @@ class CfgVehicles
 		wheelWeight = 175;
 		memoryPointMissile[] =
 		{
-			/*"aux_missile_muzzle",
-			"aux_missile_muzzle"*/
+			"l strela",
+			"p strela"
 		};
 		memoryPointGun="machinegun";
 		memoryPointLRocket="L raketa";
 		memoryPointRRocket="P raketa";
-		driverRightHandAnimName = "controlThrottle";
-		driverLeftHandAnimName = "ControlStick";
+		driverRightHandAnimName = "control_stick";
+		driverLeftHandAnimName = "control_throttle";
 		driverLeftLegAnimName = "pilot_pedal_L";
 		driverRightLegAnimName = "pilot_pedal_R";
+		/*
+		memoryPointLDust = "pos_dust_left";
+		memoryPointRDust = "pos_dust_right";
+		memoryPointGun = "pos_nosegun";*/
+		//memoryPointLMissile = "l strela";
+		//memoryPointRMissile = "p strela";
+		memoryPointCM[] = {"flare_L","flare_R"};
+		memoryPointCMDir[] = {"flare_L_dir","flare_R_dir"};
+		//memoryPointsGetInDriver = "pos_driver";
+		//memoryPointsGetInDriverDir = "pos_driver_dir";
 		weapons[]=
 		{
 		 "Su_GSh301",
+
+		 "Su_S8Laucher",
 
 		 "Su_R73Launcher",
 
 		 "Su_R27Launcher",
 
-		 "Su_R77Launcher",
+		 "Su_fab_250_Laucher",
+		 //"Su_R77Launcher",
 
      "CMFlareLauncher"
 		};
@@ -195,11 +214,15 @@ class CfgVehicles
 		 //"Su_300Rnd_30mm_GSh301",
 		 "Su_300Rnd_30mm_GSh301",
 
-		 "Su_6Rnd_R73M1_AA",
+		 "Su_80Rnd_S8T",
+
+		 "Su_2Rnd_R73M1_AA",
 
 		 "Su_2Rnd_R27EA",
 
-		 "Su_4Rnd_R77",
+		 "Su_6Rnd_fab_250",
+
+		 //"Su_4Rnd_R77",
 
      "300Rnd_CMFlare_Chaff_Magazine"
 		};
@@ -207,6 +230,57 @@ class CfgVehicles
 		elevatorSensitivity=2.9;
 		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
 
+		/*class pilotCamera
+		{
+			class OpticsIn {
+				class Wide {
+					opticsDisplayName = WFOV;
+					initAngleX = 0;
+					minAngleX = 0;
+					maxAngleX = 0;
+					initAngleY = 0;
+					minAngleY = 0;
+					maxAngleY = 0;
+					initFov = (30 / 120);
+					minFov = (30 / 120);
+					maxFov = (30 / 120);
+					directionStabilized = 1;
+					visionMode[] = {"Normal", "Ti"};
+					thermalMode[] = {0, 1};
+					gunnerOpticsModel = "\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
+					opticsPPEffects[] = {"OpticsCHAbera2", "OpticsBlur2"};
+				};
+
+				class Medium : Wide {
+					opticsDisplayName = MFOV;
+					initFov = (15 / 120);
+					minFov = (15 / 120);
+					maxFov = (15 / 120);
+					gunnerOpticsModel = "\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_medium_F.p3d";
+				};
+
+				class Narrow : Wide {
+					opticsDisplayName = NFOV;
+					initFov = (3.75 / 120);
+					minFov = (3.75 / 120);
+					maxFov = (3.75 / 120);
+					gunnerOpticsModel = "\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
+				};
+				showMiniMapInOptics = 1;
+				showUAVViewInOptics = 0;
+				showSlingLoadManagerInOptics = 0;
+			};
+			minTurn = -160;
+			maxTurn = 160;
+			initTurn = 0;
+			minElev = -10;
+			maxElev = 90;
+			initElev = 0;
+			maxXRotSpeed = 0.3;
+			maxYRotSpeed = 0.3;
+			pilotOpticsShowCursor = 1;
+			controllable = 1;
+		};*/
 		class MarkerLights
 		{
 			/*class Cockpit_light_1
@@ -438,6 +512,15 @@ class CfgVehicles
 		soundServo[] = {Vehicles\gun_elevate, 0.010000, 0.500000};
 		soundGear[] = {"\AnyAddon\AnySound(.wss)", 0.316228, 1}
 		*/
+		soundEngineOnInt[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_start_int", 0.794328, 1.0};
+		soundEngineOnExt[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_start_ext", 1.0, 1.0, 500};
+		soundEngineOffInt[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_stop_int", 0.794328, 1.0};
+		soundEngineOffExt[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_stop_ext", 1.0, 1.0, 500};
+		class scrubLandInt {
+			sound[] = {"A3\Sounds_F\vehicles\air\noises\wheelsInt", 1.0, 1.0, 100};
+			frequency = 1;
+			volume = "(scrubLand factor[0.01, 0.20])";
+		};
 		soundIncommingMissile[]=
 		{
 			"\A3\Sounds_F\weapons\Rockets\locked_3",
@@ -483,6 +566,392 @@ class CfgVehicles
 		};
 		class AnimationSources
 		{
+			//right engine
+				class thrust32b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust31b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust30b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust29b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust28b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust27b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust26b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust25b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust24b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust23b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust22b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust21b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust20b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust19b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust18b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust17b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust16b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust15b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust14b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust13b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust12b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust11b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust10b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust9b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust8b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust7b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust6b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust5b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust4b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust3b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust2b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust1b
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+			//left engine
+			class thrust32
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust31
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust30
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust29
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust28
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust27
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust26
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust25
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust24
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust23
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust22
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust21
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust20
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust19
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust18
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust17
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust16
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust15
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust14
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust13
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust12
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust11
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust10
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust9
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust8
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust7
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust6
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust5
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust4
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust3
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust2
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
+			class thrust1A
+			{
+				source="user";
+				animPeriod=5;
+				initPhase=0;
+			};
 			class sun_rise
 			{
 				source="user";
@@ -563,7 +1032,7 @@ class CfgVehicles
 				onlyforplayer=0;
 				condition="this animationPhase ""ABcut"" == 1 and player in this and isengineon this";
 				//statement="this animate [""ABcut"",0]";
-				statement="this animate [""ABcut"",0]  and this animate [""AfterburnerLV2"",1] and this animate [""AfterburnerRV2"",1] and this animate [""AfterburnerL2"",1] and this animate [""AfterburnerR2"",1]";
+				statement="this animate [""ABcut"",0]";
 				hideOnUse=1;
 				showWindow=0;
 			};
@@ -576,7 +1045,7 @@ class CfgVehicles
 				onlyforplayer=0;
 				condition="this animationPhase ""ABcut"" == 0 and player in this and isengineon this";
 				//statement="this animate [""ABcut"",1]";
-				statement="this animate [""ABcut"",1]  and this animate [""AfterburnerLV2"",0] and this animate [""AfterburnerRV2"",0] and this animate [""AfterburnerL2"",0] and this animate [""AfterburnerR2"",0]";
+				statement="this animate [""ABcut"",1]";
 				showWindow=0;
 				hideOnUse=1;
 			};
@@ -669,7 +1138,7 @@ class CfgVehicles
 		 }
 		class Eventhandlers: Eventhandlers
 		{
-			init="_this execVM ""\SU_33_Flanker_D\sqs\init2.sqf"",[_this select 0]exec ""\SU_33_Flanker_D\sqs\init.sqs"",[_this select 0]exec ""\SU_33_Flanker_D\sqs\wing.sqs"",[_this select 0] execVM ""\SU_33_Flanker_D\sqs\AircraftEffects.sqf"",_this execVM ""\SU_33_Flanker_D\sqs\aircraftvapour.sqf"",[_this select 0] execVM ""\SU_33_Flanker_D\sqs\afterburner_anim.sqf"",";
+			init="[_this select 0] execVM ""\SU_33_Flanker_D\sqs\init.sqf"",[_this select 0]exec ""\SU_33_Flanker_D\sqs\init.sqs"",[_this select 0]exec ""\SU_33_Flanker_D\sqs\wing.sqs"",[_this select 0] execVM ""\SU_33_Flanker_D\sqs\AircraftEffects.sqf"",_this execVM ""\SU_33_Flanker_D\sqs\aircraftvapour.sqf"",";
 			fired="[_this] exec ""\SU_33_Flanker_D\sqs\fireGsh.sqs"",_this call BIS_Effects_EH_Fired";
 		};
 		class Library
@@ -4023,29 +4492,29 @@ class CfgNonAIVehicles
 {
 	class ProxyDriver;
 	class ProxyWeapon;
-	class Proxym_kh29: ProxyWeapon
+	class ProxyKH_29: ProxyWeapon
 	{
 		model="\SU_33_Flanker_D\wep\KH-29";
 		simulation="maverickweapon";
 	};
-	class Proxym_r73: ProxyWeapon
+	class ProxyR73_proxy: ProxyWeapon
 	{
 		model="\SU_33_Flanker_D\wep\R73_proxy";
 		simulation="maverickweapon";
 	};
-	class Proxym_r77: ProxyWeapon
+	class ProxyR77_proxy: ProxyWeapon
 	{
 		model="\SU_33_Flanker_D\wep\R77_proxy";
 		simulation="maverickweapon";
 	};
-	class Proxym_r27: ProxyWeapon
+	class ProxyR27RE_proxy: ProxyWeapon
 	{
 		model="\SU_33_Flanker_D\wep\R27RE_proxy";
 		simulation="maverickweapon";
 	};
-	class Proxym_kab500l: ProxyWeapon
+	class Proxyfab250: ProxyWeapon
 	{
-		model="\SU_33_Flanker_D\wep\FAB-500";
+		model="\SU_33_Flanker_D\wep\fab250";
 		simulation="maverickweapon";
 	};
 	/*class Proxym_s8_launcher_x1: ProxyWeapon

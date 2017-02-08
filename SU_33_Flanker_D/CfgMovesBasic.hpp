@@ -3,8 +3,8 @@ class CfgMovesBasic
 	class DefaultDie;
 	class ManActions
 	{
-		pilot="pilot";
-		commander="commander";
+		su_33_pilot="su_33_pilot";
+		//commander="commander";
 	};
 };
 class CfgMovesMaleSdr: CfgMovesBasic
@@ -12,35 +12,26 @@ class CfgMovesMaleSdr: CfgMovesBasic
 	class States
 	{
 		class Crew;
-		class pilot_dead: DefaultDie
+		class su_33_pilot: Crew
+		{
+			file="\SU_33_Flanker_D\anim\su33_pilot.rtm";
+			interpolateTo[]=
+			{
+				"su33_pilot_dead",
+				1
+			};
+		};
+		class su33_pilot_dead: DefaultDie
 		{
 			actions="DeadActions";
 			speed=0.5;
 			looped="false";
 			terminal=1;
-			file="\SU_33_Flanker_D\anim\kia.rtm";
+			file="\SU_33_Flanker_D\anim\su33_pilot_dead.rtm";
 			connectTo[]=
 			{
 				"DeadState",
 				0.1
-			};
-		};
-		class pilot: Crew
-		{
-			file="\SU_33_Flanker_D\anim\pilot.rtm";
-			interpolateTo[]=
-			{
-				"pilot_dead",
-				1
-			};
-		};
-		class commander: Crew
-		{
-			file="\SU_33_Flanker_D\anim\commander.rtm";
-			interpolateTo[]=
-			{
-				"pilot_dead",
-				1
 			};
 		};
 	};

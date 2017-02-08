@@ -81,8 +81,115 @@ else
 				};
 			};
 	};
+
+
 if ((isengineon _this) and ((_this animationPhase "wing") < 0.1) and ((_this animationPhase "ABcut") < 0.3)) then
 {
+	/*_plane animate ["thrust1A",0.6];
+	_plane animate ["thrust2",0.6];
+	_plane animate ["thrust3",0.6];
+	_plane animate ["thrust4",0.6];
+	_plane animate ["thrust5",0.6];
+	_plane animate ["thrust6",0.6];
+	_plane animate ["thrust7",0.6];
+	_plane animate ["thrust8",0.6];
+	_plane animate ["thrust9",0.6];
+	_plane animate ["thrust10",0.6];
+	_plane animate ["thrust11",0.6];
+	_plane animate ["thrust12",0.6];
+	_plane animate ["thrust13",0.6];
+	_plane animate ["thrust14",0.6];
+	_plane animate ["thrust15",0.6];
+	_plane animate ["thrust16",0.6];
+	_plane animate ["thrust17",0.6];
+	_plane animate ["thrust18",0.6];
+	_plane animate ["thrust19",0.6];
+	_plane animate ["thrust20",0.6];
+	_plane animate ["thrust21",0.6];
+	_plane animate ["thrust22",0.6];
+	_plane animate ["thrust23",0.6];
+	_plane animate ["thrust24",0.6];
+	_plane animate ["thrust25",0.6];
+	_plane animate ["thrust26",0.6];
+	_plane animate ["thrust27",0.6];
+	_plane animate ["thrust28",0.6];
+	_plane animate ["thrust29",0.6];
+	_plane animate ["thrust20",0.6];
+	_plane animate ["thrust31",0.6];
+	_plane animate ["thrust32",0.6];*/
+
+	_plane animate ["AfterburnerLV2",1];
+	_plane animate ["AfterburnerRV2",1];
+	_plane animate ["AfterburnerL2",1];
+	_plane animate ["AfterburnerR2",1];
+	//engine left
+	_plane animate ["thrust1A",0.1];
+	_plane animate ["thrust2",0.1];
+	_plane animate ["thrust3",0.1];
+	_plane animate ["thrust4",0.1];
+	_plane animate ["thrust5",0.1];
+	_plane animate ["thrust6",0.1];
+	_plane animate ["thrust7",0.1];
+	_plane animate ["thrust8",0.1];
+	_plane animate ["thrust9",0.1];
+	_plane animate ["thrust10",0.1];
+	_plane animate ["thrust11",0.1];
+	_plane animate ["thrust12",0.1];
+	_plane animate ["thrust13",0.1];
+	_plane animate ["thrust14",0.1];
+	_plane animate ["thrust15",0.1];
+	_plane animate ["thrust16",0.1];
+	_plane animate ["thrust17",0.1];
+	_plane animate ["thrust18",0.1];
+	_plane animate ["thrust19",0.1];
+	_plane animate ["thrust20",0.1];
+	_plane animate ["thrust21",0.1];
+	_plane animate ["thrust22",0.1];
+	_plane animate ["thrust23",0.1];
+	_plane animate ["thrust24",0.1];
+	_plane animate ["thrust25",0.1];
+	_plane animate ["thrust26",0.1];
+	_plane animate ["thrust27",0.1];
+	_plane animate ["thrust28",0.1];
+	_plane animate ["thrust29",0.1];
+	_plane animate ["thrust30",0.1];
+	_plane animate ["thrust31",0.1];
+	_plane animate ["thrust32",0.1];
+	//right Engine
+	_plane animate ["thrust1b",0.1];
+	_plane animate ["thrust2b",0.1];
+	_plane animate ["thrust3b",0.1];
+	_plane animate ["thrust4b",0.1];
+	_plane animate ["thrust5b",0.1];
+	_plane animate ["thrust6b",0.1];
+	_plane animate ["thrust7b",0.1];
+	_plane animate ["thrust8b",0.1];
+	_plane animate ["thrust9b",0.1];
+	_plane animate ["thrust10b",0.1];
+	_plane animate ["thrust11b",0.1];
+	_plane animate ["thrust12b",0.1];
+	_plane animate ["thrust13b",0.1];
+	_plane animate ["thrust14b",0.1];
+	_plane animate ["thrust15b",0.1];
+	_plane animate ["thrust16b",0.1];
+	_plane animate ["thrust17b",0.1];
+	_plane animate ["thrust18b",0.1];
+	_plane animate ["thrust19b",0.1];
+	_plane animate ["thrust20b",0.1];
+	_plane animate ["thrust21b",0.1];
+	_plane animate ["thrust22b",0.1];
+	_plane animate ["thrust23b",0.1];
+	_plane animate ["thrust24b",0.1];
+	_plane animate ["thrust25b",0.1];
+	_plane animate ["thrust26b",0.1];
+	_plane animate ["thrust27b",0.1];
+	_plane animate ["thrust28b",0.1];
+	_plane animate ["thrust29b",0.1];
+	_plane animate ["thrust30b",0.1];
+	_plane animate ["thrust31b",0.1];
+	_plane animate ["thrust32b",0.1];
+
+
   if (_Intensity < _MaxIntensity) then
      {
      	_Intensity = _Intensity + 0.1*(10*_looptime);
@@ -107,7 +214,114 @@ if ((isengineon _this) and ((_this animationPhase "wing") < 0.1) and ((_this ani
 			 _this setFuel ((fuel _this)-((1/3000)*(3*_looptime)))
 		 };
 }
+/*if (((_this animationPhase "ABcut") > 0.3)) then
+{
+
+	_plane animate ["thrust1",0.6];
+	_plane animate ["thrust2",0.6];
+	_plane animate ["thrust3",0.6];
+	_plane animate ["thrust4",0.6];
+	_plane animate ["thrust5",0.6];
+	_plane animate ["thrust6",0.6];
+	_plane animate ["thrust7",0.6];
+	_plane animate ["thrust8",0.6];
+	_plane animate ["thrust9",0.6];
+	_plane animate ["thrust10",0.6];
+	_plane animate ["thrust11",0.6];
+	_plane animate ["thrust12",0.6];
+	_plane animate ["thrust13",0.6];
+	_plane animate ["thrust14",0.6];
+	_plane animate ["thrust15",0.6];
+	_plane animate ["thrust16",0.6];
+	_plane animate ["thrust17",0.6];
+	_plane animate ["thrust18",0.6];
+	_plane animate ["thrust19",0.6];
+	_plane animate ["thrust20",0.6];
+	_plane animate ["thrust21",0.6];
+	_plane animate ["thrust22",0.6];
+	_plane animate ["thrust23",0.6];
+	_plane animate ["thrust24",0.6];
+	_plane animate ["thrust25",0.6];
+	_plane animate ["thrust26",0.6];
+	_plane animate ["thrust27",0.6];
+	_plane animate ["thrust28",0.6];
+	_plane animate ["thrust29",0.6];
+	_plane animate ["thrust20",0.6];
+	_plane animate ["thrust31",0.6];
+	_plane animate ["thrust32",0.6];
+};*/
 else {
+	    _plane animate ["AfterburnerLV2",0];
+			_plane animate ["AfterburnerRV2",0];
+			_plane animate ["AfterburnerL2",0];
+			_plane animate ["AfterburnerR2",0];
+			//engine left
+			_plane animate ["thrust1A",0.5];
+			_plane animate ["thrust2",0.5];
+			_plane animate ["thrust3",0.5];
+			_plane animate ["thrust4",0.5];
+			_plane animate ["thrust5",0.5];
+			_plane animate ["thrust6",0.5];
+			_plane animate ["thrust7",0.5];
+			_plane animate ["thrust8",0.5];
+			_plane animate ["thrust9",0.5];
+			_plane animate ["thrust10",0.5];
+			_plane animate ["thrust11",0.5];
+			_plane animate ["thrust12",0.5];
+			_plane animate ["thrust13",0.5];
+			_plane animate ["thrust14",0.5];
+			_plane animate ["thrust15",0.5];
+			_plane animate ["thrust16",0.5];
+			_plane animate ["thrust17",0.5];
+			_plane animate ["thrust18",0.5];
+			_plane animate ["thrust19",0.5];
+			_plane animate ["thrust20",0.5];
+			_plane animate ["thrust21",0.5];
+			_plane animate ["thrust22",0.5];
+			_plane animate ["thrust23",0.5];
+			_plane animate ["thrust24",0.5];
+			_plane animate ["thrust25",0.5];
+			_plane animate ["thrust26",0.5];
+			_plane animate ["thrust27",0.5];
+			_plane animate ["thrust28",0.5];
+			_plane animate ["thrust29",0.5];
+			_plane animate ["thrust30",0.5];
+			_plane animate ["thrust31",0.5];
+			_plane animate ["thrust32",0.5];
+			//engine right
+			_plane animate ["thrust1b",0.6];
+			_plane animate ["thrust2b",0.6];
+			_plane animate ["thrust3b",0.6];
+			_plane animate ["thrust4b",0.6];
+			_plane animate ["thrust5b",0.6];
+			_plane animate ["thrust6b",0.6];
+			_plane animate ["thrust7b",0.6];
+			_plane animate ["thrust8b",0.6];
+			_plane animate ["thrust9b",0.6];
+			_plane animate ["thrust10b",0.6];
+			_plane animate ["thrust11b",0.6];
+			_plane animate ["thrust12b",0.6];
+			_plane animate ["thrust13b",0.6];
+			_plane animate ["thrust14b",0.6];
+			_plane animate ["thrust15b",0.6];
+			_plane animate ["thrust16b",0.6];
+			_plane animate ["thrust17b",0.6];
+			_plane animate ["thrust18b",0.6];
+			_plane animate ["thrust19b",0.6];
+			_plane animate ["thrust20b",0.6];
+			_plane animate ["thrust21b",0.6];
+			_plane animate ["thrust22b",0.6];
+			_plane animate ["thrust23b",0.6];
+			_plane animate ["thrust24b",0.6];
+			_plane animate ["thrust25b",0.6];
+			_plane animate ["thrust26b",0.6];
+			_plane animate ["thrust27b",0.6];
+			_plane animate ["thrust28b",0.6];
+			_plane animate ["thrust29b",0.6];
+			_plane animate ["thrust30b",0.6];
+			_plane animate ["thrust31b",0.6];
+			_plane animate ["thrust32b",0.6];
+
 	if (_Intensity > 0) then
 		{
 			_Intensity = _Intensity - 0.2*(10*_looptime);
@@ -141,8 +355,20 @@ _veldirz = ((vectordir _this) select 2) / _veldir;
 	_leftengine setParticleParams ["\SU_33_Flanker_D\cl_exp2","","Billboard",1,(0.06 - (0.05*((speed _this) / (_maxspeed /2) ))),(_this selectionposition "burner_l"),[(velocity _this select 0) - _veldirx *30,(velocity _this select 1) - _veldiry *30,(velocity _this select 2) - _veldirz *30],1,1.2745,1,0,[0.7,0.1],[_cl0,_cl1,_cl2,_cl3],[0],0,0,"","",_this];
 	_rightengine setParticleParams ["\SU_33_Flanker_D\cl_exp2","","Billboard",1,(0.06 - (0.05*((speed _this) / (_maxspeed /2) ))),(_this selectionposition "burner_r"),[(velocity _this select 0) - _veldirx *30,(velocity _this select 1) - _veldiry *30,(velocity _this select 2) - _veldirz *30],1,1.2745,1,0,[0.7,0.1],[_cl0,_cl1,_cl2,_cl3],[0],0,0,"","",_this];
 
-{_x setpos (getpos _this)} foreach _emitters;
-if (_Intensity > 0) then {{_x setDropInterval 0.001} foreach _emitters} else {{_x setDropInterval 0} foreach _emitters};
+{
+	_x setpos (getpos _this)
+} foreach _emitters;
+if (_Intensity > 0) then
+{
+	{
+		_x setDropInterval 0.001} foreach _emitters
+	}
+else
+{
+	{
+		_x setDropInterval 0
+	} foreach _emitters
+};
 
 _looptime = time;
 

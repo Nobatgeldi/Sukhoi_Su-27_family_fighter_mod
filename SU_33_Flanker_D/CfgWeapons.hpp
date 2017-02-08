@@ -240,11 +240,30 @@ class CfgWeapons
 		displayNameMagazine="KAB-500K";
 		shortNameMagazine="KAB-500K";
 	};
-	class Su_kab500L_Laucher: Bomb_03_Plane_CAS_02_F
+	class Su_fab_250_Laucher: Bomb_04_Plane_CAS_01_F
 	{
-		displayName="KAB-500L";
-		displayNameMagazine="KAB-500L";
-		shortNameMagazine="KAB-500L";
+		displayName="BOMB LAUNCHER";
+		displayNameMagazine="FAB-250";
+		shortNameMagazine="FAB-250";
+		optics = true;
+		magazines[]=
+		{
+			"Su_6Rnd_fab_250"
+		};
+		class Viewoptics
+		{
+			initAngleX = 0;
+			minAngleX = -90;
+			maxAngleX = 90;
+			initAngleY = 0;
+			minAngleY = -90;
+			maxAngleY = 90;
+			initFov = 0.18;
+			minFov = 0.18;
+			maxFov = 0.4;
+			opticsModel = "\SU_33_Flanker_D\wep\optika.p3d";
+			memoryPointCamera = "eye";
+		};
 	};
 	class Su_R73Launcher: MissileLauncher
 	{
@@ -304,9 +323,7 @@ class CfgWeapons
 		magazines[]=
 		{
 			"Su_6Rnd_R73",
-			"Su_4Rnd_R73",
-			"Su_2Rnd_R73",
-			"Su_6Rnd_R73M1_AA",
+			"Su_2Rnd_R73M1_AA",
 		};
 		holdsterAnimValue=3;
 		weaponLockSystem="2 + 16 + 4";
