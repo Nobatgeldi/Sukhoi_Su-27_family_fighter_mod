@@ -74,7 +74,7 @@ deleteVehicle _dirt;
 _v setvelocity [0,0,-0.1];
 if (local _v) then
 {
-	_v setVehicleInit format ["[this, %1, %2,false,true]spawn BIS_Effects_Burn",_int, _t];
+	_v setVehicleInit format ["[this, %1, %2,false,true] spawn BIS_Effects_Burn",_int, _t];
 	processInitCommands; //ClearvehicleInit done at end of burn script
 	[_v,_int,false] spawn BIS_Effects_Secondaries;
 };

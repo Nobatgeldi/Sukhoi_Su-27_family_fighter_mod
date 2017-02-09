@@ -14,7 +14,7 @@ class CfgPatches
 		};
 		weapons[] = {};
 		requiredVersion = 0.0.1;
-		requiredAddons[] = {};
+		requiredAddons[] = {"CBA_Extended_EventHandlers"};
 	};
 };
 class CfgVehicles
@@ -118,10 +118,11 @@ class CfgVehicles
 		vehicleClass="Air";
 		icon="\SU_33_Flanker_D\paa\icon.paa";
 		picture="\SU_33_Flanker_D\paa\pic.paa";
-		unitInfoType="UnitInfoAirplane";
+		unitInfoType="RscOptics_CAS_Pilot";
+		driverWeaponsInfoType = "RscOptics_CAS_01_TGP";
 		//unitInfoType = "Rsc_FA18X_UnitInfo";
 		simulation="airplane";
-		_generalMacro="Plane";
+		_generalMacro="Su33_Protatype_PT_2";
 		scope=2;
 		accuracy = 3.500000
 		nameSound="aircraft";
@@ -180,7 +181,7 @@ class CfgVehicles
 		memoryPointGun="machinegun";
 		memoryPointLRocket="L raketa";
 		memoryPointRRocket="P raketa";
-		driverRightHandAnimName = "control_stick";
+		driverRightHandAnimName = "ControlStick";
 		driverLeftHandAnimName = "control_throttle";
 		driverLeftLegAnimName = "pilot_pedal_L";
 		driverRightLegAnimName = "pilot_pedal_R";
@@ -194,6 +195,24 @@ class CfgVehicles
 		memoryPointCMDir[] = {"flare_L_dir","flare_R_dir"};
 		//memoryPointsGetInDriver = "pos_driver";
 		//memoryPointsGetInDriverDir = "pos_driver_dir";
+		/*class ViewPilot
+		{
+			initFov = 0.55;
+			minFov = 0.25;
+			maxFov = 0.8;
+			initAngleX = 0;
+			minAngleX = -75;
+			maxAngleX = 89;
+			initAngleY = 0;
+			minAngleY = -160;
+			maxAngleY = 160;
+			maxmovex = 0.1;
+			maxmovey = 0.1;
+			maxmovez = 0.1;
+			minmovex = -0.1;
+			minmovey = -0.1;
+			minmovez = -0.1;
+		};*/
 		weapons[]=
 		{
 		 "Su_GSh301",
@@ -205,6 +224,8 @@ class CfgVehicles
 		 "Su_R27Launcher",
 
 		 "Su_fab_250_Laucher",
+
+		 "Laserdesignator_mounted";
 		 //"Su_R77Launcher",
 
      "CMFlareLauncher"
@@ -222,16 +243,13 @@ class CfgVehicles
 
 		 "Su_6Rnd_fab_250",
 
+		 "Laserbatteries",
+
 		 //"Su_4Rnd_R77",
 
      "300Rnd_CMFlare_Chaff_Magazine"
 		};
-		aileronSensitivity=2.5;
-		elevatorSensitivity=2.9;
-		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
-
-		/*class pilotCamera
-		{
+		class pilotCamera {
 			class OpticsIn {
 				class Wide {
 					opticsDisplayName = WFOV;
@@ -247,6 +265,7 @@ class CfgVehicles
 					directionStabilized = 1;
 					visionMode[] = {"Normal", "Ti"};
 					thermalMode[] = {0, 1};
+					//gunnerOpticsModel = "\SU_33_Flanker_D\wep\optika.p3d";
 					gunnerOpticsModel = "\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
 					opticsPPEffects[] = {"OpticsCHAbera2", "OpticsBlur2"};
 				};
@@ -280,7 +299,42 @@ class CfgVehicles
 			maxYRotSpeed = 0.3;
 			pilotOpticsShowCursor = 1;
 			controllable = 1;
+		};
+		/*class ViewPilot {
+			initFov = 0.55;
+			minFov = 0.25;
+			maxFov = 0.8;
+			initAngleX = 0;
+			minAngleX = -75;
+			maxAngleX = 89;
+			initAngleY = 0;
+			minAngleY = -160;
+			maxAngleY = 160;
+			maxmovex = 0.1;
+			maxmovey = 0.1;
+			maxmovez = 0.1;
+			minmovex = -0.1;
+			minmovey = -0.1;
+			minmovez = -0.1;
 		};*/
+		memoryPointDriverOptics = "PilotCamera_pos";
+		aileronSensitivity=2.5;
+		elevatorSensitivity=2.9;
+		radarTargetSize=1.0;					/*Radar cross-section coefficient of the vehicle. Works as a coefficient of
+						                      RADAR Sensor's range within the given combat situation.
+																	Early test values
+																	0.1 - fully stealth (<0.0005m2 RCS) (not recommended)
+																	0.7 - small aircrafts, semi-stealth (~1m2 RCS)
+																	1.0 - mid sized aircraft, car (~5m2 RCS)
+																	1.2 - tanks, trucks (~10m2 RCS)
+																	2.0 - large bomber, small ship and bigger (>80m2 RCS)*/
+		receiveRemoteTargets = true; //if the vehicle is able to receive targets
+																 //  and positions from friendly vehicles with reportRemoteTargets.
+
+		reportRemoteTargets = true;  /* Says if the vehicle is able to broadcast targets acquired by own sensors*/
+		reportOwnPosition = true; 	/*Says if the vehicle is able to broadcast its own position*/
+
+		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
 		class MarkerLights
 		{
 			/*class Cockpit_light_1
@@ -415,8 +469,8 @@ class CfgVehicles
 					1,
 					1600
 				};
-				frequency="1.0 min (rpm + 0.5)";
-				volume="engineOn*camPos*(rpm factor[0.85, 0])";
+				frequency = "1.0 min (rpm + 0.5)";
+				volume = "camPos*2*(rpm factor[0.95, 0])*(rpm factor[0, 0.95])";
 			};
 			class EngineHighOut
 			{
@@ -427,8 +481,8 @@ class CfgVehicles
 					1.3,
 					1800
 				};
-				frequency="1";
-				volume="engineOn*camPos*(rpm factor[0.55, 1.0])";
+				frequency = "1";
+				volume = "camPos*4*(rpm factor[0.5, 1.1])*(rpm factor[1.1, 0.5])";
 			};
 			class ForsageOut
 			{
@@ -439,21 +493,15 @@ class CfgVehicles
 					1.1,
 					2000
 				};
-				frequency="1";
-				volume="engineOn*camPos*(thrust factor[0.5, 1.0])";
-				cone[]={3.1400001,3.9200001,2,0.40000001};
+				frequency = "1";
+				volume = "engineOn*camPos*(thrust factor[0.6, 1.0])";
+				cone[] = {3.14, 3.92, 2.0, 0.5};
 			};
 			class WindNoiseOut
 			{
-				sound[]=
-				{
-					"A3\Sounds_F\air\Plane_Fighter_03\noise",
-					1,
-					1,
-					150
-				};
-				frequency="(0.1+(1.2*(speed factor[1, 150])))";
-				volume="camPos*(speed factor[1, 150])";
+				sound[] = {"A3\Sounds_F_EPC\CAS_02\noise", 0.562341, 1.0, 150};
+				frequency = "(0.1+(1.2*(speed factor[1, 150])))";
+				volume = "camPos*(speed factor[1, 150])";
 			};
 			class EngineLowIn
 			{
@@ -463,8 +511,8 @@ class CfgVehicles
 					0.56234097,
 					1
 				};
-				frequency="1.0 min (rpm + 0.5)";
-				volume="(1-camPos)*(engineOn*(rpm factor[0.85, 0]))";
+				frequency = "1.0 min (rpm + 0.5)";
+				volume = "(1-camPos)*((rpm factor[0.7, 0.1])*(rpm factor[0.1, 0.7]))";
 			};
 			class EngineHighIn
 			{
@@ -474,8 +522,8 @@ class CfgVehicles
 					1,
 					1
 				};
-				frequency="1";
-				volume="(1-camPos)*(engineOn*(rpm factor[0.55, 1.0]))";
+				frequency = "1";
+				volume = "(1-camPos)*(rpm factor[0.85, 1.0])";
 			};
 			class ForsageIn
 			{
@@ -485,8 +533,8 @@ class CfgVehicles
 					0.56234097,
 					1.1
 				};
-				frequency="1";
-				volume="(1-camPos)*(engineOn*(thrust factor[0.5, 1.0]))";
+				frequency = "1";
+				volume = "(1-camPos)*(engineOn*(thrust factor[0.6, 1.0]))";
 			};
 			class WindNoiseIn
 			{
@@ -496,64 +544,41 @@ class CfgVehicles
 					0.70794576,
 					1
 				};
-				frequency="(0.1+(1.2*(speed factor[1, 150])))";
-				volume="(1-camPos)*(speed factor[1, 150])";
+				frequency = "(0.1+(1.2*(speed factor[1, 150])))";
+				volume = "(1-camPos)*(speed factor[1, 150])";
+			};
+			class RainExt
+			{
+				sound[] = {"A3\Sounds_F\vehicles\noises\rain1_ext", 1.77828, 1.0, 100};
+				frequency = 1;
+				volume = "camPos * rain * (speed factor[50, 0])";
+			};
+
+			class RainInt
+			{
+				sound[] = {"A3\Sounds_F\vehicles\noises\rain1_int", 1.0, 1.0, 100};
+				frequency = 1;
+				volume = "(1-camPos) * rain * (speed factor[50, 0])";
 			};
 		};
-		/*
-		soundCrash[] = {Vehicles\crash, 0.316228, 1};
-		soundDammage[] = {"", 1, 1};
-		soundEngine[] = {"", 1, 1};
-		soundEnviron[] = {"", 1, 1};
-		soundLandCrash[] = {Explosions\intoground, 0.316228, 1};
-		soundWaterCrash[] = {Explosions\intowater, 0.316228, 1};
-		soundGetIn[] = {Vehicles\get_in, 0.000316, 1};
-		soundGetOut[] = {Vehicles\get_out, 0.000316, 1};
-		soundServo[] = {Vehicles\gun_elevate, 0.010000, 0.500000};
-		soundGear[] = {"\AnyAddon\AnySound(.wss)", 0.316228, 1}
-		*/
+		attenuationEffectType = "PlaneAttenuation";
+		soundGetIn[] = {"A3\Sounds_F_EPC\CAS_02\TO_getin", 1.0, 1};
+		soundGetOut[] = {"A3\Sounds_F_EPC\CAS_02\getout", 1.0, 1, 40};
+		soundDammage[] = {"", 0.562341, 1};
 		soundEngineOnInt[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_start_int", 0.794328, 1.0};
 		soundEngineOnExt[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_start_ext", 1.0, 1.0, 500};
 		soundEngineOffInt[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_stop_int", 0.794328, 1.0};
 		soundEngineOffExt[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_stop_ext", 1.0, 1.0, 500};
+		soundLocked[] = {"\A3\Sounds_F\weapons\Rockets\locked_1", 0.316228, 1};
+		soundIncommingMissile[] = {"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4", 0.398107, 1.0};
+		soundGearUp[] = {"A3\Sounds_F_EPC\CAS_02\gear_up", 0.794328, 1.0, 150};
+		soundGearDown[] = {"A3\Sounds_F_EPC\CAS_02\gear_down", 0.794328, 1.0, 150};
+		soundFlapsUp[] = {"A3\Sounds_F_EPC\CAS_02\Flaps_Up", 0.630957, 1.0, 100};
+		soundFlapsDown[] = {"A3\Sounds_F_EPC\CAS_02\Flaps_Down", 0.630957, 1.0, 100};
 		class scrubLandInt {
 			sound[] = {"A3\Sounds_F\vehicles\air\noises\wheelsInt", 1.0, 1.0, 100};
 			frequency = 1;
 			volume = "(scrubLand factor[0.01, 0.20])";
-		};
-		soundIncommingMissile[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\locked_3",
-			0.1,
-			1.5
-		};
-		soundGearUp[]=
-		{
-			"A3\Sounds_F_EPC\CAS_02\gear_up",
-			0.79432797,
-			1,
-			150
-		};
-		soundGearDown[]=
-		{
-			"A3\Sounds_F_EPC\CAS_02\gear_down",
-			0.79432797,
-			1,
-			150
-		};
-		soundFlapsUp[]=
-		{
-			"A3\Sounds_F_EPC\CAS_02\Flaps_Up",
-			0.63095701,
-			1,
-			100
-		};
-		soundFlapsDown[]=
-		{
-			"A3\Sounds_F_EPC\CAS_02\Flaps_Down",
-			0.63095701,
-			1,
-			100
 		};
 		insideSoundCoef = 0.1;
 		hiddenselections[]=
@@ -999,25 +1024,25 @@ class CfgVehicles
 			class AfterburnerLV2
 			{
 				source = "user";
-				animPeriod = 1;
+				animPeriod = 5;
 				initPhase = 0;
 			};
 			class AfterburnerRV2
 			{
 				source = "user";
-				animPeriod = 1;
+				animPeriod = 5;
 				initPhase = 0;
 			};
 			class AfterburnerL2
 			{
 				source = "user";
-				animPeriod = 1;
+				animPeriod = 5;
 				initPhase = 0;
 			};
 			class AfterburnerR2
 			{
 				source = "user";
-				animPeriod = 1;
+				animPeriod = 5;
 				initPhase = 0;
 			};
 		};
@@ -1113,29 +1138,6 @@ class CfgVehicles
 				showWindow=0;
 			};
 		};
-		/*class EventHandlers {
-			init = "_this execVM ""\Sukhoi_Su33\sqs\init2.sqf"",[_this select 0]exec ""\Sukhoi_Su33\sqs\init.sqs"",[_this select 0]exec ""\Sukhoi_Su33\sqs\wing.sqs"",[_this select 0] execVM ""\Sukhoi_Su33\sqs\AircraftEffects.sqf"",_this exec ""\Sukhoi_Su33\sqs\ejectstart.sqs"",_this execVM ""a3\data_f\ParticleEffects\SCRIPTS\misc\aircraftvapour.sqf""";
-			fired = "[_this] exec ""\Sukhoi_Su33\sqs\fireGsh.sqs"",_this call BIS_Effects_EH_Fired";
-		};*/
-		class pilotCamera
-		{
-
-		    class OpticsIn
-		    {
-		        //different optics mode, same as in turrets
-		    }
-
-		    minTurn = - 90; //yaw limits
-		    maxTurn=   90;  //yaw limits
-		    initTurn= 0;  //initial yaw angle
-		    minElev = - 90; //pitch limits
-		    maxElev =   90; //pitch limits
-		    initElev =  0; //initial pitch angle
-		    maxXRotSpeed = 0.5; // yawing speed
-		    maxYRotSpeed = 0.5; // pitching speed
-		    pilotOpticsShowCursor = 1; //to show aimCursor (is useful to see plane direction)
-		    controllable = 1; // set false to have static camera
-		 }
 		class Eventhandlers: Eventhandlers
 		{
 			init="[_this select 0] execVM ""\SU_33_Flanker_D\sqs\init.sqf"",[_this select 0]exec ""\SU_33_Flanker_D\sqs\init.sqs"",[_this select 0]exec ""\SU_33_Flanker_D\sqs\wing.sqs"",[_this select 0] execVM ""\SU_33_Flanker_D\sqs\AircraftEffects.sqf"",_this execVM ""\SU_33_Flanker_D\sqs\aircraftvapour.sqf"",";

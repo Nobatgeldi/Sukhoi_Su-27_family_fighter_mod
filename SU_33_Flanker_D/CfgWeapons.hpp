@@ -242,7 +242,7 @@ class CfgWeapons
 	};
 	class Su_fab_250_Laucher: Bomb_04_Plane_CAS_01_F
 	{
-		displayName="BOMB LAUNCHER";
+		displayName="FAB-250 BOMB";
 		displayNameMagazine="FAB-250";
 		shortNameMagazine="FAB-250";
 		optics = true;
@@ -250,20 +250,7 @@ class CfgWeapons
 		{
 			"Su_6Rnd_fab_250"
 		};
-		class Viewoptics
-		{
-			initAngleX = 0;
-			minAngleX = -90;
-			maxAngleX = 90;
-			initAngleY = 0;
-			minAngleY = -90;
-			maxAngleY = 90;
-			initFov = 0.18;
-			minFov = 0.18;
-			maxFov = 0.4;
-			opticsModel = "\SU_33_Flanker_D\wep\optika.p3d";
-			memoryPointCamera = "eye";
-		};
+		ballisticsComputer = 8;
 	};
 	class Su_R73Launcher: MissileLauncher
 	{
