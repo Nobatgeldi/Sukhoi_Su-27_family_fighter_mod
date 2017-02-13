@@ -13,8 +13,8 @@ class CfgAmmo
 	};
 	class fab_250: Bomb_04_F
 	{
-		model="SU_33_Flanker_D\wep\fab250";
-		proxyShape="SU_33_Flanker_D\wep\fab250";
+		model="\SU_33_Flanker_D\wep\fab250.p3d";
+		proxyShape="\SU_33_Flanker_D\wep\fab250.p3d";
 		/*
 			hit=6000;
 			indirectHit=1800;
@@ -88,7 +88,81 @@ class CfgAmmo
   */
 	 // bla blaa
 	};
-	class Su35_kh_29: MissileBase
+	class su_kab500: LaserBombCore
+	{
+		hit=6000;
+		model="\SU_33_Flanker_D\wep\FAB500.p3d";
+		proxyShape="\SU_33_Flanker_D\wep\FAB500.p3d";
+		indirectHit=1800;
+		indirectHitRange=12;
+		irlock=0;
+		laserLock=1;
+		airlock=0;
+		artilleryLock=1;
+		nvLock=1;
+		soundHit1[]=
+		{
+			"A3\Sounds_F\weapons\Explosion\expl_big_1",
+			2.5118899,
+			1,
+			2400
+		};
+		soundHit2[]=
+		{
+			"A3\Sounds_F\weapons\Explosion\expl_big_2",
+			2.5118899,
+			1,
+			2400
+		};
+		soundHit3[]=
+		{
+			"A3\Sounds_F\weapons\Explosion\expl_big_3",
+			2.5118899,
+			1,
+			2400
+		};
+		soundHit4[]=
+		{
+			"A3\Sounds_F\weapons\Explosion\expl_shell_1",
+			2.5118899,
+			1,
+			2400
+		};
+		soundHit5[]=
+		{
+			"A3\Sounds_F\weapons\Explosion\expl_shell_2",
+			2.5118899,
+			1,
+			2400
+		};
+		multiSoundHit[]=
+		{
+			"soundHit1",
+			0.2,
+			"soundHit2",
+			0.2,
+			"soundHit3",
+			0.2,
+			"soundHit4",
+			0.2,
+			"soundHit5",
+			0.2
+		};
+		explosionSoundEffect="DefaultExplosion";
+		trackOversteer=1;
+		trackLead=0.94999999;
+		maneuvrability=20;
+		CraterEffects="BombCrater";
+		explosionEffects="BombExplosion";
+		explosionTime=2;
+		fuseDistance=35;
+		whistleDist=24;
+		weaponLockSystem="2 + 16 + 4";
+		missileLockCone=120;
+		maxControlRange=8000;
+		manualControl=1;
+	};
+	class Su_kh_29: MissileBase
 	{
 		hit=1500;
 		indirectHit=950;
@@ -163,7 +237,7 @@ class CfgAmmo
 	class Su_rocket_80mm_HE: MissileBase
 	{
 		model="\A3\Weapons_F\Ammo\Rocket_02_fly_F";
-		proxyShape="\SU_33_Flanker_D\m_empty";
+		proxyShape="\SU_33_Flanker_D\wep\s8_launcher_aircraft";
 		hit=210;
 		weaponType = "rocket";
 		indirectHit=55;

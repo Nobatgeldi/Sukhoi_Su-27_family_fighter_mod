@@ -30,7 +30,7 @@ if(isNil 'BIS_Effects_Init') then
 	BIS_Effects_Burn=compile preprocessFileLineNumbers "\SU_33_Flanker_D\sqs\burn.sqf";
 	BIS_Effects_AircraftVapour=compile preprocessFileLineNumbers "\SU_33_Flanker_D\sqs\aircraftvapour.sqf";
 	BIS_Effects_AirDestruction=compile preprocessFileLineNumbers "\SU_33_Flanker_D\sqs\AirDestruction.sqf";
-	BIS_Effects_AirDestructionStage2=compile preprocessFileLineNumbers "\SU_33_Flanker_D\sqs\AirDestructionStage2.sqf";
+	//BIS_Effects_AirDestructionStage2=compile preprocessFileLineNumbers "\SU_33_Flanker_D\sqs\AirDestructionStage2.sqf";
 	BIS_Effects_Secondaries=compile preprocessFileLineNumbers "\SU_33_Flanker_D\sqs\Secondaries.sqf";
 	//BIS_Effects_RocketTrail=compile preprocessFileLineNumbers "\A3\data_f\ParticleEffects\SCRIPTS\muzzle\rockettrail.sqf";
 

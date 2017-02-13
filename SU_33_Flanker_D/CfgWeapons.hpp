@@ -168,7 +168,28 @@ class CfgWeapons
 			maxRangeProbab=0.0099999998;
 		};
 	};
-	class Su33_kh29_Launcher: MissileLauncher
+	class su_kab500l_Laucher: RocketPods
+	{
+		canLock=2;
+		displayName="KAB-500L";
+		displayNameMagazine="KAB-500L";
+		shortNameMagazine="KAB-500L";
+		magazines[]=
+		{
+			"Su_fab_500"
+		};
+		reloadTime=0.1;
+		magazineReloadTime=0.5;
+		aiRateOfFire=5;
+		aiRateOfFireDistance=500;
+		nameSound="";
+		cursor="EmptyCursor";
+		cursorAim="EmptyCursor";
+		textureType="fullAuto";
+		missileLockCone=180;
+		weaponLockDelay=1;
+	};
+	class Su_kh29_Launcher: MissileLauncher
 	{
 		canLock=2;
 		autoFire=0;
@@ -177,7 +198,7 @@ class CfgWeapons
 		shortNameMagazine="Kh-29";
 		magazines[]=
 		{
-			"Su33_kh29_x4"
+			"Su_kh29"
 		};
 		reloadTime=0.1;
 		magazineReloadTime=0.1;
@@ -248,7 +269,7 @@ class CfgWeapons
 		optics = true;
 		magazines[]=
 		{
-			"Su_6Rnd_fab_250"
+			"Su_fab_250"
 		};
 		ballisticsComputer = 8;
 	};
@@ -310,7 +331,7 @@ class CfgWeapons
 		magazines[]=
 		{
 			"Su_6Rnd_R73",
-			"Su_2Rnd_R73M1_AA",
+			"Su_R73M1_AA",
 		};
 		holdsterAnimValue=3;
 		weaponLockSystem="2 + 16 + 4";
@@ -324,7 +345,7 @@ class CfgWeapons
 		shortNameMagazine="R-27 Alamo";
 		magazines[]=
 		{
-			"Su_2Rnd_R27R",
+			"Su_R27R",
 			"Su_2Rnd_R27EA"
 		};
 		reloadTime=0.30000001;
@@ -345,7 +366,10 @@ class CfgWeapons
 		displayName="S8 80mm Rockets";
 		magazines[]=
 		{
-			"Su_80Rnd_S8T"
+			"Su_20Rnd1_S8T",
+			"Su_20Rnd2_S8T",
+			"Su_20Rnd3_S8T",
+			"Su_20Rnd4_S8T"
 		};
 		cursor="Air_Dot";
 		cursorSize=1;

@@ -4,6 +4,7 @@
 #include "CfgWeapons.hpp"
 #include "CfgAmmo.hpp"
 #include "CfgMagazines.hpp"
+#include "CfgNonAIVehicles.hpp"
 
 class CfgPatches
 {
@@ -151,6 +152,8 @@ class CfgVehicles
 		irScanRangeMax=10000;
 		irScanToEyeFactor=4;
 		irScanGround=1;
+		nvTarget = 1;
+		nvScanner = 1;
 		LockDetectionSystem="1 + 2 + 4 + 8";
 		landingAoa="rad 10";
 		sweepDisengageRandomCourseCoef = 1;
@@ -232,8 +235,8 @@ class CfgVehicles
 		};
 		magazines[]=
 		{
-		 //"Su_300Rnd_30mm_GSh301",
 		 "Su_300Rnd_30mm_GSh301",
+		 /*"Su_300Rnd_30mm_GSh301",
 
 		 "Su_80Rnd_S8T",
 
@@ -243,7 +246,7 @@ class CfgVehicles
 
 		 "Su_6Rnd_fab_250",
 
-		 "Laserbatteries",
+		 "Laserbatteries",*/
 
 		 //"Su_4Rnd_R77",
 
@@ -591,6 +594,12 @@ class CfgVehicles
 		};
 		class AnimationSources
 		{
+			class AA_load
+			{
+				source="user";
+				animPeriod=0.001;
+				initPhase=0;
+			};
 			//right engine
 				class thrust32b
 				{
@@ -1048,6 +1057,28 @@ class CfgVehicles
 		};
 		class UserActions
 		{
+			class AA_load
+			{
+				displayName="Air to Air load";
+				position="pilotcontrol";
+				onlyforplayer=1;
+				showWindow=0;
+				hideOnUse=1;
+				radius=5;
+				condition="((this distance (nearestObject [this, ""O_Truck_03_ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_03_ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_TentHangar_V1_F""]) < 55) and (damage (nearestObject [this, ""Land_TentHangar_V1_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_Hangar_F""]) < 55) and (damage (nearestObject [this, ""Land_Hangar_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1)";
+				statement="this animate [""AA_load"",1];";
+			};
+			class AA_load_unload
+			{
+				displayName="Unload All Weapons";
+				position="pilotcontrol";
+				onlyforplayer=1;
+				showWindow=0;
+				hideOnUse=1;
+				radius=5;
+				condition="((this distance (nearestObject [this, ""O_Truck_03_ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_03_ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_TentHangar_V1_F""]) < 55) and (damage (nearestObject [this, ""Land_TentHangar_V1_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_Hangar_F""]) < 55) and (damage (nearestObject [this, ""Land_Hangar_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1)";
+				statement="this animate [""AA_load"",0.3];";
+			};
 			class ABon
 			{
 				displayName="Afterburner ON";
@@ -4489,44 +4520,3 @@ class CfgVehicles
 		};
 	};
 };*/
-
-class CfgNonAIVehicles
-{
-	class ProxyDriver;
-	class ProxyWeapon;
-	class ProxyKH_29: ProxyWeapon
-	{
-		model="\SU_33_Flanker_D\wep\KH-29";
-		simulation="maverickweapon";
-	};
-	class ProxyR73_proxy: ProxyWeapon
-	{
-		model="\SU_33_Flanker_D\wep\R73_proxy";
-		simulation="maverickweapon";
-	};
-	class ProxyR77_proxy: ProxyWeapon
-	{
-		model="\SU_33_Flanker_D\wep\R77_proxy";
-		simulation="maverickweapon";
-	};
-	class ProxyR27RE_proxy: ProxyWeapon
-	{
-		model="\SU_33_Flanker_D\wep\R27RE_proxy";
-		simulation="maverickweapon";
-	};
-	class Proxyfab250: ProxyWeapon
-	{
-		model="\SU_33_Flanker_D\wep\fab250";
-		simulation="maverickweapon";
-	};
-	/*class Proxym_s8_launcher_x1: ProxyWeapon
-	{
-		model="\js_jc_su35\stores\m_s8_launcher_x1";
-		simulation="maverickweapon";
-	};
-	class Proxym_s8_launcher_x2: ProxyWeapon
-	{
-		model="\js_jc_su35\stores\m_s8_launcher_x2";
-		simulation="maverickweapon";
-	};*/
-};

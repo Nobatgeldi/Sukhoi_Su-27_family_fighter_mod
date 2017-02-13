@@ -85,39 +85,6 @@ else
 
 if ((isengineon _this) and ((_this animationPhase "wing") < 0.1) and ((_this animationPhase "ABcut") < 0.3)) then
 {
-	/*_plane animate ["thrust1A",0.6];
-	_plane animate ["thrust2",0.6];
-	_plane animate ["thrust3",0.6];
-	_plane animate ["thrust4",0.6];
-	_plane animate ["thrust5",0.6];
-	_plane animate ["thrust6",0.6];
-	_plane animate ["thrust7",0.6];
-	_plane animate ["thrust8",0.6];
-	_plane animate ["thrust9",0.6];
-	_plane animate ["thrust10",0.6];
-	_plane animate ["thrust11",0.6];
-	_plane animate ["thrust12",0.6];
-	_plane animate ["thrust13",0.6];
-	_plane animate ["thrust14",0.6];
-	_plane animate ["thrust15",0.6];
-	_plane animate ["thrust16",0.6];
-	_plane animate ["thrust17",0.6];
-	_plane animate ["thrust18",0.6];
-	_plane animate ["thrust19",0.6];
-	_plane animate ["thrust20",0.6];
-	_plane animate ["thrust21",0.6];
-	_plane animate ["thrust22",0.6];
-	_plane animate ["thrust23",0.6];
-	_plane animate ["thrust24",0.6];
-	_plane animate ["thrust25",0.6];
-	_plane animate ["thrust26",0.6];
-	_plane animate ["thrust27",0.6];
-	_plane animate ["thrust28",0.6];
-	_plane animate ["thrust29",0.6];
-	_plane animate ["thrust20",0.6];
-	_plane animate ["thrust31",0.6];
-	_plane animate ["thrust32",0.6];*/
-
 	_plane animate ["AfterburnerLV2",1];
 	_plane animate ["AfterburnerRV2",1];
 	_plane animate ["AfterburnerL2",1];
@@ -214,42 +181,6 @@ if ((isengineon _this) and ((_this animationPhase "wing") < 0.1) and ((_this ani
 			 _this setFuel ((fuel _this)-((1/3000)*(3*_looptime)))
 		 };
 }
-/*if (((_this animationPhase "ABcut") > 0.3)) then
-{
-
-	_plane animate ["thrust1",0.6];
-	_plane animate ["thrust2",0.6];
-	_plane animate ["thrust3",0.6];
-	_plane animate ["thrust4",0.6];
-	_plane animate ["thrust5",0.6];
-	_plane animate ["thrust6",0.6];
-	_plane animate ["thrust7",0.6];
-	_plane animate ["thrust8",0.6];
-	_plane animate ["thrust9",0.6];
-	_plane animate ["thrust10",0.6];
-	_plane animate ["thrust11",0.6];
-	_plane animate ["thrust12",0.6];
-	_plane animate ["thrust13",0.6];
-	_plane animate ["thrust14",0.6];
-	_plane animate ["thrust15",0.6];
-	_plane animate ["thrust16",0.6];
-	_plane animate ["thrust17",0.6];
-	_plane animate ["thrust18",0.6];
-	_plane animate ["thrust19",0.6];
-	_plane animate ["thrust20",0.6];
-	_plane animate ["thrust21",0.6];
-	_plane animate ["thrust22",0.6];
-	_plane animate ["thrust23",0.6];
-	_plane animate ["thrust24",0.6];
-	_plane animate ["thrust25",0.6];
-	_plane animate ["thrust26",0.6];
-	_plane animate ["thrust27",0.6];
-	_plane animate ["thrust28",0.6];
-	_plane animate ["thrust29",0.6];
-	_plane animate ["thrust20",0.6];
-	_plane animate ["thrust31",0.6];
-	_plane animate ["thrust32",0.6];
-};*/
 else {
 	    _plane animate ["AfterburnerLV2",0];
 			_plane animate ["AfterburnerRV2",0];

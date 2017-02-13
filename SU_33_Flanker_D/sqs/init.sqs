@@ -6,6 +6,7 @@ _plane setobjecttexture[2, "\SU_33_Flanker_D\tex\omote.paa"]
 
 _plane setobjecttexture[03, "\SU_33_Flanker_D\num\2.paa"]
 _plane setobjecttexture[04, "\SU_33_Flanker_D\num\1.paa"]
+
 /*?(norandnum):goto "exit"
 _num = random 99
 #number

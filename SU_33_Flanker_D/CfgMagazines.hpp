@@ -2,13 +2,38 @@ class CfgMagazines
 {
 	class VehicleMagazine;
 	//class 4Rnd_Bomb_04_F;
-	class Su_6Rnd_fab_250: VehicleMagazine
+	class Su_fab_250: VehicleMagazine
 	{
 		scope=2;
-		count=6;
+		count=1;
 		ammo="fab_250";
 		initSpeed=0;
 		ammoIsProxy = true;
+	};
+	class Su_fab_500: VehicleMagazine
+	{
+		scope=2;
+		displayName="KAB-500L";
+		descriptionShort="KAB-500L";
+		displayNameShort="KAB-500L";
+		ammo="su_kab500";
+		ammoIsProxy = true;
+		initSpeed=0;
+		maxLeadSpeed=1000;
+		sound[]=
+		{
+			"",
+			1,
+			1
+		};
+		reloadSound[]=
+		{
+			"",
+			0.00031622799,
+			1
+		};
+		count=1;
+		nameSound="";
 	};
 	class Su_300Rnd_30mm_GSh301: VehicleMagazine
 	{
@@ -19,12 +44,12 @@ class CfgMagazines
 		tracersEvery=1;
 		ammoIsProxy = true;
 	};
-	class Su33_kh29_x4: VehicleMagazine
+	class Su_kh29: VehicleMagazine
 	{
 		scope=2;
 		displayName="Kh-29L";
 		displayNameShort="Kh-29L";
-		ammo="Su35_kh_29";
+		ammo="Su_kh_29";
 		ammoIsProxy = true;
 		initSpeed=0;
 		maxLeadSpeed=220;
@@ -40,7 +65,7 @@ class CfgMagazines
 			0.00031622799,
 			1
 		};
-		count=4;
+		count=1;
 		nameSound="missiles";
 	};
 	class Su_6Rnd_R73: VehicleMagazine
@@ -69,25 +94,25 @@ class CfgMagazines
 		};
 		nameSound="missiles";
 	};
-	class Su_2Rnd_R73M1_AA: Su_6Rnd_R73
+	class Su_R73M1_AA: Su_6Rnd_R73
 	{
 		ammo="Su_M_R73M1_AA";
 		displayName="R-73M1";
 		displayNameShort="R-73M1";
 		ammoIsProxy = true;
-		count=2
+		count=1;
 	};
-	class Su_2Rnd_R27R: Su_6Rnd_R73
+	class Su_R27R: Su_6Rnd_R73
 	{
 		scope=2;
 		displayName="R-27R";
 		displayNameShort="R-27R";
-		count=2;
+		count=1;
 		ammoIsProxy = true;
 		ammo="Su_M_R27R";
 		initSpeed=0;
 	};
-	class Su_2Rnd_R27EA: Su_2Rnd_R27R
+	class Su_2Rnd_R27EA: Su_R27R
 	{
 		scope=2;
 		displayName="R-27EA";
@@ -108,12 +133,81 @@ class CfgMagazines
 		initSpeed=0;
 		maxLeadSpeed=650;
 	};
-	class Su_80Rnd_S8T: VehicleMagazine
+	class Su_20Rnd1_S8T: VehicleMagazine
 	{
 		scope=2;
 		displayName="S8 Rocket";
 		ammo="Su_rocket_80mm_HE";
-		count=80;
+		count=20;
+		ammoIsProxy = true;
+		initSpeed=0;
+		nameSound="rockets";
+		sound[]=
+		{
+			"A3\sounds_f\weapons\rockets\explosion_missile_02",
+			1,
+			1,
+			1200
+		};
+		reloadSound[]=
+		{
+			"",
+			0.00031622799,
+			1
+		};
+	};
+	class Su_20Rnd2_S8T: VehicleMagazine
+	{
+		scope=2;
+		displayName="S8 Rocket";
+		ammo="Su_rocket_80mm_HE";
+		count=20;
+		ammoIsProxy = true;
+		initSpeed=0;
+		nameSound="rockets";
+		sound[]=
+		{
+			"A3\sounds_f\weapons\rockets\explosion_missile_02",
+			1,
+			1,
+			1200
+		};
+		reloadSound[]=
+		{
+			"",
+			0.00031622799,
+			1
+		};
+	};
+	class Su_20Rnd3_S8T: VehicleMagazine
+	{
+		scope=2;
+		displayName="S8 Rocket";
+		ammo="Su_rocket_80mm_HE";
+		count=20;
+		ammoIsProxy = true;
+		initSpeed=0;
+		nameSound="rockets";
+		sound[]=
+		{
+			"A3\sounds_f\weapons\rockets\explosion_missile_02",
+			1,
+			1,
+			1200
+		};
+		reloadSound[]=
+		{
+			"",
+			0.00031622799,
+			1
+		};
+	};
+	class Su_20Rnd4_S8T: VehicleMagazine
+	{
+		scope=2;
+		displayName="S8 Rocket";
+		ammo="Su_rocket_80mm_HE";
+		count=20;
 		ammoIsProxy = true;
 		initSpeed=0;
 		nameSound="rockets";
