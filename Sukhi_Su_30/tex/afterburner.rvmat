@@ -1,0 +1,23 @@
+﻿////////////////////////////////////////////////////////////////////
+//DeRap: Produced from mikero's Dos Tools Dll version 5.66
+//'now' is Mon Jan 09 17:17:20 2017 : 'file' last modified on Sun Aug 21 00:38:42 2016
+//http://dev-heaven.net/projects/list_files/mikero-pbodll
+////////////////////////////////////////////////////////////////////
+
+#define _ARMA_
+
+//Class C:/Users/Nobat/OneDrive/tex&bump/afterburner.rvmat{
+class StageTI
+{
+	texture = "a3\data_f\default_hot_ti_ca.paa";
+};
+ambient[] = {5,5,5,1};
+diffuse[] = {0,0,0,1};
+forcedDiffuse[] = {0,0,0,0};
+emmisive[] = {555,555,555,1};
+specular[] = {0,0,0,0};
+specularPower = 0;
+renderFlags[] = {"AlwaysInShadow","NoZWrite","NoAlphaWrite","AddBlend"};
+PixelShaderID = "Normal";
+VertexShaderID = "Basic";
+//};
