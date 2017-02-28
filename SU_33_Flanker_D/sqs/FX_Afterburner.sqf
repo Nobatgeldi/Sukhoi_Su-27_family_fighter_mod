@@ -303,7 +303,7 @@ else
 
 _looptime = time;
 
-sleep 0.05; // mod by Crowe
+sleep 0.05; 
 //hintSilent format["day : %1 \nclR : %2 \nclG : %3\nclB : %4\ndayl : %5",_daylight,_cl0 select 0,_cl0 select 1,_cl0 select 2,_daylight];
 
 _looptime = time - _looptime;

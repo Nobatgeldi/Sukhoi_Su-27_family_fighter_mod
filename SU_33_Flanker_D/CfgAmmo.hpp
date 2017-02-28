@@ -7,86 +7,20 @@ class CfgAmmo
 	class LaserBombCore;
 	class BombCore;
 
+	class Su_fak_ammo: MissileBase
+	{
+		model="\SU_33_Flanker_D\wep\fake_w.p3d";
+		proxyShape="\SU_33_Flanker_D\wep\fake_w.p3d";
+	};
+
 	class Su_GSh301_30mm: Cannon_30mm_HE_Plane_CAS_02_F
 	{
    // bla blaa
 	};
-	class fab_250: Bomb_04_F
+	class Su_fab_250: Bomb_04_F
 	{
 		model="\SU_33_Flanker_D\wep\fab250.p3d";
 		proxyShape="\SU_33_Flanker_D\wep\fab250.p3d";
-		/*
-			hit=6000;
-			indirectHit=1800;
-			indirectHitRange=12;
-			irlock=0;
-			laserLock=1;
-			airlock=0;
-			artilleryLock=1;
-			nvLock=1;
-			soundHit1[]=
-			{
-				"A3\Sounds_F\weapons\Explosion\expl_big_1",
-				2.5118899,
-				1,
-				2400
-			};
-			soundHit2[]=
-			{
-				"A3\Sounds_F\weapons\Explosion\expl_big_2",
-				2.5118899,
-				1,
-				2400
-			};
-			soundHit3[]=
-			{
-				"A3\Sounds_F\weapons\Explosion\expl_big_3",
-				2.5118899,
-				1,
-				2400
-			};
-			soundHit4[]=
-			{
-				"A3\Sounds_F\weapons\Explosion\expl_shell_1",
-				2.5118899,
-				1,
-				2400
-			};
-			soundHit5[]=
-			{
-				"A3\Sounds_F\weapons\Explosion\expl_shell_2",
-				2.5118899,
-				1,
-				2400
-			};
-			multiSoundHit[]=
-			{
-				"soundHit1",
-				0.2,
-				"soundHit2",
-				0.2,
-				"soundHit3",
-				0.2,
-				"soundHit4",
-				0.2,
-				"soundHit5",
-				0.2
-			};
-			explosionSoundEffect="DefaultExplosion";
-			trackOversteer=1;
-			trackLead=0.94999999;
-			maneuvrability=20;
-			CraterEffects="BombCrater";
-			explosionEffects="BombExplosion";
-			explosionTime=2;
-			fuseDistance=35;
-			whistleDist=24;
-			weaponLockSystem="2 + 16 + 4";
-			missileLockCone=120;
-			maxControlRange=8000;
-			manualControl=1;
-  */
-	 // bla blaa
 	};
 	class su_kab500: LaserBombCore
 	{
@@ -167,8 +101,8 @@ class CfgAmmo
 		hit=1500;
 		indirectHit=950;
 		indirectHitRange=10.5;
-		model="\SU_33_Flanker_D\wep\KH-29.p3d";
-		proxyShape="\SU_33_Flanker_D\wep\KH-29.p3d";
+		model="\SU_33_Flanker_D\wep\KH29\KH29T.p3d";
+		proxyShape="\SU_33_Flanker_D\wep\KH29\KH29T.p3d";
 		trackOversteer=1;
 		whistleDist=8;
 		maxControlRange=11000;
@@ -234,6 +168,54 @@ class CfgAmmo
 		};
 		weaponLockSystem="2 + 16 + 4";
 	};
+	class Su_MissileBase_AGM : MissileBase {
+		model = "";
+		proxyShape = "";
+		hit = 3000;
+		indirectHit = 100;
+		indirectHitRange = 200;
+		cost = 10000;
+		irLock = 1;
+		laserLock = 0;
+		maxControlRange = 27000;
+		initTime = 0.15;
+		trackOversteer = 1;
+		trackLead = 1;
+		timeToLive = 120;
+		maneuvrability = 30;
+		simulationStep = 0.01;
+		sideAirFriction = 0.02;
+		maxSpeed = 300;
+		thrustTime = 2.0;
+		thrust = 100;
+		effectsMissile = "missile1";
+		whistleDist = 4;
+		weaponLockSystem = 16 +  4;
+		cmImmunity = 0.9;
+	};
+	class Su_KH31_AG : Su_MissileBase_AGM {
+		model = "\SU_33_Flanker_D\wep\KH31\KH31.p3d";
+		proxyShape = "\SU_33_Flanker_D\wep\KH31\KH31.p3d";
+		hit = 4000;
+		indirectHit = 300;
+		indirectHitRange = 12;
+		maxSpeed = 926;
+		maxControlRange = 150000;
+		initTime = 2;
+		thrustTime = 18;
+		thrust = 150;
+		maneuvrability = 45;
+		effectsMissile = "missile1";
+		soundHit[]=
+		{
+			"A3\Sounds_F\weapons\Rockets\explosion_missile_02",
+			2.5118899,
+			1,
+			1800
+		};
+		laserLock = 1;
+		nvLock = 1;
+	};
 	class Su_rocket_80mm_HE: MissileBase
 	{
 		model="\A3\Weapons_F\Ammo\Rocket_02_fly_F";
@@ -298,7 +280,7 @@ class CfgAmmo
 		laserLock=0;
 	};
 	// short range
-	class Su_M_R73_AA: MissileBase
+	class Su_R73_AA: MissileBase
 	{
 		model="\SU_33_Flanker_D\wep\R73_proxy.p3d";
 		proxyShape="\SU_33_Flanker_D\wep\R73_proxy.p3d";
@@ -351,7 +333,7 @@ class CfgAmmo
 			};
 		};
 	};
-	class Su_M_R73M1_AA: Su_M_R73_AA
+	class Su_R73M1_AA: Su_R73_AA
 	{
 		hit=350;
 		indirectHit=100;
@@ -359,7 +341,7 @@ class CfgAmmo
 		maneuvrability=35;
 	};
 	// medium range missile up to 80 km
-	class Su_M_R27R: Su_M_R73_AA
+	class Su_R27R_AA: Su_R73_AA
 	{
 		model="\SU_33_Flanker_D\wep\R27RE.p3d";
 		proxyShape="\SU_33_Flanker_D\wep\R27RE_proxy.p3d";
@@ -389,7 +371,7 @@ class CfgAmmo
 		weaponLockSystem="2 + 8 + 8";
 	};
 	// long range missile up to 130 km
-	class Su_M_R27EA: Su_M_R27R
+	class Su_R27EA_AA: Su_R27R_AA
 	{
 		hit=1400;
 		indirectHit=800;
@@ -405,7 +387,7 @@ class CfgAmmo
 		laserLock=0;
 		cost=1000;
 		timeToLive=20;
-		maxSpeed=1200;
+		maxSpeed=1500;
 		initTime=0.25;
 		thrustTime=30.5;
 		thrust=385;
@@ -413,33 +395,32 @@ class CfgAmmo
 		weaponLockSystem="2 + 8 + 8";
 	};
 	// medium range
-	class Su_M_R77: Su_M_R73_AA
+	class Su_R77_AA: Su_R73_AA
 	{
-		model="\SU_33_Flanker_D\wep\R77.p3d";
-		proxyShape="\SU_33_Flanker_D\wep\R77_proxy.p3d";
-		hit=600;
-		indirectHit=300;
-		indirectHitRange=25;
+		model="\SU_33_Flanker_D\wep\R_77.p3d";
+		proxyShape="\SU_33_Flanker_D\wep\R77\R_77_proxy.p3d";
+		hit=1200;
+		indirectHit=600;
+		indirectHitRange=30;
 		airFriction=0.078000002;
 		sideAirFriction=0.2;
-		maneuvrability=60;
+		maneuvrability=90;
 		simulationStep=0.0020000001;
-		trackOversteer=1;
+		trackOversteer=5;
 		trackLead=1;
 		airLock=2;
 		irLock=1;
 		laserLock=0;
 		cost=1000;
 		timeToLive=20;
-		maxSpeed=950;
+		maxSpeed=1200;
 		initTime=0.25;
 		thrustTime=30.5;
 		thrust=385;
-		fuseDistance=50;
+		fuseDistance=1000;
 		CraterEffects="AAMissileCrater";
 		explosionEffects="AAMissileExplosion";
 		effectsMissileInit="RocketBackEffectsRPG";
-		//effectsMissile="FX_SU35_Missile_AA";
-		weaponLockSystem="2 + 8 + 4";
+		weaponLockSystem="2 + 8 + 8";
 	};
 };

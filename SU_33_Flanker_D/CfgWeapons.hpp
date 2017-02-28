@@ -6,7 +6,7 @@ class CfgWeapons
 	class H_PilotHelmetFighter_O;
 	class Bomb_03_Plane_CAS_02_F;
 	class Bomb_04_Plane_CAS_01_F;
-	//class gatling_30mm;
+	class FakeWeapon;
 	class gatling_30mm;
 	//class Cannon_30mm_Plane_CAS_02_F;
 	class Su_GSh301: gatling_30mm
@@ -32,140 +32,6 @@ class CfgWeapons
 		magazines[]=
 		{
 			"Su_300Rnd_30mm_GSh301"
-		};
-	};
-	class Su_GSh301_old: CannonCore
-	{
-		scope=2;
-		displayName="Gsh-301 30mm";
-		displayNameMagazine="Gsh-301 30mm";
-		shortNameMagazine="Gsh-301 30mm";
-		nameSound="cannon";
-		cursor="EmptyCursor";
-		cursorAim="mg";
-		showAimCursorInternal = true;
-		magazines[]=
-		{
-			"Su_300Rnd_30mm_GSh301"
-		};
-		canLock=2;
-		ballisticsComputer=2;
-		modes[]=
-		{
-			"manual",
-			"close",
-			"short",
-			"medium",
-			"far"
-		};
-		class GunParticles
-		{
-			class Effect
-			{
-				effectName="MachineGun1";
-				positionName="nosegun";
-				directionName="nosegun_dir";
-			};
-		};
-		class manual: CannonCore
-		{
-			displayName="Gsh-301 30mm";
-			autoFire=1;
-			sounds[]=
-			{
-				"StandardSound"
-			};
-			class StandardSound
-			{
-				begin1[]=
-				{
-					//"A3\sounds_f_arsenal\weapons_vehicles\gatling_30mm\30mm_02_burst",
-					"\Sukhoi_Su33\sound\gsh30_1",
-					1,
-					1,
-					700
-				};
-				begin2[]=
-				{
-					//"A3\sounds_f_arsenal\weapons_vehicles\gatling_30mm\30mm_02_burst",
-					"\Sukhoi_Su33\sound\gsh30_2",
-					1,
-					1,
-					700
-				};
-				soundBegin[]=
-				{
-					"begin1",
-					1,
-					"begin2",
-					1
-				};
-				weaponSoundEffect="DefaultRifle";
-			};
-			soundBurst=true
-			reloadTime=0.1;
-			dispersion=0.0024999999;
-			soundContinuous=0;
-			showToPlayer=1;
-			burst=1;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=1;
-			minRangeProbab=0.0099999998;
-			midRange=2;
-			midRangeProbab=0.0099999998;
-			maxRange=3;
-			maxRangeProbab=0.0099999998;
-			textureType="fullAuto";
-		};
-		class close: manual
-		{
-			showToPlayer=0;
-			burst=15;
-			aiRateOfFire=0.25;
-			aiRateOfFireDistance=400;
-			minRange=0;
-			minRangeProbab=0.050000001;
-			midRange=200;
-			midRangeProbab=0.69999999;
-			maxRange=400;
-			maxRangeProbab=0.2;
-		};
-		class short: close
-		{
-			burst=10;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=500;
-			minRange=300;
-			minRangeProbab=0.2;
-			midRange=400;
-			midRangeProbab=0.69999999;
-			maxRange=500;
-			maxRangeProbab=0.2;
-		};
-		class medium: close
-		{
-			burst=7;
-			aiRateOfFire=1;
-			aiRateOfFireDistance=900;
-			minRange=400;
-			minRangeProbab=0.2;
-			midRange=700;
-			midRangeProbab=0.69999999;
-			maxRange=900;
-			maxRangeProbab=0.2;
-		};
-		class far: close
-		{
-			burst=4;
-			aiRateOfFire=1.5;
-			aiRateOfFireDistance=1500;
-			minRange=800;
-			minRangeProbab=0.2;
-			midRange=1000;
-			midRangeProbab=0.40000001;
-			maxRange=1500;
-			maxRangeProbab=0.0099999998;
 		};
 	};
 	class su_kab500l_Laucher: RocketPods
@@ -255,6 +121,19 @@ class CfgWeapons
 		maxRange=9000;
 		maxRangeProbab=0.0099999998;
 	};
+	class Su_KH31_Launcher : Su_kh29_Launcher {
+		scope = 2;
+		displayName = "Kh-31U";
+		minRange = 50;
+		minRangeProbab = 0.6;
+		midRange = 5000;
+		midRangeProbab = 0.9;
+		maxRange = 15000;
+		maxRangeProbab = 0.1;
+		reloadTime = 4;
+		magazines[] = {"Su_KH31"};
+		//GLT_isGPSguided = 1;
+	};
 	class Su_kab500K_Laucher: Bomb_04_Plane_CAS_01_F
 	{
 		displayName="KAB-500K";
@@ -330,13 +209,22 @@ class CfgWeapons
 		magazineReloadTime=0.1;
 		magazines[]=
 		{
-			"Su_6Rnd_R73",
-			"Su_R73M1_AA",
+			"Su_R73"
 		};
 		holdsterAnimValue=3;
 		weaponLockSystem="2 + 16 + 4";
 		weaponLockDelay=3;
 		textureType="semi";
+	};
+	class Su_R73M1Launcher: Su_R73Launcher
+	{
+		displayName="R-73M1 Archer";
+		displayNameMagazine="R-73M1 Archer";
+		shortNameMagazine="R-73M1 Archer";
+		magazines[]=
+		{
+			"Su_R73M1"
+		};
 	};
 	class Su_R27Launcher: Su_R73Launcher
 	{
@@ -346,7 +234,7 @@ class CfgWeapons
 		magazines[]=
 		{
 			"Su_R27R",
-			"Su_2Rnd_R27EA"
+			"Su_R27EA"
 		};
 		reloadTime=0.30000001;
 	};
@@ -357,7 +245,7 @@ class CfgWeapons
 		shortNameMagazine="R-77 Adder";
 		magazines[]=
 		{
-			"Su_4Rnd_R77"
+			"Su_R77"
 		};
 		reloadTime=0.30000001;
 	};
@@ -373,5 +261,14 @@ class CfgWeapons
 		};
 		cursor="Air_Dot";
 		cursorSize=1;
+	};
+	class Su_fake_weapon: FakeWeapon
+	{
+		displayName="Safe mod";
+		displayNameMagazine="Safe mod";
+		shortNameMagazine="Safe mod";
+		magazines[]=
+		{
+		};
 	};
 };

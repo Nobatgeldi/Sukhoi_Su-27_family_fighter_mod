@@ -14,7 +14,7 @@ class CfgPatches
 			"Su33_Protatype_PT_2"
 		};
 		weapons[] = {};
-		requiredVersion = 0.0.1;
+		requiredVersion = 1.3;
 		requiredAddons[] = {"CBA_Extended_EventHandlers"};
 	};
 };
@@ -46,7 +46,6 @@ class CfgVehicles
 			displayName="Sukhoi Pilot";
 			model="\A3\characters_F\Common\pilot_f.p3d";
 			modelSides[]={3,1};
-			//uniformClass="JS_JC_SU35_PilotCoveralls";
 			weapons[]=
 			{
 				"Throw",
@@ -66,23 +65,23 @@ class CfgVehicles
 			backpack="";
 			linkedItems[]=
 			{
-				"H_PilotHelmetFighter_O",
 				"ItemMap",
 				"ItemCompass",
 				"ItemWatch",
 				"ItemRadio",
 				"ItemGPS",
-				"Integrated_NVG_F"
+				"Integrated_NVG_F",
+				"H_PilotHelmetFighter_O"
 			};
 			respawnLinkedItems[]=
 			{
-				"H_PilotHelmetFighter_O",
 				"ItemMap",
 				"ItemCompass",
 				"ItemWatch",
 				"ItemRadio",
 				"ItemGPS",
-				"Integrated_NVG_F"
+				"Integrated_NVG_F",
+				"H_PilotHelmetFighter_O"
 			};
 			hiddenSelections[]=
 			{
@@ -198,26 +197,12 @@ class CfgVehicles
 		memoryPointCMDir[] = {"flare_L_dir","flare_R_dir"};
 		//memoryPointsGetInDriver = "pos_driver";
 		//memoryPointsGetInDriverDir = "pos_driver_dir";
-		/*class ViewPilot
-		{
-			initFov = 0.55;
-			minFov = 0.25;
-			maxFov = 0.8;
-			initAngleX = 0;
-			minAngleX = -75;
-			maxAngleX = 89;
-			initAngleY = 0;
-			minAngleY = -160;
-			maxAngleY = 160;
-			maxmovex = 0.1;
-			maxmovey = 0.1;
-			maxmovez = 0.1;
-			minmovex = -0.1;
-			minmovey = -0.1;
-			minmovez = -0.1;
-		};*/
+
 		weapons[]=
 		{
+
+		 "Su_fake_weapon",
+
 		 "Su_GSh301",
 
 		 "Su_S8Laucher",
@@ -226,31 +211,24 @@ class CfgVehicles
 
 		 "Su_R27Launcher",
 
+		 "Su_R77Launcher",
+
+		 "Su_R73M1Launcher",
+
 		 "Su_fab_250_Laucher",
 
-		 "Laserdesignator_mounted";
-		 //"Su_R77Launcher",
+		 "Su_KH31_Launcher",
 
-     "CMFlareLauncher"
+		 "Laserdesignator_mounted",
+
+         "CMFlareLauncher"
+
 		};
 		magazines[]=
 		{
 		 "Su_300Rnd_30mm_GSh301",
-		 /*"Su_300Rnd_30mm_GSh301",
 
-		 "Su_80Rnd_S8T",
-
-		 "Su_2Rnd_R73M1_AA",
-
-		 "Su_2Rnd_R27EA",
-
-		 "Su_6Rnd_fab_250",
-
-		 "Laserbatteries",*/
-
-		 //"Su_4Rnd_R77",
-
-     "300Rnd_CMFlare_Chaff_Magazine"
+         "300Rnd_CMFlare_Chaff_Magazine"
 		};
 		class pilotCamera {
 			class OpticsIn {
@@ -303,23 +281,6 @@ class CfgVehicles
 			pilotOpticsShowCursor = 1;
 			controllable = 1;
 		};
-		/*class ViewPilot {
-			initFov = 0.55;
-			minFov = 0.25;
-			maxFov = 0.8;
-			initAngleX = 0;
-			minAngleX = -75;
-			maxAngleX = 89;
-			initAngleY = 0;
-			minAngleY = -160;
-			maxAngleY = 160;
-			maxmovex = 0.1;
-			maxmovey = 0.1;
-			maxmovez = 0.1;
-			minmovex = -0.1;
-			minmovey = -0.1;
-			minmovez = -0.1;
-		};*/
 		memoryPointDriverOptics = "PilotCamera_pos";
 		aileronSensitivity=2.5;
 		elevatorSensitivity=2.9;
@@ -340,21 +301,6 @@ class CfgVehicles
 		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
 		class MarkerLights
 		{
-			/*class Cockpit_light_1
-			{
-				name="pos player";
-				ambient[]={1.0, 0.8, 0.2, 1.0};
-				color[]={1.0, 0.8, 0.2, 1.0};
-				brightness=0.10;
-				blinking=0;
-				class Attenuation
-				{
-					start=1;
-					constant=0;
-					linear=0;
-					quadratic=4;
-				};
-			};*/
 			class Cockpit_light
 			{
 				name="pos player";
@@ -436,30 +382,6 @@ class CfgVehicles
 					quadratic=4;
 				};
 			};
-			/*class Right
-			{
-				color[]={7000,7500,10000,1};
-				ambient[]={100,100,100,0};
-				position="light_1_2_source";
-				direction="light_1_2_target";
-				hitpoint="P svetlo";
-				selection="P svetlo";
-				size=1;
-				innerAngle=20;
-				outerAngle=60;
-				coneFadeCoef=10;
-				intensity=25;
-				useFlare=1;
-				dayLight=0;
-				FlareSize=4;
-				class Attenuation
-				{
-					start=1;
-					constant=0;
-					linear=0;
-					quadratic=4;
-				};
-			};*/
 		};
 		class Sounds
 		{
@@ -595,6 +517,12 @@ class CfgVehicles
 		class AnimationSources
 		{
 			class AA_load
+			{
+				source="user";
+				animPeriod=0.001;
+				initPhase=0;
+			};
+			class AG_load
 			{
 				source="user";
 				animPeriod=0.001;
@@ -1068,6 +996,17 @@ class CfgVehicles
 				condition="((this distance (nearestObject [this, ""O_Truck_03_ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_03_ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_TentHangar_V1_F""]) < 55) and (damage (nearestObject [this, ""Land_TentHangar_V1_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_Hangar_F""]) < 55) and (damage (nearestObject [this, ""Land_Hangar_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1)";
 				statement="this animate [""AA_load"",1];";
 			};
+			class AG_load
+			{
+				displayName="Air to Ground(anti-ship) load";
+				position="pilotcontrol";
+				onlyforplayer=1;
+				showWindow=0;
+				hideOnUse=1;
+				radius=5;
+				condition="((this distance (nearestObject [this, ""O_Truck_03_ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_03_ammo_F""]) < 1) and player == driver this and this animationPhase ""AG_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 1) and player == driver this and this animationPhase ""AG_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_TentHangar_V1_F""]) < 55) and (damage (nearestObject [this, ""Land_TentHangar_V1_F""]) < 1) and player == driver this and this animationPhase ""AG_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_Hangar_F""]) < 55) and (damage (nearestObject [this, ""Land_Hangar_F""]) < 1) and player == driver this and this animationPhase ""AG_load"" < 0.5 and speed this < 1)";
+				statement="this animate [""AG_load"",1];";
+			};
 			class AA_load_unload
 			{
 				displayName="Unload All Weapons";
@@ -1079,6 +1018,17 @@ class CfgVehicles
 				condition="((this distance (nearestObject [this, ""O_Truck_03_ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_03_ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_TentHangar_V1_F""]) < 55) and (damage (nearestObject [this, ""Land_TentHangar_V1_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_Hangar_F""]) < 55) and (damage (nearestObject [this, ""Land_Hangar_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1)";
 				statement="this animate [""AA_load"",0.3];";
 			};
+			/*class AG_load
+			{
+				displayName="Load Anti-ship Missile";
+				position="pilotcontrol";
+				onlyforplayer=1;
+				showWindow=0;
+				hideOnUse=1;
+				radius=5;
+				condition="((this distance (nearestObject [this, ""O_Truck_03_ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_03_ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_TentHangar_V1_F""]) < 55) and (damage (nearestObject [this, ""Land_TentHangar_V1_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_Hangar_F""]) < 55) and (damage (nearestObject [this, ""Land_Hangar_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1)";
+				statement="this animate [""AA_load"",0.3];";
+			};*/
 			class ABon
 			{
 				displayName="Afterburner ON";

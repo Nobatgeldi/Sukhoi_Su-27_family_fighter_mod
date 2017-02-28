@@ -2,15 +2,6 @@
   private ["_plane"];
 
   _plane = _this;
-  //max count of ammo
-    _R73_count  = 6;
-    _R27_count  = 4;
-    _R73M_count = 2;
-    _R77_count  = 2;
-    _KH29_count = 4;
-    _KH31_count = 2;
-    _FAB2_count = 6;
-  //_Fak_count  = 10;
 
 //WEAPON CLASSNAME DEFINITIONS
 //LIST OF ALL POSSIBLE WEAPONS USED WITH THIS PLANE
@@ -33,8 +24,6 @@
 
     _KH31    =  "Su_KH31_Launcher";
 
-    _Safe_m  =  "Su_fake_weapon";
-
     _Laser_designator = "Laserdesignator_mounted";
 
 //MAGAZINE CLASSNAME DEFINITIONS
@@ -56,7 +45,6 @@
     _KH29_magazine    = "Su_kh29";
 
     _KH31_magazine    = "Su_KH31";
-    _Fake_magazin     = "Su_fake_M";
 
     _Laser_designator_magazine = "Laserbatteries";
 
@@ -163,13 +151,11 @@
 
 while {(alive _plane)} do
 {
-    //A to A load
     if (((_this animationPhase "AA_load") == 1)) then
     {
       //ROMEVE ALL POSSIBLE DEFAULT WEAPONS
           _plane removeWeapon _S8;
           _plane removeWeapon _R_73;
-          _plane removeWeapon _R_73M1;
           _plane removeWeapon _R_27;
           _plane removeWeapon _R_77;
           _plane removeWeapon _KH29;
@@ -178,11 +164,36 @@ while {(alive _plane)} do
           _plane removeWeapon _Laser_designator;
 
       //ROMEVE ALL POSSIBLE DEFAULT MAGAZINES
-            for "_h" from 0 to 10 do
+          _R73_count = 10;
+          _R27_count = 10;
+          _KH29_count = 4;
+          _FAB2_count = 6;
+          //while remove
+            /*while {(_R_73_magazine in _loadout)} do
             {
-              _plane removeMagazine _Fake_magazin;
+                _plane removeMagazine _R_73_magazine;
             };
-            systemChat "Fake weapons are unloaded";
+            while {(_R_27_magazine in _loadout)} do
+            {
+                _plane removeMagazine _R_27_magazine;
+            };
+            while {(_R_77_magazine in _loadout)} do
+            {
+                _plane removeMagazine _R_77_magazine;
+            };
+            while {(_KH29_magazine in _loadout)} do
+            {
+                _plane removeMagazine _KH29_magazine;
+            };
+            while {(_KH31_magazine in _loadout)} do
+            {
+                _plane removeMagazine _KH31_magazine;
+            };
+            while {(_FAB_250_magazine in _loadout)} do
+            {
+                _plane removeMagazine _FAB_250_magazine;
+            };*/
+          //for remove
             for "_h" from 0 to _R73_count do
             {
               if ((_R_73_magazine in _loadout)) then
@@ -190,7 +201,7 @@ while {(alive _plane)} do
                 _plane removeMagazine _R_73_magazine;
               };
             };
-            systemChat "R-73 missiles are unloaded";
+            systemChat "Removed";
             for "_h" from 0 to _R27_count do
             {
               if ((_R_27_magazine in _loadout)) then
@@ -198,19 +209,7 @@ while {(alive _plane)} do
                 _plane removeMagazine _R_27_magazine;
               };
             };
-            systemChat "R-27 missiles are unloaded";
-            for "_h" from 0 to _R73M_count do
-            {
-
-                _plane removeMagazine _R_73M1_magazine;
-            };
-            systemChat "R-73M missiles are unloaded";
-            for "_h" from 0 to _R77_count do
-            {
-
-                _plane removeMagazine _R_77_magazine;
-            };
-            systemChat "R-77 missiles are unloaded";
+            systemChat "Removed";
             for "_h" from 0 to _KH29_count do
             {
               if ((_KH29_magazine in _loadout)) then
@@ -218,13 +217,7 @@ while {(alive _plane)} do
                 _plane removeMagazine _KH29_magazine;
               };
             };
-            systemChat "KH-29 missiles are unloaded";
-            for "_h" from 0 to _KH31_count do
-            {
-
-                _plane removeMagazine _KH31_magazine;
-            };
-            systemChat "KH-31 missiles are unloaded";
+            systemChat "Removed";
             for "_h" from 0 to _FAB2_count do
             {
               if ((_FAB_250_magazine in _loadout)) then
@@ -232,12 +225,6 @@ while {(alive _plane)} do
                 _plane removeMagazine _FAB_250_magazine;
               };
             };
-            systemChat "FAB-250 bobms are unloaded";
-            for "_h" from 0 to 10 do
-            {
-              _plane removeMagazine _Fake_magazin;
-            };
-            systemChat "Fake weapons are unloaded";
         sleep 1.5;
         systemChat "Weapons are unloaded";
         sleep 2.0;
@@ -271,12 +258,12 @@ while {(alive _plane)} do
         _plane addWeapon _R_73;
         _plane addWeapon _R_27;
     };
-    //A to G load(anti-ship)
     if (((_this animationPhase "AG_load") == 1)) then
     {
       //ROMEVE ALL POSSIBLE DEFAULT WEAPONS
           _plane removeWeapon _S8;
           _plane removeWeapon _R_73;
+          _plane removeWeapon _R_73M1;
           _plane removeWeapon _R_27;
           _plane removeWeapon _R_77;
           _plane removeWeapon _KH29;
@@ -285,11 +272,19 @@ while {(alive _plane)} do
           _plane removeWeapon _Laser_designator;
 
       //ROMEVE ALL POSSIBLE DEFAULT MAGAZINES
-            for "_h" from 0 to 10 do
+          _R73_count  = 6;
+          _R73M_count = 2;
+          _R77_count  = 2;
+          _R27_count  = 2;
+          _KH29_count = 4;
+          _FAB2_count = 6;
+          //for remove
+            for "_h" from 0 to _R73M_count do
             {
-              _plane removeMagazine _Fake_magazin;
+                _plane removeMagazine _R_73M1_magazine;
             };
-            systemChat "Fake weapons are unloaded";
+            systemChat "R-73M1 missiles are unloaded";
+
             for "_h" from 0 to _R73_count do
             {
               if ((_R_73_magazine in _loadout)) then
@@ -298,6 +293,13 @@ while {(alive _plane)} do
               };
             };
             systemChat "R-73 missiles are unloaded";
+
+            for "_h" from 0 to _R77_count do
+            {
+                _plane removeMagazine _R_77_magazine;
+            };
+            systemChat "R-77 missiles are unloaded";
+
             for "_h" from 0 to _R27_count do
             {
               if ((_R_27_magazine in _loadout)) then
@@ -306,38 +308,18 @@ while {(alive _plane)} do
               };
             };
             systemChat "R-27 missiles are unloaded";
-            for "_h" from 0 to _R73M_count do
-            {
 
-                _plane removeMagazine _R_73M1_magazine;
-            };
-            systemChat "R-73M missiles are unloaded";
-            for "_h" from 0 to _R77_count do
-            {
-
-                _plane removeMagazine _R_77_magazine;
-            };
-            systemChat "R-77 missiles are unloaded";
             for "_h" from 0 to _KH29_count do
             {
-
               if ((_KH29_magazine in _loadout)) then
               {
                 _plane removeMagazine _KH29_magazine;
               };
             };
-            systemChat "KH-29 missiles are unloaded";
-            for "_h" from 0 to _KH31_count do
-            {
-              if ((_KH31_magazine in _loadout)) then
-              {
-                _plane removeMagazine _KH31_magazine;
-              };
-            };
-            systemChat "KH-31 missiles are unloaded";
+            systemChat "KH-29L missiles are unloaded";
+
             for "_h" from 0 to _FAB2_count do
             {
-
               if ((_FAB_250_magazine in _loadout)) then
               {
                 _plane removeMagazine _FAB_250_magazine;
@@ -354,91 +336,55 @@ while {(alive _plane)} do
 
       _plane addMagazine _KH31_magazine;
           sleep 2.0;
-      _plane addMagazine _KH31_magazine;
+      _plane addMagazine _KH31_magazines;
           systemChat "R-77 AA  missiles are loaded";
-      for "_h" from 0 to 10 do
-       {
-        _plane addMagazine _Fake_magazin;
-       };
-          systemChat "Fake weapons are loaded";
 
-      //_plane addWeapon _Safe_m;
       _plane addWeapon _R_73M1;
       _plane addWeapon _KH31;
+
     };
-    //unload all
     if (((_this animationPhase "AA_load") == 0.3)) then
     {
       //ROMEVE ALL POSSIBLE DEFAULT WEAPONS
-          _plane removeWeapon _S8;
-          _plane removeWeapon _R_73;
-          _plane removeWeapon _R_73M1;
-          _plane removeWeapon _R_27;
-          _plane removeWeapon _R_77;
-          _plane removeWeapon _KH29;
-          _plane removeWeapon _KH31;
-          _plane removeWeapon _FAB_250;
-          _plane removeWeapon _Laser_designator;
+        _plane removeWeapon _R_73;
+        _plane removeWeapon _R_73M1;
+        _plane removeWeapon _KH31;
+        _plane removeWeapon _R_27;
+        _plane removeWeapon _R_77;
 
       //ROMEVE ALL POSSIBLE DEFAULT MAGAZINES
-            for "_h" from 0 to _R73_count do
-            {
-              if ((_R_73_magazine in _loadout)) then
-              {
-                _plane removeMagazine _R_73_magazine;
-              };
-            };
-            systemChat "R-73 missiles are unloaded";
-            for "_h" from 0 to _R27_count do
-            {
-              if ((_R_27_magazine in _loadout)) then
-              {
-                _plane removeMagazine _R_27_magazine;
-              };
-            };
-            systemChat "R-27 missiles are unloaded";
-            for "_h" from 0 to _R73M_count do
-            {
+        _R73_count = 6;
+        _R73M_count = 2;
+        _R27_count = 4;
+        _R77_count = 2;
 
-                _plane removeMagazine _R_73M1_magazine;
-            };
-            systemChat "R-73M missiles are unloaded";
-            for "_h" from 0 to _R77_count do
-            {
-
-                _plane removeMagazine _R_77_magazine;
-            };
-            systemChat "R-77 missiles are unloaded";
-            for "_h" from 0 to _KH29_count do
-            {
-              if ((_KH29_magazine in _loadout)) then
-              {
-                _plane removeMagazine _KH29_magazine;
-              };
-            };
-            systemChat "KH-29 missiles are unloaded";
-            for "_h" from 0 to _KH31_count do
-            {
-
-                _plane removeMagazine _KH31_magazine;
-            };
-            systemChat "KH-31 missiles are unloaded";
-            for "_h" from 0 to _FAB2_count do
-            {
-
-              if ((_FAB_250_magazine in _loadout)) then
-              {
-                _plane removeMagazine _FAB_250_magazine;
-              };
-            };
-            systemChat "FAB-250 bombs are unloaded";
-            for "_h" from 0 to 10 do
-            {
-              _plane removeMagazine _Fake_magazin;
-            };
-            systemChat "Fake weapons are unloaded";
+        for "_h" from 0 to _R73_count do
+        {
+          if ((_R_73_magazine in _loadout)) then
+          {
+            _plane removeMagazine _R_73_magazine;
+          };
+        };
+        systemChat "R-73 missiles are unloaded";
+        for "_h" from 0 to _R73M_count do
+        {
+            _plane removeMagazine _R_73M1_magazine;
+        };
+        systemChat "R-73M1 missiles are unloaded";
+        for "_h" from 0 to _R27_count do
+        {
+          if ((_R_27_magazine in _loadout)) then
+          {
+            _plane removeMagazine _R_27_magazine;
+          };
+        };
         sleep 1.5;
-        systemChat "Weapons are unloaded";
+        systemChat "R-27 missiles are unloaded";
+        for "_h" from 0 to _R77_count do
+        {
+            _plane removeMagazine _R_77_magazine;
+        };
+        systemChat "R-77 missiles are unloaded";
     };
     _plane animate ["AA_load", 0];
     _plane animate ["AG_load", 0];

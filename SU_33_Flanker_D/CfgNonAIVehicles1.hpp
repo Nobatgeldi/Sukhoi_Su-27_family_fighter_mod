@@ -2,29 +2,24 @@ class CfgNonAIVehicles
 {
 	class ProxyDriver;
 	class ProxyWeapon;
-	class Proxyfake_w: ProxyWeapon
+	class ProxyKH29T: ProxyWeapon
 	{
-		model="\SU_33_Flanker_D\wep\fake_w";
+		model="\SU_33_Flanker_D\wep\KH29\KH29T";
 		simulation="maverickweapon";
 	};
-	class ProxyKH_29: ProxyWeapon
+	class ProxyR73: ProxyWeapon
 	{
-		model="\SU_33_Flanker_D\wep\KH-29";
+		model="\SU_33_Flanker_D\wep\R73\R73";
 		simulation="maverickweapon";
 	};
-	class ProxyR73_proxy: ProxyWeapon
+	class ProxyR77_proxy: ProxyWeapon
 	{
-		model="\SU_33_Flanker_D\wep\R73_proxy";
-		simulation="maverickweapon";
-	};
-	class ProxyR_77_proxy: ProxyWeapon
-	{
-		model="\SU_33_Flanker_D\wep\R77\R_77_proxy";
+		model="\SU_33_Flanker_D\wep\R27\R77proxy";
 		simulation="maverickweapon";
 	};
 	class ProxyR27RE_proxy: ProxyWeapon
 	{
-		model="\SU_33_Flanker_D\wep\R27RE_proxy";
+		model="\SU_33_Flanker_D\wep\R27\R27";
 		simulation="maverickweapon";
 	};
 	class Proxyfab250: ProxyWeapon
