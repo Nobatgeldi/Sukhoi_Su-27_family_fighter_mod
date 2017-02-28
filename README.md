@@ -1,8 +1,6 @@
 # SUKHOI SU-27 FAMILY AIRCRAFT MODS
 # 
 THIS ADD-ON REPRESENTS REAL LIFE FLANKERS IN VARIOUS PAINT SCHEMES/VERSIONS
-#
-[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K6922R75JMFTS)
 # 
 Weapons selection(14 slots available)
 #
@@ -25,5 +23,6 @@ Weapons selection(14 slots available)
 #
 -![GitHub Logo](https://raw.githubusercontent.com/Nobatgeldi/Sukhoi_Su-27_family_fighter_mod/master/pic/photo_2017-02-12_00-31-49.jpg)
 #
-
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K6922R75JMFTS)
+#
 Contact [Telegram](https://t.me/NOBATGELDI)
