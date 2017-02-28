@@ -18,6 +18,7 @@ Weapons selection(14 slots available)
 | Kh-29L Kedge AG missile                  |
 | Kh-31 Krypton Anti ship missile          |
 | FAB-250 Fugasnaya aviatsionnaya bomba    |
+| Gryazev-Shipunov GSh-301  autocannon     |
 #
 -![GitHub Logo](https://raw.githubusercontent.com/Nobatgeldi/Sukhoi_Su-27_family_fighter_mod/master/pic/photo_2017-02-12_00-31-49.jpg)
 #
