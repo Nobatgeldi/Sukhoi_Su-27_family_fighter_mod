@@ -516,18 +516,32 @@ class CfgVehicles
 		};
 		class AnimationSources
 		{
-			class AA_load
+			class Afterburner_source
 			{
 				source="user";
-				animPeriod=0.001;
+				animPeriod=5;
 				initPhase=0;
 			};
-			class AG_load
+			class Engine_source
 			{
 				source="user";
-				animPeriod=0.001;
+				animPeriod=5;
 				initPhase=0;
 			};
+			// weapons load
+				class AA_load
+				{
+					source="user";
+					animPeriod=0.001;
+					initPhase=0;
+				};
+				class AG_load
+				{
+					source="user";
+					animPeriod=0.001;
+					initPhase=0;
+				};
+			/*
 			//right engine
 				class thrust32b
 				{
@@ -722,198 +736,199 @@ class CfgVehicles
 					initPhase=0;
 				};
 			//left engine
-			class thrust32
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust31
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust30
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust29
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust28
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust27
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust26
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust25
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust24
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust23
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust22
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust21
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust20
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust19
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust18
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust17
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust16
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust15
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust14
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust13
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust12
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust11
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust10
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust9
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust8
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust7
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust6
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust5
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust4
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust3
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust2
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
-			class thrust1A
-			{
-				source="user";
-				animPeriod=5;
-				initPhase=0;
-			};
+				class thrust32
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust31
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust30
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust29
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust28
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust27
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust26
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust25
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust24
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust23
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust22
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust21
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust20
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust19
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust18
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust17
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust16
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust15
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust14
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust13
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust12
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust11
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust10
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust9
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust8
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust7
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust6
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust5
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust4
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust3
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust2
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+				class thrust1A
+				{
+					source="user";
+					animPeriod=5;
+					initPhase=0;
+				};
+			*/
 			class sun_rise
 			{
 				source="user";
@@ -958,7 +973,7 @@ class CfgVehicles
 				initPhase=1;
 				animPeriod=0.0099999998;
 			};
-			class AfterburnerLV2
+			/*class AfterburnerLV2
 			{
 				source = "user";
 				animPeriod = 5;
@@ -981,7 +996,7 @@ class CfgVehicles
 				source = "user";
 				animPeriod = 5;
 				initPhase = 0;
-			};
+			};*/
 		};
 		class UserActions
 		{
@@ -1018,17 +1033,6 @@ class CfgVehicles
 				condition="((this distance (nearestObject [this, ""O_Truck_03_ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_03_ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_TentHangar_V1_F""]) < 55) and (damage (nearestObject [this, ""Land_TentHangar_V1_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_Hangar_F""]) < 55) and (damage (nearestObject [this, ""Land_Hangar_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1)";
 				statement="this animate [""AA_load"",0.3];";
 			};
-			/*class AG_load
-			{
-				displayName="Load Anti-ship Missile";
-				position="pilotcontrol";
-				onlyforplayer=1;
-				showWindow=0;
-				hideOnUse=1;
-				radius=5;
-				condition="((this distance (nearestObject [this, ""O_Truck_03_ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_03_ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_TentHangar_V1_F""]) < 55) and (damage (nearestObject [this, ""Land_TentHangar_V1_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_Hangar_F""]) < 55) and (damage (nearestObject [this, ""Land_Hangar_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1)";
-				statement="this animate [""AA_load"",0.3];";
-			};*/
 			class ABon
 			{
 				displayName="Afterburner ON";

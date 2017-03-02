@@ -1,4 +1,8 @@
-
+// -----------------------------
+// Original FX scripts by Lethal
+// Modified by Gnat
+// configured for su-33 by Nobat
+// -----------------------------
 private ["_MaxIntensity","_Boost","_leftengine","_rightengine","_emitters","_Intensity","_looptime", "_plane","_illuminateL","_illuminateR","_veldir","_veldirx","_veldiry","_veldirz","_daylight","_cl0","_cl1","_cl2","_cl3","_risetime","_downtime","_day","_eftime","_ef"];
 
 _MaxIntensity = 2;
@@ -85,76 +89,10 @@ else
 
 if ((isengineon _this) and ((_this animationPhase "wing") < 0.1) and ((_this animationPhase "ABcut") < 0.3)) then
 {
-	_plane animate ["AfterburnerLV2",1];
-	_plane animate ["AfterburnerRV2",1];
-	_plane animate ["AfterburnerL2",1];
-	_plane animate ["AfterburnerR2",1];
-	//engine left
-	_plane animate ["thrust1A",0.1];
-	_plane animate ["thrust2",0.1];
-	_plane animate ["thrust3",0.1];
-	_plane animate ["thrust4",0.1];
-	_plane animate ["thrust5",0.1];
-	_plane animate ["thrust6",0.1];
-	_plane animate ["thrust7",0.1];
-	_plane animate ["thrust8",0.1];
-	_plane animate ["thrust9",0.1];
-	_plane animate ["thrust10",0.1];
-	_plane animate ["thrust11",0.1];
-	_plane animate ["thrust12",0.1];
-	_plane animate ["thrust13",0.1];
-	_plane animate ["thrust14",0.1];
-	_plane animate ["thrust15",0.1];
-	_plane animate ["thrust16",0.1];
-	_plane animate ["thrust17",0.1];
-	_plane animate ["thrust18",0.1];
-	_plane animate ["thrust19",0.1];
-	_plane animate ["thrust20",0.1];
-	_plane animate ["thrust21",0.1];
-	_plane animate ["thrust22",0.1];
-	_plane animate ["thrust23",0.1];
-	_plane animate ["thrust24",0.1];
-	_plane animate ["thrust25",0.1];
-	_plane animate ["thrust26",0.1];
-	_plane animate ["thrust27",0.1];
-	_plane animate ["thrust28",0.1];
-	_plane animate ["thrust29",0.1];
-	_plane animate ["thrust30",0.1];
-	_plane animate ["thrust31",0.1];
-	_plane animate ["thrust32",0.1];
-	//right Engine
-	_plane animate ["thrust1b",0.1];
-	_plane animate ["thrust2b",0.1];
-	_plane animate ["thrust3b",0.1];
-	_plane animate ["thrust4b",0.1];
-	_plane animate ["thrust5b",0.1];
-	_plane animate ["thrust6b",0.1];
-	_plane animate ["thrust7b",0.1];
-	_plane animate ["thrust8b",0.1];
-	_plane animate ["thrust9b",0.1];
-	_plane animate ["thrust10b",0.1];
-	_plane animate ["thrust11b",0.1];
-	_plane animate ["thrust12b",0.1];
-	_plane animate ["thrust13b",0.1];
-	_plane animate ["thrust14b",0.1];
-	_plane animate ["thrust15b",0.1];
-	_plane animate ["thrust16b",0.1];
-	_plane animate ["thrust17b",0.1];
-	_plane animate ["thrust18b",0.1];
-	_plane animate ["thrust19b",0.1];
-	_plane animate ["thrust20b",0.1];
-	_plane animate ["thrust21b",0.1];
-	_plane animate ["thrust22b",0.1];
-	_plane animate ["thrust23b",0.1];
-	_plane animate ["thrust24b",0.1];
-	_plane animate ["thrust25b",0.1];
-	_plane animate ["thrust26b",0.1];
-	_plane animate ["thrust27b",0.1];
-	_plane animate ["thrust28b",0.1];
-	_plane animate ["thrust29b",0.1];
-	_plane animate ["thrust30b",0.1];
-	_plane animate ["thrust31b",0.1];
-	_plane animate ["thrust32b",0.1];
+	//afterburner affect animation
+	_plane animateSource  ["Afterburner_source",1];
+	//engine animation
+	_plane animateSource  ["Engine_source",0];
 
 
   if (_Intensity < _MaxIntensity) then
@@ -182,76 +120,10 @@ if ((isengineon _this) and ((_this animationPhase "wing") < 0.1) and ((_this ani
 		 };
 }
 else {
-	    _plane animate ["AfterburnerLV2",0];
-			_plane animate ["AfterburnerRV2",0];
-			_plane animate ["AfterburnerL2",0];
-			_plane animate ["AfterburnerR2",0];
-			//engine left
-			_plane animate ["thrust1A",0.5];
-			_plane animate ["thrust2",0.5];
-			_plane animate ["thrust3",0.5];
-			_plane animate ["thrust4",0.5];
-			_plane animate ["thrust5",0.5];
-			_plane animate ["thrust6",0.5];
-			_plane animate ["thrust7",0.5];
-			_plane animate ["thrust8",0.5];
-			_plane animate ["thrust9",0.5];
-			_plane animate ["thrust10",0.5];
-			_plane animate ["thrust11",0.5];
-			_plane animate ["thrust12",0.5];
-			_plane animate ["thrust13",0.5];
-			_plane animate ["thrust14",0.5];
-			_plane animate ["thrust15",0.5];
-			_plane animate ["thrust16",0.5];
-			_plane animate ["thrust17",0.5];
-			_plane animate ["thrust18",0.5];
-			_plane animate ["thrust19",0.5];
-			_plane animate ["thrust20",0.5];
-			_plane animate ["thrust21",0.5];
-			_plane animate ["thrust22",0.5];
-			_plane animate ["thrust23",0.5];
-			_plane animate ["thrust24",0.5];
-			_plane animate ["thrust25",0.5];
-			_plane animate ["thrust26",0.5];
-			_plane animate ["thrust27",0.5];
-			_plane animate ["thrust28",0.5];
-			_plane animate ["thrust29",0.5];
-			_plane animate ["thrust30",0.5];
-			_plane animate ["thrust31",0.5];
-			_plane animate ["thrust32",0.5];
-			//engine right
-			_plane animate ["thrust1b",0.8];
-			_plane animate ["thrust2b",0.8];
-			_plane animate ["thrust3b",0.8];
-			_plane animate ["thrust4b",0.8];
-			_plane animate ["thrust5b",0.8];
-			_plane animate ["thrust6b",0.8];
-			_plane animate ["thrust7b",0.8];
-			_plane animate ["thrust8b",0.8];
-			_plane animate ["thrust9b",0.8];
-			_plane animate ["thrust10b",0.8];
-			_plane animate ["thrust11b",0.8];
-			_plane animate ["thrust12b",0.8];
-			_plane animate ["thrust13b",0.8];
-			_plane animate ["thrust14b",0.8];
-			_plane animate ["thrust15b",0.8];
-			_plane animate ["thrust16b",0.8];
-			_plane animate ["thrust17b",0.8];
-			_plane animate ["thrust18b",0.8];
-			_plane animate ["thrust19b",0.8];
-			_plane animate ["thrust20b",0.8];
-			_plane animate ["thrust21b",0.8];
-			_plane animate ["thrust22b",0.8];
-			_plane animate ["thrust23b",0.8];
-			_plane animate ["thrust24b",0.8];
-			_plane animate ["thrust25b",0.8];
-			_plane animate ["thrust26b",0.8];
-			_plane animate ["thrust27b",0.8];
-			_plane animate ["thrust28b",0.8];
-			_plane animate ["thrust29b",0.8];
-			_plane animate ["thrust30b",0.8];
-			_plane animate ["thrust31b",0.8];
-			_plane animate ["thrust32b",0.8];
+		//afterburner affect animation
+		_plane animateSource  ["Afterburner_source",0];
+		//engine animation
+		_plane animateSource  ["Engine_source",1];
 
 	if (_Intensity > 0) then
 		{
@@ -303,7 +175,7 @@ else
 
 _looptime = time;
 
-sleep 0.05; 
+sleep 0.05;
 //hintSilent format["day : %1 \nclR : %2 \nclG : %3\nclB : %4\ndayl : %5",_daylight,_cl0 select 0,_cl0 select 1,_cl0 select 2,_daylight];
 
 _looptime = time - _looptime;

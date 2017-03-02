@@ -1,7 +1,8 @@
-// ---------------------
+// -----------------------------
 // Original FX scripts by Lethal
 // Modified by Gnat
-// ---------------------
+// configured for su-33 by Nobat
+// -----------------------------
 private ["_emitter","_nowspeed", "_lastspeed"];
 
 _emitter = "#particlesource" createVehicle position _this;

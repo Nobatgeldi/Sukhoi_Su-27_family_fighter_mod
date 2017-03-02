@@ -1,7 +1,8 @@
-// ---------------------
+// -----------------------------
 // Original FX scripts by Lethal
 // Modified by Gnat
-// ---------------------
+// configured for su-33 by Nobat
+// -----------------------------
 private ["_opacity","_leftwingemitter","_rightwingemitter","_emitters","_rate","_direction","_looptime","_VectorL","_VectorR"];
 /*
 switch (typeOf _this) do
