@@ -3,6 +3,7 @@
 // Modified by Gnat
 // configured for su-33 by Nobat
 // -----------------------------
+
 private ["_MaxIntensity","_Boost","_leftengine","_rightengine","_emitters","_Intensity","_looptime", "_plane","_illuminateL","_illuminateR","_veldir","_veldirx","_veldiry","_veldirz","_daylight","_cl0","_cl1","_cl2","_cl3","_risetime","_downtime","_day","_eftime","_ef"];
 
 _MaxIntensity = 2;
