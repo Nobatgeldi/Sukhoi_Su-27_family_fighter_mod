@@ -1,8 +1,5 @@
 _plane = _this select 0
 
-_plane setobjecttexture[0, "\SU_33_Flanker_D\paa\omote.paa"]
-_plane setobjecttexture[1, "\SU_33_Flanker_D\paa\glass.paa"]
-_plane setobjecttexture[2, "\SU_33_Flanker_D\paa\omote.paa"]
 ? getpos _plane select 2 > 21  : goto "gearup"
 
 

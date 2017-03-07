@@ -21,15 +21,7 @@ _fire setParticleParams [["\a3\data_f\ParticleEffects\Universal\Universal",16,2,
                 [[1,1,1,-1],[1,1,1,0]], [0.5], 0.01, 0.01, "", "", _v,360];
 _fire setParticleRandom [0.5, [0.5, 0.5, 0.5], [0, 0, 0], 0, 0, [0, 0, 0, 0], 0, 0];
 _fire setDropInterval 0.01;
-/*
-_shards = "#particlesource" createVehicleLocal _pos;
-//_shards attachto [_v,[0,0,0],"destructionEffect1"];
-_shards setParticleParams [["\CA\Data\ParticleEffects\Shard\shard",1,0,1], "", "SpaceObject", 1, 60, [0, 0, 0], [0, 0, 0], 0, 1.275, 1, 0, [1,1],
-                       [[1,1,1,1]], [0.5], 0, 0, "", "", _v];
-		       _shards setParticleRandom [30, [1, 1, 0], [0, 0, 0], 0, 0, [0, 0, 0, 0], 0, 0];
-_shards setParticleCircle [2,[0.001,0.001,-0.001]];
-_shards setDropInterval 0.05;
-*/
+
 _dirt = "#particlesource" createVehicleLocal _pos;
 _dirt attachto [_v,[0,0,0],"destructionEffect1"];
 _dirt setParticleParams [["\a3\data_f\ParticleEffects\Universal\Universal",16,12,9,0], "", "Billboard", 1, 5, [0, 0, 0], [0, 0, 5], 0, 5, 1, 0, [10,20],
@@ -72,11 +64,10 @@ deleteVehicle _shards;
 deleteVehicle _dirt;
 
 _v setvelocity [0,0,-0.1];
-if (local _v) then
+/*if (local _v) then
 {
-	_v setVehicleInit format ["[this, %1, %2,false,true] spawn BIS_Effects_Burn",_int, _t];
-	processInitCommands; //ClearvehicleInit done at end of burn script
+	_v remoteExec ["[this, %1, %2,false,true] spawn BIS_Effects_Burn",_int, _t];
 	[_v,_int,false] spawn BIS_Effects_Secondaries;
-};
+};*/
 sleep 0.5;
 _v setvelocity [0,0,-0.01];

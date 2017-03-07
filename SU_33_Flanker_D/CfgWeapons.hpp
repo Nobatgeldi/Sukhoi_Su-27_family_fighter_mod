@@ -1,5 +1,6 @@
 class CfgWeapons
 {
+
 	class CannonCore;
 	class MissileLauncher;
 	class RocketPods;
@@ -8,7 +9,8 @@ class CfgWeapons
 	class Bomb_04_Plane_CAS_01_F;
 	class FakeWeapon;
 	class gatling_30mm;
-	//class Cannon_30mm_Plane_CAS_02_F;
+
+
 	class Su_GSh301: gatling_30mm
 	{
 		displayName="Gsh-301 30mm";

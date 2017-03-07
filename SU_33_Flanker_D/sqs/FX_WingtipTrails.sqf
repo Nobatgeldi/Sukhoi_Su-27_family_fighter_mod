@@ -4,7 +4,7 @@
 // configured for su-33 by Nobat
 // -----------------------------
 private ["_opacity","_leftwingemitter","_rightwingemitter","_emitters","_rate","_direction","_looptime","_VectorL","_VectorR"];
-/*
+
 switch (typeOf _this) do
 {
 	case "A10":
@@ -54,4 +54,3 @@ while {(alive _this) and (_this animationPhase "KillFx" == 0)} do
 	};
 deleteVehicle _leftwingemitter;
 deleteVehicle _rightwingemitter;
-*/

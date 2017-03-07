@@ -22,7 +22,7 @@ class CfgAmmo
 		model="\SU_33_Flanker_D\wep\fab250.p3d";
 		proxyShape="\SU_33_Flanker_D\wep\fab250.p3d";
 	};
-	class su_kab500: LaserBombCore
+	/*class su_kab500: LaserBombCore
 	{
 		hit=6000;
 		model="\SU_33_Flanker_D\wep\FAB500.p3d";
@@ -95,7 +95,7 @@ class CfgAmmo
 		missileLockCone=120;
 		maxControlRange=8000;
 		manualControl=1;
-	};
+	};*/
 	class Su_kh_29: MissileBase
 	{
 		hit=1500;
@@ -125,7 +125,6 @@ class CfgAmmo
 		fuseDistance=500;
 		CraterEffects="ATMissileCrater";
 		explosionEffects="ATMissileExplosion";
-		//effectsMissile="FX_SU35_Missile_AG";
 		muzzleEffect="BIS_fnc_effectFiredHeliRocket";
 		soundHit[]=
 		{
@@ -190,16 +189,18 @@ class CfgAmmo
 		thrust = 100;
 		effectsMissile = "missile1";
 		whistleDist = 4;
-		weaponLockSystem = 16 +  4;
+		weaponLockSystem=8 + 16;
 		cmImmunity = 0.9;
 	};
 	class Su_KH31_AG : Su_MissileBase_AGM {
 		model = "\SU_33_Flanker_D\wep\KH31\KH31.p3d";
 		proxyShape = "\SU_33_Flanker_D\wep\KH31\KH31.p3d";
-		hit = 4000;
-		indirectHit = 300;
+		hit = 2000;
+		indirectHit = 1000;
+		offBoresightAngle = 80; // 180° laser sensor FoV
 		indirectHitRange = 12;
-		maxSpeed = 926;
+		maxSpeed = 2520;
+		explosive = 1;//Defines whether ammunition is explosive, and if so, by how much.
 		maxControlRange = 150000;
 		initTime = 2;
 		thrustTime = 18;
@@ -312,7 +313,6 @@ class CfgAmmo
 		fuseDistance=500; //Defines the distance traveled before ammunition is fused.
 		CraterEffects="AAMissileCrater";
 		explosionEffects="AAMissileExplosion";
-		//effectsMissile="FX_SU35_Missile_AA";
 		whistleDist=20;
 		muzzleEffect="BIS_fnc_effectFiredHeliRocket";
 
@@ -367,7 +367,6 @@ class CfgAmmo
 		CraterEffects="AAMissileCrater";
 		explosionEffects="AAMissileExplosion";
 		effectsMissileInit="RocketBackEffectsRPG";
-		//effectsMissile="FX_SU35_Missile_AA";
 		weaponLockSystem="2 + 8 + 8";
 	};
 	// long range missile up to 130 km

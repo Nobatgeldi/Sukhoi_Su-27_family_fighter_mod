@@ -39,8 +39,9 @@ sleep 0.2;
 };
 
 _pos=getpos _v;
-clearVehicleInit _v;
-deletevehicle _fl;deletevehicle _sm;
+//clearVehicleInit _v;
+deletevehicle _fl;
+deletevehicle _sm;
 if (surfaceiswater(_pos) && (_pos select 2)<9 ) then
 {
 	_wave = "#particlesource" createVehicleLocal getpos _v;
@@ -123,8 +124,9 @@ else
 				_v setdamage 0;
 
 
-			};    */
+			};
 		_v setVehicleInit format ["[this, %1, %2]spawn BIS_Effects_AirDestructionStage2",_int, _t];
 		processInitCommands; //ClearvehicleInit done at end of burn script
+		*/
 	};
 };
