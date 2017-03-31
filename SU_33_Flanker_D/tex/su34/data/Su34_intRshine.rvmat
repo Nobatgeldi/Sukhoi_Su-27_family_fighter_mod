@@ -1,0 +1,101 @@
+////////////////////////////////////////////////////////////////////
+//DeRap: Produced from mikero's Dos Tools Dll version 3.52
+//http://dev-heaven.net/projects/list_files/mikero-pbodll
+////////////////////////////////////////////////////////////////////
+
+#define _ARMA_
+
+//Class Air3 : SU34\DATA\su34_intrshine.rvmat{
+ambient[] = {1,1,1,1};
+diffuse[] = {1,1,1,1};
+forcedDiffuse[] = {1,0.2,0.2,0};
+emmisive[] = {60,0.2,0.2,1};
+specular[] = {1,1,1,1};
+specularPower = 560;
+PixelShaderID = "Super";
+VertexShaderID = "Super";
+class Stage1
+{
+ texture = "sab_SU34\data\su34_int_nohq.paa";
+ uvSource = "tex";
+ class uvTransform
+ {
+  aside[] = {1,0,0};
+  up[] = {0,1,0};
+  dir[] = {0,0,0};
+  pos[] = {0,0,0};
+ };
+};
+class Stage2
+{
+ texture = "#(argb,8,8,3)color(0.5,0.5,0.5,0.5,DT)";
+ uvSource = "tex";
+ class uvTransform
+ {
+  aside[] = {1,0,0};
+  up[] = {0,1,0};
+  dir[] = {0,0,0};
+  pos[] = {0,0,0};
+ };
+};
+class Stage3
+{
+ texture = "#(argb,8,8,3)color(0,0,0,0,MC)";
+ uvSource = "tex";
+ class uvTransform
+ {
+  aside[] = {1,0,0};
+  up[] = {0,1,0};
+  dir[] = {0,0,0};
+  pos[] = {0,0,0};
+ };
+};
+class Stage4
+{
+ texture = "sab_SU34\data\su34_int_as.paa";
+ uvSource = "tex";
+ class uvTransform
+ {
+  aside[] = {1,0,0};
+  up[] = {0,1,0};
+  dir[] = {0,0,0};
+  pos[] = {0,0,0};
+ };
+};
+class Stage5
+{
+ texture = "sab_SU34\data\su34_int_smdi.paa";
+ uvSource = "tex";
+ class uvTransform
+ {
+  aside[] = {1,0,0};
+  up[] = {0,1,0};
+  dir[] = {0,0,0};
+  pos[] = {0,0,0};
+ };
+};
+class Stage6
+{
+ texture = "#(ai,64,64,1)fresnel(0.95,1.05)";
+ uvSource = "tex";
+ class uvTransform
+ {
+  aside[] = {1,0,0};
+  up[] = {0,1,0};
+  dir[] = {0,0,0};
+  pos[] = {0,0,0};
+ };
+};
+class Stage7
+{
+ texture = "A3\data_F\env_land_co.paa";
+ uvSource = "tex";
+ class uvTransform
+ {
+  aside[] = {1,0,0};
+  up[] = {0,1,0};
+  dir[] = {0,0,0};
+  pos[] = {0,0,0};
+ };
+};
+//};

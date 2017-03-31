@@ -3,7 +3,7 @@ class CfgMovesBasic
 	class DefaultDie;
 	class ManActions
 	{
-		su_33_pilot="su_33_pilot";
+		su_33_pilot="pilot_plane_cas_01";
 		//commander="commander";
 	};
 };

@@ -96,8 +96,8 @@ class CfgVehicles
 		getInAction = "";
 		animated=1;
 		vehicleClass="Air";
-		icon="\SU_33_Flanker_D\paa\icon.paa";
-		picture="\SU_33_Flanker_D\paa\pic.paa";
+		icon="\SU_33_Flanker_D\tex\icon.paa";
+		picture="\SU_33_Flanker_D\tex\pic.paa";
 		unitInfoType="RscOptics_CAS_Pilot";
 		driverWeaponsInfoType = "RscOptics_CAS_01_TGP";
 		simulation="airplane";
@@ -280,11 +280,11 @@ class CfgVehicles
 		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
 		class MarkerLights
 		{
-			/*class Cockpit_light
+			class Cockpit_light
 			{
-				name="pos player";
+				name="pos light";
 				ambient[]={0.0099999998,0.0099999998,0.0099999998,1};
-				color[]={0.029999999,1,0.11,1};
+				color[]={0.029999999,1,0.11,0};
 				brightness=0.035;
 				blinking=0;
 				class Attenuation
@@ -294,7 +294,7 @@ class CfgVehicles
 					linear=0;
 					quadratic=4;
 				};
-			};*/
+			};
 			class Green_Still_Rear
 			{
 				name="bily pozicni";
@@ -308,7 +308,7 @@ class CfgVehicles
 				name="cerveny pozicni";
 				color[]={1000,0,0,1};
 				ambient[]={1,0,0,1};
-				brightness=0.029999999;
+				brightness=0.1;
 				blinking=1;
 			};
 			class red_Still_Flaps_R
@@ -316,7 +316,7 @@ class CfgVehicles
 				name="zeleny pozicni";
 				color[]={1000,0,0,1};
 				ambient[]={1,0,0,1};
-				brightness=0.029999999;
+				brightness=0.1;
 				blinking=1;
 			};
 		};
@@ -694,8 +694,9 @@ class CfgVehicles
 		};
 		class Eventhandlers: Eventhandlers
 		{
-			init="[_this select 0] execVM ""\SU_33_Flanker_D\sqs\init.sqf"",[_this select 0]exec ""\SU_33_Flanker_D\sqs\init.sqs"",[_this select 0]exec ""\SU_33_Flanker_D\sqs\wing.sqs"",[_this select 0] execVM ""\SU_33_Flanker_D\sqs\AircraftEffects.sqf"",_this execVM ""\SU_33_Flanker_D\sqs\aircraftvapour.sqf"",";
-			fired="[_this] exec ""\SU_33_Flanker_D\sqs\fireGsh.sqs"",_this call BIS_Effects_EH_Fired";
+			init="[_this select 0]exec ""\SU_33_Flanker_D\sqf\init.sqs"",[_this select 0]exec ""\SU_33_Flanker_D\sqf\wing.sqs"",[_this select 0] execVM ""\SU_33_Flanker_D\sqf\AircraftEffects.sqf"",";
+			fired="[_this] exec ""\SU_33_Flanker_D\sqf\fireGsh.sqs"",_this call BIS_Effects_EH_Fired";
+			//"[_this select 0] execVM ""\SU_33_Flanker_D\sqf\init.sqf"
 		};
 		class Library
 		{

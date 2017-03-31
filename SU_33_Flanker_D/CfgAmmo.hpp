@@ -15,7 +15,7 @@ class CfgAmmo
 
 	class Su_GSh301_30mm: Cannon_30mm_HE_Plane_CAS_02_F
 	{
-   // bla blaa
+   // bla blaa blaa
 	};
 	class Su_fab_250: Bomb_04_F
 	{
@@ -396,8 +396,8 @@ class CfgAmmo
 	// medium range
 	class Su_R77_AA: Su_R73_AA
 	{
-		model="\SU_33_Flanker_D\wep\R_77.p3d";
-		proxyShape="\SU_33_Flanker_D\wep\R77\R_77_proxy.p3d";
+		model="\SU_33_Flanker_D\wep\R77.p3d";
+		proxyShape="\SU_33_Flanker_D\wep\R77_proxy.p3d";
 		hit=1200;
 		indirectHit=600;
 		indirectHitRange=30;

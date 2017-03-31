@@ -1,0 +1,39 @@
+_plane = _this select 0
+
+_plane setobjecttexture[0, "\SU_33_Flanker_D\tex\omote.paa"]
+_plane setobjecttexture[1, "\SU_33_Flanker_D\tex\glass.paa"]
+_plane setobjecttexture[2, "\SU_33_Flanker_D\tex\omote.paa"]
+
+_plane setobjecttexture[03, "\SU_33_Flanker_D\num\2.paa"]
+_plane setobjecttexture[04, "\SU_33_Flanker_D\num\1.paa"]
+
+
+
+_num = (random 99);
+
+#number
+
+_num1 = floor( _num / 10)
+_num2 = floor( _num - (_num1 * 10 ))
+?(_num1 > 0): _plane setobjecttexture[03, "\SU_33_Flanker_D\num\1.paa"]
+?(_num1 > 1): _plane setobjecttexture[03, "\SU_33_Flanker_D\num\2.paa"]
+?(_num1 > 2): _plane setobjecttexture[03, "\SU_33_Flanker_D\num\3.paa"]
+?(_num1 > 3): _plane setobjecttexture[03, "\SU_33_Flanker_D\num\4.paa"]
+?(_num1 > 4): _plane setobjecttexture[03, "\SU_33_Flanker_D\num\5.paa"]
+?(_num1 > 5): _plane setobjecttexture[03, "\SU_33_Flanker_D\num\6.paa"]
+?(_num1 > 6): _plane setobjecttexture[03, "\SU_33_Flanker_D\num\7.paa"]
+?(_num1 > 7): _plane setobjecttexture[03, "\SU_33_Flanker_D\num\8.paa"]
+?(_num1 > 8): _plane setobjecttexture[03, "\SU_33_Flanker_D\num\9.paa"]
+
+?(_num2 > 0): _plane setobjecttexture[04, "\SU_33_Flanker_D\num\1.paa"]
+?(_num2 > 1): _plane setobjecttexture[04, "\SU_33_Flanker_D\num\2.paa"]
+?(_num2 > 2): _plane setobjecttexture[04, "\SU_33_Flanker_D\num\3.paa"]
+?(_num2 > 3): _plane setobjecttexture[04, "\SU_33_Flanker_D\num\4.paa"]
+?(_num2 > 4): _plane setobjecttexture[04, "\SU_33_Flanker_D\num\5.paa"]
+?(_num2 > 5): _plane setobjecttexture[04, "\SU_33_Flanker_D\num\6.paa"]
+?(_num2 > 6): _plane setobjecttexture[04, "\SU_33_Flanker_D\num\7.paa"]
+?(_num2 > 7): _plane setobjecttexture[04, "\SU_33_Flanker_D\num\8.paa"]
+?(_num2 > 8): _plane setobjecttexture[04, "\SU_33_Flanker_D\num\9.paa"]
+
+#exit
+exit

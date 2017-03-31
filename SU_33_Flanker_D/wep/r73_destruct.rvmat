@@ -8,7 +8,7 @@ PixelShaderID="NormalMapMacroASSpecularDIMap";
 VertexShaderID="NormalMapAS";
 class Stage1
 {
-	texture="SU_33_Flanker_D\wep\rktsu33_wep_co_nohq.paa";
+	texture="SU_33_Flanker_D\wep\su33_wep_co_nohq.paa";
 	uvSource="tex";
 	class uvTransform
 	{

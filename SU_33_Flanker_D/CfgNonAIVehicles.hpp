@@ -17,9 +17,9 @@ class CfgNonAIVehicles
 		model="\SU_33_Flanker_D\wep\R73_proxy";
 		simulation="maverickweapon";
 	};
-	class ProxyR_77_proxy: ProxyWeapon
+	class ProxyR77_proxy: ProxyWeapon
 	{
-		model="\SU_33_Flanker_D\wep\R77\R_77_proxy";
+		model="\SU_33_Flanker_D\wep\R77_proxy";
 		simulation="maverickweapon";
 	};
 	class ProxyR27RE_proxy: ProxyWeapon
