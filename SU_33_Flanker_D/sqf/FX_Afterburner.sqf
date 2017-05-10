@@ -51,8 +51,8 @@ _rightengine = "#particlesource" createVehicle position _this;
 
 
 _emitters = [_leftengine,_rightengine];
-{_x setParticleRandom [0.00,[0.05,0.05,0.05],[0.05,0.05,0.05],0,0.8,[0.1,0.1,0.1,0],0,0]} foreach _emitters;
-{_x setDropInterval 0} foreach _emitters;
+{_x setParticleRandom [0.00,[0.05,0.05,0.05],[0.05,0.05,0.05],0,0.8,[0.1,0.1,0.1,0],0,0]} forEach _emitters;
+{_x setDropInterval 0} forEach _emitters;
 _looptime = 0.1;
 
 //roop
@@ -87,7 +87,7 @@ else
 	};
 
 
-if ((isengineon _this) and ((_this animationPhase "wing") < 0.1) and ((_this animationPhase "ABcut") < 0.3)) then
+if ((isEngineOn _this) and ((_this animationPhase "wing") < 0.1) and ((_this animationPhase "ABcut") < 0.3)) then
 {
 	//afterburner affect animation
 	_plane animateSource  ["Afterburner_source",1];
@@ -112,7 +112,7 @@ if ((isengineon _this) and ((_this animationPhase "wing") < 0.1) and ((_this ani
      };
      if ((speed _this) < _maxspeed) then
       {
-				_this setVelocity [(velocity _this select 0)+((vectordir _this) select 0)*((_Boost*_Intensity/2)*(10*_looptime)),(velocity _this select 1)+((vectordir _this) select 1)*((_Boost*_Intensity/2)*(10*_looptime)),(velocity _this select 2)+((vectordir _this) select 2)*((_Boost*_Intensity/2)*(10*_looptime))]
+				_this setVelocity [(velocity _this select 0)+((vectorDir _this) select 0)*((_Boost*_Intensity/2)*(10*_looptime)),(velocity _this select 1)+((vectorDir _this) select 1)*((_Boost*_Intensity/2)*(10*_looptime)),(velocity _this select 2)+((vectorDir _this) select 2)*((_Boost*_Intensity/2)*(10*_looptime))]
 			};
      if (fuel _this > 0) then
 		 {
@@ -144,33 +144,33 @@ else {
 };
 
 //set burner color
-_cl0 = [(0.90 - _daylight*0.50),(0.50 + _daylight*0.15),(0.30 + _daylight*0.50),(1 -(ceil _daylight)*2)*0.01*_Intensity];
+/*_cl0 = [(0.90 - _daylight*0.50),(0.50 + _daylight*0.15),(0.30 + _daylight*0.50),(1 -(ceil _daylight)*2)*0.01*_Intensity];
 _cl1 = [(0.90 - _daylight*0.50),(0.50 + _daylight*0.15),(0.30 + _daylight*0.50),(1 -(ceil _daylight)*2)*0.005*_Intensity];
 _cl2 = [(0.90 - _daylight*0.50),(0.50 + _daylight*0.15),(0.30 + _daylight*0.50),(1 -(ceil _daylight)*2)*0.002*_Intensity];
 _cl3 = [0,0,0,0];
 //get vector
-_veldir = sqrt(((vectordir _this) select 0)^2 + ((vectordir _this) select 1)^2 + ((vectordir _this) select 2)^2);
-_veldirx = ((vectordir _this) select 0) / _veldir;
-_veldiry = ((vectordir _this) select 1) / _veldir;
-_veldirz = ((vectordir _this) select 2) / _veldir;
+_veldir = sqrt(((vectorDir _this) select 0)^2 + ((vectorDir _this) select 1)^2 + ((vectorDir _this) select 2)^2);
+_veldirx = ((vectorDir _this) select 0) / _veldir;
+_veldiry = ((vectorDir _this) select 1) / _veldir;
+_veldirz = ((vectorDir _this) select 2) / _veldir;
 
 //drop burner
-	_leftengine setParticleParams ["\SU_33_Flanker_D\cl_exp","","Billboard",1,(0.06 - (0.05*((speed _this) / (_maxspeed /2) ))),(_this selectionposition "burner_l"),[(velocity _this select 0) - _veldirx *30,(velocity _this select 1) - _veldiry *30,(velocity _this select 2) - _veldirz *30],1,1.2745,1,0,[0.7,0.1],[_cl0,_cl1,_cl2,_cl3],[0],0,0,"","",_this];
-	_rightengine setParticleParams ["\SU_33_Flanker_D\cl_exp","","Billboard",1,(0.06 - (0.05*((speed _this) / (_maxspeed /2) ))),(_this selectionposition "burner_r"),[(velocity _this select 0) - _veldirx *30,(velocity _this select 1) - _veldiry *30,(velocity _this select 2) - _veldirz *30],1,1.2745,1,0,[0.7,0.1],[_cl0,_cl1,_cl2,_cl3],[0],0,0,"","",_this];
-
+	_leftengine setParticleParams ["\SU_33_Flanker_D\cl_exp","","Billboard",1,(0.06 - (0.05*((speed _this) / (_maxspeed /2) ))),(_this selectionPosition "burner_l"),[(velocity _this select 0) - _veldirx *30,(velocity _this select 1) - _veldiry *30,(velocity _this select 2) - _veldirz *30],1,1.2745,1,0,[0.7,0.1],[_cl0,_cl1,_cl2,_cl3],[0],0,0,"","",_this];
+	_rightengine setParticleParams ["\SU_33_Flanker_D\cl_exp","","Billboard",1,(0.06 - (0.05*((speed _this) / (_maxspeed /2) ))),(_this selectionPosition "burner_r"),[(velocity _this select 0) - _veldirx *30,(velocity _this select 1) - _veldiry *30,(velocity _this select 2) - _veldirz *30],1,1.2745,1,0,[0.7,0.1],[_cl0,_cl1,_cl2,_cl3],[0],0,0,"","",_this];
+*/
 {
-	_x setpos (getpos _this)
-} foreach _emitters;
+	_x setPos (getPos _this)
+} forEach _emitters;
 if (_Intensity > 0) then
 {
 	{
-		_x setDropInterval 0.001} foreach _emitters
+		_x setDropInterval 0.001} forEach _emitters
 	}
 else
 {
 	{
 		_x setDropInterval 0
-	} foreach _emitters
+	} forEach _emitters
 };
 
 _looptime = time;

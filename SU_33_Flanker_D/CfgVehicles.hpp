@@ -694,8 +694,8 @@ class CfgVehicles
 		};
 		class Eventhandlers: Eventhandlers
 		{
-			init="[_this select 0]exec ""\SU_33_Flanker_D\sqf\init.sqs"",[_this select 0]exec ""\SU_33_Flanker_D\sqf\wing.sqs"",[_this select 0] execVM ""\SU_33_Flanker_D\sqf\AircraftEffects.sqf"",";
-			fired="[_this] exec ""\SU_33_Flanker_D\sqf\fireGsh.sqs"",_this call BIS_Effects_EH_Fired";
+			init="[_this select 0]execVM ""\SU_33_Flanker_D\sqf\init.sqf"",[_this select 0]exec ""\SU_33_Flanker_D\sqf\wing.sqs"",";
+			fired="[_this] execVM ""\SU_33_Flanker_D\sqf\Gsh.sqf"",_this call BIS_Effects_EH_Fired";
 			//"[_this select 0] execVM ""\SU_33_Flanker_D\sqf\init.sqf"
 		};
 		class Library

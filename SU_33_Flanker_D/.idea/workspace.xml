@@ -15,17 +15,70 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FX_Afterburner.sqf" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sqf/FX_Afterburner.sqf">
+      <file leaf-file-name="CfgVehicles.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CfgVehicles.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="88" lean-forward="false" selection-start-line="5" selection-start-column="88" selection-end-line="5" selection-end-column="88" />
+            <state relative-caret-position="294">
+              <caret line="696" column="129" lean-forward="true" selection-start-line="696" selection-start-column="75" selection-end-line="696" selection-end-column="129" />
+              <folding>
+                <element signature="e#89#1371#0" expanded="false" />
+                <element signature="e#4234#4498#0" expanded="false" />
+                <element signature="e#4517#4592#0" expanded="false" />
+                <element signature="e#4614#5999#0" expanded="false" />
+                <element signature="e#6128#6637#0" expanded="false" />
+                <element signature="e#7169#7937#0" expanded="false" />
+                <element signature="e#7958#8224#0" expanded="false" />
+                <element signature="e#8247#8696#0" expanded="false" />
+                <element signature="e#8715#10924#0" expanded="false" />
+                <element signature="e#11979#12123#0" expanded="false" />
+                <element signature="e#12174#12242#0" expanded="false" />
+                <element signature="e#12271#13255#0" expanded="false" />
+                <element signature="e#13279#19036#0" expanded="false" />
+                <element signature="e#20050#70528#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="init.sqf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sqf/init.sqf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weapons.sqf" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sqf/weapons.sqf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="734">
+              <caret line="106" column="15" lean-forward="false" selection-start-line="106" selection-start-column="15" selection-end-line="106" selection-end-column="15" />
+              <folding>
+                <element signature="e#4885#14084#0" expanded="false" />
+                <element signature="e#5453#5519#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CfgNonAIVehicles.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CfgNonAIVehicles.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-154">
+              <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>KillFx</find>
+    </findStrings>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -35,8 +88,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/CfgVehicles.hpp" />
         <option value="$PROJECT_DIR$/sqf/weapons.sqf" />
+        <option value="$PROJECT_DIR$/sqf/Gsh.sqf" />
+        <option value="$PROJECT_DIR$/sqf/AircraftEffects.sqf" />
+        <option value="$PROJECT_DIR$/sqf/scripts.sqf" />
+        <option value="$PROJECT_DIR$/sqf/FX_WingtipTrails.sqf" />
+        <option value="$PROJECT_DIR$/CfgVehicles.hpp" />
+        <option value="$PROJECT_DIR$/sqf/init.sqf" />
+        <option value="$PROJECT_DIR$/sqf/FX_Afterburner.sqf" />
       </list>
     </option>
   </component>
@@ -61,6 +120,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -91,7 +151,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -263,7 +322,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -273,7 +332,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -296,11 +355,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sqf/weapons.sqf">
+    <entry file="file://$PROJECT_DIR$/sqf/FX_Afterburner.sqf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/weapons.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#4885#14084#0" expanded="false" />
+            <element signature="e#5453#5519#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -310,6 +380,19 @@
           <caret line="198" column="26" lean-forward="false" selection-start-line="198" selection-start-column="10" selection-end-line="198" selection-end-column="26" />
           <folding>
             <element signature="e#89#1371#0" expanded="false" />
+            <element signature="e#4234#4498#0" expanded="false" />
+            <element signature="e#4517#4592#0" expanded="false" />
+            <element signature="e#4614#5999#0" expanded="false" />
+            <element signature="e#6128#6637#0" expanded="false" />
+            <element signature="e#7169#7937#0" expanded="false" />
+            <element signature="e#7958#8224#0" expanded="false" />
+            <element signature="e#8247#8696#0" expanded="false" />
+            <element signature="e#8715#10924#0" expanded="false" />
+            <element signature="e#11979#12123#0" expanded="false" />
+            <element signature="e#12174#12242#0" expanded="false" />
+            <element signature="e#12271#13255#0" expanded="false" />
+            <element signature="e#13279#19036#0" expanded="false" />
+            <element signature="e#20050#70528#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -318,7 +401,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#4885#14084#0" expanded="false" />
+            <element signature="e#5453#5519#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -328,6 +414,19 @@
           <caret line="198" column="26" lean-forward="false" selection-start-line="198" selection-start-column="10" selection-end-line="198" selection-end-column="26" />
           <folding>
             <element signature="e#89#1371#0" expanded="false" />
+            <element signature="e#4234#4498#0" expanded="false" />
+            <element signature="e#4517#4592#0" expanded="false" />
+            <element signature="e#4614#5999#0" expanded="false" />
+            <element signature="e#6128#6637#0" expanded="false" />
+            <element signature="e#7169#7937#0" expanded="false" />
+            <element signature="e#7958#8224#0" expanded="false" />
+            <element signature="e#8247#8696#0" expanded="false" />
+            <element signature="e#8715#10924#0" expanded="false" />
+            <element signature="e#11979#12123#0" expanded="false" />
+            <element signature="e#12174#12242#0" expanded="false" />
+            <element signature="e#12271#13255#0" expanded="false" />
+            <element signature="e#13279#19036#0" expanded="false" />
+            <element signature="e#20050#70528#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -339,29 +438,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sqf/weapons.sqf">
+    <entry file="file://$PROJECT_DIR$/sqf/fireGsh.sqs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+        <state relative-caret-position="154">
+          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/init.sqs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="7" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/Gsh.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/scripts.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="28" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/wing.sqs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/FX_WingtipTrails.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/FX_Afterburner.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3344">
+          <caret line="152" column="16" lean-forward="false" selection-start-line="152" selection-start-column="16" selection-end-line="152" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgNonAIVehicles.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/init.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CfgVehicles.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="198" column="26" lean-forward="false" selection-start-line="198" selection-start-column="10" selection-end-line="198" selection-end-column="26" />
+        <state relative-caret-position="294">
+          <caret line="696" column="129" lean-forward="true" selection-start-line="696" selection-start-column="75" selection-end-line="696" selection-end-column="129" />
           <folding>
             <element signature="e#89#1371#0" expanded="false" />
+            <element signature="e#4234#4498#0" expanded="false" />
+            <element signature="e#4517#4592#0" expanded="false" />
+            <element signature="e#4614#5999#0" expanded="false" />
+            <element signature="e#6128#6637#0" expanded="false" />
+            <element signature="e#7169#7937#0" expanded="false" />
+            <element signature="e#7958#8224#0" expanded="false" />
+            <element signature="e#8247#8696#0" expanded="false" />
+            <element signature="e#8715#10924#0" expanded="false" />
+            <element signature="e#11979#12123#0" expanded="false" />
+            <element signature="e#12174#12242#0" expanded="false" />
+            <element signature="e#12271#13255#0" expanded="false" />
+            <element signature="e#13279#19036#0" expanded="false" />
+            <element signature="e#20050#70528#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sqf/FX_Afterburner.sqf">
+    <entry file="file://$PROJECT_DIR$/sqf/weapons.sqf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="88" lean-forward="false" selection-start-line="5" selection-start-column="88" selection-end-line="5" selection-end-column="88" />
-          <folding />
+        <state relative-caret-position="734">
+          <caret line="106" column="15" lean-forward="false" selection-start-line="106" selection-start-column="15" selection-end-line="106" selection-end-column="15" />
+          <folding>
+            <element signature="e#4885#14084#0" expanded="false" />
+            <element signature="e#5453#5519#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
