@@ -26,4 +26,6 @@ THIS ADD-ON REPRESENTS REAL LIFE FLANKERS IN VARIOUS PAINT SCHEMES/VERSIONS
 # 
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K6922R75JMFTS)
 #
+Arma 3 game is created by and owned Bohemia Interactive. Sukhoi Su-27 family mod was created by Nobatgeldi Geldimammedov. Mod Creator and it's author aren't affiliated with Bohemia Interactive. This project is licensed under the MIT License. You don't need to contact me if you want to create derivatives or publish the project elsewhere.
+#
 Contact [Telegram](https://t.me/NOBATGELDI)
