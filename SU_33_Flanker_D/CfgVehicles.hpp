@@ -82,8 +82,17 @@ class CfgVehicles
 			class Sounds;
 			class AnimationSources;
 			class Eventhandlers;
+			class HitPoints;
 		};
-	class Su33_Protatype_PT_2: Plane
+		class Su33_Base_F : Plane {
+			class AnimationSources;	// External class reference
+
+			class HitPoints : HitPoints {
+				class HitHull;	// External class reference
+			};
+			class Components;	// External class reference
+		};
+	class Su33_Protatype_PT_2: Su33_Base_F
 	{
 		side = 0;
 		faction = "OPF_F";
@@ -113,6 +122,9 @@ class CfgVehicles
 		MapUseRealSize = true;
 		cost=1000000;
 		type=2;
+		//new
+		cabinOpening = 1;
+
 		threat[]={0.99999999,0.99999999,1};
 		armor=80;
 		damageResistance=0.00336;
@@ -200,14 +212,13 @@ class CfgVehicles
 
 		 "Laserdesignator_mounted",
 
-         "CMFlareLauncher"
-
+      "CMFlareLauncher"
 		};
 		magazines[]=
 		{
 		 "Su_300Rnd_30mm_GSh301",
 
-         "300Rnd_CMFlare_Chaff_Magazine"
+     "300Rnd_CMFlare_Chaff_Magazine"
 		};
 		class pilotCamera {
 			class OpticsIn {
@@ -263,7 +274,7 @@ class CfgVehicles
 		memoryPointDriverOptics = "PilotCamera_pos";
 		aileronSensitivity=2.5;
 		elevatorSensitivity=2.9;
-		radarTargetSize=1.0;					/*Radar cross-section coefficient of the vehicle. Works as a coefficient of
+		radarTargetSize=1.0;				  /*Radar cross-section coefficient of the vehicle. Works as a coefficient of
 						                      RADAR Sensor's range within the given combat situation.
 																	Early test values
 																	0.1 - fully stealth (<0.0005m2 RCS) (not recommended)
@@ -278,6 +289,129 @@ class CfgVehicles
 		reportOwnPosition = true; 	/*Says if the vehicle is able to broadcast its own position*/
 
 		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
+		class Components : Components {
+			class SensorsManagerComponent {
+				class Components {
+					class IRSensorComponent : SensorTemplateIR {
+						class AirTarget {
+							minRange = 50;
+							maxRange = 30000;
+							objectDistanceLimitCoef = -1;
+							viewDistanceLimitCoef = 1;
+						};
+
+						class GroundTarget {
+							minRange = 500;
+							maxRange = 15000;
+							objectDistanceLimitCoef = 1;
+							viewDistanceLimitCoef = 1;
+						};
+						angleRangeHorizontal = 90;
+						angleRangeVertical = 90;
+						maxTrackableSpeed = 100;
+						animDirection = "PilotCamera_V";
+					};
+
+					class VisualSensorComponent : SensorTemplateVisual {
+						class AirTarget {
+							minRange = 50;
+							maxRange = 10000;
+							objectDistanceLimitCoef = -1;
+							viewDistanceLimitCoef = 1;
+						};
+
+						class GroundTarget {
+							minRange = 100;
+							maxRange = 6000;
+							objectDistanceLimitCoef = 1;
+							viewDistanceLimitCoef = 1;
+						};
+						angleRangeHorizontal = 90;
+						angleRangeVertical = 90;
+						maxTrackableSpeed = 100;
+						animDirection = "PilotCamera_V";
+					};
+
+					class AntiRadiationSensorComponent : SensorTemplateAntiRadiation {};
+
+					class ActiveRadarSensorComponent : SensorTemplateActiveRadar {};
+
+					class PassiveRadarSensorComponent : SensorTemplatePassiveRadar {};
+
+					class LaserSensorComponent : SensorTemplateLaser {};
+
+					class NVSensorComponent : SensorTemplateNV {};
+				};
+			};
+
+			class VehicleSystemsDisplayManagerComponentLeft : DefaultVehicleSystemsDisplayManagerLeft {
+				class Components {
+					class EmptyDisplay {
+						componentType = "EmptyDisplayComponent";
+					};
+
+					class MinimapDisplay {
+						componentType = "MinimapDisplayComponent";
+						resource = "RscCustomInfoMiniMap";
+					};
+
+					class UAVDisplay {
+						componentType = "UAVFeedDisplayComponent";
+					};
+
+					class VehicleDriverDisplay {
+						componentType = "TransportFeedDisplayComponent";
+						source = "Driver";
+					};
+
+					class VehicleMissileDisplay {
+						componentType = "TransportFeedDisplayComponent";
+						source = "Missile";
+					};
+
+					class SensorDisplay {
+						componentType = "SensorsDisplayComponent";
+						range[] = {4000, 2000, 16000, 8000};
+						resource = "RscCustomInfoSensors";
+					};
+				};
+			};
+
+			class VehicleSystemsDisplayManagerComponentRight : DefaultVehicleSystemsDisplayManagerRight {
+				defaultDisplay = "SensorDisplay";
+
+				class Components {
+					class EmptyDisplay {
+						componentType = "EmptyDisplayComponent";
+					};
+
+					class MinimapDisplay {
+						componentType = "MinimapDisplayComponent";
+						resource = "RscCustomInfoMiniMap";
+					};
+
+					class UAVDisplay {
+						componentType = "UAVFeedDisplayComponent";
+					};
+
+					class VehicleDriverDisplay {
+						componentType = "TransportFeedDisplayComponent";
+						source = "Driver";
+					};
+
+					class VehicleMissileDisplay {
+						componentType = "TransportFeedDisplayComponent";
+						source = "Missile";
+					};
+
+					class SensorDisplay {
+						componentType = "SensorsDisplayComponent";
+						range[] = {4000, 2000, 16000, 8000};
+						resource = "RscCustomInfoSensors";
+					};
+				};
+			};
+		};
 		class MarkerLights
 		{
 			class Cockpit_light
@@ -327,12 +461,14 @@ class CfgVehicles
 				position="levy prach";
 				direction="Exhausts_end_left";
 				effect="ExhaustsEffectPlane";
+				engineIndex = 0;
 			};
 			class Exhaust_right
 			{
 				position="pravy prach";
 				direction="Exhausts_end_right";
 				effect="ExhaustsEffectPlane";
+				engineIndex = 1;
 			};
 		};
 		class Reflectors
@@ -362,7 +498,7 @@ class CfgVehicles
 				};
 			};
 		};
-		class Sounds
+		/*class Sounds
 		{
 			class EngineLowOut
 			{
@@ -464,10 +600,88 @@ class CfgVehicles
 				frequency = 1;
 				volume = "(1-camPos) * rain * (speed factor[50, 0])";
 			};
+		};*/
+		class Sounds {
+			class EngineLowOut {
+				sound[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_engine_idle_ext", 1.0, 1.0, 2100};
+				frequency = "1.0 min (rpm + 0.5)";
+				volume = "camPos*2*(rpm factor[0.95, 0])*(rpm factor[0, 0.95])";
+			};
+
+			class EngineHighOut {
+				sound[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_engine_max_ext", 1.0, 1.2, 2500};
+				frequency = "1";
+				volume = "camPos*4*(rpm factor[0.5, 1.1])*(rpm factor[1.1, 0.5])";
+			};
+
+			class ForsageOut {
+				sound[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_forsage_ext", 1.41254, 1.2, 2800};
+				frequency = "1";
+				volume = "engineOn*camPos*(thrust factor[0.6, 1.0])";
+				cone[] = {3.14, 3.92, 2.0, 0.5};
+			};
+
+			class WindNoiseOut {
+				sound[] = {"A3\Sounds_F_EPC\CAS_02\noise", 0.562341, 1.0, 150};
+				frequency = "(0.1+(1.2*(speed factor[1, 150])))";
+				volume = "camPos*(speed factor[1, 150])";
+			};
+
+			class EngineLowIn {
+				sound[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_engine_idle_int", 0.562341, 1.0};
+				frequency = "1.0 min (rpm + 0.5)";
+				volume = "(1-camPos)*((rpm factor[0.7, 0.1])*(rpm factor[0.1, 0.7]))";
+			};
+
+			class EngineHighIn {
+				sound[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_engine_max_int", 0.316228, 1.2};
+				frequency = "1";
+				volume = "(1-camPos)*(rpm factor[0.85, 1.0])";
+			};
+
+			class ForsageIn {
+				sound[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_forsage_int", 0.501187, 1.2};
+				frequency = "1";
+				volume = "(1-camPos)*(engineOn*(thrust factor[0.6, 1.0]))";
+			};
+
+			class WindNoiseIn {
+				sound[] = {"A3\Sounds_F\air\Plane_Fighter_03\noise_int", 0.316228, 1.0};
+				frequency = "(0.1+(1.2*(speed factor[1, 150])))";
+				volume = "(1-camPos)*(speed factor[1, 150])";
+			};
+
+			class RainExt {
+				sound[] = {"A3\Sounds_F\vehicles\noises\rain1_ext", 1.77828, 1.0, 100};
+				frequency = 1;
+				volume = "camPos * rain * (speed factor[50, 0])";
+			};
+
+			class RainInt {
+				sound[] = {"A3\Sounds_F\vehicles\noises\rain1_int", 1.0, 1.0, 100};
+				frequency = 1;
+				volume = "(1-camPos) * rain * (speed factor[50, 0])";
+			};
+
+			class Waternoise_ext {
+				sound[] = {"A3\Sounds_F\vehicles\noises\air_driving_in_water", 0.707946, 1, 300};
+				frequency = "1";
+				volume = "(speed factor[0, 5]) * water * camPos + (speed factor[-0.1, -5]) * water * camPos";
+			};
+
+			class Waternoise_int {
+				sound[] = {"A3\Sounds_F\vehicles\noises\soft_driving_in_water_int", 0.562341, 1, 100};
+				frequency = "1";
+				volume = "(speed factor[0, 5]) * water * (1-camPos) + (speed factor[-0.1, -5]) * water * (1-camPos)";
+			};
 		};
 		attenuationEffectType = "PlaneAttenuation";
 		soundGetIn[] = {"A3\Sounds_F_EPC\CAS_02\TO_getin", 1.0, 1};
 		soundGetOut[] = {"A3\Sounds_F_EPC\CAS_02\getout", 1.0, 1, 40};
+		cabinOpenSound[] = {"A3\Sounds_F\air\noises\Plane_CAS02_CabinOpen", 3.16228, 1, 40};
+		cabinCloseSound[] = {"A3\Sounds_F\air\noises\Plane_CAS02_CabinClose", 3.16228, 1, 40};
+		cabinOpenSoundInternal[] = {"A3\Sounds_F\air\noises\Plane_CAS02_CabinOpen", 10.0, 1, 40};
+		cabinCloseSoundInternal[] = {"A3\Sounds_F\air\noises\Plane_CAS02_CabinClose", 10.0, 1, 40};
 		soundDammage[] = {"", 0.562341, 1};
 		soundEngineOnInt[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_start_int", 0.794328, 1.0};
 		soundEngineOnExt[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_start_ext", 1.0, 1.0, 500};
@@ -479,6 +693,29 @@ class CfgVehicles
 		soundGearDown[] = {"A3\Sounds_F_EPC\CAS_02\gear_down", 0.794328, 1.0, 150};
 		soundFlapsUp[] = {"A3\Sounds_F_EPC\CAS_02\Flaps_Up", 0.630957, 1.0, 100};
 		soundFlapsDown[] = {"A3\Sounds_F_EPC\CAS_02\Flaps_Down", 0.630957, 1.0, 100};
+		soundWaterCollision1[] = {"A3\Sounds_F\vehicles\crashes\planes\plane_crash_water_1", 1.41254, 1, 500};
+		soundWaterCollision2[] = {"A3\Sounds_F\vehicles\crashes\planes\plane_crash_water_2", 1.41254, 1, 500};
+		soundWaterCrashes[] = {"soundWaterCollision1", 0.5, "soundWaterCollision2", 0.5};
+		buildCrash0[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1", 1.0, 1, 900};
+		buildCrash1[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_2", 1.0, 1, 900};
+		buildCrash2[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_3", 1.0, 1, 900};
+		buildCrash3[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_4", 1.0, 1, 900};
+		soundBuildingCrash[] = {"buildCrash0", 0.25, "buildCrash1", 0.25, "buildCrash2", 0.25, "buildCrash3", 0.25};
+		WoodCrash0[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_1", 3.16228, 1, 900};
+		WoodCrash1[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_2", 3.16228, 1, 900};
+		WoodCrash2[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_6", 3.16228, 1, 900};
+		WoodCrash3[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_8", 3.16228, 1, 900};
+		soundWoodCrash[] = {"woodCrash0", 0.25, "woodCrash1", 0.25, "woodCrash2", 0.25, "woodCrash3", 0.25};
+		armorCrash0[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1", 1.0, 1, 900};
+		armorCrash1[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_2", 1.0, 1, 900};
+		armorCrash2[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_3", 1.0, 1, 900};
+		armorCrash3[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_4", 1.0, 1, 900};
+		soundArmorCrash[] = {"ArmorCrash0", 0.25, "ArmorCrash1", 0.25, "ArmorCrash2", 0.25, "ArmorCrash3", 0.25};
+		Crash0[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1", 1.0, 1, 900};
+		Crash1[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_2", 1.0, 1, 900};
+		Crash2[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_3", 1.0, 1, 900};
+		Crash3[] = {"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_4", 1.0, 1, 900};
+		soundCrashes[] = {"Crash0", 0.25, "Crash1", 0.25, "Crash2", 0.25, "Crash3", 0.25};
 		class scrubLandInt {
 			sound[] = {"A3\Sounds_F\vehicles\air\noises\wheelsInt", 1.0, 1.0, 100};
 			frequency = 1;
@@ -623,7 +860,6 @@ class CfgVehicles
 				radius=20;
 				onlyforplayer=0;
 				condition="this animationPhase ""ABcut"" == 0 and player in this and isengineon this";
-				//statement="this animate [""ABcut"",1]";
 				statement="this animate [""ABcut"",1]";
 				showWindow=0;
 				hideOnUse=1;
@@ -648,6 +884,7 @@ class CfgVehicles
 				hideOnUse=1;
 				condition="this animationPhase ""sun_rise"" == 1";
 				statement="this animate [""sun_rise"",0];";
+				showWindow=0;
 			};
 			/*class Hookon
 			{

@@ -100,21 +100,21 @@ private ["_R73_count","_R27_count","_R73M_count","_R77_count","_KH29_count","_KH
     _station_14 = _FAB_250_magazine;
 
 //systemChat "Weapons Loading!";
-  titleText ["Weapons are Loading", "PLAIN DOWN",0.3];
-  sleep 1.0;
+  titleText ["Weapons are Loading", "PLAIN DOWN",0.5];
+  sleep 0.5;
     _plane addMagazine _station_1;
     _plane addMagazine _station_2;
-      sleep 0.5;
+      sleep 0.1;
       systemChat "R-73M1 AA missiles are loaded";
     _plane addMagazine _station_3;
     _plane addMagazine _station_4;
-      sleep 0.5;
+      sleep 0.1;
       systemChat "R-77 AA missiles are loaded";
     _plane addMagazine _station_5;
     _plane addMagazine _station_6;
     _plane addMagazine _station_7;
     _plane addMagazine _station_8;
-      sleep 0.5;
+      sleep 0.1;
       systemChat "KH-29 AT missiles are loaded";
     _plane addMagazine _station_9;
     _plane addMagazine _station_10;
@@ -122,7 +122,7 @@ private ["_R73_count","_R27_count","_R73M_count","_R77_count","_KH29_count","_KH
     _plane addMagazine _station_12;
     _plane addMagazine _station_13;
     _plane addMagazine _station_14;
-      sleep 0.5;
+      sleep 0.1;
       systemChat "FAB-250 bombs are loaded";
 
       //ADD NEW WEAPONS FOR PRELOADED MAGAZINES
@@ -143,10 +143,12 @@ private ["_R73_count","_R27_count","_R73M_count","_R77_count","_KH29_count","_KH
         {
           _plane addWeapon _KH29;
         };
+
         /*if ((_KH31_magazine in _loadout)) then
         {
           _plane addWeapon _KH31;
         };*/
+
         if ((_FAB_250_magazine in _loadout)) then
         {
           _plane addWeapon _FAB_250;
@@ -159,10 +161,11 @@ private ["_R73_count","_R27_count","_R73M_count","_R77_count","_KH29_count","_KH
         {
           _plane addWeapon _Laser_designator;
         };
-        sleep 1.5;
+        sleep 0.5;
         systemChat "Weapons are Loaded";
 
-while {(alive _plane)} do
+//while {(alive _plane and (_plane distance (nearestObject [_plane, "O_Truck_03_ammo_F"]) < 25) and (damage (nearestObject [_plane, "O_Truck_03_ammo_F"]) < 1) and player == driver _plane)}
+while {(alive _plane)}do
 {
     //A to A load
     if (((_this animationPhase "AA_load") == 1)) then

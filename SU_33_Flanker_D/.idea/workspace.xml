@@ -15,26 +15,105 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CfgVehicles.hpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CfgVehicles.hpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CfgVehicles.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="696" column="129" lean-forward="true" selection-start-line="696" selection-start-column="75" selection-end-line="696" selection-end-column="129" />
+            <state relative-caret-position="1156">
+              <caret line="131" column="20" lean-forward="false" selection-start-line="131" selection-start-column="8" selection-end-line="131" selection-end-column="20" />
               <folding>
                 <element signature="e#89#1371#0" expanded="false" />
-                <element signature="e#4234#4498#0" expanded="false" />
+                <element signature="e#1450#1563#0" expanded="false" />
+                <element signature="e#3521#3555#0" expanded="false" />
+                <element signature="e#3834#3949#0" expanded="false" />
                 <element signature="e#4517#4592#0" expanded="false" />
                 <element signature="e#4614#5999#0" expanded="false" />
-                <element signature="e#6128#6637#0" expanded="false" />
-                <element signature="e#7169#7937#0" expanded="false" />
-                <element signature="e#7958#8224#0" expanded="false" />
-                <element signature="e#8247#8696#0" expanded="false" />
-                <element signature="e#8715#10924#0" expanded="false" />
-                <element signature="e#11979#12123#0" expanded="false" />
-                <element signature="e#12174#12242#0" expanded="false" />
-                <element signature="e#12271#13255#0" expanded="false" />
-                <element signature="e#13279#19036#0" expanded="false" />
-                <element signature="e#20050#70528#0" expanded="false" />
+                <element signature="e#6129#6638#0" expanded="false" />
+                <element signature="e#7170#7938#0" expanded="false" />
+                <element signature="e#7959#8225#0" expanded="false" />
+                <element signature="e#8248#8697#0" expanded="false" />
+                <element signature="e#8716#10925#0" expanded="false" />
+                <element signature="e#11980#12124#0" expanded="false" />
+                <element signature="e#12175#12243#0" expanded="false" />
+                <element signature="e#12272#13256#0" expanded="false" />
+                <element signature="e#13280#19009#0" expanded="false" />
+                <element signature="e#17361#17600#0" expanded="false" />
+                <element signature="e#17628#17869#0" expanded="false" />
+                <element signature="e#17874#18300#0" expanded="false" />
+                <element signature="e#18326#18652#0" expanded="false" />
+                <element signature="e#18676#19004#0" expanded="false" />
+                <element signature="e#19050#19334#0" expanded="false" />
+                <element signature="e#19354#19946#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CfgWeapons.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CfgWeapons.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#248#724#0" expanded="false" />
+                <element signature="e#765#1141#0" expanded="false" />
+                <element signature="e#1185#2238#0" expanded="false" />
+                <element signature="e#2283#2526#0" expanded="false" />
+                <element signature="e#2579#2675#0" expanded="false" />
+                <element signature="e#2728#2909#0" expanded="false" />
+                <element signature="e#2951#4003#0" expanded="false" />
+                <element signature="e#4046#4195#0" expanded="false" />
+                <element signature="e#4236#4415#0" expanded="false" />
+                <element signature="e#4456#4619#0" expanded="false" />
+                <element signature="e#4654#4830#0" expanded="false" />
+                <element signature="e#4867#4987#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CfgMagazines.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CfgMagazines.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5852">
+              <caret line="266" column="6" lean-forward="false" selection-start-line="266" selection-start-column="6" selection-end-line="266" selection-end-column="6" />
+              <folding>
+                <element signature="e#81#166#0" expanded="false" />
+                <element signature="e#204#288#0" expanded="false" />
+                <element signature="e#326#628#0" expanded="false" />
+                <element signature="e#677#787#0" expanded="false" />
+                <element signature="e#834#1157#0" expanded="false" />
+                <element signature="e#1504#1611#0" expanded="false" />
+                <element signature="e#1645#1975#0" expanded="false" />
+                <element signature="e#2002#2114#0" expanded="false" />
+                <element signature="e#2140#2275#0" expanded="false" />
+                <element signature="e#2303#2441#0" expanded="false" />
+                <element signature="e#2466#2598#0" expanded="false" />
+                <element signature="e#2639#2932#0" expanded="false" />
+                <element signature="e#2973#3266#0" expanded="false" />
+                <element signature="e#3307#3600#0" expanded="false" />
+                <element signature="e#3641#3934#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CfgAmmo.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CfgAmmo.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1760">
+              <caret line="344" column="4" lean-forward="false" selection-start-line="344" selection-start-column="4" selection-end-line="344" selection-end-column="4" />
+              <folding>
+                <element signature="e#194#289#0" expanded="false" />
+                <element signature="e#346#370#0" expanded="false" />
+                <element signature="e#402#497#0" expanded="false" />
+                <element signature="e#500#1733#0" expanded="false" />
+                <element signature="e#1764#3098#0" expanded="false" />
+                <element signature="e#3140#3615#0" expanded="false" />
+                <element signature="e#3656#4245#0" expanded="false" />
+                <element signature="e#4286#5345#0" expanded="false" />
+                <element signature="e#7101#7179#0" expanded="false" />
+                <element signature="e#7919#8306#0" expanded="false" />
+                <element signature="e#8354#8951#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -43,32 +122,53 @@
       <file leaf-file-name="init.sqf" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sqf/init.sqf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weapons.sqf" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sqf/weapons.sqf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="734">
-              <caret line="106" column="15" lean-forward="false" selection-start-line="106" selection-start-column="15" selection-end-line="106" selection-end-column="15" />
+            <state relative-caret-position="660">
+              <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding>
-                <element signature="e#4885#14084#0" expanded="false" />
-                <element signature="e#5453#5519#0" expanded="false" />
+                <element signature="e#1000#1834#0" expanded="false" />
+                <element signature="e#1855#2689#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CfgNonAIVehicles.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CfgNonAIVehicles.hpp">
+      <file leaf-file-name="weapons.sqf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sqf/weapons.sqf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-154">
-              <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="38" />
-              <folding />
+            <state relative-caret-position="3630">
+              <caret line="453" column="0" lean-forward="false" selection-start-line="453" selection-start-column="0" selection-end-line="453" selection-end-column="0" />
+              <folding>
+                <element signature="e#4000#4045#0" expanded="false" />
+                <element signature="e#4102#4147#0" expanded="false" />
+                <element signature="e#4203#4246#0" expanded="false" />
+                <element signature="e#4303#4348#0" expanded="false" />
+                <element signature="e#4359#4456#0" expanded="false" />
+                <element signature="e#4516#4564#0" expanded="false" />
+                <element signature="e#4624#4672#0" expanded="false" />
+                <element signature="e#4741#4798#0" expanded="false" />
+                <element signature="e#5153#8738#0" expanded="false" />
+                <element signature="e#5643#5709#0" expanded="false" />
+                <element signature="e#8827#11766#0" expanded="false" />
+                <element signature="e#11845#14186#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FX_Afterburner.sqf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sqf/FX_Afterburner.sqf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1672">
+              <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+              <folding>
+                <element signature="e#2546#2569#0" expanded="false" />
+                <element signature="e#2576#3000#0" expanded="false" />
+                <element signature="e#3118#4485#0" expanded="false" />
+                <element signature="e#4491#5836#0" expanded="false" />
+                <element signature="e#5858#7252#0" expanded="false" />
+                <element signature="e#7327#7380#0" expanded="false" />
+                <element signature="e#7386#7436#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,6 +178,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>KillFx</find>
+      <find>_array</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -88,22 +189,24 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sqf/weapons.sqf" />
-        <option value="$PROJECT_DIR$/sqf/Gsh.sqf" />
         <option value="$PROJECT_DIR$/sqf/AircraftEffects.sqf" />
         <option value="$PROJECT_DIR$/sqf/scripts.sqf" />
         <option value="$PROJECT_DIR$/sqf/FX_WingtipTrails.sqf" />
-        <option value="$PROJECT_DIR$/CfgVehicles.hpp" />
         <option value="$PROJECT_DIR$/sqf/init.sqf" />
         <option value="$PROJECT_DIR$/sqf/FX_Afterburner.sqf" />
+        <option value="$PROJECT_DIR$/sqf/Gsh.sqf" />
+        <option value="$PROJECT_DIR$/sqf/weapons.sqf" />
+        <option value="$PROJECT_DIR$/CfgVehicles.hpp" />
+        <option value="$PROJECT_DIR$/CfgWeapons.hpp" />
+        <option value="$PROJECT_DIR$/CfgAmmo.hpp" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="886" />
+    <option name="width" value="1040" />
+    <option name="height" value="754" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -120,9 +223,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -151,10 +253,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Mikoyan-Mig-29" />
+    <property name="settings.editor.selected.configurable" value="preferences.startup.tasks" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -162,6 +266,9 @@
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AntRunConfiguration" factoryName="Ant Target">
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -185,6 +292,9 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="CompoundRunConfigurationType" factoryName="Compound Run Configuration">
       <method />
     </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
@@ -270,6 +380,28 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -321,8 +453,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1040" height="754" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -332,12 +464,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24902344" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -354,12 +487,493 @@
     <breakpoint-manager />
     <watches-manager />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/CfgAmmo.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#194#289#0" expanded="false" />
+            <element signature="e#346#370#0" expanded="false" />
+            <element signature="e#402#497#0" expanded="false" />
+            <element signature="e#500#1733#0" expanded="false" />
+            <element signature="e#1764#3098#0" expanded="false" />
+            <element signature="e#3140#3615#0" expanded="false" />
+            <element signature="e#3656#4245#0" expanded="false" />
+            <element signature="e#4286#5345#0" expanded="false" />
+            <element signature="e#7101#7179#0" expanded="false" />
+            <element signature="e#7919#8306#0" expanded="false" />
+            <element signature="e#8354#8951#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/init.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="e#1000#1834#0" expanded="false" />
+            <element signature="e#1855#2689#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/weapons.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3674">
+          <caret line="167" column="24" lean-forward="false" selection-start-line="167" selection-start-column="24" selection-end-line="167" selection-end-column="24" />
+          <folding>
+            <element signature="e#4000#4045#0" expanded="false" />
+            <element signature="e#4102#4147#0" expanded="false" />
+            <element signature="e#4203#4246#0" expanded="false" />
+            <element signature="e#4303#4348#0" expanded="false" />
+            <element signature="e#4359#4456#0" expanded="false" />
+            <element signature="e#4516#4564#0" expanded="false" />
+            <element signature="e#4624#4672#0" expanded="false" />
+            <element signature="e#4741#4798#0" expanded="false" />
+            <element signature="e#5153#8738#0" expanded="false" />
+            <element signature="e#5643#5709#0" expanded="false" />
+            <element signature="e#8827#11766#0" expanded="false" />
+            <element signature="e#11845#14186#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgVehicles.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#89#1371#0" expanded="false" />
+            <element signature="e#1450#1563#0" expanded="false" />
+            <element signature="e#3521#3555#0" expanded="false" />
+            <element signature="e#3834#3949#0" expanded="false" />
+            <element signature="e#4517#4592#0" expanded="false" />
+            <element signature="e#4614#5999#0" expanded="false" />
+            <element signature="e#6129#6638#0" expanded="false" />
+            <element signature="e#7170#7938#0" expanded="false" />
+            <element signature="e#7959#8225#0" expanded="false" />
+            <element signature="e#8248#8697#0" expanded="false" />
+            <element signature="e#8716#10925#0" expanded="false" />
+            <element signature="e#11980#12124#0" expanded="false" />
+            <element signature="e#12175#12243#0" expanded="false" />
+            <element signature="e#12272#13256#0" expanded="false" />
+            <element signature="e#13280#19009#0" expanded="false" />
+            <element signature="e#17361#17600#0" expanded="false" />
+            <element signature="e#17628#17869#0" expanded="false" />
+            <element signature="e#17874#18300#0" expanded="false" />
+            <element signature="e#18326#18652#0" expanded="false" />
+            <element signature="e#18676#19004#0" expanded="false" />
+            <element signature="e#19050#19334#0" expanded="false" />
+            <element signature="e#19354#19946#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgAmmo.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7612">
+          <caret line="346" column="52" lean-forward="false" selection-start-line="346" selection-start-column="41" selection-end-line="346" selection-end-column="52" />
+          <folding>
+            <element signature="e#194#289#0" expanded="false" />
+            <element signature="e#346#370#0" expanded="false" />
+            <element signature="e#402#497#0" expanded="false" />
+            <element signature="e#500#1733#0" expanded="false" />
+            <element signature="e#1764#3098#0" expanded="false" />
+            <element signature="e#3140#3615#0" expanded="false" />
+            <element signature="e#3656#4245#0" expanded="false" />
+            <element signature="e#4286#5345#0" expanded="false" />
+            <element signature="e#7101#7179#0" expanded="false" />
+            <element signature="e#7919#8306#0" expanded="false" />
+            <element signature="e#8354#8951#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/init.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="e#1000#1834#0" expanded="false" />
+            <element signature="e#1855#2689#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/weapons.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3674">
+          <caret line="167" column="24" lean-forward="true" selection-start-line="167" selection-start-column="24" selection-end-line="167" selection-end-column="24" />
+          <folding>
+            <element signature="e#4000#4045#0" expanded="false" />
+            <element signature="e#4102#4147#0" expanded="false" />
+            <element signature="e#4203#4246#0" expanded="false" />
+            <element signature="e#4303#4348#0" expanded="false" />
+            <element signature="e#4359#4456#0" expanded="false" />
+            <element signature="e#4516#4564#0" expanded="false" />
+            <element signature="e#4624#4672#0" expanded="false" />
+            <element signature="e#4741#4798#0" expanded="false" />
+            <element signature="e#5153#8738#0" expanded="false" />
+            <element signature="e#5643#5709#0" expanded="false" />
+            <element signature="e#8827#11766#0" expanded="false" />
+            <element signature="e#11845#14186#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgVehicles.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15290">
+          <caret line="695" column="0" lean-forward="false" selection-start-line="695" selection-start-column="0" selection-end-line="695" selection-end-column="0" />
+          <folding>
+            <element signature="e#89#1371#0" expanded="false" />
+            <element signature="e#1450#1563#0" expanded="false" />
+            <element signature="e#3521#3555#0" expanded="false" />
+            <element signature="e#3834#3949#0" expanded="false" />
+            <element signature="e#4517#4592#0" expanded="false" />
+            <element signature="e#4614#5999#0" expanded="false" />
+            <element signature="e#6129#6638#0" expanded="false" />
+            <element signature="e#7170#7938#0" expanded="false" />
+            <element signature="e#7959#8225#0" expanded="false" />
+            <element signature="e#8248#8697#0" expanded="false" />
+            <element signature="e#8716#10925#0" expanded="false" />
+            <element signature="e#11980#12124#0" expanded="false" />
+            <element signature="e#12175#12243#0" expanded="false" />
+            <element signature="e#12272#13256#0" expanded="false" />
+            <element signature="e#13280#19009#0" expanded="false" />
+            <element signature="e#17361#17600#0" expanded="false" />
+            <element signature="e#17628#17869#0" expanded="false" />
+            <element signature="e#17874#18300#0" expanded="false" />
+            <element signature="e#18326#18652#0" expanded="false" />
+            <element signature="e#18676#19004#0" expanded="false" />
+            <element signature="e#19050#19334#0" expanded="false" />
+            <element signature="e#19354#19946#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/init.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="e#1000#1834#0" expanded="false" />
+            <element signature="e#1855#2689#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/weapons.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3300">
+          <caret line="167" column="24" lean-forward="true" selection-start-line="167" selection-start-column="24" selection-end-line="167" selection-end-column="24" />
+          <folding>
+            <element signature="e#4000#4045#0" expanded="false" />
+            <element signature="e#4102#4147#0" expanded="false" />
+            <element signature="e#4203#4246#0" expanded="false" />
+            <element signature="e#4303#4348#0" expanded="false" />
+            <element signature="e#4359#4456#0" expanded="false" />
+            <element signature="e#4516#4564#0" expanded="false" />
+            <element signature="e#4624#4672#0" expanded="false" />
+            <element signature="e#4741#4798#0" expanded="false" />
+            <element signature="e#5153#8738#0" expanded="false" />
+            <element signature="e#5643#5709#0" expanded="false" />
+            <element signature="e#8827#11766#0" expanded="false" />
+            <element signature="e#11845#14186#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/Gsh.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgVehicles.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15312">
+          <caret line="696" column="129" lean-forward="false" selection-start-line="696" selection-start-column="75" selection-end-line="696" selection-end-column="129" />
+          <folding>
+            <element signature="e#89#1371#0" expanded="false" />
+            <element signature="e#1450#1563#0" expanded="false" />
+            <element signature="e#3521#3555#0" expanded="false" />
+            <element signature="e#3834#3949#0" expanded="false" />
+            <element signature="e#4517#4592#0" expanded="false" />
+            <element signature="e#4614#5999#0" expanded="false" />
+            <element signature="e#6129#6638#0" expanded="false" />
+            <element signature="e#7170#7938#0" expanded="false" />
+            <element signature="e#7959#8225#0" expanded="false" />
+            <element signature="e#8248#8697#0" expanded="false" />
+            <element signature="e#8716#10925#0" expanded="false" />
+            <element signature="e#11980#12124#0" expanded="false" />
+            <element signature="e#12175#12243#0" expanded="false" />
+            <element signature="e#12272#13256#0" expanded="false" />
+            <element signature="e#13280#19009#0" expanded="false" />
+            <element signature="e#17361#17600#0" expanded="false" />
+            <element signature="e#17628#17869#0" expanded="false" />
+            <element signature="e#17874#18300#0" expanded="false" />
+            <element signature="e#18326#18652#0" expanded="false" />
+            <element signature="e#18676#19004#0" expanded="false" />
+            <element signature="e#19050#19334#0" expanded="false" />
+            <element signature="e#19354#19946#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/init.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="19" />
+          <folding>
+            <element signature="e#1000#1834#0" expanded="false" />
+            <element signature="e#1855#2689#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/Gsh.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgNonAIVehicles.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgVehicles.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15312">
+          <caret line="696" column="129" lean-forward="false" selection-start-line="696" selection-start-column="75" selection-end-line="696" selection-end-column="129" />
+          <folding>
+            <element signature="e#89#1371#0" expanded="false" />
+            <element signature="e#1450#1563#0" expanded="false" />
+            <element signature="e#3521#3555#0" expanded="false" />
+            <element signature="e#3834#3949#0" expanded="false" />
+            <element signature="e#4517#4592#0" expanded="false" />
+            <element signature="e#4614#5999#0" expanded="false" />
+            <element signature="e#6129#6638#0" expanded="false" />
+            <element signature="e#7170#7938#0" expanded="false" />
+            <element signature="e#7959#8225#0" expanded="false" />
+            <element signature="e#8248#8697#0" expanded="false" />
+            <element signature="e#8716#10925#0" expanded="false" />
+            <element signature="e#11980#12124#0" expanded="false" />
+            <element signature="e#12175#12243#0" expanded="false" />
+            <element signature="e#12272#13256#0" expanded="false" />
+            <element signature="e#13280#19009#0" expanded="false" />
+            <element signature="e#17361#17600#0" expanded="false" />
+            <element signature="e#17628#17869#0" expanded="false" />
+            <element signature="e#17874#18300#0" expanded="false" />
+            <element signature="e#18326#18652#0" expanded="false" />
+            <element signature="e#18676#19004#0" expanded="false" />
+            <element signature="e#19050#19334#0" expanded="false" />
+            <element signature="e#19354#19946#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/init.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="19" />
+          <folding>
+            <element signature="e#1000#1834#0" expanded="false" />
+            <element signature="e#1855#2689#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/Gsh.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/weapons.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2288">
+          <caret line="104" column="26" lean-forward="false" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
+          <folding>
+            <element signature="e#4000#4045#0" expanded="false" />
+            <element signature="e#4102#4147#0" expanded="false" />
+            <element signature="e#4203#4246#0" expanded="false" />
+            <element signature="e#4303#4348#0" expanded="false" />
+            <element signature="e#4359#4456#0" expanded="false" />
+            <element signature="e#4516#4564#0" expanded="false" />
+            <element signature="e#4624#4672#0" expanded="false" />
+            <element signature="e#4741#4798#0" expanded="false" />
+            <element signature="e#5153#8738#0" expanded="false" />
+            <element signature="e#5643#5709#0" expanded="false" />
+            <element signature="e#8827#11766#0" expanded="false" />
+            <element signature="e#11845#14186#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgNonAIVehicles.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgVehicles.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15312">
+          <caret line="696" column="129" lean-forward="false" selection-start-line="696" selection-start-column="75" selection-end-line="696" selection-end-column="129" />
+          <folding>
+            <element signature="e#89#1371#0" expanded="false" />
+            <element signature="e#1450#1563#0" expanded="false" />
+            <element signature="e#3521#3555#0" expanded="false" />
+            <element signature="e#3834#3949#0" expanded="false" />
+            <element signature="e#4517#4592#0" expanded="false" />
+            <element signature="e#4614#5999#0" expanded="false" />
+            <element signature="e#6129#6638#0" expanded="false" />
+            <element signature="e#7170#7938#0" expanded="false" />
+            <element signature="e#7959#8225#0" expanded="false" />
+            <element signature="e#8248#8697#0" expanded="false" />
+            <element signature="e#8716#10925#0" expanded="false" />
+            <element signature="e#11980#12124#0" expanded="false" />
+            <element signature="e#12175#12243#0" expanded="false" />
+            <element signature="e#12272#13256#0" expanded="false" />
+            <element signature="e#13280#19009#0" expanded="false" />
+            <element signature="e#17361#17600#0" expanded="false" />
+            <element signature="e#17628#17869#0" expanded="false" />
+            <element signature="e#17874#18300#0" expanded="false" />
+            <element signature="e#18326#18652#0" expanded="false" />
+            <element signature="e#18676#19004#0" expanded="false" />
+            <element signature="e#19050#19334#0" expanded="false" />
+            <element signature="e#19354#19946#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/init.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding>
+            <element signature="e#1000#1834#0" expanded="false" />
+            <element signature="e#1855#2689#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/weapons.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#4000#4045#0" expanded="false" />
+            <element signature="e#4102#4147#0" expanded="false" />
+            <element signature="e#4203#4246#0" expanded="false" />
+            <element signature="e#4303#4348#0" expanded="false" />
+            <element signature="e#4359#4456#0" expanded="false" />
+            <element signature="e#4516#4564#0" expanded="false" />
+            <element signature="e#4624#4672#0" expanded="false" />
+            <element signature="e#4741#4798#0" expanded="false" />
+            <element signature="e#5153#8738#0" expanded="false" />
+            <element signature="e#5643#5709#0" expanded="false" />
+            <element signature="e#8827#11766#0" expanded="false" />
+            <element signature="e#11845#14186#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgNonAIVehicles.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgVehicles.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15312">
+          <caret line="696" column="129" lean-forward="false" selection-start-line="696" selection-start-column="75" selection-end-line="696" selection-end-column="129" />
+          <folding>
+            <element signature="e#89#1371#0" expanded="false" />
+            <element signature="e#1450#1563#0" expanded="false" />
+            <element signature="e#3521#3555#0" expanded="false" />
+            <element signature="e#3834#3949#0" expanded="false" />
+            <element signature="e#4517#4592#0" expanded="false" />
+            <element signature="e#4614#5999#0" expanded="false" />
+            <element signature="e#6129#6638#0" expanded="false" />
+            <element signature="e#7170#7938#0" expanded="false" />
+            <element signature="e#7959#8225#0" expanded="false" />
+            <element signature="e#8248#8697#0" expanded="false" />
+            <element signature="e#8716#10925#0" expanded="false" />
+            <element signature="e#11980#12124#0" expanded="false" />
+            <element signature="e#12175#12243#0" expanded="false" />
+            <element signature="e#12272#13256#0" expanded="false" />
+            <element signature="e#13280#19009#0" expanded="false" />
+            <element signature="e#17361#17600#0" expanded="false" />
+            <element signature="e#17628#17869#0" expanded="false" />
+            <element signature="e#17874#18300#0" expanded="false" />
+            <element signature="e#18326#18652#0" expanded="false" />
+            <element signature="e#18676#19004#0" expanded="false" />
+            <element signature="e#19050#19334#0" expanded="false" />
+            <element signature="e#19354#19946#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/init.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding>
+            <element signature="e#1000#1834#0" expanded="false" />
+            <element signature="e#1855#2689#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/weapons.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#4000#4045#0" expanded="false" />
+            <element signature="e#4102#4147#0" expanded="false" />
+            <element signature="e#4203#4246#0" expanded="false" />
+            <element signature="e#4303#4348#0" expanded="false" />
+            <element signature="e#4359#4456#0" expanded="false" />
+            <element signature="e#4516#4564#0" expanded="false" />
+            <element signature="e#4624#4672#0" expanded="false" />
+            <element signature="e#4741#4798#0" expanded="false" />
+            <element signature="e#5153#8738#0" expanded="false" />
+            <element signature="e#5643#5709#0" expanded="false" />
+            <element signature="e#8827#11766#0" expanded="false" />
+            <element signature="e#11845#14186#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgNonAIVehicles.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sqf/FX_Afterburner.sqf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -368,8 +982,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4885#14084#0" expanded="false" />
-            <element signature="e#5453#5519#0" expanded="false" />
+            <element signature="e#4000#4045#0" expanded="false" />
+            <element signature="e#4102#4147#0" expanded="false" />
+            <element signature="e#4203#4246#0" expanded="false" />
+            <element signature="e#4303#4348#0" expanded="false" />
+            <element signature="e#4359#4456#0" expanded="false" />
+            <element signature="e#4516#4564#0" expanded="false" />
+            <element signature="e#4624#4672#0" expanded="false" />
+            <element signature="e#4741#4798#0" expanded="false" />
+            <element signature="e#5153#8738#0" expanded="false" />
+            <element signature="e#5643#5709#0" expanded="false" />
+            <element signature="e#8827#11766#0" expanded="false" />
+            <element signature="e#11845#14186#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -380,19 +1004,27 @@
           <caret line="198" column="26" lean-forward="false" selection-start-line="198" selection-start-column="10" selection-end-line="198" selection-end-column="26" />
           <folding>
             <element signature="e#89#1371#0" expanded="false" />
-            <element signature="e#4234#4498#0" expanded="false" />
+            <element signature="e#1450#1563#0" expanded="false" />
+            <element signature="e#3521#3555#0" expanded="false" />
+            <element signature="e#3834#3949#0" expanded="false" />
             <element signature="e#4517#4592#0" expanded="false" />
             <element signature="e#4614#5999#0" expanded="false" />
-            <element signature="e#6128#6637#0" expanded="false" />
-            <element signature="e#7169#7937#0" expanded="false" />
-            <element signature="e#7958#8224#0" expanded="false" />
-            <element signature="e#8247#8696#0" expanded="false" />
-            <element signature="e#8715#10924#0" expanded="false" />
-            <element signature="e#11979#12123#0" expanded="false" />
-            <element signature="e#12174#12242#0" expanded="false" />
-            <element signature="e#12271#13255#0" expanded="false" />
-            <element signature="e#13279#19036#0" expanded="false" />
-            <element signature="e#20050#70528#0" expanded="false" />
+            <element signature="e#6129#6638#0" expanded="false" />
+            <element signature="e#7170#7938#0" expanded="false" />
+            <element signature="e#7959#8225#0" expanded="false" />
+            <element signature="e#8248#8697#0" expanded="false" />
+            <element signature="e#8716#10925#0" expanded="false" />
+            <element signature="e#11980#12124#0" expanded="false" />
+            <element signature="e#12175#12243#0" expanded="false" />
+            <element signature="e#12272#13256#0" expanded="false" />
+            <element signature="e#13280#19009#0" expanded="false" />
+            <element signature="e#17361#17600#0" expanded="false" />
+            <element signature="e#17628#17869#0" expanded="false" />
+            <element signature="e#17874#18300#0" expanded="false" />
+            <element signature="e#18326#18652#0" expanded="false" />
+            <element signature="e#18676#19004#0" expanded="false" />
+            <element signature="e#19050#19334#0" expanded="false" />
+            <element signature="e#19354#19946#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -402,8 +1034,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4885#14084#0" expanded="false" />
-            <element signature="e#5453#5519#0" expanded="false" />
+            <element signature="e#4000#4045#0" expanded="false" />
+            <element signature="e#4102#4147#0" expanded="false" />
+            <element signature="e#4203#4246#0" expanded="false" />
+            <element signature="e#4303#4348#0" expanded="false" />
+            <element signature="e#4359#4456#0" expanded="false" />
+            <element signature="e#4516#4564#0" expanded="false" />
+            <element signature="e#4624#4672#0" expanded="false" />
+            <element signature="e#4741#4798#0" expanded="false" />
+            <element signature="e#5153#8738#0" expanded="false" />
+            <element signature="e#5643#5709#0" expanded="false" />
+            <element signature="e#8827#11766#0" expanded="false" />
+            <element signature="e#11845#14186#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -414,19 +1056,27 @@
           <caret line="198" column="26" lean-forward="false" selection-start-line="198" selection-start-column="10" selection-end-line="198" selection-end-column="26" />
           <folding>
             <element signature="e#89#1371#0" expanded="false" />
-            <element signature="e#4234#4498#0" expanded="false" />
+            <element signature="e#1450#1563#0" expanded="false" />
+            <element signature="e#3521#3555#0" expanded="false" />
+            <element signature="e#3834#3949#0" expanded="false" />
             <element signature="e#4517#4592#0" expanded="false" />
             <element signature="e#4614#5999#0" expanded="false" />
-            <element signature="e#6128#6637#0" expanded="false" />
-            <element signature="e#7169#7937#0" expanded="false" />
-            <element signature="e#7958#8224#0" expanded="false" />
-            <element signature="e#8247#8696#0" expanded="false" />
-            <element signature="e#8715#10924#0" expanded="false" />
-            <element signature="e#11979#12123#0" expanded="false" />
-            <element signature="e#12174#12242#0" expanded="false" />
-            <element signature="e#12271#13255#0" expanded="false" />
-            <element signature="e#13279#19036#0" expanded="false" />
-            <element signature="e#20050#70528#0" expanded="false" />
+            <element signature="e#6129#6638#0" expanded="false" />
+            <element signature="e#7170#7938#0" expanded="false" />
+            <element signature="e#7959#8225#0" expanded="false" />
+            <element signature="e#8248#8697#0" expanded="false" />
+            <element signature="e#8716#10925#0" expanded="false" />
+            <element signature="e#11980#12124#0" expanded="false" />
+            <element signature="e#12175#12243#0" expanded="false" />
+            <element signature="e#12272#13256#0" expanded="false" />
+            <element signature="e#13280#19009#0" expanded="false" />
+            <element signature="e#17361#17600#0" expanded="false" />
+            <element signature="e#17628#17869#0" expanded="false" />
+            <element signature="e#17874#18300#0" expanded="false" />
+            <element signature="e#18326#18652#0" expanded="false" />
+            <element signature="e#18676#19004#0" expanded="false" />
+            <element signature="e#19050#19334#0" expanded="false" />
+            <element signature="e#19354#19946#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -438,35 +1088,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sqf/fireGsh.sqs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sqf/init.sqs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="7" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sqf/Gsh.sqf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/fireGsh.sqs" />
+    <entry file="file://$PROJECT_DIR$/sqf/init.sqs" />
     <entry file="file://$PROJECT_DIR$/sqf/scripts.sqf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="1" column="28" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -474,7 +1101,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -482,7 +1108,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -490,64 +1115,177 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
           <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sqf/FX_Afterburner.sqf">
+    <entry file="file://$PROJECT_DIR$/sqf/save.sqf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3344">
-          <caret line="152" column="16" lean-forward="false" selection-start-line="152" selection-start-column="16" selection-end-line="152" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="-2901">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tex/afterburner.rvmat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CfgNonAIVehicles.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-154">
+        <state relative-caret-position="242">
           <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sqf/init.sqf">
+    <entry file="file://$PROJECT_DIR$/sqf/Gsh.sqf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CfgVehicles.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="696" column="129" lean-forward="true" selection-start-line="696" selection-start-column="75" selection-end-line="696" selection-end-column="129" />
-          <folding>
-            <element signature="e#89#1371#0" expanded="false" />
-            <element signature="e#4234#4498#0" expanded="false" />
-            <element signature="e#4517#4592#0" expanded="false" />
-            <element signature="e#4614#5999#0" expanded="false" />
-            <element signature="e#6128#6637#0" expanded="false" />
-            <element signature="e#7169#7937#0" expanded="false" />
-            <element signature="e#7958#8224#0" expanded="false" />
-            <element signature="e#8247#8696#0" expanded="false" />
-            <element signature="e#8715#10924#0" expanded="false" />
-            <element signature="e#11979#12123#0" expanded="false" />
-            <element signature="e#12174#12242#0" expanded="false" />
-            <element signature="e#12271#13255#0" expanded="false" />
-            <element signature="e#13279#19036#0" expanded="false" />
-            <element signature="e#20050#70528#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="176">
+          <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sqf/weapons.sqf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="734">
-          <caret line="106" column="15" lean-forward="false" selection-start-line="106" selection-start-column="15" selection-end-line="106" selection-end-column="15" />
+        <state relative-caret-position="3630">
+          <caret line="453" column="0" lean-forward="false" selection-start-line="453" selection-start-column="0" selection-end-line="453" selection-end-column="0" />
           <folding>
-            <element signature="e#4885#14084#0" expanded="false" />
-            <element signature="e#5453#5519#0" expanded="false" />
+            <element signature="e#4000#4045#0" expanded="false" />
+            <element signature="e#4102#4147#0" expanded="false" />
+            <element signature="e#4203#4246#0" expanded="false" />
+            <element signature="e#4303#4348#0" expanded="false" />
+            <element signature="e#4359#4456#0" expanded="false" />
+            <element signature="e#4516#4564#0" expanded="false" />
+            <element signature="e#4624#4672#0" expanded="false" />
+            <element signature="e#4741#4798#0" expanded="false" />
+            <element signature="e#5153#8738#0" expanded="false" />
+            <element signature="e#5643#5709#0" expanded="false" />
+            <element signature="e#8827#11766#0" expanded="false" />
+            <element signature="e#11845#14186#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/FX_Afterburner.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1672">
+          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+          <folding>
+            <element signature="e#2546#2569#0" expanded="false" />
+            <element signature="e#2576#3000#0" expanded="false" />
+            <element signature="e#3118#4485#0" expanded="false" />
+            <element signature="e#4491#5836#0" expanded="false" />
+            <element signature="e#5858#7252#0" expanded="false" />
+            <element signature="e#7327#7380#0" expanded="false" />
+            <element signature="e#7386#7436#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqf/init.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="e#1000#1834#0" expanded="false" />
+            <element signature="e#1855#2689#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgMagazines.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5852">
+          <caret line="266" column="6" lean-forward="false" selection-start-line="266" selection-start-column="6" selection-end-line="266" selection-end-column="6" />
+          <folding>
+            <element signature="e#81#166#0" expanded="false" />
+            <element signature="e#204#288#0" expanded="false" />
+            <element signature="e#326#628#0" expanded="false" />
+            <element signature="e#677#787#0" expanded="false" />
+            <element signature="e#834#1157#0" expanded="false" />
+            <element signature="e#1504#1611#0" expanded="false" />
+            <element signature="e#1645#1975#0" expanded="false" />
+            <element signature="e#2002#2114#0" expanded="false" />
+            <element signature="e#2140#2275#0" expanded="false" />
+            <element signature="e#2303#2441#0" expanded="false" />
+            <element signature="e#2466#2598#0" expanded="false" />
+            <element signature="e#2639#2932#0" expanded="false" />
+            <element signature="e#2973#3266#0" expanded="false" />
+            <element signature="e#3307#3600#0" expanded="false" />
+            <element signature="e#3641#3934#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgWeapons.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#248#724#0" expanded="false" />
+            <element signature="e#765#1141#0" expanded="false" />
+            <element signature="e#1185#2238#0" expanded="false" />
+            <element signature="e#2283#2526#0" expanded="false" />
+            <element signature="e#2579#2675#0" expanded="false" />
+            <element signature="e#2728#2909#0" expanded="false" />
+            <element signature="e#2951#4003#0" expanded="false" />
+            <element signature="e#4046#4195#0" expanded="false" />
+            <element signature="e#4236#4415#0" expanded="false" />
+            <element signature="e#4456#4619#0" expanded="false" />
+            <element signature="e#4654#4830#0" expanded="false" />
+            <element signature="e#4867#4987#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgAmmo.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1760">
+          <caret line="344" column="4" lean-forward="false" selection-start-line="344" selection-start-column="4" selection-end-line="344" selection-end-column="4" />
+          <folding>
+            <element signature="e#194#289#0" expanded="false" />
+            <element signature="e#346#370#0" expanded="false" />
+            <element signature="e#402#497#0" expanded="false" />
+            <element signature="e#500#1733#0" expanded="false" />
+            <element signature="e#1764#3098#0" expanded="false" />
+            <element signature="e#3140#3615#0" expanded="false" />
+            <element signature="e#3656#4245#0" expanded="false" />
+            <element signature="e#4286#5345#0" expanded="false" />
+            <element signature="e#7101#7179#0" expanded="false" />
+            <element signature="e#7919#8306#0" expanded="false" />
+            <element signature="e#8354#8951#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CfgVehicles.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="131" column="20" lean-forward="false" selection-start-line="131" selection-start-column="8" selection-end-line="131" selection-end-column="20" />
+          <folding>
+            <element signature="e#89#1371#0" expanded="false" />
+            <element signature="e#1450#1563#0" expanded="false" />
+            <element signature="e#3521#3555#0" expanded="false" />
+            <element signature="e#3834#3949#0" expanded="false" />
+            <element signature="e#4517#4592#0" expanded="false" />
+            <element signature="e#4614#5999#0" expanded="false" />
+            <element signature="e#6129#6638#0" expanded="false" />
+            <element signature="e#7170#7938#0" expanded="false" />
+            <element signature="e#7959#8225#0" expanded="false" />
+            <element signature="e#8248#8697#0" expanded="false" />
+            <element signature="e#8716#10925#0" expanded="false" />
+            <element signature="e#11980#12124#0" expanded="false" />
+            <element signature="e#12175#12243#0" expanded="false" />
+            <element signature="e#12272#13256#0" expanded="false" />
+            <element signature="e#13280#19009#0" expanded="false" />
+            <element signature="e#17361#17600#0" expanded="false" />
+            <element signature="e#17628#17869#0" expanded="false" />
+            <element signature="e#17874#18300#0" expanded="false" />
+            <element signature="e#18326#18652#0" expanded="false" />
+            <element signature="e#18676#19004#0" expanded="false" />
+            <element signature="e#19050#19334#0" expanded="false" />
+            <element signature="e#19354#19946#0" expanded="false" />
           </folding>
         </state>
       </provider>

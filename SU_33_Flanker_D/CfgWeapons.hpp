@@ -8,10 +8,9 @@ class CfgWeapons
 	class Bomb_03_Plane_CAS_02_F;
 	class Bomb_04_Plane_CAS_01_F;
 	class FakeWeapon;
-	class gatling_30mm;
+	class autocannon_35mm;
 
-
-	class Su_GSh301: gatling_30mm
+	class Su_GSh301: autocannon_35mm
 	{
 		displayName="Gsh-301 30mm";
 		displayNameMagazine="Gsh-301 30mm";

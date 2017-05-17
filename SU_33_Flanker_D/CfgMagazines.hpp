@@ -47,7 +47,7 @@ class CfgMagazines
 	{
 		scope=2;
 		count=300;
-		ammo="Su_GSh301_30mm";
+		ammo="Su_GSh301_35mm";
 		initSpeed=900;
 		tracersEvery=1;
 		ammoIsProxy = true;

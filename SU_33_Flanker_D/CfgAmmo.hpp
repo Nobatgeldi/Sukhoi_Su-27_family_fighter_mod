@@ -1,8 +1,7 @@
 class CfgAmmo
 {
 	class MissileBase;
-	class Cannon_30mm_HE_Plane_CAS_02_F;
-	class B_30mm_MP_Tracer_Red;
+	class B_35mm_AA_Tracer_Yellow;
 	class Bomb_04_F;
 	class LaserBombCore;
 	class BombCore;
@@ -13,7 +12,7 @@ class CfgAmmo
 		proxyShape="\SU_33_Flanker_D\wep\fake_w.p3d";
 	};
 
-	class Su_GSh301_30mm: Cannon_30mm_HE_Plane_CAS_02_F
+	class Su_GSh301_35mm: B_35mm_AA_Tracer_Yellow
 	{
    // bla blaa blaa
 	};

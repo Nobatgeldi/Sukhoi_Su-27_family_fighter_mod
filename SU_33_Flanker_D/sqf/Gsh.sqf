@@ -1,15 +1,12 @@
 // -----------------------------
-// configured for mig-29 by Gabby_NG
+// configured for Su-33 by Gabby_NG
 // -----------------------------
 private ["_array","_weapon","_plane","_gunmodelpos","_vel"];
 
 _array = _this select 0;
+_plane = _array select 0;
 _weapon = _array select 1;
 //_ammoname = _array select 4;
-_plane = _array select 0;
-
-
-//main
 
 if(_weapon == "Su_GSh301") then
 {
