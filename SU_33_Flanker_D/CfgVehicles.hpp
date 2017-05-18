@@ -178,8 +178,7 @@ class CfgVehicles
 		driverLeftHandAnimName = "control_throttle";
 		driverLeftLegAnimName = "pilot_pedal_L";
 		driverRightLegAnimName = "pilot_pedal_R";
-		/*
-		memoryPointLDust = "pos_dust_left";
+		/*memoryPointLDust = "pos_dust_left";
 		memoryPointRDust = "pos_dust_right";
 		memoryPointGun = "pos_nosegun";*/
 		//memoryPointLMissile = "l strela";
@@ -306,8 +305,8 @@ class CfgVehicles
 							objectDistanceLimitCoef = 1;
 							viewDistanceLimitCoef = 1;
 						};
-						angleRangeHorizontal = 90;
-						angleRangeVertical = 90;
+						angleRangeHorizontal = 60;
+						angleRangeVertical = 60;
 						maxTrackableSpeed = 100;
 						animDirection = "PilotCamera_V";
 					};
@@ -334,7 +333,12 @@ class CfgVehicles
 
 					class AntiRadiationSensorComponent : SensorTemplateAntiRadiation {};
 
-					class ActiveRadarSensorComponent : SensorTemplateActiveRadar {};
+					class ActiveRadarSensorComponent : SensorTemplateActiveRadar
+					{
+						angleRangeHorizontal = 140;
+						angleRangeVertical = 140;
+						maxTrackableSpeed = 100;
+					};
 
 					class PassiveRadarSensorComponent : SensorTemplatePassiveRadar {};
 
@@ -601,7 +605,8 @@ class CfgVehicles
 				volume = "(1-camPos) * rain * (speed factor[50, 0])";
 			};
 		};*/
-		class Sounds {
+		class Sounds
+		{
 			class EngineLowOut {
 				sound[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_engine_idle_ext", 1.0, 1.0, 2100};
 				frequency = "1.0 min (rpm + 0.5)";
