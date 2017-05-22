@@ -101,7 +101,7 @@ class CfgVehicles
 		displayName="Sukhoi Su-33 Flanker-D";
 		model="\SU_33_Flanker_D\Su33_protatype_2.p3d";
 		driverAction="su_33_pilot";
-		driverCanSee = 1+2+4+8+16;
+		driverCanSee = 31;
 		getInAction = "";
 		animated=1;
 		vehicleClass="Air";
@@ -139,8 +139,8 @@ class CfgVehicles
 		laserScanner=1;
 		irTarget=1;
 		irScanRangeMin=100;
-		irScanRangeMax=10000;
-		irScanToEyeFactor=4;
+		irScanRangeMax=100000;
+		irScanToEyeFactor=2;
 		irScanGround=1;
 		nvTarget = 1;
 		nvScanner = 1;
@@ -335,6 +335,10 @@ class CfgVehicles
 
 					class ActiveRadarSensorComponent : SensorTemplateActiveRadar
 					{
+						class AirTarget {
+							minRange = 50;
+							maxRange = 1000000;
+						};
 						angleRangeHorizontal = 140;
 						angleRangeVertical = 140;
 						maxTrackableSpeed = 100;
@@ -349,6 +353,8 @@ class CfgVehicles
 			};
 
 			class VehicleSystemsDisplayManagerComponentLeft : DefaultVehicleSystemsDisplayManagerLeft {
+				defaultDisplay = "VehicleMissileDisplay";
+
 				class Components {
 					class EmptyDisplay {
 						componentType = "EmptyDisplayComponent";
@@ -375,7 +381,7 @@ class CfgVehicles
 
 					class SensorDisplay {
 						componentType = "SensorsDisplayComponent";
-						range[] = {4000, 2000, 16000, 8000};
+						range[] = {40000, 2000, 16000, 8000};
 						resource = "RscCustomInfoSensors";
 					};
 				};
@@ -410,7 +416,7 @@ class CfgVehicles
 
 					class SensorDisplay {
 						componentType = "SensorsDisplayComponent";
-						range[] = {4000, 2000, 16000, 8000};
+						range[] = {10000, 5000, 35000, 18000};
 						resource = "RscCustomInfoSensors";
 					};
 				};
@@ -502,7 +508,7 @@ class CfgVehicles
 				};
 			};
 		};
-		/*class Sounds
+		class Sounds
 		{
 			class EngineLowOut
 			{
@@ -604,8 +610,8 @@ class CfgVehicles
 				frequency = 1;
 				volume = "(1-camPos) * rain * (speed factor[50, 0])";
 			};
-		};*/
-		class Sounds
+		};
+		/*class Sounds
 		{
 			class EngineLowOut {
 				sound[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_engine_idle_ext", 1.0, 1.0, 2100};
@@ -679,7 +685,7 @@ class CfgVehicles
 				frequency = "1";
 				volume = "(speed factor[0, 5]) * water * (1-camPos) + (speed factor[-0.1, -5]) * water * (1-camPos)";
 			};
-		};
+		};*/
 		attenuationEffectType = "PlaneAttenuation";
 		soundGetIn[] = {"A3\Sounds_F_EPC\CAS_02\TO_getin", 1.0, 1};
 		soundGetOut[] = {"A3\Sounds_F_EPC\CAS_02\getout", 1.0, 1, 40};

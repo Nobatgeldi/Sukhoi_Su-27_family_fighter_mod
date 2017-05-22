@@ -282,8 +282,8 @@ class CfgAmmo
 	// short range
 	class Su_R73_AA: MissileBase
 	{
-		model="\SU_33_Flanker_D\wep\R73_proxy.p3d";
-		proxyShape="\SU_33_Flanker_D\wep\R73_proxy.p3d";
+		model="\SU_33_Flanker_D\wep\R73\R_73.p3d";
+		proxyShape="\SU_33_Flanker_D\wep\R73\R_73.p3d";
 		hit=200;
 		weaponType = "missileAA"; //Overrides the engine determination of weapon type
 															//based on ammo simulation, for vehicle weapon grouping.
@@ -342,8 +342,8 @@ class CfgAmmo
 	// medium range missile up to 80 km
 	class Su_R27R_AA: Su_R73_AA
 	{
-		model="\SU_33_Flanker_D\wep\R27RE.p3d";
-		proxyShape="\SU_33_Flanker_D\wep\R27RE_proxy.p3d";
+		model="\SU_33_Flanker_D\wep\R27\R_27.p3d";
+		proxyShape="\SU_33_Flanker_D\wep\R27\R_27.p3d";
 		hit=1200;
 		indirectHit=600;
 		indirectHitRange=30;
@@ -395,8 +395,8 @@ class CfgAmmo
 	// medium range
 	class Su_R77_AA: Su_R73_AA
 	{
-		model="\SU_33_Flanker_D\wep\R77.p3d";
-		proxyShape="\SU_33_Flanker_D\wep\R77_proxy.p3d";
+		model="\SU_33_Flanker_D\wep\R77\R_77.p3d";
+		proxyShape="\SU_33_Flanker_D\wep\R77\R_77_proxy.p3d";
 		hit=1200;
 		indirectHit=600;
 		indirectHitRange=30;

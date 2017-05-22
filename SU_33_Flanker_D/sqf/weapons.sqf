@@ -261,18 +261,18 @@ while {(alive _plane)}do
         _plane addMagazine _R_27_magazine;
           sleep 1.0;
           systemChat "R-27R AA missiles are loaded";
-        _plane addMagazine _R_73_magazine;
+        /*_plane addMagazine _R_73_magazine;
         _plane addMagazine _R_73_magazine;
         _plane addMagazine _R_73_magazine;
         _plane addMagazine _R_73_magazine;
         _plane addMagazine _R_73_magazine;
         _plane addMagazine _R_73_magazine;
         sleep 1.0;
-        systemChat "R-73 AA missiles are loaded";
+        systemChat "R-73 AA missiles are loaded";*/
 
         _plane addWeapon _R_73M1;
         _plane addWeapon _R_77;
-        _plane addWeapon _R_73;
+        //_plane addWeapon _R_73;
         _plane addWeapon _R_27;
     };
     //A to G load(anti-ship)
