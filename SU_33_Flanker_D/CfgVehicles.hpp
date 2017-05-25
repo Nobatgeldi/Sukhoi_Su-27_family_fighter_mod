@@ -180,9 +180,9 @@ class CfgVehicles
 		driverRightLegAnimName = "pilot_pedal_R";
 		/*memoryPointLDust = "pos_dust_left";
 		memoryPointRDust = "pos_dust_right";
-		memoryPointGun = "pos_nosegun";*/
-		//memoryPointLMissile = "l strela";
-		//memoryPointRMissile = "p strela";
+		memoryPointGun = "pos_nosegun";
+		memoryPointLMissile = "l strela";
+		memoryPointRMissile = "p strela";*/
 		memoryPointCM[] = {"flare_L","flare_R"};
 		memoryPointCMDir[] = {"flare_L_dir","flare_R_dir"};
 		//memoryPointsGetInDriver = "pos_driver";
@@ -217,7 +217,7 @@ class CfgVehicles
 		{
 		 "Su_300Rnd_30mm_GSh301",
 
-     "300Rnd_CMFlare_Chaff_Magazine"
+         "300Rnd_CMFlare_Chaff_Magazine"
 		};
 		class pilotCamera {
 			class OpticsIn {
@@ -273,14 +273,14 @@ class CfgVehicles
 		memoryPointDriverOptics = "PilotCamera_pos";
 		aileronSensitivity=2.5;
 		elevatorSensitivity=2.9;
-		radarTargetSize=1.0;				  /*Radar cross-section coefficient of the vehicle. Works as a coefficient of
-						                      RADAR Sensor's range within the given combat situation.
-																	Early test values
-																	0.1 - fully stealth (<0.0005m2 RCS) (not recommended)
-																	0.7 - small aircrafts, semi-stealth (~1m2 RCS)
-																	1.0 - mid sized aircraft, car (~5m2 RCS)
-																	1.2 - tanks, trucks (~10m2 RCS)
-																	2.0 - large bomber, small ship and bigger (>80m2 RCS)*/
+		radarTargetSize=1.0; /*Radar cross-section coefficient of the vehicle. Works as a coefficient of
+						       RADAR Sensor's range within the given combat situation.
+                                Early test values
+                                0.1 - fully stealth (<0.0005m2 RCS) (not recommended)
+                                0.7 - small aircrafts, semi-stealth (~1m2 RCS)
+                                1.0 - mid sized aircraft, car (~5m2 RCS)
+                                1.2 - tanks, trucks (~10m2 RCS)
+                                2.0 - large bomber, small ship and bigger (>80m2 RCS)*/
 		receiveRemoteTargets = true; //if the vehicle is able to receive targets
 																 //  and positions from friendly vehicles with reportRemoteTargets.
 
@@ -300,10 +300,10 @@ class CfgVehicles
 						};
 
 						class GroundTarget {
-							minRange = 500;
-							maxRange = 15000;
-							objectDistanceLimitCoef = 1;
-							viewDistanceLimitCoef = 1;
+							minRange = 100;
+							maxRange = 20000;
+							objectDistanceLimitCoef = -1;
+							viewDistanceLimitCoef = -1;
 						};
 						angleRangeHorizontal = 60;
 						angleRangeVertical = 60;

@@ -194,9 +194,10 @@ class CfgAmmo
 	class Su_KH31_AG : Su_MissileBase_AGM {
 		model = "\SU_33_Flanker_D\wep\KH31\KH31.p3d";
 		proxyShape = "\SU_33_Flanker_D\wep\KH31\KH31.p3d";
-		hit = 2000;
-		indirectHit = 1000;
-		offBoresightAngle = 80; // 180° laser sensor FoV
+		hit = 5000;
+		missileLockMaxDistance = 20000;
+		indirectHit = 5000;
+		offBoresightAngle = 80; // 160° laser sensor FoV
 		indirectHitRange = 12;
 		maxSpeed = 2520;
 		explosive = 1;//Defines whether ammunition is explosive, and if so, by how much.
@@ -296,10 +297,13 @@ class CfgAmmo
 		cmImmunity=0.70;
 		simulation="shotMissile";
 		simulationStep=0.0020000001;
+
+		lowerterrain=1; //If defined as 'true', the ammunition can change/ lower the terrain.
+		offBoresightAngle = 80; //Defines the FOV angle of LOBL/ LOAL laser sensors.
 		airLock=2;
 		irLock=1;
 		laserLock = true;
-		laserScanRange = 10000;
+		laserScanRange = 50000;
 		cost=1500;
 		maxSpeed=828; //Meters per second  Defines the maximum speed of ammunition (missiles and rockets).
 		timeToLive=40;
@@ -326,9 +330,9 @@ class CfgAmmo
 		{
 			class LOBL
 			{
-				launchAngle=40;
+				launchAngle=20;
 				targetingMode="LOBL";
-				targetDistanceOverride=300;
+				targetDistanceOverride=150;
 			};
 		};
 	};

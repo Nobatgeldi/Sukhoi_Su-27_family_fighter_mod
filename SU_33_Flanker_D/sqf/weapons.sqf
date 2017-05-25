@@ -81,11 +81,11 @@ private ["_R73_count","_R27_count","_R73M_count","_R77_count","_KH29_count","_KH
     _plane removeMagazine _Laser_designator_magazine;
 
 //DEFINE NEW LOADOUT
-    _station_1 = _R_73_magazine;
-    _station_2 = _R_73_magazine;
+    _station_1 = _R_73M1_magazine;
+    _station_2 = _R_73M1_magazine;
 
-    _station_3 = _R_27_magazine;
-    _station_4 = _R_27_magazine;
+    _station_3 = _R_77_magazine;//_R_27_magazine;
+    _station_4 = _R_77_magazine;//_R_27_magazine;
 
     _station_5 = _KH29_magazine;
     _station_6 = _KH29_magazine;
@@ -125,15 +125,15 @@ private ["_R73_count","_R27_count","_R73M_count","_R77_count","_KH29_count","_KH
       sleep 0.1;
       systemChat "FAB-250 bombs are loaded";
 
-      //ADD NEW WEAPONS FOR PRELOADED MAGAZINES
+//ADD NEW WEAPONS FOR PRELOADED MAGAZINES
         _loadout = magazines _plane;
-        if ((_R_73_magazine in _loadout)) then
+        if ((_R_73M1_magazine in _loadout)) then
         {
-          _plane addWeapon _R_73;
+          _plane addWeapon _R_73M1;
         };
-        if ((_R_27_magazine in _loadout)) then
+        if ((_R_77_magazine in _loadout)) then
         {
-          _plane addWeapon _R_27;
+          _plane addWeapon _R_77;
         };
         if ((_S81_magazine in _loadout)) then
         {
@@ -289,6 +289,7 @@ while {(alive _plane)}do
           _plane removeWeapon _Laser_designator;
 
       //ROMEVE ALL POSSIBLE DEFAULT MAGAZINES
+
             for "_h" from 0 to 10 do
             {
               _plane removeMagazine _Fake_magazin;
@@ -358,14 +359,26 @@ while {(alive _plane)}do
         systemChat "R-73M1 AA missiles are loaded";
 
       _plane addMagazine _KH31_magazine;
-          sleep 2.0;
+          sleep 1.0;
       _plane addMagazine _KH31_magazine;
-          systemChat "R-77 AA  missiles are loaded";
-      for "_h" from 0 to 10 do
+          sleep 1.0;
+
+      _plane addMagazine _Fake_magazin;
+      _plane addMagazine _Fake_magazin;
+      _plane addMagazine _Fake_magazin;
+      _plane addMagazine _Fake_magazin;
+        sleep 1.0;
+        systemChat "Fake weapons are loaded";
+
+      _plane addMagazine _KH31_magazine;
+        sleep 1.0;
+      _plane addMagazine _KH31_magazine;
+        systemChat "KH-31 missiles are loaded";
+      for "_h" from 0 to 4 do
        {
         _plane addMagazine _Fake_magazin;
        };
-          systemChat "Fake weapons are loaded";
+        systemChat "Fake weapons are loaded";
 
       //_plane addWeapon _Safe_m;
       _plane addWeapon _R_73M1;

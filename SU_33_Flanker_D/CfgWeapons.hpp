@@ -63,6 +63,8 @@ class CfgWeapons
 		displayName="Kh-29 Kedge";
 		displayNameMagazine="Kh-29 Kedge";
 		shortNameMagazine="Kh-29";
+		type=WeaponHardMounted;
+		autoAimEnabled=true;
 		magazines[]=
 		{
 			"Su_kh29"
@@ -113,7 +115,7 @@ class CfgWeapons
 		};
 		cursor="EmptyCursor";
 		cursorAim="EmptyCursor";
-		weaponLockDelay=3;
+		weaponLockDelay=1;
 		textureType="fullAuto";
 		minRange=300;
 		minRangeProbab=0.25;
@@ -129,7 +131,7 @@ class CfgWeapons
 		minRangeProbab = 0.6;
 		midRange = 5000;
 		midRangeProbab = 0.9;
-		maxRange = 15000;
+		maxRange = 60000;
 		maxRangeProbab = 0.1;
 		reloadTime = 4;
 		magazines[] = {"Su_KH31"};
