@@ -652,7 +652,7 @@ Also add information on how to contact you by electronic and paper mail.
   If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
 
-    Sukhoi Su-27 family fighter mod  Copyright (C) Sukhoi_Su-27_family_fighter_mod
+    Sukhoi Su-27 family fighter mod  Copyright (C) 2017  Nobatgeldi Geldimammedov
     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
     This is free software, and you are welcome to redistribute it
     under certain conditions; type `show c' for details.
