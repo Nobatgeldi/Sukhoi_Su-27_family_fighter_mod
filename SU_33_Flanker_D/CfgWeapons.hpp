@@ -5,7 +5,8 @@ class CfgWeapons
 	class MissileLauncher;
 	class RocketPods;
 	class H_PilotHelmetFighter_O;
-	class Bomb_03_Plane_CAS_02_F;
+	class weapon_R73Launcher;
+	class weapon_R77Launcher;
 	class Bomb_04_Plane_CAS_01_F;
 	class FakeWeapon;
 	class autocannon_35mm;
@@ -16,6 +17,7 @@ class CfgWeapons
 		displayNameMagazine="Gsh-301 30mm";
 		shortNameMagazine="Gsh-301 30mm";
 		cursor="EmptyCursor";
+		type=WeaponHardMounted;
 		cursorAim="";
 		burst=2;
 		reloadTime=0.1;
@@ -63,7 +65,7 @@ class CfgWeapons
 		displayName="Kh-29 Kedge";
 		displayNameMagazine="Kh-29 Kedge";
 		shortNameMagazine="Kh-29";
-		type=WeaponHardMounted;
+		//type=WeaponHardMounted;
 		autoAimEnabled=true;
 		magazines[]=
 		{
@@ -124,9 +126,10 @@ class CfgWeapons
 		maxRange=9000;
 		maxRangeProbab=0.0099999998;
 	};
-	class Su_KH31_Launcher : Su_kh29_Launcher {
+	class Su_KH31_Launcher : Su_kh29_Launcher
+	{
 		scope = 2;
-		displayName = "Kh-31U";
+		displayName = "Kh-31U Krypton";
 		minRange = 50;
 		minRangeProbab = 0.6;
 		midRange = 5000;
@@ -135,7 +138,6 @@ class CfgWeapons
 		maxRangeProbab = 0.1;
 		reloadTime = 4;
 		magazines[] = {"Su_KH31"};
-		//GLT_isGPSguided = 1;
 	};
 	class Su_kab500K_Laucher: Bomb_04_Plane_CAS_01_F
 	{
@@ -155,7 +157,7 @@ class CfgWeapons
 		};
 		ballisticsComputer = 8;
 	};
-	class Su_R73Launcher: MissileLauncher
+	class Su_R73Launcher: weapon_R73Launcher
 	{
 		canLock=2;
 		autoFire=0;
@@ -241,7 +243,7 @@ class CfgWeapons
 		};
 		reloadTime=0.30000001;
 	};
-	class Su_R77Launcher: Su_R73Launcher
+	class Su_R77Launcher: weapon_R77Launcher
 	{
 		displayName="R-77 Adder";
 		displayNameMagazine="R-77 Adder";

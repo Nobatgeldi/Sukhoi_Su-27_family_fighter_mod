@@ -1,6 +1,8 @@
 class CfgAmmo
 {
 	class MissileBase;
+	class ammo_Missile_AA_R73;
+	class ammo_Missile_AA_R77;
 	class B_35mm_AA_Tracer_Yellow;
 	class Bomb_04_F;
 	class LaserBombCore;
@@ -16,11 +18,13 @@ class CfgAmmo
 	{
    // bla blaa blaa
 	};
+
 	class Su_fab_250: Bomb_04_F
 	{
 		model="\SU_33_Flanker_D\wep\fab250.p3d";
 		proxyShape="\SU_33_Flanker_D\wep\fab250.p3d";
 	};
+
 	/*class su_kab500: LaserBombCore
 	{
 		hit=6000;
@@ -95,6 +99,7 @@ class CfgAmmo
 		maxControlRange=8000;
 		manualControl=1;
 	};*/
+
 	class Su_kh_29: MissileBase
 	{
 		hit=1500;
@@ -191,6 +196,7 @@ class CfgAmmo
 		weaponLockSystem=8 + 16;
 		cmImmunity = 0.9;
 	};
+
 	class Su_KH31_AG : Su_MissileBase_AGM {
 		model = "\SU_33_Flanker_D\wep\KH31\KH31.p3d";
 		proxyShape = "\SU_33_Flanker_D\wep\KH31\KH31.p3d";
@@ -198,9 +204,9 @@ class CfgAmmo
 		missileLockMaxDistance = 20000;
 		indirectHit = 5000;
 		offBoresightAngle = 80; // 160° laser sensor FoV
-		indirectHitRange = 12;
+		indirectHitRange = 100;
 		maxSpeed = 2520;
-		explosive = 1;//Defines whether ammunition is explosive, and if so, by how much.
+		explosive = 5;//Defines whether ammunition is explosive, and if so, by how much.
 		maxControlRange = 150000;
 		initTime = 2;
 		thrustTime = 18;
@@ -217,6 +223,7 @@ class CfgAmmo
 		laserLock = 1;
 		nvLock = 1;
 	};
+
 	class Su_rocket_80mm_HE: MissileBase
 	{
 		model="\A3\Weapons_F\Ammo\Rocket_02_fly_F";
@@ -280,8 +287,9 @@ class CfgAmmo
 		irLock=0;
 		laserLock=0;
 	};
+
 	// short range
-	class Su_R73_AA: MissileBase
+	class Su_R73_AA: ammo_Missile_AA_R73
 	{
 		model="\SU_33_Flanker_D\wep\R73\R_73.p3d";
 		proxyShape="\SU_33_Flanker_D\wep\R73\R_73.p3d";
@@ -343,6 +351,7 @@ class CfgAmmo
 		indirectHitRange=20;
 		maneuvrability=35;
 	};
+
 	// medium range missile up to 80 km
 	class Su_R27R_AA: Su_R73_AA
 	{
@@ -372,6 +381,7 @@ class CfgAmmo
 		effectsMissileInit="RocketBackEffectsRPG";
 		weaponLockSystem="2 + 8 + 8";
 	};
+
 	// long range missile up to 130 km
 	class Su_R27EA_AA: Su_R27R_AA
 	{
@@ -396,8 +406,9 @@ class CfgAmmo
 		fuseDistance=1500;
 		weaponLockSystem="2 + 8 + 8";
 	};
+
 	// medium range
-	class Su_R77_AA: Su_R73_AA
+	class Su_R77_AA: ammo_Missile_AA_R77
 	{
 		model="\SU_33_Flanker_D\wep\R77\R_77.p3d";
 		proxyShape="\SU_33_Flanker_D\wep\R77\R_77_proxy.p3d";

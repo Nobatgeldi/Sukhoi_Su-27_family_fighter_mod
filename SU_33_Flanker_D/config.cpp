@@ -43,6 +43,6 @@ class CfgPatches
 		};
 		weapons[] = {};
 		requiredVersion = 1.3;
-		requiredAddons[] = {"CBA_Extended_EventHandlers"};
+		requiredAddons[] = {};
 	};
 };

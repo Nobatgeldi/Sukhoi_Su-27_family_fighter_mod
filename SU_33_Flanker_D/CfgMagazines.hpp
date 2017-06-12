@@ -1,3 +1,5 @@
+
+
 class CfgMagazines
 {
 	class VehicleMagazine;
@@ -105,7 +107,7 @@ class CfgMagazines
 	{
 		scope = 2;
 		displayName = "Kh-31U Krypton";
-		ammo = Su_KH31_AG;
+		ammo = "Su_KH31_AG";
 		count = 1;
 		ammoIsProxy = true;
 	};

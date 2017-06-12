@@ -1,97 +1,106 @@
+#define WEAPONGROUP_CANNONS      1  // Cannons
+#define WEAPONGROUP_MGUNS        2  // Machine Guns
+#define WEAPONGROUP_ROCKETS      4  // Rockets
+#define WEAPONGROUP_AAMISSILES   8  // Anti-Air Missiles
+#define WEAPONGROUP_ATMISSILES  16  // Anti-Tank Missiles
+#define WEAPONGROUP_MISSILES    32  // All / Other Missiles
+#define WEAPONGROUP_BOMBS       64  // Bombs
+#define WEAPONGROUP_SPECIAL    128  // Laser Designator + Misc
+
 class CfgVehicles
 {
-	  class All{};
-		class O_Pilot_F;
-		class Sukhoi_Pilot: O_Pilot_F
-		{
-			class SpeechVariants
-			{
-				class Default
-				{
-					speechSingular[]=
-					{
-						"veh_infantry_pilot_s"
-					};
-					speechPlural[]=
-					{
-						"veh_infantry_pilot_p"
-					};
-				};
-			};
-			//textSingular="$STR_A3_nameSound_veh_infantry_pilot_s";
-			//textPlural="$STR_A3_nameSound_veh_infantry_pilot_p";
-			nameSound="veh_infantry_pilot_s";
-			//author="$STR_A3_Bohemia_Interactive";
-			_generalMacro="O_Pilot_F";
-			displayName="Sukhoi Pilot";
-			model="\A3\characters_F\Common\pilot_f.p3d";
-			modelSides[]={3,1};
-			weapons[]=
-			{
-				"Throw",
-				"Put",
-				"arifle_Katiba_ACO_pointer_F"
-			};
-			respawnWeapons[]=
-			{
-				"Throw",
-				"Put"
-			};
-			magazines[]=
-			{
-				"30Rnd_65x39_caseless_green_mag_Tracer"
-			};
-			respawnMagazines[]={};
-			backpack="";
-			linkedItems[]=
-			{
-				"ItemMap",
-				"ItemCompass",
-				"ItemWatch",
-				"ItemRadio",
-				"ItemGPS",
-				"Integrated_NVG_F",
-				"H_PilotHelmetFighter_O"
-			};
-			respawnLinkedItems[]=
-			{
-				"ItemMap",
-				"ItemCompass",
-				"ItemWatch",
-				"ItemRadio",
-				"ItemGPS",
-				"Integrated_NVG_F",
-				"H_PilotHelmetFighter_O"
-			};
-			hiddenSelections[]=
-			{
-				"Camo"
-			};
-			hiddenSelectionsTextures[]=
-			{
-				"\A3\Characters_F\Common\Data\pilot_suit_iran_co.paa"
-			};
-			cost=165000;
-		};
-		class AllVehicles: All{};
-		class Air: AllVehicles{};
-		class Plane: Air
-		{
-			class NewTurret;
-			class ViewPilot;
-			class Sounds;
-			class AnimationSources;
-			class Eventhandlers;
-			class HitPoints;
-		};
-		class Su33_Base_F : Plane {
-			class AnimationSources;	// External class reference
+	class All{};
+    class O_Pilot_F;
+    class Sukhoi_Pilot: O_Pilot_F
+    {
+        class SpeechVariants
+        {
+            class Default
+            {
+                speechSingular[]=
+                {
+                    "veh_infantry_pilot_s"
+                };
+                speechPlural[]=
+                {
+                    "veh_infantry_pilot_p"
+                };
+            };
+        };
+        //textSingular="$STR_A3_nameSound_veh_infantry_pilot_s";
+        //textPlural="$STR_A3_nameSound_veh_infantry_pilot_p";
+        nameSound="veh_infantry_pilot_s";
+        //author="$STR_A3_Bohemia_Interactive";
+        _generalMacro="O_Pilot_F";
+        displayName="Sukhoi Pilot";
+        model="\A3\characters_F\Common\pilot_f.p3d";
+        modelSides[]={3,1};
+        weapons[]=
+        {
+            "Throw",
+            "Put",
+            "arifle_Katiba_ACO_pointer_F"
+        };
+        respawnWeapons[]=
+        {
+            "Throw",
+            "Put"
+        };
+        magazines[]=
+        {
+            "30Rnd_65x39_caseless_green_mag_Tracer"
+        };
+        respawnMagazines[]={};
+        backpack="";
+        linkedItems[]=
+        {
+            "ItemMap",
+            "ItemCompass",
+            "ItemWatch",
+            "ItemRadio",
+            "ItemGPS",
+            "Integrated_NVG_F",
+            "H_PilotHelmetFighter_O"
+        };
+        respawnLinkedItems[]=
+        {
+            "ItemMap",
+            "ItemCompass",
+            "ItemWatch",
+            "ItemRadio",
+            "ItemGPS",
+            "Integrated_NVG_F",
+            "H_PilotHelmetFighter_O"
+        };
+        hiddenSelections[]=
+        {
+            "Camo"
+        };
+        hiddenSelectionsTextures[]=
+        {
+            "\A3\Characters_F\Common\Data\pilot_suit_iran_co.paa"
+        };
+        cost=165000;
+    };
+    class AllVehicles: All{};
+    class Air: AllVehicles{};
+    class Plane: Air
+    {
+        class NewTurret;
+        class ViewPilot;
+        class Sounds;
+        class AnimationSources;
+        class Eventhandlers;
+        class HitPoints;
+    };
+    class Su33_Base_F : Plane {
+        class AnimationSources;	// External class reference
 
-			class HitPoints : HitPoints {
-				class HitHull;	// External class reference
-			};
-			class Components;	// External class reference
-		};
+        /*class HitPoints : HitPoints {
+            class HitHull;	// External class reference
+        };*/
+        class Components;	// External class reference
+    };
 	class Su33_Protatype_PT_2: Su33_Base_F
 	{
 		side = 0;
@@ -112,7 +121,8 @@ class CfgVehicles
 		simulation="airplane";
 		_generalMacro="Su33_Protatype_PT_2";
 		scope=2;
-		accuracy = 3.500000;
+		tailHook = 1;
+		accuracy = 3.50;
 		nameSound="aircraft";
 		fuelCapacity=2500;
 		camouflage=5;
@@ -142,9 +152,14 @@ class CfgVehicles
 		irScanRangeMax=100000;
 		irScanToEyeFactor=2;
 		irScanGround=1;
+		visualTarget=1;
+		visualTargetSize=1.2;
 		nvTarget = 1;
 		nvScanner = 1;
-		LockDetectionSystem="1 + 2 + 4 + 8";
+		maxDetectRange = 20;
+		detectSkill = 20;
+		LockDetectionSystem=1 + 2 + 4 + 8;
+		crewCrashProtection = 2.0;
 		landingAoa="rad 10";
 		sweepDisengageRandomCourseCoef = 1;
 		landingSpeed=180;
@@ -190,7 +205,6 @@ class CfgVehicles
 
 		weapons[]=
 		{
-
 		 "Su_fake_weapon",
 
 		 "Su_GSh301",
@@ -207,11 +221,11 @@ class CfgVehicles
 
 		 "Su_fab_250_Laucher",
 
+		 "Su_kh29_Launcher",
+
 		 "Su_KH31_Launcher",
 
-		 "Laserdesignator_mounted",
-
-      "CMFlareLauncher"
+         "CMFlareLauncher"
 		};
 		magazines[]=
 		{
@@ -219,6 +233,22 @@ class CfgVehicles
 
          "300Rnd_CMFlare_Chaff_Magazine"
 		};
+		weaponsGroup1 = WEAPONGROUP_CANNONS + WEAPONGROUP_MGUNS;                                // Adds Cannons and Machine Guns to Weapons Group 1
+        weaponsGroup2 = WEAPONGROUP_ROCKETS;                                                    // Adds Rockets to Weapons Group 2
+        weaponsGroup3 = WEAPONGROUP_AAMISSILES + WEAPONGROUP_ATMISSILES + WEAPONGROUP_MISSILES; // Adds All Missile types to Weapons Group 3
+        weaponsGroup4 = WEAPONGROUP_BOMBS + WEAPONGROUP_SPECIAL;                                // Adds Bombs and Laser Designators to Weapons Group 4
+		class camShakeGForce	/// camera shake caused by the G force
+        {
+        	power 		= 2;	/// power of the shake
+            frequency 	= 20;
+            distance 	= 0;	/// how far from the vehicle does the shake appear
+            minSpeed 	= 150;	/// minimum speed of the vehicle to start the shake
+            duration	= 2;	/// duration of the shake, does cross-fade if higher than 1
+        };
+        minGForce 				= 5;	/// minimum G-force required for the shake
+        maxGForce				= 10;	/// strength interpolates between min and max
+        gForceShakeAttenuation 	= 0.5;	/// multiplies strength of the shake
+
 		class pilotCamera {
 			class OpticsIn {
 				class Wide {
@@ -296,7 +326,7 @@ class CfgVehicles
 							minRange = 50;
 							maxRange = 30000;
 							objectDistanceLimitCoef = -1;
-							viewDistanceLimitCoef = 1;
+							viewDistanceLimitCoef = -1;
 						};
 
 						class GroundTarget {
@@ -307,8 +337,13 @@ class CfgVehicles
 						};
 						angleRangeHorizontal = 60;
 						angleRangeVertical = 60;
-						maxTrackableSpeed = 100;
-						animDirection = "PilotCamera_V";
+						maxSpeedThreshold = 40;
+                        maxTrackableATL = 1e+010;
+                        maxTrackableSpeed = 1e+010;
+                        minSpeedThreshold = 30;
+                        minTrackableATL = -1e+010;
+                        minTrackableSpeed = -1e+010;
+						animDirection = "PilotCameraY";
 					};
 
 					class VisualSensorComponent : SensorTemplateVisual {
@@ -316,19 +351,24 @@ class CfgVehicles
 							minRange = 50;
 							maxRange = 10000;
 							objectDistanceLimitCoef = -1;
-							viewDistanceLimitCoef = 1;
+							viewDistanceLimitCoef = -1;
 						};
 
 						class GroundTarget {
-							minRange = 100;
-							maxRange = 6000;
-							objectDistanceLimitCoef = 1;
-							viewDistanceLimitCoef = 1;
+							minRange = 50;
+							maxRange = 10000;
+							objectDistanceLimitCoef = -1;
+							viewDistanceLimitCoef = -1;
 						};
 						angleRangeHorizontal = 90;
 						angleRangeVertical = 90;
-						maxTrackableSpeed = 100;
-						animDirection = "PilotCamera_V";
+						maxSpeedThreshold = 40;
+                        maxTrackableATL = 1e+010;
+                        maxTrackableSpeed = 1e+010;
+                        minSpeedThreshold = 30;
+                        minTrackableATL = -1e+010;
+                        minTrackableSpeed = -1e+010;
+						animDirection = "PilotCameraY";
 					};
 
 					class AntiRadiationSensorComponent : SensorTemplateAntiRadiation {};
@@ -337,16 +377,21 @@ class CfgVehicles
 					{
 						class AirTarget {
 							minRange = 50;
-							maxRange = 1000000;
+							maxRange = 100000;
 						};
-						angleRangeHorizontal = 140;
-						angleRangeVertical = 140;
-						maxTrackableSpeed = 100;
+						angleRangeHorizontal = 160;
+						angleRangeVertical = 160;
+						maxSpeedThreshold = 40;
+						maxTrackableATL = 1e+010;
+						maxTrackableSpeed = 1e+010;
+						minSpeedThreshold = 30;
+						minTrackableATL = -1e+010;
+                        minTrackableSpeed = -1e+010;
 					};
 
 					class PassiveRadarSensorComponent : SensorTemplatePassiveRadar {};
 
-					class LaserSensorComponent : SensorTemplateLaser {};
+					class LaserSensorComponent : SensorTemplateLaser{};
 
 					class NVSensorComponent : SensorTemplateNV {};
 				};
@@ -381,7 +426,7 @@ class CfgVehicles
 
 					class SensorDisplay {
 						componentType = "SensorsDisplayComponent";
-						range[] = {40000, 2000, 16000, 8000};
+						range[] = {16000, 8000, 4000, 2000};
 						resource = "RscCustomInfoSensors";
 					};
 				};
@@ -416,7 +461,7 @@ class CfgVehicles
 
 					class SensorDisplay {
 						componentType = "SensorsDisplayComponent";
-						range[] = {10000, 5000, 35000, 18000};
+						range[] = {16000, 8000, 4000, 2000};
 						resource = "RscCustomInfoSensors";
 					};
 				};
@@ -501,10 +546,12 @@ class CfgVehicles
 				FlareSize=4;
 				class Attenuation
 				{
-					start=1;
-					constant=0;
-					linear=0;
-					quadratic=4;
+					start = 1;
+                    constant = 0;
+                    linear = 0;
+                    quadratic = 4;
+                    hardLimitStart = 9;
+                    hardLimitEnd = 10;
 				};
 			};
 		};
@@ -746,13 +793,13 @@ class CfgVehicles
 			class Afterburner_source
 			{
 				source="user";
-				animPeriod=5;
+				animPeriod=2;
 				initPhase=0;
 			};
 			class Engine_source
 			{
 				source="user";
-				animPeriod=5;
+				animPeriod=2;
 				initPhase=0;
 			};
 			// weapons load
@@ -4282,4 +4329,9 @@ class CfgVehicles
 				};
 			};
 	};
+	/*class Su33_Protatype_PT_1: Su33_Protatype_PT_2
+	{
+	    displayName="Sukhoi Su-33 PhyscX";
+	    simulation="airplaneX";
+	};*/
 };
