@@ -37,27 +37,6 @@ class CfgWeapons
 			"Su_300Rnd_30mm_GSh301"
 		};
 	};
-	class su_kab500l_Laucher: RocketPods
-	{
-		canLock=2;
-		displayName="KAB-500L";
-		displayNameMagazine="KAB-500L";
-		shortNameMagazine="KAB-500L";
-		magazines[]=
-		{
-			"Su_fab_500"
-		};
-		reloadTime=0.1;
-		magazineReloadTime=0.5;
-		aiRateOfFire=5;
-		aiRateOfFireDistance=500;
-		nameSound="";
-		cursor="EmptyCursor";
-		cursorAim="EmptyCursor";
-		textureType="fullAuto";
-		missileLockCone=180;
-		weaponLockDelay=1;
-	};
 	class Su_kh29_Launcher: MissileLauncher
 	{
 		canLock=2;
@@ -138,24 +117,6 @@ class CfgWeapons
 		maxRangeProbab = 0.1;
 		reloadTime = 4;
 		magazines[] = {"Su_KH31"};
-	};
-	class Su_kab500K_Laucher: Bomb_04_Plane_CAS_01_F
-	{
-		displayName="KAB-500K";
-		displayNameMagazine="KAB-500K";
-		shortNameMagazine="KAB-500K";
-	};
-	class Su_fab_250_Laucher: Bomb_04_Plane_CAS_01_F
-	{
-		displayName="FAB-250 BOMB";
-		displayNameMagazine="FAB-250";
-		shortNameMagazine="FAB-250";
-		optics = true;
-		magazines[]=
-		{
-			"Su_fab_250"
-		};
-		ballisticsComputer = 8;
 	};
 	class Su_R73Launcher: weapon_R73Launcher
 	{
@@ -254,26 +215,26 @@ class CfgWeapons
 		};
 		reloadTime=0.30000001;
 	};
-	class Su_S8Laucher: RocketPods
-	{
-		displayName="S8 80mm Rockets";
-		magazines[]=
-		{
-			"Su_20Rnd1_S8T",
-			"Su_20Rnd2_S8T",
-			"Su_20Rnd3_S8T",
-			"Su_20Rnd4_S8T"
-		};
-		cursor="Air_Dot";
-		cursorSize=1;
-	};
 	class Su_fake_weapon: FakeWeapon
 	{
 		displayName="Safe mod";
 		displayNameMagazine="Safe mod";
+		type=WeaponHardMounted;
 		shortNameMagazine="Safe mod";
 		magazines[]=
 		{
 		};
 	};
+	class Su_fab_250_Laucher: Bomb_04_Plane_CAS_01_F
+    {
+        displayName="FAB-250 BOMB";
+        displayNameMagazine="FAB-250";
+        shortNameMagazine="FAB-250";
+        optics = true;
+        magazines[]=
+        {
+            "Su_fab_250"
+        };
+        ballisticsComputer = 8;
+    };
 };

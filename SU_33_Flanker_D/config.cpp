@@ -39,7 +39,8 @@ class CfgPatches
 	{
 		units[] = {
 			"Su33_Protatype_PT_2",
-			"Sukhoi_Pilot"
+			"Sukhoi_Pilot",
+			"Su33_Protatype_Dynamic"
 		};
 		weapons[] = {};
 		requiredVersion = 1.3;

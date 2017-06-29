@@ -11,6 +11,7 @@ class CfgVehicles
 {
 	class All{};
     class O_Pilot_F;
+
     class Sukhoi_Pilot: O_Pilot_F
     {
         class SpeechVariants
@@ -82,8 +83,10 @@ class CfgVehicles
         };
         cost=165000;
     };
+
     class AllVehicles: All{};
     class Air: AllVehicles{};
+
     class Plane: Air
     {
         class NewTurret;
@@ -93,6 +96,7 @@ class CfgVehicles
         class Eventhandlers;
         class HitPoints;
     };
+
     class Su33_Base_F : Plane {
         class AnimationSources;	// External class reference
 
@@ -101,14 +105,15 @@ class CfgVehicles
         };*/
         class Components;	// External class reference
     };
+
 	class Su33_Protatype_PT_2: Su33_Base_F
 	{
 		side = 0;
 		faction = "OPF_F";
 		crew = "Sukhoi_Pilot";
 		author="Nobatgeldi Geldimammedov";
-		displayName="Sukhoi Su-33 Flanker-D";
-		model="\SU_33_Flanker_D\Su33_protatype_2.p3d";
+		displayName="Sukhoi Su-33 Flanker-D ";
+		model="\SU_33_Flanker_D\Su33_protatype_1.p3d";
 		driverAction="su_33_pilot";
 		driverCanSee = 31;
 		getInAction = "";
@@ -116,6 +121,7 @@ class CfgVehicles
 		vehicleClass="Air";
 		icon="\SU_33_Flanker_D\tex\icon.paa";
 		picture="\SU_33_Flanker_D\tex\pic.paa";
+		editorpreview = "\SU_33_Flanker_D\tex\UI\pic.paa";
 		unitInfoType="RscOptics_CAS_Pilot";
 		driverWeaponsInfoType = "RscOptics_CAS_01_TGP";
 		simulation="airplane";
@@ -209,8 +215,6 @@ class CfgVehicles
 
 		 "Su_GSh301",
 
-		 "Su_S8Laucher",
-
 		 "Su_R73Launcher",
 
 		 "Su_R27Launcher",
@@ -218,8 +222,6 @@ class CfgVehicles
 		 "Su_R77Launcher",
 
 		 "Su_R73M1Launcher",
-
-		 "Su_fab_250_Laucher",
 
 		 "Su_kh29_Launcher",
 
@@ -398,7 +400,9 @@ class CfgVehicles
 			};
 
 			class VehicleSystemsDisplayManagerComponentLeft : DefaultVehicleSystemsDisplayManagerLeft {
-				defaultDisplay = "VehicleMissileDisplay";
+				componentType = "VehicleSystemsDisplayManager";
+
+				defaultDisplay = "VehicleDriverDisplay";
 
 				class Components {
 					class EmptyDisplay {
@@ -414,6 +418,12 @@ class CfgVehicles
 						componentType = "UAVFeedDisplayComponent";
 					};
 
+					class SlingLoadDisplay      //Slingload Assistant
+                    {
+                        componentType = "SlingLoadDisplayComponent";
+                        resource = "RscCustomInfoSlingLoad";
+                    };
+
 					class VehicleDriverDisplay {
 						componentType = "TransportFeedDisplayComponent";
 						source = "Driver";
@@ -427,13 +437,15 @@ class CfgVehicles
 					class SensorDisplay {
 						componentType = "SensorsDisplayComponent";
 						range[] = {16000, 8000, 4000, 2000};
+						showTargetTypes = 1+2+4+8+16+32+64+128+256+512+1024; // 1 - Sensor sectors, 2 - Threats, 4 - Marked tgt symbol, 8 - Own detection, 16 - Remote detection, 32 - Active detection, 64 - Passive detection, 128 - Ground tgts, 256 - Air tgts, 512 - Men, 1024 - Special (laser, NV)
 						resource = "RscCustomInfoSensors";
 					};
 				};
 			};
 
 			class VehicleSystemsDisplayManagerComponentRight : DefaultVehicleSystemsDisplayManagerRight {
-				defaultDisplay = "SensorDisplay";
+				forcedDisplay = "SensorsDisplay";
+				defaultDisplay = "SensorsDisplay";
 
 				class Components {
 					class EmptyDisplay {
@@ -462,6 +474,7 @@ class CfgVehicles
 					class SensorDisplay {
 						componentType = "SensorsDisplayComponent";
 						range[] = {16000, 8000, 4000, 2000};
+						showTargetTypes = 1+2+4+8+16+32+64+128+256+512+1024; // 1 - Sensor sectors, 2 - Threats, 4 - Marked tgt symbol, 8 - Own detection, 16 - Remote detection, 32 - Active detection, 64 - Passive detection, 128 - Ground tgts, 256 - Air tgts, 512 - Men, 1024 - Special (laser, NV)
 						resource = "RscCustomInfoSensors";
 					};
 				};
@@ -497,7 +510,7 @@ class CfgVehicles
 				name="cerveny pozicni";
 				color[]={1000,0,0,1};
 				ambient[]={1,0,0,1};
-				brightness=0.1;
+				brightness=0.01;
 				blinking=1;
 			};
 			class red_Still_Flaps_R
@@ -505,7 +518,7 @@ class CfgVehicles
 				name="zeleny pozicni";
 				color[]={1000,0,0,1};
 				ambient[]={1,0,0,1};
-				brightness=0.1;
+				brightness=0.01;
 				blinking=1;
 			};
 		};
@@ -989,9 +1002,8 @@ class CfgVehicles
 		};
 		class Eventhandlers: Eventhandlers
 		{
-			init="[_this select 0]execVM ""\SU_33_Flanker_D\sqf\init.sqf"",[_this select 0]exec ""\SU_33_Flanker_D\sqf\wing.sqs"",";
+			init="[_this select 0]execVM ""\SU_33_Flanker_D\sqf\init.sqf"",_this execVM  ""\SU_33_Flanker_D\sqf\weapons.sqf"",[_this select 0]exec ""\SU_33_Flanker_D\sqf\wing.sqs"",";
 			fired="[_this] execVM ""\SU_33_Flanker_D\sqf\Gsh.sqf"",_this call BIS_Effects_EH_Fired";
-			//"[_this select 0] execVM ""\SU_33_Flanker_D\sqf\init.sqf"
 		};
 		class Library
 		{
@@ -4329,9 +4341,123 @@ class CfgVehicles
 				};
 			};
 	};
-	/*class Su33_Protatype_PT_1: Su33_Protatype_PT_2
+
+	class Su33_Protatype_Dynamic: Su33_Protatype_PT_2
 	{
-	    displayName="Sukhoi Su-33 PhyscX";
-	    simulation="airplaneX";
-	};*/
+	    displayName="Sukhoi Su-33 Dynamic Loadout";
+        model="\SU_33_Flanker_D\Su33_protatype_2.p3d";
+	    class Components : Components
+	    {
+            class TransportPylonsComponent {
+
+                uiPicture = "\SU_33_Flanker_D\tex\UI\Pylon.paa";
+
+                class Pylons // Pylons are indexed to aircraft model's proxies IDs in the order they are written in class Pylons
+                {
+                    class Pylons1 // left wingtip
+                    {
+                        maxweight     = 300;           //kg ,magazine with higher mass will not be allowed on this pylon
+                        hardpoints[]  = {O_R77, O_R73};// magazine with at least one same hardpoints name will be attachable
+                        //hardpoint[] = {"A164_PYLON_1_10","LAU_7","B_ASRAAM", "SUU_63_PYLON","BRU_32_EJECTOR","B_BOMB_PYLON"}; // just example for community, I am sure you will go closer to realism
+                        attachment    = "PylonMissile_Missile_AA_R73_x1"; // default magazine
+                        //bay           = -1; // index of bay for animation
+                        priority      = 5;    // pylon with higher priority is used to fire missile first, this can by changed in run time by script command setPylonsPriority
+                        UIposition[] = {0.00, 0.30}; // x,y coordinates in 3DEN UI
+                        //turret[]      = {};        // default owner of pylon/weapon, empty for driver
+                    };
+                    class Pylons2 : Pylons1
+                    {
+                        hardpoints[] = {O_R77, O_R73};
+                        priority = 4;
+                        attachment = "PylonMissile_Missile_AA_R73_x1";
+                        maxweight = 300;
+                        UIposition[] = {0.65, 0.30};
+                    };
+
+                    class Pylons3 : Pylons1
+                    {
+                        hardpoints[] = {O_MISSILE_PYLON, O_BOMB_PYLON, O_R77, O_R73, O_KH25, FIR_MISC, "FIR_OPFOR_Combined_HP"};
+                        priority = 3;
+                        attachment = "PylonMissile_Missile_AGM_KH25_x1";
+                        maxweight = 1200;
+                        UIposition[] = {0.40, 0.40};
+                    };
+                    class Pylons4 : Pylons1
+                    {
+                        hardpoints[] = {O_MISSILE_PYLON, O_BOMB_PYLON, O_R77, O_R73, O_KH25, FIR_MISC, "FIR_OPFOR_Combined_HP"};
+                        priority = 2;
+                        attachment = "PylonMissile_Missile_AGM_KH25_x1";
+                        maxweight = 1200;
+                        UIposition[] = {0.21, 0.40};
+                    };
+
+                    class Pylons5 : Pylons1
+                    {
+                        hardpoints[] = {O_MISSILE_PYLON, O_R77, O_R73};
+                        priority = 4;
+                        attachment = "PylonMissile_Missile_AA_R73_x1";
+                        maxweight = 300;
+                        UIposition[] = {0.15, 0.35};
+                    };
+                    class Pylons6 : Pylons1
+                    {
+                        hardpoints[] = {O_MISSILE_PYLON, O_R77, O_R73};
+                        priority = 4;
+                        attachment = "PylonMissile_Missile_AA_R73_x1";
+                        maxweight = 300;
+                        UIposition[] = {0.50, 0.35};
+                    };
+
+                    class Pylons7 : Pylons1
+                    {
+                        hardpoints[] = {O_BOMB_PYLON, B_BOMB_PYLON, O_KH25};
+                        priority = 3;
+                        attachment = "PylonMissile_Bomb_KAB250_x1";
+                        maxweight = 1500;
+                        UIposition[] = {0.30, 0.45};
+                    };
+                    class Pylons8 : Pylons1
+                    {
+                        hardpoints[] = {O_BOMB_PYLON, B_BOMB_PYLON, O_KH25};
+                        priority = 2;
+                        attachment = "PylonMissile_Bomb_KAB250_x1";
+                        maxweight = 1500;
+                        UIposition[] = {0.30, 0.50};
+                    };
+                };
+                class Presets {
+                    class Empty
+                    {
+                        displayName = "Empty";
+                        attachment[] = {};
+                    };
+
+                    class AA
+                    {
+                        displayName = "Combined";
+                        attachment[] = {"PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1", "PylonMissile_Missile_AA_R77_x1", "PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1"};
+                    };
+                };
+            };
+        };
+        weapons[]=
+        {
+         "Su_fake_weapon",
+
+         "Su_GSh301",
+
+         "CMFlareLauncher"
+        };
+        magazines[]=
+        {
+         "Su_300Rnd_30mm_GSh301",
+
+         "300Rnd_CMFlare_Chaff_Magazine"
+        };
+        class Eventhandlers: Eventhandlers
+        {
+            init="[_this select 0]execVM ""\SU_33_Flanker_D\sqf\init.sqf"",[_this select 0]exec ""\SU_33_Flanker_D\sqf\wing.sqs"",";
+            fired="[_this] execVM ""\SU_33_Flanker_D\sqf\Gsh.sqf"",_this call BIS_Effects_EH_Fired";
+        };
+	};
 };

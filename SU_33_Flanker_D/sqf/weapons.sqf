@@ -1,7 +1,7 @@
 
 private ["_R73_count","_R27_count","_R73M_count","_R77_count","_KH29_count","_KH31_count","_FAB2_count","_loadout","_station_1","_station_2","_station_3","_station_4","_station_5","_station_6","_station_7","_station_8","_station_9","_station_10","_station_11","_station_12","_station_13","_station_14","_plane","_S8","_R_73","_R_73M1","_R_27","_R_77","_FAB_250","_FAB_500","_Safe_m","_S81_magazine","_R_73_magazine","_R_73M1_magazine","_R_27_magazine","_R_77_magazine","_FAB_250_magazine","_FAB_500_magazine","_KH29_magazine","_KH31_magazine","_Fake_magazin","_KH29","_KH31","_Laser_designator","_Laser_designator_magazine"];
 
-  _plane = _this;
+  _plane = _this select 0;
 //WEAPON CLASSNAME DEFINITIONS
     _R73_count  = 6;
     _R27_count  = 4;
@@ -14,8 +14,6 @@ private ["_R73_count","_R27_count","_R73M_count","_R77_count","_KH29_count","_KH
 
 //LIST OF ALL POSSIBLE WEAPONS USED WITH THIS PLANE
 
-    _S8      =  "Su_S8Laucher";
-
     _R_73    =  "Su_R73Launcher";
 
     _R_73M1  =  "Su_R73M1Launcher";
@@ -26,19 +24,14 @@ private ["_R73_count","_R27_count","_R73M_count","_R77_count","_KH29_count","_KH
 
     _FAB_250 =  "Su_fab_250_Laucher";
 
-    _FAB_500 =  "su_kab500l_Laucher";
-
     _KH29    =  "Su_kh29_Launcher";
 
     _KH31    =  "Su_KH31_Launcher";
-
-    _Safe_m  =  "Su_fake_weapon";
 
     _Laser_designator = "Laserdesignator_pilotCamera";
 
 //MAGAZINE CLASSNAME DEFINITIONS
 //LIST OF ALL POSSIBLE MAGAZINES USED WITH THIS PLANE
-    _S81_magazine     = "Su_20Rnd1_S8T";
 
     _R_73_magazine    = "Su_R73";
 
@@ -50,8 +43,6 @@ private ["_R73_count","_R27_count","_R73M_count","_R77_count","_KH29_count","_KH
 
     _FAB_250_magazine = "Su_fab_250";
 
-    _FAB_500_magazine = "Su_fab_500";
-
     _KH29_magazine    = "Su_kh29";
 
     _KH31_magazine    = "Su_KH31";
@@ -62,7 +53,6 @@ private ["_R73_count","_R27_count","_R73M_count","_R77_count","_KH29_count","_KH
 
 //ROMEVE ALL POSSIBLE DEFAULT WEAPONS
    //removeAllWeapons _plane;
-    _plane removeWeapon _S8;
     _plane removeWeapon _R_73;
     _plane removeWeapon _R_73M1;
     _plane removeWeapon _R_27;
@@ -73,7 +63,6 @@ private ["_R73_count","_R27_count","_R73M_count","_R77_count","_KH29_count","_KH
     _plane removeWeapon _Laser_designator;
 
 //ROMEVE ALL POSSIBLE DEFAULT MAGAZINES
-    _plane removeMagazine _S81_magazine;
     _plane removeMagazine _R_73_magazine;
     _plane removeMagazine _R_27_magazine;
     _plane removeMagazine _R_77_magazine;
@@ -135,10 +124,6 @@ private ["_R73_count","_R27_count","_R73M_count","_R77_count","_KH29_count","_KH
         {
           _plane addWeapon _R_77;
         };
-        if ((_S81_magazine in _loadout)) then
-        {
-          _plane addWeapon _S8;
-        };
         if ((_KH29_magazine in _loadout)) then
         {
           _plane addWeapon _KH29;
@@ -153,10 +138,6 @@ private ["_R73_count","_R27_count","_R73M_count","_R77_count","_KH29_count","_KH
         {
           _plane addWeapon _FAB_250;
         };
-        if ((_FAB_500_magazine in _loadout)) then
-        {
-          _plane addWeapon _FAB_500;
-        };
         if ((_Laser_designator_magazine in _loadout)) then
         {
           _plane addWeapon _Laser_designator;
@@ -168,10 +149,9 @@ private ["_R73_count","_R27_count","_R73M_count","_R77_count","_KH29_count","_KH
 while {(alive _plane)}do
 {
     //A to A load
-    if (((_this animationPhase "AA_load") == 1)) then
+    if (((_plane animationPhase "AA_load") == 1)) then
     {
       //ROMEVE ALL POSSIBLE DEFAULT WEAPONS
-          _plane removeWeapon _S8;
           _plane removeWeapon _R_73;
           _plane removeWeapon _R_73M1;
           _plane removeWeapon _R_27;
@@ -264,10 +244,9 @@ while {(alive _plane)}do
         _plane addWeapon _R_27;
     };
     //A to G load(anti-ship)
-    if (((_this animationPhase "AG_load") == 1)) then
+    if (((_plane animationPhase "AG_load") == 1)) then
     {
       //ROMEVE ALL POSSIBLE DEFAULT WEAPONS
-          _plane removeWeapon _S8;
           _plane removeWeapon _R_73;
           _plane removeWeapon _R_27;
           _plane removeWeapon _R_77;
@@ -373,11 +352,10 @@ while {(alive _plane)}do
       _plane addWeapon _KH31;
     };
     //unload all
-    if (((_this animationPhase "AA_load") == 0.3)) then
+    if (((_plane animationPhase "AA_load") == 0.3)) then
     {
 
       //ROMEVE ALL POSSIBLE DEFAULT WEAPONS
-          _plane removeWeapon _S8;
           _plane removeWeapon _R_73;
           _plane removeWeapon _R_73M1;
           _plane removeWeapon _R_27;

@@ -5,17 +5,17 @@ class CfgNonAIVehicles
 	class Proxyfake_w: ProxyWeapon
 	{
 		model="\SU_33_Flanker_D\wep\fake_w";
-		simulation="maverickweapon";
+		simulation="pylonpod";
 	};
 	class ProxyKH29T: ProxyWeapon
 	{
 		model="\SU_33_Flanker_D\wep\KH29\KH29T";
-		simulation="maverickweapon";
+		simulation="pylonpod";
 	};
 	class ProxyR_73: ProxyWeapon
 	{
 		model="\SU_33_Flanker_D\wep\R73\R_73";
-		simulation="maverickweapon";
+		simulation="pylonpod";
 	};
 	class ProxyR_77_proxy: ProxyWeapon
 	{
@@ -25,25 +25,25 @@ class CfgNonAIVehicles
 	class ProxyR_27: ProxyWeapon
 	{
 		model="\SU_33_Flanker_D\wep\R27\R_27";
-		simulation="maverickweapon";
+		simulation="pylonpod";
 	};
 	class Proxyfab250: ProxyWeapon
 	{
 		model="\SU_33_Flanker_D\wep\fab250";
-		simulation="maverickweapon";
+		simulation="pylonpod";
 	};
 	class ProxyFAB500: ProxyWeapon
 	{
 		model="\SU_33_Flanker_D\wep\FAB500";
-		simulation="maverickweapon";
+		simulation="pylonpod";
 	};
 	class ProxyKH31 : ProxyWeapon {
 		model = "\SU_33_Flanker_D\wep\KH31\KH31.p3d";
-		simulation = "maverickweapon";
+		simulation = "pylonpod";
 	};
 	class Proxys8_launcher_aircraft: ProxyWeapon
 	{
 		model="\SU_33_Flanker_D\wep\s8_launcher_aircraft";
-		simulation="maverickweapon";
+		simulation="pylonpod";
 	};
 };

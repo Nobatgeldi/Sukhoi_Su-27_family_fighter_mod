@@ -13,38 +13,13 @@ class CfgMagazines
 		ammoIsProxy = true;
 	};
 	class Su_fab_250: VehicleMagazine
-	{
-		scope=2;
-		count=1;
-		ammo="Su_fab_250";
-		initSpeed=0;
-		ammoIsProxy = true;
-	};
-	class Su_fab_500: VehicleMagazine
-	{
-		scope=2;
-		displayName="KAB-500L";
-		descriptionShort="KAB-500L";
-		displayNameShort="KAB-500L";
-		ammo="su_kab500";
-		ammoIsProxy = true;
-		initSpeed=0;
-		maxLeadSpeed=1000;
-		sound[]=
-		{
-			"",
-			1,
-			1
-		};
-		reloadSound[]=
-		{
-			"",
-			0.00031622799,
-			1
-		};
-		count=1;
-		nameSound="";
-	};
+    {
+        scope=2;
+        count=1;
+        ammo="Su_fab_250";
+        initSpeed=0;
+        ammoIsProxy = true;
+    };
 	class Su_300Rnd_30mm_GSh301: VehicleMagazine
 	{
 		scope=2;
@@ -175,96 +150,5 @@ class CfgMagazines
 		ammo="Su_R77_AA";
 		initSpeed=0;
 	};
-	class Su_20Rnd1_S8T: VehicleMagazine
-	{
-		scope=2;
-		displayName="S8 Rocket";
-		ammo="Su_rocket_80mm_HE";
-		count=20;
-		ammoIsProxy = true;
-		initSpeed=0;
-		nameSound="rockets";
-		sound[]=
-		{
-			"A3\sounds_f\weapons\rockets\explosion_missile_02",
-			1,
-			1,
-			1200
-		};
-		reloadSound[]=
-		{
-			"",
-			0.00031622799,
-			1
-		};
-	};
-	class Su_20Rnd2_S8T: VehicleMagazine
-	{
-		scope=2;
-		displayName="S8 Rocket";
-		ammo="Su_rocket_80mm_HE";
-		count=20;
-		ammoIsProxy = true;
-		initSpeed=0;
-		nameSound="rockets";
-		sound[]=
-		{
-			"A3\sounds_f\weapons\rockets\explosion_missile_02",
-			1,
-			1,
-			1200
-		};
-		reloadSound[]=
-		{
-			"",
-			0.00031622799,
-			1
-		};
-	};
-	class Su_20Rnd3_S8T: VehicleMagazine
-	{
-		scope=2;
-		displayName="S8 Rocket";
-		ammo="Su_rocket_80mm_HE";
-		count=20;
-		ammoIsProxy = true;
-		initSpeed=0;
-		nameSound="rockets";
-		sound[]=
-		{
-			"A3\sounds_f\weapons\rockets\explosion_missile_02",
-			1,
-			1,
-			1200
-		};
-		reloadSound[]=
-		{
-			"",
-			0.00031622799,
-			1
-		};
-	};
-	class Su_20Rnd4_S8T: VehicleMagazine
-	{
-		scope=2;
-		displayName="S8 Rocket";
-		ammo="Su_rocket_80mm_HE";
-		count=20;
-		ammoIsProxy = true;
-		initSpeed=0;
-		nameSound="rockets";
-		sound[]=
-		{
-			"A3\sounds_f\weapons\rockets\explosion_missile_02",
-			1,
-			1,
-			1200
-		};
-		reloadSound[]=
-		{
-			"",
-			0.00031622799,
-			1
-		};
-	};
+
 };
