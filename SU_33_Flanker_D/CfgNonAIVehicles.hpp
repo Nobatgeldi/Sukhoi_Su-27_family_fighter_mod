@@ -32,18 +32,8 @@ class CfgNonAIVehicles
 		model="\SU_33_Flanker_D\wep\fab250";
 		simulation="pylonpod";
 	};
-	class ProxyFAB500: ProxyWeapon
-	{
-		model="\SU_33_Flanker_D\wep\FAB500";
-		simulation="pylonpod";
-	};
 	class ProxyKH31 : ProxyWeapon {
 		model = "\SU_33_Flanker_D\wep\KH31\KH31.p3d";
 		simulation = "pylonpod";
-	};
-	class Proxys8_launcher_aircraft: ProxyWeapon
-	{
-		model="\SU_33_Flanker_D\wep\s8_launcher_aircraft";
-		simulation="pylonpod";
 	};
 };

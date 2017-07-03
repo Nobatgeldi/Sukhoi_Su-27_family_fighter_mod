@@ -17,7 +17,8 @@ class SensorTemplateNV;	// External class reference
 #include "CfgNonAIVehicles.hpp"
 #include "CfgVehicles.hpp"
 
-enum {
+enum
+{
 	DESTRUCTENGINE = 2,
 	DESTRUCTDEFAULT = 6,
 	DESTRUCTWRECK = 7,
@@ -37,7 +38,8 @@ class CfgPatches
 {
 	class Su33_Protatype_PT
 	{
-		units[] = {
+		units[] =
+		{
 			"Su33_Protatype_PT_2",
 			"Sukhoi_Pilot",
 			"Su33_Protatype_Dynamic"
