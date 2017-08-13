@@ -113,7 +113,7 @@ class CfgVehicles
 		crew = "Sukhoi_Pilot";
 		author="Nobatgeldi Geldimammedov";
 		displayName="Sukhoi Su-33 Flanker-D ";
-		model="\SU_33_Flanker_D\Su33_protatype_1.p3d";
+		model="\SU_33_Flanker_D\model\Su33_protatype_3.p3d";
 		driverAction="su_33_pilot";
 		driverCanSee = 31;
 		getInAction = "";
@@ -206,7 +206,7 @@ class CfgVehicles
 		memoryPointRMissile = "p strela";*/
 		memoryPointCM[] = {"flare_L","flare_R"};
 		memoryPointCMDir[] = {"flare_L_dir","flare_R_dir"};
-		memoryPointsGetInDriver = "pos_driver";
+		memoryPointsGetInDriver = "getin";
 		memoryPointsGetInDriverDir = "pos_driver_dir";
 
 		weapons[]=
@@ -214,18 +214,6 @@ class CfgVehicles
 		 "Su_fake_weapon",
 
 		 "Su_GSh301",
-
-		 "Su_R73Launcher",
-
-		 "Su_R27Launcher",
-
-		 "Su_R77Launcher",
-
-		 "Su_R73M1Launcher",
-
-		 "Su_kh29_Launcher",
-
-		 "Su_KH31_Launcher",
 
          "CMFlareLauncher"
 		};
@@ -305,8 +293,8 @@ class CfgVehicles
 		memoryPointDriverOptics = "PilotCamera_pos";
 		aileronSensitivity=2.5;
 		elevatorSensitivity=2.9;
-		radarTargetSize=1.0; /*Radar cross-section coefficient of the vehicle. Works as a coefficient of
-						       RADAR Sensor's range within the given combat situation.
+		radarTargetSize=1.0; /* Radar cross-section coefficient of the vehicle. Works as a coefficient of
+						        RADAR Sensor's range within the given combat situation.
                                 Early test values
                                 0.1 - fully stealth (<0.0005m2 RCS) (not recommended)
                                 0.7 - small aircrafts, semi-stealth (~1m2 RCS)
@@ -314,9 +302,9 @@ class CfgVehicles
                                 1.2 - tanks, trucks (~10m2 RCS)
                                 2.0 - large bomber, small ship and bigger (>80m2 RCS)*/
 		receiveRemoteTargets = true; //if the vehicle is able to receive targets
-																 //  and positions from friendly vehicles with reportRemoteTargets.
+									 //  and positions from friendly vehicles with reportRemoteTargets.
 
-		reportRemoteTargets = true;  /* Says if the vehicle is able to broadcast targets acquired by own sensors*/
+		reportRemoteTargets = true; /* Says if the vehicle is able to broadcast targets acquired by own sensors*/
 		reportOwnPosition = true; 	/*Says if the vehicle is able to broadcast its own position*/
 
 		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
@@ -444,6 +432,7 @@ class CfgVehicles
 			};
 
 			class VehicleSystemsDisplayManagerComponentRight : DefaultVehicleSystemsDisplayManagerRight {
+				componentType = "VehicleSystemsDisplayManager";
 				defaultDisplay = "SensorsDisplay";
 
 				class Components {
@@ -478,10 +467,104 @@ class CfgVehicles
 					};
 				};
 			};
+
+		    class TransportPylonsComponent
+            {
+
+                uiPicture = "\SU_33_Flanker_D\tex\UI\Pylon.paa";
+
+                class Pylons // Pylons are indexed to aircraft model's proxies IDs in the order they are written in class Pylons
+                {
+                    class Pylons1 // left wingtip
+                    {
+                        maxweight     = 300;           //kg ,magazine with higher mass will not be allowed on this pylon
+                        hardpoints[]  = {O_R77, O_R73};// magazine with at least one same hardpoints name will be attachable
+                        //hardpoint[] = {"A164_PYLON_1_10","LAU_7","B_ASRAAM", "SUU_63_PYLON","BRU_32_EJECTOR","B_BOMB_PYLON"}; // just example for community, I am sure you will go closer to realism
+                        attachment    = "PylonMissile_Missile_AA_R73_x1"; // default magazine
+                        //bay           = -1; // index of bay for animation
+                        priority      = 5;    // pylon with higher priority is used to fire missile first, this can by changed in run time by script command setPylonsPriority
+                        UIposition[] = {0.00, 0.30}; // x,y coordinates in 3DEN UI
+                        //turret[]      = {};        // default owner of pylon/weapon, empty for driver
+                    };
+                    class Pylons2 : Pylons1
+                    {
+                        hardpoints[] = {O_R77, O_R73};
+                        priority = 4;
+                        attachment = "PylonMissile_Missile_AA_R73_x1";
+                        maxweight = 300;
+                        UIposition[] = {0.65, 0.30};
+                    };
+
+                    class Pylons3 : Pylons1
+                    {
+                        hardpoints[] = {O_MISSILE_PYLON, O_BOMB_PYLON, O_R77, O_R73, O_KH25, FIR_MISC, "FIR_OPFOR_Combined_HP"};
+                        priority = 3;
+                        attachment = "PylonMissile_Missile_AGM_KH25_x1";
+                        maxweight = 1200;
+                        UIposition[] = {0.40, 0.40};
+                    };
+                    class Pylons4 : Pylons1
+                    {
+                        hardpoints[] = {O_MISSILE_PYLON, O_BOMB_PYLON, O_R77, O_R73, O_KH25, FIR_MISC, "FIR_OPFOR_Combined_HP"};
+                        priority = 2;
+                        attachment = "PylonMissile_Missile_AGM_KH25_x1";
+                        maxweight = 1200;
+                        UIposition[] = {0.21, 0.40};
+                    };
+
+                    class Pylons5 : Pylons1
+                    {
+                        hardpoints[] = {O_MISSILE_PYLON, O_R77, O_R73};
+                        priority = 4;
+                        attachment = "PylonMissile_Missile_AA_R73_x1";
+                        maxweight = 300;
+                        UIposition[] = {0.15, 0.35};
+                    };
+                    class Pylons6 : Pylons1
+                    {
+                        hardpoints[] = {O_MISSILE_PYLON, O_R77, O_R73};
+                        priority = 4;
+                        attachment = "PylonMissile_Missile_AA_R73_x1";
+                        maxweight = 300;
+                        UIposition[] = {0.50, 0.35};
+                    };
+
+                    class Pylons7 : Pylons1
+                    {
+                        hardpoints[] = {O_BOMB_PYLON, B_BOMB_PYLON, O_R77, O_KH25};
+                        priority = 3;
+                        attachment = "PylonMissile_Bomb_KAB250_x1";
+                        maxweight = 1500;
+                        UIposition[] = {0.30, 0.45};
+                    };
+                    class Pylons8 : Pylons1
+                    {
+                        hardpoints[] = {O_BOMB_PYLON, B_BOMB_PYLON, O_R77, O_KH25};
+                        priority = 2;
+                        attachment = "PylonMissile_Bomb_KAB250_x1";
+                        maxweight = 1500;
+                        UIposition[] = {0.30, 0.50};
+                    };
+                };
+                class Presets
+                {
+                    class Empty
+                    {
+                        displayName = "Empty";
+                        attachment[] = {};
+                    };
+
+                    class AA
+                    {
+                        displayName = "Combined";
+                        attachment[] = {"PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1", "PylonMissile_Missile_AA_R77_x1", "PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1"};
+                    };
+                };
+            };
 		};
 		class MarkerLights
 		{
-			class Cockpit_light
+			/*class Cockpit_light
 			{
 				name="pos light";
 				ambient[]={0.0099999998,0.0099999998,0.0099999998,1};
@@ -519,11 +602,11 @@ class CfgVehicles
 				ambient[]={1,0,0,1};
 				brightness=0.01;
 				blinking=1;
-			};
+			};*/
 		};
 		class Exhausts
 		{
-			class Exhaust_left
+			/*class Exhaust_left
 			{
 				position="levy prach";
 				direction="Exhausts_end_left";
@@ -536,11 +619,11 @@ class CfgVehicles
 				direction="Exhausts_end_right";
 				effect="ExhaustsEffectPlane";
 				engineIndex = 1;
-			};
+			};*/
 		};
 		class Reflectors
 		{
-			class Left
+			/*class Left
 			{
 				color[]={7000,7500,10000,1};
 				ambient[]={100,100,100,0};
@@ -565,7 +648,7 @@ class CfgVehicles
                     hardLimitStart = 9;
                     hardLimitEnd = 10;
 				};
-			};
+			};*/
 		};
 		class Sounds
 		{
@@ -802,31 +885,12 @@ class CfgVehicles
 		};
 		class AnimationSources
 		{
-			class Afterburner_source
+			/*class Engine_source
 			{
 				source="user";
 				animPeriod=2;
 				initPhase=0;
 			};
-			class Engine_source
-			{
-				source="user";
-				animPeriod=2;
-				initPhase=0;
-			};
-			// weapons load
-				class AA_load
-				{
-					source="user";
-					animPeriod=0.001;
-					initPhase=0;
-				};
-				class AG_load
-				{
-					source="user";
-					animPeriod=0.001;
-					initPhase=0;
-				};
 
 			class sun_rise
 			{
@@ -865,7 +929,7 @@ class CfgVehicles
 				source="user";
 				animPeriod=3;
 				initPhase=0;
-			};
+			};*/
 			class ABcut
 			{
 				source="user";
@@ -875,39 +939,6 @@ class CfgVehicles
 		};
 		class UserActions
 		{
-			class AA_load
-			{
-				displayName="Air to Air load";
-				position="pilotcontrol";
-				onlyforplayer=1;
-				showWindow=0;
-				hideOnUse=1;
-				radius=5;
-				condition="((this distance (nearestObject [this, ""O_Truck_03_ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_03_ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_TentHangar_V1_F""]) < 55) and (damage (nearestObject [this, ""Land_TentHangar_V1_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_Hangar_F""]) < 55) and (damage (nearestObject [this, ""Land_Hangar_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1)";
-				statement="this animate [""AA_load"",1];";
-			};
-			class AG_load
-			{
-				displayName="Air to Ground(anti-ship) load";
-				position="pilotcontrol";
-				onlyforplayer=1;
-				showWindow=0;
-				hideOnUse=1;
-				radius=5;
-				condition="((this distance (nearestObject [this, ""O_Truck_03_ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_03_ammo_F""]) < 1) and player == driver this and this animationPhase ""AG_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 1) and player == driver this and this animationPhase ""AG_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_TentHangar_V1_F""]) < 55) and (damage (nearestObject [this, ""Land_TentHangar_V1_F""]) < 1) and player == driver this and this animationPhase ""AG_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_Hangar_F""]) < 55) and (damage (nearestObject [this, ""Land_Hangar_F""]) < 1) and player == driver this and this animationPhase ""AG_load"" < 0.5 and speed this < 1)";
-				statement="this animate [""AG_load"",1];";
-			};
-			class AA_load_unload
-			{
-				displayName="Unload All Weapons";
-				position="pilotcontrol";
-				onlyforplayer=1;
-				showWindow=0;
-				hideOnUse=1;
-				radius=5;
-				condition="((this distance (nearestObject [this, ""O_Truck_03_ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_03_ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 25) and (damage (nearestObject [this, ""O_Truck_02_Ammo_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_TentHangar_V1_F""]) < 55) and (damage (nearestObject [this, ""Land_TentHangar_V1_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1) or ((this distance (nearestObject [this, ""Land_Hangar_F""]) < 55) and (damage (nearestObject [this, ""Land_Hangar_F""]) < 1) and player == driver this and this animationPhase ""AA_load"" < 0.5 and speed this < 1)";
-				statement="this animate [""AA_load"",0.3];";
-			};
 			class ABon
 			{
 				displayName="Afterburner ON";
@@ -933,7 +964,7 @@ class CfgVehicles
 				showWindow=0;
 				hideOnUse=1;
 			};
-			class sun_rise_up
+			/*class sun_rise_up
 			{
 				displayName="Sun Visor Up";
 				position="pos player";
@@ -955,24 +986,6 @@ class CfgVehicles
 				statement="this animate [""sun_rise"",0];";
 				showWindow=0;
 			};
-			/*class Hookon
-			{
-				displayName="HOOK ON";
-				position="pos player";
-				radius=20;
-				onlyforplayer=0;
-				condition="this animationPhase ""hook"" == 0";
-				statement="this animate [""hook"",1];";
-			};
-			class Hookoff
-			{
-				displayName="HOOK OFF";
-				position="pos player";
-				radius=20;
-				onlyforplayer=0;
-				condition="this animationPhase ""hook"" == 1";
-				statement="this animate [""hook"",0];";
-			};*/
 			class folding_wing
 			{
 				displayName="Fold Wing";
@@ -996,13 +1009,13 @@ class CfgVehicles
 				onlyforplayer=0;
 				hideOnUse=1;
 				showWindow=0;
-			};
+			};*/
 		};
 		class Eventhandlers: Eventhandlers
-		{
-			init="[_this select 0]execVM ""\SU_33_Flanker_D\sqf\init.sqf"",_this execVM  ""\SU_33_Flanker_D\sqf\weapons.sqf"",[_this select 0]exec ""\SU_33_Flanker_D\sqf\wing.sqs"",";
-			fired="[_this] execVM ""\SU_33_Flanker_D\sqf\Gsh.sqf"",_this call BIS_Effects_EH_Fired";
-		};
+        {
+            init="[_this select 0]execVM ""\SU_33_Flanker_D\sqf\init_m.sqf"",";
+            fired="[_this] execVM ""\SU_33_Flanker_D\sqf\Gsh.sqf"",_this call BIS_Effects_EH_Fired";
+        };
 		class Library
 		{
 			libTextDesc = "The Sukhoi Su-33 (NATO reporting name Flanker-D) is a carrier-based multi-role fighter aircraft produced by Russian firm Sukhoi beginning in 1982. \nThe main differences from the Su-27 are that the Su-33 can operate from aircraft carriers and is capable of aerial refueling. \nThe wings were fitted with power-assisted folding, and the vertical tails were shortened to allow the fighter to fit in the typically crowded hangars of an aircraft carrier. The rear radome was shortened and reshaped to allow for the tail hook, as well as to save space inside the hangars.";
@@ -4339,201 +4352,4 @@ class CfgVehicles
             };
         };
 	};
-
-	class Su33_Protatype_Dynamic: Su33_Protatype_PT_2
-	{
-        displayName="Sukhoi Su-33 Dynamic Loadout";
-        model="\SU_33_Flanker_D\Su33_protatype_2.p3d";
-        class Components : Components
-        {
-            class TransportPylonsComponent
-            {
-
-                uiPicture = "\SU_33_Flanker_D\tex\UI\Pylon.paa";
-
-                class Pylons // Pylons are indexed to aircraft model's proxies IDs in the order they are written in class Pylons
-                {
-                    class Pylons1 // left wingtip
-                    {
-                        maxweight     = 300;           //kg ,magazine with higher mass will not be allowed on this pylon
-                        hardpoints[]  = {O_R77, O_R73};// magazine with at least one same hardpoints name will be attachable
-                        //hardpoint[] = {"A164_PYLON_1_10","LAU_7","B_ASRAAM", "SUU_63_PYLON","BRU_32_EJECTOR","B_BOMB_PYLON"}; // just example for community, I am sure you will go closer to realism
-                        attachment    = "PylonMissile_Missile_AA_R73_x1"; // default magazine
-                        //bay           = -1; // index of bay for animation
-                        priority      = 5;    // pylon with higher priority is used to fire missile first, this can by changed in run time by script command setPylonsPriority
-                        UIposition[] = {0.00, 0.30}; // x,y coordinates in 3DEN UI
-                        //turret[]      = {};        // default owner of pylon/weapon, empty for driver
-                    };
-                    class Pylons2 : Pylons1
-                    {
-                        hardpoints[] = {O_R77, O_R73};
-                        priority = 4;
-                        attachment = "PylonMissile_Missile_AA_R73_x1";
-                        maxweight = 300;
-                        UIposition[] = {0.65, 0.30};
-                    };
-
-                    class Pylons3 : Pylons1
-                    {
-                        hardpoints[] = {O_MISSILE_PYLON, O_BOMB_PYLON, O_R77, O_R73, O_KH25, FIR_MISC, "FIR_OPFOR_Combined_HP"};
-                        priority = 3;
-                        attachment = "PylonMissile_Missile_AGM_KH25_x1";
-                        maxweight = 1200;
-                        UIposition[] = {0.40, 0.40};
-                    };
-                    class Pylons4 : Pylons1
-                    {
-                        hardpoints[] = {O_MISSILE_PYLON, O_BOMB_PYLON, O_R77, O_R73, O_KH25, FIR_MISC, "FIR_OPFOR_Combined_HP"};
-                        priority = 2;
-                        attachment = "PylonMissile_Missile_AGM_KH25_x1";
-                        maxweight = 1200;
-                        UIposition[] = {0.21, 0.40};
-                    };
-
-                    class Pylons5 : Pylons1
-                    {
-                        hardpoints[] = {O_MISSILE_PYLON, O_R77, O_R73};
-                        priority = 4;
-                        attachment = "PylonMissile_Missile_AA_R73_x1";
-                        maxweight = 300;
-                        UIposition[] = {0.15, 0.35};
-                    };
-                    class Pylons6 : Pylons1
-                    {
-                        hardpoints[] = {O_MISSILE_PYLON, O_R77, O_R73};
-                        priority = 4;
-                        attachment = "PylonMissile_Missile_AA_R73_x1";
-                        maxweight = 300;
-                        UIposition[] = {0.50, 0.35};
-                    };
-
-                    class Pylons7 : Pylons1
-                    {
-                        hardpoints[] = {O_BOMB_PYLON, B_BOMB_PYLON, O_R77, O_KH25};
-                        priority = 3;
-                        attachment = "PylonMissile_Bomb_KAB250_x1";
-                        maxweight = 1500;
-                        UIposition[] = {0.30, 0.45};
-                    };
-                    class Pylons8 : Pylons1
-                    {
-                        hardpoints[] = {O_BOMB_PYLON, B_BOMB_PYLON, O_R77, O_KH25};
-                        priority = 2;
-                        attachment = "PylonMissile_Bomb_KAB250_x1";
-                        maxweight = 1500;
-                        UIposition[] = {0.30, 0.50};
-                    };
-                };
-                class Presets
-                {
-                    class Empty
-                    {
-                        displayName = "Empty";
-                        attachment[] = {};
-                    };
-
-                    class AA
-                    {
-                        displayName = "Combined";
-                        attachment[] = {"PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1", "PylonMissile_Missile_AA_R77_x1", "PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1"};
-                    };
-                };
-            };
-        };
-        weapons[]=
-        {
-         "Su_fake_weapon",
-
-         "Su_GSh301",
-
-         "CMFlareLauncher"
-        };
-        magazines[]=
-        {
-         "Su_300Rnd_30mm_GSh301",
-
-         "300Rnd_CMFlare_Chaff_Magazine"
-        };
-        class Eventhandlers: Eventhandlers
-        {
-            init="[_this select 0]execVM ""\SU_33_Flanker_D\sqf\init.sqf"",[_this select 0]exec ""\SU_33_Flanker_D\sqf\wing.sqs"",";
-            fired="[_this] execVM ""\SU_33_Flanker_D\sqf\Gsh.sqf"",_this call BIS_Effects_EH_Fired";
-        };
-	};
-    class Su33_Protatype_3: Su33_Protatype_Dynamic
-    {
-        displayName="Sukhoi Su-33M";
-        model="\SU_33_Flanker_D\model\Su33_protatype_3.p3d";
-        memoryPointGun="machinegun";
-        memoryPointsGetInCargo = "getin";
-        memoryPointsGetInCoDriver = "getin";
-        memoryPointsGetInCommander = "getin";
-        memoryPointsGetInDriver = "getin";
-        memoryPointsGetInGunner = "getin";
-        weapons[]=
-        {
-         "Su_fake_weapon",
-
-         "Su_GSh301",
-
-         "CMFlareLauncher"
-        };
-        magazines[]=
-        {
-         "Su_300Rnd_30mm_GSh301",
-
-         "300Rnd_CMFlare_Chaff_Magazine"
-        };
-      class Eventhandlers: Eventhandlers
-      {
-            init="[_this select 0]execVM ""\SU_33_Flanker_D\sqf\init_m.sqf"",";
-            fired="[_this] execVM ""\SU_33_Flanker_D\sqf\Gsh.sqf"",_this call BIS_Effects_EH_Fired";
-      };
-      class AnimationSources
-      {
-        class ABcut
-        {
-            source="user";
-            initPhase=1;
-            animPeriod=0.0099999998;
-        };
-      };
-      class UserActions
-      {
-        class ABon
-        {
-            displayName="Afterburner ON";
-            position="pos player";
-            shortcut="SeagullFastForward";
-            radius=20;
-            onlyforplayer=0;
-            condition="this animationPhase ""ABcut"" == 1 and player in this and isengineon this";
-            statement="this animate [""ABcut"",0]";
-            hideOnUse=1;
-            showWindow=0;
-        };
-        class ABoff
-        {
-            displayName="Afterburner Off";
-            position="pos player";
-            shortcut="SeagullFastForward";
-            radius=20;
-            onlyforplayer=0;
-            condition="this animationPhase ""ABcut"" == 0 and player in this and isengineon this";
-            statement="this animate [""ABcut"",1]";
-            showWindow=0;
-            hideOnUse=1;
-        };
-      };
-      class MarkerLights
-      {
-      };
-      class Exhausts
-      {
-      };
-      class Reflectors
-      {
-      };
-  };
-
 };

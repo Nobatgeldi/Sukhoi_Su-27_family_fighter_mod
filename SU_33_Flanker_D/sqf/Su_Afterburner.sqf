@@ -1,8 +1,3 @@
-// -----------------------------
-// Original FX scripts by Lethal
-// configured for su-33 by Nobat
-// -----------------------------
-
 ///-------------------<>----------------///
 ///     Author: Gabby_NG                ///
 ///       Date: 02 July                 ///
@@ -30,7 +25,7 @@ while {(alive _plane)} do
         if (_Intensity < _MaxIntensity) then
         {
             _Intensity = _Intensity + 0.1*(15*_looptime);
-         };
+        };
         if ((speed _plane) < _maxspeed) then
         {
          _plane setVelocity [(velocity _plane select 0)+((vectorDir _plane) select 0)*((_Boost*_Intensity/2)*(15*_looptime)),(velocity _plane select 1)+((vectorDir _plane) select 1)*((_Boost*_Intensity/2)*(15*_looptime)),(velocity _plane select 2)+((vectorDir _plane) select 2)*((_Boost*_Intensity/2)*(15*_looptime))]

@@ -12,14 +12,6 @@ class CfgMagazines
 		initSpeed=0;
 		ammoIsProxy = true;
 	};
-	class Su_fab_250: VehicleMagazine
-    {
-        scope=2;
-        count=1;
-        ammo="Su_fab_250";
-        initSpeed=0;
-        ammoIsProxy = true;
-    };
 	class Su_300Rnd_30mm_GSh301: VehicleMagazine
 	{
 		scope=2;
@@ -29,7 +21,8 @@ class CfgMagazines
 		tracersEvery=1;
 		ammoIsProxy = true;
 	};
-	class Su_MagazineBase_AG : VehicleMagazine
+
+	/*class Su_MagazineBase_AG : VehicleMagazine
 	{
 		scope = 1;
 		displayName = "";
@@ -85,7 +78,7 @@ class CfgMagazines
 		ammo = "Su_KH31_AG";
 		count = 1;
 		ammoIsProxy = true;
-	};
+	};*/
 	class Su_R73: VehicleMagazine
 	{
 		scope=2;
@@ -120,7 +113,8 @@ class CfgMagazines
 		ammoIsProxy = true;
 		count=1;
 	};
-	class Su_R27R: Su_R73
+
+	/*class Su_R27R: Su_R73
 	{
 		scope=2;
 		displayName="R-27R";
@@ -149,6 +143,6 @@ class CfgMagazines
 		ammoIsProxy = true;
 		ammo="Su_R77_AA";
 		initSpeed=0;
-	};
+	};*/
 
 };

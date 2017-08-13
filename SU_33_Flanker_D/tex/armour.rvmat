@@ -1,9 +1,0 @@
-surfaceInfo="A3\data_f\Penetration\armour.bisurf";
-ambient[]={0.317647,0.345098,0.549020,1.000000};
-diffuse[]={0.317647,0.345098,0.549020,1.000000};
-forcedDiffuse[]={0,0,0,0};
-emmisive[]={0,0,0,1};
-specular[]={0,0,0,1};
-specularPower=1;
-PixelShaderID="Normal";
-VertexShaderID="Basic";

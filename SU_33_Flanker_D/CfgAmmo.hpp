@@ -8,7 +8,7 @@ class CfgAmmo
 	class LaserBombCore;
 	class BombCore;
 
-	class Su_fak_ammo: MissileBase
+	class Su_fake_ammo: MissileBase
 	{
 		model="\SU_33_Flanker_D\wep\fake_w.p3d";
 		proxyShape="\SU_33_Flanker_D\wep\fake_w.p3d";
@@ -19,7 +19,7 @@ class CfgAmmo
    // bla blaa blaa
 	};
 
-	class Su_fab_250: Bomb_04_F
+	/*class Su_fab_250: Bomb_04_F
 	{
 		model="\SU_33_Flanker_D\wep\fab250.p3d";
 		proxyShape="\SU_33_Flanker_D\wep\fab250.p3d";
@@ -296,5 +296,5 @@ class CfgAmmo
 		explosionEffects="AAMissileExplosion";
 		effectsMissileInit="RocketBackEffectsRPG";
 		weaponLockSystem="2 + 8 + 8";
-	};
+	};*/
 };
