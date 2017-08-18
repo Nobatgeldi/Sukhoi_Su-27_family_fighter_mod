@@ -206,8 +206,12 @@ class CfgVehicles
 		memoryPointRMissile = "p strela";*/
 		memoryPointCM[] = {"flare_L","flare_R"};
 		memoryPointCMDir[] = {"flare_L_dir","flare_R_dir"};
-		memoryPointsGetInDriver = "getin";
-		memoryPointsGetInDriverDir = "pos_driver_dir";
+		memoryPointsGetInCargo = "get_in";
+        memoryPointsGetInCoDriver = "get_in";
+        memoryPointsGetInCommander = "get_in";
+        memoryPointsGetInDriver = "get_in";
+        memoryPointsGetInGunner = "get_in";
+        getInRadius=8.5;
 
 		weapons[]=
 		{
