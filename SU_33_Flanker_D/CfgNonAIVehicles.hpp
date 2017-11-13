@@ -12,4 +12,9 @@ class CfgNonAIVehicles
 		model="\SU_33_Flanker_D\wep\R73\R_73";
 		simulation="pylonpod";
 	};
+	/*class ProxyKH31: ProxyWeapon
+  {
+      model="\SU_33_Flanker_D\wep\KH31\KH31";
+      simulation="maverickweapon";
+  };*/
 };

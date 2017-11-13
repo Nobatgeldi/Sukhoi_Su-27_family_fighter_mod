@@ -1,12 +1,7 @@
 class CfgAmmo
 {
 	class MissileBase;
-	class ammo_Missile_AA_R73;
-	class ammo_Missile_AA_R77;
 	class B_35mm_AA_Tracer_Yellow;
-	class Bomb_04_F;
-	class LaserBombCore;
-	class BombCore;
 
 	class Su_fake_ammo: MissileBase
 	{
@@ -16,52 +11,100 @@ class CfgAmmo
 
 	class Su_GSh301_35mm: B_35mm_AA_Tracer_Yellow
 	{
-   // bla blaa blaa
+        // bla blaa blaa
 	};
 
-	/*class Su_fab_250: Bomb_04_F
+	/*class Su_KH_31: MissileBase
 	{
-		model="\SU_33_Flanker_D\wep\fab250.p3d";
-		proxyShape="\SU_33_Flanker_D\wep\fab250.p3d";
-	};
-
-	class Su_kh_29: MissileBase
-	{
-		hit=1500;
-		indirectHit=950;
+		hit=15000;
+		indirectHit=5000;
 		indirectHitRange=10.5;
-		model="\SU_33_Flanker_D\wep\KH29\KH29T.p3d";
-		proxyShape="\SU_33_Flanker_D\wep\KH29\KH29T.p3d";
+		model="\SU_33_Flanker_D\wep\KH31\KH31_fly";
+		proxyShape="\SU_33_Flanker_D\wep\KH31\KH31";
 		trackOversteer=1;
 		whistleDist=8;
 		maxControlRange=11000;
-		maneuvrability=14;
+		maneuvrability=20;
+		deflecting = 5;
 		simulationStep=0.0020000001;
+		simulation="shotMissile";
+		audibleFire = 5.0;
 		airLock=0;
 		irLock=1;
 		laserLock=1;
-		cmimmunity=0.80000001;
+		cmimmunity=0.8;
 		manualControl=1;
 		cost=1000;
 		maxSpeed=400;
 		timeToLive=45;
 		airFriction=0.039999999;
-		sideAirFriction=0.079999998;
+		sideAirFriction=0.7;
 		trackLead=1;
-		initTime=0.15000001;
+		initTime=1.0;
 		thrustTime=2;
 		thrust=366;
 		fuseDistance=500;
 		CraterEffects="ATMissileCrater";
 		explosionEffects="ATMissileExplosion";
-		muzzleEffect="BIS_fnc_effectFiredHeliRocket";
-		soundHit[]=
-		{
-			"",
-			1,
-			1,
-			1900
-		};
+		soundHit[] = { "A3\Sounds_F\weapons\Rockets\explosion_missile_01", 3.1622777, 1, 1800 };
+		missileLockCone = 180;
+        missileKeepLockedCone = 180;
+        missileLockMaxDistance = 6000;
+        missileLockMinDistance = 50;
+        missileLockMaxSpeed = 550;
+		class Components
+        {
+            class SensorsManagerComponent
+            {
+                class Components
+                {
+                    class SomeRadarSensorComponent
+                    {
+                        componentType = "IRSensorComponent";
+                        class AirTarget      // ranges for targets with sky background
+                        {
+                            minRange = 0;         //minimum possible range in meters
+                            maxRange = 0;       //maximum possible range in meters
+                            objectDistanceLimitCoef = -1;    //range not limited by obj. view distance
+                            viewDistanceLimitCoef = -1;      //range not limited by view distance
+                        };
+                        class GroundTarget      // ranges for targets with ground background
+                        {
+                            minRange = 50;
+                            maxRange = 6000;
+                            objectDistanceLimitCoef = -1;
+                            viewDistanceLimitCoef = -1;
+                        };
+                        typeRecognitionDistance = 6000; // distance how far the target type gets recognized
+                        angleRangeHorizontal = 180;     // sensor azimuth coverage in degrees
+                        angleRangeVertical = 240;       // sensor elevation coverage in degrees
+                        groundNoiseDistanceCoef = -1;  // portion of sensor-target-ground distance below which the targets become invisible to the sensor
+                        maxGroundNoiseDistance = -1;   // distance from the ground in meters, hard cap, above which the target will be visible even if still below groundNoiseDistanceCoef
+                        minSpeedThreshold = -1;        // target speed in km/h above which the target will start to become visible
+                        maxSpeedThreshold = -1;       // target speed above which the target becomes visible even if below groundNoiseDistanceCoef, linearly decreases to minSpeedThreshold
+                    };
+                    class LaserSensorComponent : SensorTemplateLaser
+                    {
+                        class AirTarget {
+                            minRange = 20000;
+                            maxRange = 20000;
+                            objectDistanceLimitCoef = -1;
+                            viewDistanceLimitCoef = -1;
+                        };
+
+                        class GroundTarget {
+                            minRange = 20000;
+                            maxRange = 20000;
+                            objectDistanceLimitCoef = -1;
+                            viewDistanceLimitCoef = -1;
+                        };
+                        maxTrackableSpeed = 55;
+                        angleRangeHorizontal = 180;
+                        angleRangeVertical = 240;
+                    };
+                };
+            };
+        };
 		class Hiteffects
 		{
 			hitWater="ImpactEffectsSmall";
@@ -94,207 +137,5 @@ class CfgAmmo
 			frequency=20;
 			distance=1;
 		};
-		weaponLockSystem="2 + 16 + 4";
-	};
-	class Su_MissileBase_AGM : MissileBase {
-		model = "";
-		proxyShape = "";
-		hit = 3000;
-		indirectHit = 100;
-		indirectHitRange = 200;
-		cost = 10000;
-		irLock = 1;
-		laserLock = 0;
-		maxControlRange = 27000;
-		initTime = 0.15;
-		trackOversteer = 1;
-		trackLead = 1;
-		timeToLive = 120;
-		maneuvrability = 30;
-		simulationStep = 0.01;
-		sideAirFriction = 0.02;
-		maxSpeed = 300;
-		thrustTime = 2.0;
-		thrust = 100;
-		effectsMissile = "missile1";
-		whistleDist = 4;
-		weaponLockSystem=8 + 16;
-		cmImmunity = 0.9;
-	};
-
-	class Su_KH31_AG : Su_MissileBase_AGM {
-		model = "\SU_33_Flanker_D\wep\KH31\KH31.p3d";
-		proxyShape = "\SU_33_Flanker_D\wep\KH31\KH31.p3d";
-		hit = 5000;
-		missileLockMaxDistance = 20000;
-		indirectHit = 5000;
-		offBoresightAngle = 80; // 160° laser sensor FoV
-		indirectHitRange = 100;
-		maxSpeed = 2520;
-		explosive = 5;//Defines whether ammunition is explosive, and if so, by how much.
-		maxControlRange = 150000;
-		initTime = 2;
-		thrustTime = 18;
-		thrust = 150;
-		maneuvrability = 45;
-		effectsMissile = "missile1";
-		soundHit[]=
-		{
-			"A3\Sounds_F\weapons\Rockets\explosion_missile_02",
-			2.5118899,
-			1,
-			1800
-		};
-		laserLock = 1;
-		nvLock = 1;
-	};
-
-	// short range
-	class Su_R73_AA: ammo_Missile_AA_R73
-	{
-		model="\SU_33_Flanker_D\wep\R73\R_73.p3d";
-		proxyShape="\SU_33_Flanker_D\wep\R73\R_73.p3d";
-		hit=200;
-		weaponType = "missileAA"; //Overrides the engine determination of weapon type
-															//based on ammo simulation, for vehicle weapon grouping.
-		guidanceInitTime=1; //Defines how long a projectile waits before starting its engine.
-		trackOversteer=2;   //Defines how a missile over steers.	1 - no oversteer
-										    //Values higher than 1 result in more over steer.
-		indirectHit=85;
-		indirectHitRange=10;
-		maneuvrability=27;
-		cmImmunity=0.70;
-		simulation="shotMissile";
-		simulationStep=0.0020000001;
-
-		lowerterrain=1; //If defined as 'true', the ammunition can change/ lower the terrain.
-		offBoresightAngle = 80; //Defines the FOV angle of LOBL/ LOAL laser sensors.
-		airLock=2;
-		irLock=1;
-		laserLock = true;
-		laserScanRange = 50000;
-		cost=1500;
-		maxSpeed=828; //Meters per second  Defines the maximum speed of ammunition (missiles and rockets).
-		timeToLive=40;
-		airFriction=0.050000001;
-		sideAirFriction=0.1;
-		trackLead=1;
-		initTime=0;
-		thrustTime=5;
-		thrust=240;
-		fuseDistance=500; //Defines the distance traveled before ammunition is fused.
-		CraterEffects="AAMissileCrater";
-		explosionEffects="AAMissileExplosion";
-		whistleDist=20;
-		muzzleEffect="BIS_fnc_effectFiredHeliRocket";
-
-		weaponLockSystem="2 + 8 + 4"; //	Defines the type of detection system
-																	 // that can detect this munition when it is locked on to a target.
-																	 // GUIDANCE_NONE 0 GUIDANCE_VISUAL 1
-																	 // GUIDANCE_INFRARED 2 GUIDANCE_LASER 4
-																	 // GUIDANCE_RADAR 8 DETECTION_MISSILE 16
-		missileLockCone=120;
-		maxControlRange=8000;
-		class LaunchModes
-		{
-			class LOBL
-			{
-				launchAngle=20;
-				targetingMode="LOBL";
-				targetDistanceOverride=150;
-			};
-		};
-	};
-	class Su_R73M1_AA: Su_R73_AA
-	{
-		hit=350;
-		indirectHit=100;
-		indirectHitRange=20;
-		maneuvrability=35;
-	};
-
-	// medium range missile up to 80 km
-	class Su_R27R_AA: Su_R73_AA
-	{
-		model="\SU_33_Flanker_D\wep\R27\R_27.p3d";
-		proxyShape="\SU_33_Flanker_D\wep\R27\R_27.p3d";
-		hit=1200;
-		indirectHit=600;
-		indirectHitRange=30;
-		airFriction=0.078000002;
-		sideAirFriction=0.2;
-		maneuvrability=90;
-		simulationStep=0.0020000001;
-		trackOversteer=5;
-		trackLead=1;
-		airLock=2;
-		irLock=1;
-		laserLock=0;
-		cost=1000;
-		timeToLive=20;
-		maxSpeed=1200;
-		initTime=0.25;
-		thrustTime=30.5;
-		thrust=385;
-		fuseDistance=1000;
-		CraterEffects="AAMissileCrater";
-		explosionEffects="AAMissileExplosion";
-		effectsMissileInit="RocketBackEffectsRPG";
-		weaponLockSystem="2 + 8 + 8";
-	};
-
-	// long range missile up to 130 km
-	class Su_R27EA_AA: Su_R27R_AA
-	{
-		hit=1400;
-		indirectHit=800;
-		indirectHitRange=40;
-		airFriction=0.078000002;
-		sideAirFriction=0.2;
-		maneuvrability=100;
-		simulationStep=0.0020000001;
-		trackOversteer=10;
-		trackLead=1;
-		airLock=2;
-		irLock=1;
-		laserLock=0;
-		cost=1000;
-		timeToLive=20;
-		maxSpeed=1500;
-		initTime=0.25;
-		thrustTime=30.5;
-		thrust=385;
-		fuseDistance=1500;
-		weaponLockSystem="2 + 8 + 8";
-	};
-
-	// medium range
-	class Su_R77_AA: ammo_Missile_AA_R77
-	{
-		model="\SU_33_Flanker_D\wep\R77\R_77.p3d";
-		proxyShape="\SU_33_Flanker_D\wep\R77\R_77_proxy.p3d";
-		hit=1200;
-		indirectHit=600;
-		indirectHitRange=30;
-		airFriction=0.078000002;
-		sideAirFriction=0.2;
-		maneuvrability=90;
-		simulationStep=0.0020000001;
-		trackOversteer=5;
-		trackLead=1;
-		airLock=2;
-		irLock=1;
-		laserLock=0;
-		cost=1000;
-		timeToLive=20;
-		maxSpeed=1200;
-		initTime=0.25;
-		thrustTime=30.5;
-		thrust=385;
-		fuseDistance=1000;
-		CraterEffects="AAMissileCrater";
-		explosionEffects="AAMissileExplosion";
-		effectsMissileInit="RocketBackEffectsRPG";
-		weaponLockSystem="2 + 8 + 8";
 	};*/
 };

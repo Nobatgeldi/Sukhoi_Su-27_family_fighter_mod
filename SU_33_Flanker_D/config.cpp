@@ -3,6 +3,8 @@
 #include "CfgMovesBasic.hpp"
 #include "DefaultVehicleSystemsDisplayManagerLeft.hpp"
 #include "DefaultVehicleSystemsDisplayManagerRight.hpp"
+#include "CfgFactionClasses.hpp"
+#include "CfgVehicleClasses.hpp"
 class SensorTemplatePassiveRadar;	// External class reference
 class SensorTemplateAntiRadiation;	// External class reference
 class SensorTemplateActiveRadar;	// External class reference

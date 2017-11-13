@@ -1,5 +1,4 @@
 
-
 class CfgMagazines
 {
 	class VehicleMagazine;
@@ -15,70 +14,12 @@ class CfgMagazines
 	class Su_300Rnd_30mm_GSh301: VehicleMagazine
 	{
 		scope=2;
-		count=300;
+		count=150;
 		ammo="Su_GSh301_35mm";
 		initSpeed=900;
 		tracersEvery=1;
 		ammoIsProxy = true;
 	};
-
-	/*class Su_MagazineBase_AG : VehicleMagazine
-	{
-		scope = 1;
-		displayName = "";
-		ammo = "";
-		count = 2;
-		initSpeed = 0;
-		maxLeadSpeed = 150;
-		sound[]=
-		{
-			"A3\sounds_f\weapons\rockets\explosion_missile_02",
-			1,
-			1,
-			1200
-		};
-		reloadSound[]=
-		{
-			"",
-			0.00031622799,
-			1
-		};
-		nameSound = "missiles";
-		WeaponLockSystem = 8;
-		cmImmunity = 0.9;
-	};
-	class Su_kh29: VehicleMagazine
-	{
-		scope=2;
-		displayName="Kh-29L";
-		displayNameShort="Kh-29L";
-		ammo="Su_kh_29";
-		ammoIsProxy = true;
-		initSpeed=0;
-		maxLeadSpeed=220;
-		sound[]=
-		{
-			"",
-			1,
-			1
-		};
-		reloadSound[]=
-		{
-			"",
-			0.00031622799,
-			1
-		};
-		count=1;
-		nameSound="missiles";
-	};
-	class Su_KH31 : Su_MagazineBase_AG
-	{
-		scope = 2;
-		displayName = "Kh-31U Krypton";
-		ammo = "Su_KH31_AG";
-		count = 1;
-		ammoIsProxy = true;
-	};*/
 	class Su_R73: VehicleMagazine
 	{
 		scope=2;
@@ -113,36 +54,4 @@ class CfgMagazines
 		ammoIsProxy = true;
 		count=1;
 	};
-
-	/*class Su_R27R: Su_R73
-	{
-		scope=2;
-		displayName="R-27R";
-		displayNameShort="R-27R";
-		count=1;
-		ammoIsProxy = true;
-		ammo="Su_R27R_AA";
-		initSpeed=0;
-	};
-	class Su_R27EA: Su_R27R
-	{
-		scope=2;
-		displayName="R-27EA";
-		displayNameShort="R-27EA";
-		count=1;
-		ammoIsProxy = true;
-		ammo="Su_R27EA_AA";
-		initSpeed=0;
-	};
-	class Su_R77: Su_R73
-	{
-		scope=2;
-		displayName="R-77";
-		displayNameShort="R-77";
-		count=1;
-		ammoIsProxy = true;
-		ammo="Su_R77_AA";
-		initSpeed=0;
-	};*/
-
 };

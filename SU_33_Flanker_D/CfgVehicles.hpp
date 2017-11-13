@@ -109,7 +109,7 @@ class CfgVehicles
 	class Su33_Protatype_PT_2: Su33_Base_F
 	{
 		side = 0;
-		faction = "OPF_F";
+		faction = "simulation_teknokent";
 		crew = "Sukhoi_Pilot";
 		author="Nobatgeldi Geldimammedov";
 		displayName="Sukhoi Su-33 Flanker-D ";
@@ -118,7 +118,7 @@ class CfgVehicles
 		driverCanSee = 31;
 		getInAction = "";
 		animated=1;
-		vehicleClass="Air";
+		vehicleClass="simulation_teknokent_PL";
 		icon="\SU_33_Flanker_D\tex\icon.paa";
 		picture="\SU_33_Flanker_D\tex\pic.paa";
 		editorpreview = "\SU_33_Flanker_D\tex\UI\pic.paa";
@@ -132,7 +132,7 @@ class CfgVehicles
 		nameSound="aircraft";
 		fuelCapacity=2500;
 		camouflage=5;
-		lightOnGear = true;
+		lightOnGear = 1;
 		Audible=9;
 		mapSize=20;
 		MapUseRealSize = true;
@@ -167,13 +167,17 @@ class CfgVehicles
 		LockDetectionSystem=1 + 2 + 4 + 8;
 		crewCrashProtection = 2.0;
 		landingAoa="rad 10";
+		stallSpeed = 180;
 		sweepDisengageRandomCourseCoef = 1;
 		landingSpeed=180;
 		enableGPS = 1;
 		fuelLeakiness = 20;
 		extCameraPosition[] = {0, 2, -30};
 		gearRetracting=1;
+		gearDownTime = 2;
+		gearUpTime = 3.33;
 		maxSpeed=2300;
+		wheelSteeringSensitivity = 2.3;
 		//timeToStop=0.2;
 		commanderUsesPilotView=true;
 		flapsFrictionCoef=0.2;
@@ -211,6 +215,7 @@ class CfgVehicles
         memoryPointsGetInCommander = "get_in";
         memoryPointsGetInDriver = "get_in";
         memoryPointsGetInGunner = "get_in";
+        //driveOnComponent[] = {"wheel_f","wheel_r","wheel_l"};	// Caesar BTT
         getInRadius=8.5;
 
 		weapons[]=
@@ -295,8 +300,9 @@ class CfgVehicles
 			controllable = 1;
 		};
 		memoryPointDriverOptics = "PilotCamera_pos";
-		aileronSensitivity=2.5;
-		elevatorSensitivity=2.9;
+		aileronSensitivity=2.0;
+		elevatorSensitivity=2.4;
+
 		radarTargetSize=1.0; /* Radar cross-section coefficient of the vehicle. Works as a coefficient of
 						        RADAR Sensor's range within the given combat situation.
                                 Early test values
@@ -312,280 +318,12 @@ class CfgVehicles
 		reportOwnPosition = true; 	/*Says if the vehicle is able to broadcast its own position*/
 
 		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
-		class Components : Components {
-			class SensorsManagerComponent {
-				class Components {
-					class IRSensorComponent : SensorTemplateIR {
-						class AirTarget {
-							minRange = 50;
-							maxRange = 30000;
-							objectDistanceLimitCoef = -1;
-							viewDistanceLimitCoef = -1;
-						};
-
-						class GroundTarget {
-							minRange = 100;
-							maxRange = 20000;
-							objectDistanceLimitCoef = -1;
-							viewDistanceLimitCoef = -1;
-						};
-						angleRangeHorizontal = 60;
-						angleRangeVertical = 60;
-						maxSpeedThreshold = 40;
-                        maxTrackableATL = 1e+010;
-                        maxTrackableSpeed = 1e+010;
-                        minSpeedThreshold = 30;
-                        minTrackableATL = -1e+010;
-                        minTrackableSpeed = -1e+010;
-						animDirection = "PilotCameraY";
-					};
-
-					class VisualSensorComponent : SensorTemplateVisual {
-						class AirTarget {
-							minRange = 50;
-							maxRange = 10000;
-							objectDistanceLimitCoef = -1;
-							viewDistanceLimitCoef = -1;
-						};
-
-						class GroundTarget {
-							minRange = 50;
-							maxRange = 10000;
-							objectDistanceLimitCoef = -1;
-							viewDistanceLimitCoef = -1;
-						};
-						angleRangeHorizontal = 90;
-						angleRangeVertical = 90;
-						maxSpeedThreshold = 40;
-                        maxTrackableATL = 1e+010;
-                        maxTrackableSpeed = 1e+010;
-                        minSpeedThreshold = 30;
-                        minTrackableATL = -1e+010;
-                        minTrackableSpeed = -1e+010;
-						animDirection = "PilotCameraY";
-					};
-
-					class AntiRadiationSensorComponent : SensorTemplateAntiRadiation {};
-
-					class ActiveRadarSensorComponent : SensorTemplateActiveRadar
-					{
-						class AirTarget {
-							minRange = 50;
-							maxRange = 100000;
-						};
-						angleRangeHorizontal = 160;
-						angleRangeVertical = 160;
-						maxSpeedThreshold = 40;
-						maxTrackableATL = 1e+010;
-						maxTrackableSpeed = 1e+010;
-						minSpeedThreshold = 30;
-						minTrackableATL = -1e+010;
-                        minTrackableSpeed = -1e+010;
-					};
-
-					class PassiveRadarSensorComponent : SensorTemplatePassiveRadar {};
-
-					class LaserSensorComponent : SensorTemplateLaser{};
-
-					class NVSensorComponent : SensorTemplateNV {};
-				};
-			};
-
-			class VehicleSystemsDisplayManagerComponentLeft : DefaultVehicleSystemsDisplayManagerLeft {
-				componentType = "VehicleSystemsDisplayManager";
-
-				defaultDisplay = "VehicleDriverDisplay";
-
-				class Components {
-					class EmptyDisplay {
-						componentType = "EmptyDisplayComponent";
-					};
-
-					class MinimapDisplay {
-						componentType = "MinimapDisplayComponent";
-						resource = "RscCustomInfoMiniMap";
-					};
-
-					class UAVDisplay {
-						componentType = "UAVFeedDisplayComponent";
-					};
-
-					class SlingLoadDisplay      //Slingload Assistant
-                    {
-                        componentType = "SlingLoadDisplayComponent";
-                        resource = "RscCustomInfoSlingLoad";
-                    };
-
-					class VehicleDriverDisplay {
-						componentType = "TransportFeedDisplayComponent";
-						source = "Driver";
-					};
-
-					class VehicleMissileDisplay {
-						componentType = "TransportFeedDisplayComponent";
-						source = "Missile";
-					};
-
-					class SensorDisplay {
-						componentType = "SensorsDisplayComponent";
-						range[] = {16000, 8000, 4000, 2000};
-						showTargetTypes = 1+2+4+8+16+32+64+128+256+512+1024; // 1 - Sensor sectors, 2 - Threats, 4 - Marked tgt symbol, 8 - Own detection, 16 - Remote detection, 32 - Active detection, 64 - Passive detection, 128 - Ground tgts, 256 - Air tgts, 512 - Men, 1024 - Special (laser, NV)
-						resource = "RscCustomInfoSensors";
-					};
-				};
-			};
-
-			class VehicleSystemsDisplayManagerComponentRight : DefaultVehicleSystemsDisplayManagerRight {
-				componentType = "VehicleSystemsDisplayManager";
-				defaultDisplay = "SensorsDisplay";
-
-				class Components {
-					class EmptyDisplay {
-						componentType = "EmptyDisplayComponent";
-					};
-
-					class MinimapDisplay {
-						componentType = "MinimapDisplayComponent";
-						resource = "RscCustomInfoMiniMap";
-					};
-
-					class UAVDisplay {
-						componentType = "UAVFeedDisplayComponent";
-					};
-
-					class VehicleDriverDisplay {
-						componentType = "TransportFeedDisplayComponent";
-						source = "Driver";
-					};
-
-					class VehicleMissileDisplay {
-						componentType = "TransportFeedDisplayComponent";
-						source = "Missile";
-					};
-
-					class SensorDisplay {
-						componentType = "SensorsDisplayComponent";
-						range[] = {16000, 8000, 4000, 2000};
-						showTargetTypes = 1+2+4+8+16+32+64+128+256+512+1024; // 1 - Sensor sectors, 2 - Threats, 4 - Marked tgt symbol, 8 - Own detection, 16 - Remote detection, 32 - Active detection, 64 - Passive detection, 128 - Ground tgts, 256 - Air tgts, 512 - Men, 1024 - Special (laser, NV)
-						resource = "RscCustomInfoSensors";
-					};
-				};
-			};
-
-		    class TransportPylonsComponent
-            {
-
-                uiPicture = "\SU_33_Flanker_D\tex\UI\Pylon.paa";
-
-                class Pylons // Pylons are indexed to aircraft model's proxies IDs in the order they are written in class Pylons
-                {
-                    class Pylons1 // left wingtip
-                    {
-                        maxweight     = 300;           //kg ,magazine with higher mass will not be allowed on this pylon
-                        hardpoints[]  = {O_R77, O_R73};// magazine with at least one same hardpoints name will be attachable
-                        //hardpoint[] = {"A164_PYLON_1_10","LAU_7","B_ASRAAM", "SUU_63_PYLON","BRU_32_EJECTOR","B_BOMB_PYLON"}; // just example for community, I am sure you will go closer to realism
-                        attachment    = "PylonMissile_Missile_AA_R73_x1"; // default magazine
-                        //bay           = -1; // index of bay for animation
-                        priority      = 5;    // pylon with higher priority is used to fire missile first, this can by changed in run time by script command setPylonsPriority
-                        UIposition[] = {0.00, 0.30}; // x,y coordinates in 3DEN UI
-                        //turret[]      = {};        // default owner of pylon/weapon, empty for driver
-                    };
-                    class Pylons2 : Pylons1
-                    {
-                        hardpoints[] = {O_R77, O_R73};
-                        priority = 4;
-                        attachment = "PylonMissile_Missile_AA_R73_x1";
-                        maxweight = 300;
-                        UIposition[] = {0.65, 0.30};
-                    };
-
-                    class Pylons3 : Pylons1
-                    {
-                        hardpoints[] = {O_MISSILE_PYLON, O_BOMB_PYLON, O_R77, O_R73, O_KH25, FIR_MISC, "FIR_OPFOR_Combined_HP"};
-                        priority = 3;
-                        attachment = "PylonMissile_Missile_AGM_KH25_x1";
-                        maxweight = 1200;
-                        UIposition[] = {0.40, 0.40};
-                    };
-                    class Pylons4 : Pylons1
-                    {
-                        hardpoints[] = {O_MISSILE_PYLON, O_BOMB_PYLON, O_R77, O_R73, O_KH25, FIR_MISC, "FIR_OPFOR_Combined_HP"};
-                        priority = 2;
-                        attachment = "PylonMissile_Missile_AGM_KH25_x1";
-                        maxweight = 1200;
-                        UIposition[] = {0.21, 0.40};
-                    };
-
-                    class Pylons5 : Pylons1
-                    {
-                        hardpoints[] = {O_MISSILE_PYLON, O_R77, O_R73};
-                        priority = 4;
-                        attachment = "PylonMissile_Missile_AA_R73_x1";
-                        maxweight = 300;
-                        UIposition[] = {0.15, 0.35};
-                    };
-                    class Pylons6 : Pylons1
-                    {
-                        hardpoints[] = {O_MISSILE_PYLON, O_R77, O_R73};
-                        priority = 4;
-                        attachment = "PylonMissile_Missile_AA_R73_x1";
-                        maxweight = 300;
-                        UIposition[] = {0.50, 0.35};
-                    };
-
-                    class Pylons7 : Pylons1
-                    {
-                        hardpoints[] = {O_BOMB_PYLON, B_BOMB_PYLON, O_R77, O_KH25};
-                        priority = 3;
-                        attachment = "PylonMissile_Bomb_KAB250_x1";
-                        maxweight = 1500;
-                        UIposition[] = {0.30, 0.45};
-                    };
-                    class Pylons8 : Pylons1
-                    {
-                        hardpoints[] = {O_BOMB_PYLON, B_BOMB_PYLON, O_R77, O_KH25};
-                        priority = 2;
-                        attachment = "PylonMissile_Bomb_KAB250_x1";
-                        maxweight = 1500;
-                        UIposition[] = {0.30, 0.50};
-                    };
-                };
-                class Presets
-                {
-                    class Empty
-                    {
-                        displayName = "Empty";
-                        attachment[] = {};
-                    };
-
-                    class AA
-                    {
-                        displayName = "Combined";
-                        attachment[] = {"PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1", "PylonMissile_Missile_AA_R77_x1", "PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1","PylonMissile_Missile_AGM_KH25_x1"};
-                    };
-                };
-            };
-		};
+        #include "Components.hpp"
 		class MarkerLights
 		{
-			/*class Cockpit_light
-			{
-				name="pos light";
-				ambient[]={0.0099999998,0.0099999998,0.0099999998,1};
-				color[]={0.029999999,1,0.11,0};
-				brightness=0.035;
-				blinking=0;
-				class Attenuation
-				{
-					start=1;
-					constant=0;
-					linear=0;
-					quadratic=4;
-				};
-			};
 			class Green_Still_Rear
 			{
-				name="bily pozicni";
+				name="Green_Still_Rear";
 				color[]={0.0, 0.0, 1.0, 1.0};
 				ambient[]={0.0, 0.0, 1.0, 1.0};
 				brightness=0.1;
@@ -593,7 +331,7 @@ class CfgVehicles
 			};
 			class red_Still_Flaps_L
 			{
-				name="cerveny pozicni";
+				name="red_Still_Flaps_L";
 				color[]={1000,0,0,1};
 				ambient[]={1,0,0,1};
 				brightness=0.01;
@@ -601,40 +339,42 @@ class CfgVehicles
 			};
 			class red_Still_Flaps_R
 			{
-				name="zeleny pozicni";
+				name="red_Still_Flaps_R";
 				color[]={1000,0,0,1};
 				ambient[]={1,0,0,1};
 				brightness=0.01;
 				blinking=1;
-			};*/
+			};
 		};
 		class Exhausts
 		{
-			/*class Exhaust_left
+			class Exhaust_left
 			{
-				position="levy prach";
+			    //intensity
+				position="engine_L";
 				direction="Exhausts_end_left";
 				effect="ExhaustsEffectPlane";
 				engineIndex = 0;
 			};
 			class Exhaust_right
 			{
-				position="pravy prach";
+			    //intensity
+				position="engine_R";
 				direction="Exhausts_end_right";
 				effect="ExhaustsEffectPlane";
 				engineIndex = 1;
-			};*/
+			};
 		};
 		class Reflectors
 		{
-			/*class Left
+			class Gear_Light_1
 			{
 				color[]={7000,7500,10000,1};
 				ambient[]={100,100,100,0};
 				position="light_1_1_source";
 				direction="light_1_1_target";
 				hitpoint="L svetlo";
-				selection="L svetlo";
+                selection="L svetlo";
 				size=1;
 				innerAngle=20;
 				outerAngle=60;
@@ -652,8 +392,73 @@ class CfgVehicles
                     hardLimitStart = 9;
                     hardLimitEnd = 10;
 				};
-			};*/
+			};
+			class Gear_Light_2
+            {
+                color[]={7000,7500,10000,1};
+                ambient[]={100,100,100,0};
+                position="light_1_2_source";
+                direction="light_1_2_target";
+				hitpoint="L svetlo";
+                selection="L svetlo";
+                size=1;
+                innerAngle=20;
+                outerAngle=60;
+                coneFadeCoef=10;
+                intensity=25;
+                useFlare=1;
+                dayLight=0;
+                FlareSize=4;
+                class Attenuation
+                {
+                    start = 1;
+                    constant = 0;
+                    linear = 0;
+                    quadratic = 4;
+                    hardLimitStart = 9;
+                    hardLimitEnd = 10;
+                };
+            };
+            class Gear_Light_3
+            {
+                color[]={7000,7500,10000,1};
+                ambient[]={100,100,100,0};
+                position="light_1_3_source";
+                direction="light_1_3_target";
+				hitpoint="L svetlo";
+                selection="L svetlo";
+                size=1;
+                innerAngle=10;
+                outerAngle=30;
+                coneFadeCoef=10;
+                intensity=25;
+                useFlare=1;
+                dayLight=0;
+                FlareSize=4;
+                class Attenuation
+                {
+                    start = 1;
+                    constant = 0;
+                    linear = 0;
+                    quadratic = 4;
+                    hardLimitStart = 9;
+                    hardLimitEnd = 10;
+                };
+            };
 		};
+		/*class RenderTargets {
+            class mfdFlir {
+                renderTarget = "rendertarget0";
+
+                class CameraView1 {
+                    pointPosition = "flir_pos";
+                    pointDirection = "flir_dir";
+                    renderQuality = 2;
+                    renderVisionMode = 2;
+                    fov = 0.3;
+                };
+            };
+        };*/
 		class Sounds
 		{
 			class EngineLowOut
@@ -757,81 +562,6 @@ class CfgVehicles
 				volume = "(1-camPos) * rain * (speed factor[50, 0])";
 			};
 		};
-		/*class Sounds
-		{
-			class EngineLowOut {
-				sound[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_engine_idle_ext", 1.0, 1.0, 2100};
-				frequency = "1.0 min (rpm + 0.5)";
-				volume = "camPos*2*(rpm factor[0.95, 0])*(rpm factor[0, 0.95])";
-			};
-
-			class EngineHighOut {
-				sound[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_engine_max_ext", 1.0, 1.2, 2500};
-				frequency = "1";
-				volume = "camPos*4*(rpm factor[0.5, 1.1])*(rpm factor[1.1, 0.5])";
-			};
-
-			class ForsageOut {
-				sound[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_forsage_ext", 1.41254, 1.2, 2800};
-				frequency = "1";
-				volume = "engineOn*camPos*(thrust factor[0.6, 1.0])";
-				cone[] = {3.14, 3.92, 2.0, 0.5};
-			};
-
-			class WindNoiseOut {
-				sound[] = {"A3\Sounds_F_EPC\CAS_02\noise", 0.562341, 1.0, 150};
-				frequency = "(0.1+(1.2*(speed factor[1, 150])))";
-				volume = "camPos*(speed factor[1, 150])";
-			};
-
-			class EngineLowIn {
-				sound[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_engine_idle_int", 0.562341, 1.0};
-				frequency = "1.0 min (rpm + 0.5)";
-				volume = "(1-camPos)*((rpm factor[0.7, 0.1])*(rpm factor[0.1, 0.7]))";
-			};
-
-			class EngineHighIn {
-				sound[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_engine_max_int", 0.316228, 1.2};
-				frequency = "1";
-				volume = "(1-camPos)*(rpm factor[0.85, 1.0])";
-			};
-
-			class ForsageIn {
-				sound[] = {"A3\Sounds_F_EPC\CAS_02\CAS_02_forsage_int", 0.501187, 1.2};
-				frequency = "1";
-				volume = "(1-camPos)*(engineOn*(thrust factor[0.6, 1.0]))";
-			};
-
-			class WindNoiseIn {
-				sound[] = {"A3\Sounds_F\air\Plane_Fighter_03\noise_int", 0.316228, 1.0};
-				frequency = "(0.1+(1.2*(speed factor[1, 150])))";
-				volume = "(1-camPos)*(speed factor[1, 150])";
-			};
-
-			class RainExt {
-				sound[] = {"A3\Sounds_F\vehicles\noises\rain1_ext", 1.77828, 1.0, 100};
-				frequency = 1;
-				volume = "camPos * rain * (speed factor[50, 0])";
-			};
-
-			class RainInt {
-				sound[] = {"A3\Sounds_F\vehicles\noises\rain1_int", 1.0, 1.0, 100};
-				frequency = 1;
-				volume = "(1-camPos) * rain * (speed factor[50, 0])";
-			};
-
-			class Waternoise_ext {
-				sound[] = {"A3\Sounds_F\vehicles\noises\air_driving_in_water", 0.707946, 1, 300};
-				frequency = "1";
-				volume = "(speed factor[0, 5]) * water * camPos + (speed factor[-0.1, -5]) * water * camPos";
-			};
-
-			class Waternoise_int {
-				sound[] = {"A3\Sounds_F\vehicles\noises\soft_driving_in_water_int", 0.562341, 1, 100};
-				frequency = "1";
-				volume = "(speed factor[0, 5]) * water * (1-camPos) + (speed factor[-0.1, -5]) * water * (1-camPos)";
-			};
-		};*/
 		attenuationEffectType = "PlaneAttenuation";
 		soundGetIn[] = {"A3\Sounds_F_EPC\CAS_02\TO_getin", 1.0, 1};
 		soundGetOut[] = {"A3\Sounds_F_EPC\CAS_02\getout", 1.0, 1, 40};

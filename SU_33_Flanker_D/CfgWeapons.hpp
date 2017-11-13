@@ -1,13 +1,7 @@
 class CfgWeapons
 {
-
-	class CannonCore;
 	class MissileLauncher;
-	class RocketPods;
-	class H_PilotHelmetFighter_O;
 	class weapon_R73Launcher;
-	class weapon_R77Launcher;
-	class Bomb_04_Plane_CAS_01_F;
 	class FakeWeapon;
 	class autocannon_35mm;
 
@@ -121,4 +115,31 @@ class CfgWeapons
 		{
 		};
 	};
+	/*class Su_K31_weapon: MissileLauncher
+	{
+      scope = 2;
+      holdsterAnimValue = 1;
+      displayName = "Kh-31U Krypton";
+      displayNameMagazine = "Kh-31U";
+      shortNameMagazine = "Kh-31U";
+      sounds[] = {"StandardSound"};
+      class StandardSound {
+          begin1[] = {"A3\Sounds_F\weapons\Rockets\titan_1", 2.51189, 1, 1100};
+          soundBegin[] = {"begin1", 1};
+          weaponSoundEffect = "DefaultRifle";
+      };
+      initspeed = 10;
+      magazineReloadTime = 0.1;
+      reloadTime = 0.5;
+      aiRateOfFire = 4;
+      aiRateOfFireDistance = 500;
+      minRange = 100;
+      minRangeProbab = 0.04;
+      midRange = 1000;
+      midRangeProbab = 0.85;
+      maxRange = 4000;
+      maxRangeProbab = 0.55;
+      maxLeadSpeed = 2500;
+      magazines[] = {"Su_KH31_magazine"};
+  };*/
 };
