@@ -90,9 +90,9 @@ else
 if ((isEngineOn _this) and ((_this animationPhase "wing") < 0.1) and ((_this animationPhase "ABcut") < 0.3)) then
 {
 	//afterburner affect animation
-	_plane animateSource  ["Afterburner_source",1];
+	_plane animateSource  ["afterburner",1];
 	//engine animation
-	_plane animateSource  ["Engine_source",0];
+	//_plane animateSource  ["Engine_source",0];
 
 
   if (_Intensity < _MaxIntensity) then
@@ -121,9 +121,9 @@ if ((isEngineOn _this) and ((_this animationPhase "wing") < 0.1) and ((_this ani
 }
 else {
 		//afterburner affect animation
-		_plane animateSource  ["Afterburner_source",0];
+		_plane animateSource  ["afterburner",0];
 		//engine animation
-		_plane animateSource  ["Engine_source",1];
+		//_plane animateSource  ["Engine_source",1];
 
 	if (_Intensity > 0) then
 		{

@@ -619,14 +619,14 @@ class CfgVehicles
 		};
 		class AnimationSources
 		{
-			/*class Engine_source
+			class afterburner
 			{
 				source="user";
-				animPeriod=2;
+				animPeriod=1;
 				initPhase=0;
 			};
 
-			class sun_rise
+			/*class sun_rise
 			{
 				source="user";
 				animPeriod=2;

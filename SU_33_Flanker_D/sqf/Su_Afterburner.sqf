@@ -7,7 +7,7 @@
 ///-------------------<>----------------///
 
 
-private ["_MaxIntensity","_maxspeed","_Boost","_Intensity","_looptime", "_plane"];
+private ["_MaxIntensity","_maxspeed","_Boost","_Intensity","_looptime", "_plane", "_trottle"];
 
 _plane = _this;
 _MaxIntensity = 1.5;
@@ -20,8 +20,14 @@ _maxspeed = getNumber (configFile >> "cfgVehicles" >> typeOf _plane >> "maxSpeed
 _looptime = 0.1;
 while {(alive _plane)} do
 {
-    if ((isEngineOn _plane) and ((_plane animationPhase "ABcut") < 0.3)) then
+    _trottle = airplaneThrottle _plane;
+    _throttle =["Throttle",_trottle];
+    //object animationSourcePhase source
+    hintSilent ( _throttle joinString ":");
+
+    if ((isEngineOn _plane) and ( _trottle > 0.9)) then
     {
+        _plane animateSource  ["afterburner",0];
         if (_Intensity < _MaxIntensity) then
         {
             _Intensity = _Intensity + 0.1*(15*_looptime);
@@ -34,6 +40,7 @@ while {(alive _plane)} do
     }
     else
     {
+        _plane animateSource  ["afterburner",1];
         if (_Intensity > 0) then
         {
          _Intensity = _Intensity - 0.2*(15*_looptime);
