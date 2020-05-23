@@ -8,22 +8,23 @@ private ["_emitter","_nowspeed", "_lastspeed"];
 _emitter = "#particlesource" createVehicle position _this;
 _emitter setParticleRandom [0.05,[2,2,2],[5,5,5],0,0.5,[0.1,0.1,0.1,0.5],0,0];
 _emitter setDropInterval 0;
+_lastspeed= 0;
 
-while {(alive _this) and (_this animationPhase "KillFx" == 0)} do
+while {(alive _this)} do
 {
 	_nowspeed = speed _this;
-	if ((_nowspeed > 850) and (_nowspeed < 880)) then /*and (_lastspeed < _nowspeed)*/
+	if ((_nowspeed > 850) and (_nowspeed < 880) and (_lastspeed < _nowspeed)) then /*and (_lastspeed < _nowspeed)*/
 	{
 		_emitter setDropInterval 0.0005;
 		for "_i" from 1 to 100 do
-		  {
-			_emitter setParticleRandom [0.4,[10*(_i/100),10*(_i/100),10*(_i/100)],[10*(_i/100),10*(_i/100),10*(_i/100)],0,0.3,[0.1,0.15,0.3,0.5],0,0];
-			_emitter setParticleParams ["\SU_33_Flanker_D\cl_exp.p3d","","Billboard",1,0.1,[0,(-12*(_i/100)+8),-0.5],(velocity _this),1,1.2745,1,0.001,[20*(_i/100)],[[1,1,1,0],[1,1,1,0.1*(_i/100)],[1,1,1,0]],[0],0,0,"","",_this];
-			 sleep 0.005;
-		   };
+        {
+            _emitter setParticleRandom [0.4,[10*(_i/100),10*(_i/100),10*(_i/100)],[10*(_i/100),10*(_i/100),10*(_i/100)],0,0.3,[0.1,0.15,0.3,0.5],0,0];
+            _emitter setParticleParams ["\SU_33_Flanker_D\cl_exp.p3d","","Billboard",1,0.1,[0,(-12*(_i/100)+8),-0.5],(velocity _this),1,1.2745,1,0.001,[20*(_i/100)],[[1,1,1,0],[1,1,1,0.1*(_i/100)],[1,1,1,0]],[0],0,0,"","",_this];
+             sleep 0.005;
+        };
 		_emitter setDropInterval 0;
 		sleep ((random 5)+ 5);
-	 }
+	}
 	else
 	{
 		_emitter setDropInterval 0

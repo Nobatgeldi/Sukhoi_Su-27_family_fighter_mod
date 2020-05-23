@@ -1,0 +1,73 @@
+class O_Pilot_F;
+
+class Sukhoi_Pilot: O_Pilot_F
+{
+    class SpeechVariants
+    {
+        class Default
+        {
+            speechSingular[]=
+            {
+                "veh_infantry_pilot_s"
+            };
+            speechPlural[]=
+            {
+                "veh_infantry_pilot_p"
+            };
+        };
+    };
+    //textSingular="$STR_A3_nameSound_veh_infantry_pilot_s";
+    //textPlural="$STR_A3_nameSound_veh_infantry_pilot_p";
+    nameSound="veh_infantry_pilot_s";
+    //author="$STR_A3_Bohemia_Interactive";
+    _generalMacro="O_Pilot_F";
+    displayName="Sukhoi Pilot";
+    model="\A3\characters_F\Common\pilot_f.p3d";
+    modelSides[]={3,1};
+    weapons[]=
+    {
+        "Throw",
+        "Put",
+        "arifle_Katiba_ACO_pointer_F"
+    };
+    respawnWeapons[]=
+    {
+        "Throw",
+        "Put"
+    };
+    magazines[]=
+    {
+        "30Rnd_65x39_caseless_green_mag_Tracer"
+    };
+    respawnMagazines[]={};
+    backpack="";
+    linkedItems[]=
+    {
+        "ItemMap",
+        "ItemCompass",
+        "ItemWatch",
+        "ItemRadio",
+        "ItemGPS",
+        "Integrated_NVG_F",
+        "H_PilotHelmetFighter_O"
+    };
+    respawnLinkedItems[]=
+    {
+        "ItemMap",
+        "ItemCompass",
+        "ItemWatch",
+        "ItemRadio",
+        "ItemGPS",
+        "Integrated_NVG_F",
+        "H_PilotHelmetFighter_O"
+    };
+    hiddenSelections[]=
+    {
+        "Camo"
+    };
+    hiddenSelectionsTextures[]=
+    {
+        "\A3\Characters_F\Common\Data\pilot_suit_iran_co.paa"
+    };
+    cost=165000;
+};

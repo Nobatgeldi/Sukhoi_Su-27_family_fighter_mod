@@ -1,6 +1,11 @@
-// -----------------------------
-// configured for Su-33 by Gabby_NG
-// -----------------------------
+///-------------------<>----------------///
+///     Author: Gabby_NG                ///
+///       Date: 02 July                 ///
+///    Project: SU_33_Flanker_D         ///
+///       File: GSH.sqf                 ///
+/// Permission: GPL v3.0                ///
+///-------------------<>----------------///
+
 private ["_array","_weapon","_plane","_gunmodelpos","_vel"];
 
 _array = _this select 0;
@@ -10,7 +15,8 @@ _weapon = _array select 1;
 
 if(_weapon == "Su_GSh301") then
 {
-	_gunmodelpos = _plane selectionPosition  "machinegun";
+	_gunmodelpos = _plane selectionPosition "machinegun";
+	_gunworldpos = _plane modelToWorld _gunmodelpos;
 	_vel = speed _plane;
 	if(_vel > 40) then
 	{

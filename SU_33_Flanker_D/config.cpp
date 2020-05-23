@@ -1,10 +1,14 @@
-#include "basicDefines_A3.hpp"
-#include "BIS_AddonInfo.hpp"
-#include "CfgMovesBasic.hpp"
-#include "DefaultVehicleSystemsDisplayManagerLeft.hpp"
-#include "DefaultVehicleSystemsDisplayManagerRight.hpp"
-#include "CfgFactionClasses.hpp"
-#include "CfgVehicleClasses.hpp"
+#include "header/basicDefines_A3.hpp"
+#include "header/BIS_AddonInfo.hpp"
+#include "header/CfgMovesBasic.hpp"
+#include "header/CfgCloudlets.hpp"
+#include "header/BodyVortices.hpp"
+#include "header/SU_33_BodyVortices.hpp"
+#include "header/DefaultVehicleSystemsDisplayManagerLeft.hpp"
+#include "header/DefaultVehicleSystemsDisplayManagerRight.hpp"
+#include "header/CfgFactionClasses.hpp"
+#include "header/CfgVehicleClasses.hpp"
+
 class SensorTemplatePassiveRadar;	// External class reference
 class SensorTemplateAntiRadiation;	// External class reference
 class SensorTemplateActiveRadar;	// External class reference
@@ -13,11 +17,12 @@ class SensorTemplateVisual;	// External class reference
 class SensorTemplateMan;	// External class reference
 class SensorTemplateLaser;	// External class reference
 class SensorTemplateNV;	// External class reference
-#include "CfgWeapons.hpp"
-#include "CfgAmmo.hpp"
-#include "CfgMagazines.hpp"
-#include "CfgNonAIVehicles.hpp"
-#include "CfgVehicles.hpp"
+
+#include "header/CfgWeapons.hpp"
+#include "header/CfgAmmo.hpp"
+#include "header/CfgMagazines.hpp"
+#include "header/CfgNonAIVehicles.hpp"
+#include "header/CfgVehicles.hpp"
 
 enum
 {
@@ -40,8 +45,7 @@ class CfgPatches
 {
 	class Su33_Protatype_PT
 	{
-		units[] =
-		{
+		units[] ={
 			"Su33_Protatype_PT_2",
 			"Sukhoi_Pilot",
 			"Su33_Protatype_Dynamic"
